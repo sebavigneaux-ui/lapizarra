@@ -12,7 +12,9 @@
       "Bash(npm run:*)",
       "Bash(rm -rf node_modules && npm install 2>&1 | tail -5)",
       "Bash(git init:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)"
     ]
   }
 }
