@@ -1,5 +1,4 @@
 import Blobs from "./Blobs";
-import Marquee from "./Marquee";
 
 const pasos = [
   {
@@ -59,9 +58,6 @@ export default function Metodologia() {
             ))}
           </div>
         </div>
-      </div>
-      <div className="relative z-10">
-        <Marquee />
       </div>
     </section>
   );
