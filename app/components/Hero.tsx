@@ -52,7 +52,7 @@ export default function Hero() {
 
       {/* Carrusel de clientes — mismo fondo */}
       <div className="relative z-10 pb-16">
-        <p className="text-white/30 text-xs uppercase tracking-widest text-center mb-8">
+        <p className="text-white/60 text-xs uppercase tracking-widest text-center mb-8">
           Han confiado en nosotros
         </p>
 
@@ -80,7 +80,7 @@ export default function Hero() {
           <div className="marquee-track">
             {[...clientes, ...clientes].map((nombre, i) => (
               <span key={i} className="flex items-center whitespace-nowrap">
-                <span className="text-white/60 text-sm font-medium px-6 hover:text-white transition-colors">
+                <span className="text-white/60 text-base font-medium px-6 hover:text-white transition-colors">
                   {nombre}
                 </span>
                 <span className="text-[#EC008C] text-xs select-none">•</span>
