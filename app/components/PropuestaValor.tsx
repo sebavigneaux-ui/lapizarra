@@ -1,4 +1,5 @@
 import Blobs from "./Blobs";
+import Marquee from "./Marquee";
 
 const atributos = [
   "Estrategia",
@@ -61,6 +62,9 @@ export default function PropuestaValor() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="relative z-10">
+        <Marquee />
       </div>
     </section>
   );

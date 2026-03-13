@@ -1,4 +1,5 @@
 import Blobs from "./Blobs";
+import Marquee from "./Marquee";
 import Image from "next/image";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
@@ -37,6 +38,11 @@ export default function CTAFinal() {
             Respuesta rápida. Conversación directa con el equipo senior.
           </p>
         </div>
+      </div>
+
+      {/* Marquee antes del footer */}
+      <div className="relative z-10">
+        <Marquee />
       </div>
 
       {/* Footer fusionado */}
