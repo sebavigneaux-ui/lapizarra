@@ -8,7 +8,7 @@ const clientes = [
   "Stellantis", "KIA", "PUIG", "Linde", "Metso Outotec",
   "SQM", "Parque Arauco", "Ripley", "Alsea", "Kaufmann",
   "Polpaico", "CChC", "Universidad de los Andes",
-  "Clínica Universidad de los Andes", "Orsan", "Cool Carriers",
+  "Clínica Universidad de los Andes", "Orsan", "Cool Carriers", "Novo Nordisk",
 ];
 
 export default function Hero() {
