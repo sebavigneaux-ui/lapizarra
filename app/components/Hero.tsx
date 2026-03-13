@@ -4,6 +4,11 @@ const WA_COTIZAR = "https://wa.me/56958419326?text=Hola%2C%20me%20gustar%C3%ADa%
 export default function Hero() {
   return (
     <section className="bg-[#231F20] min-h-screen flex items-center relative overflow-hidden">
+      {/* Blobs animados tipo aurora */}
+      <div className="blob blob-1" />
+      <div className="blob blob-2" />
+      <div className="blob blob-3" />
+
       {/* Línea decorativa magenta */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 

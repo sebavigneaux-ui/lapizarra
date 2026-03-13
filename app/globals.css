@@ -30,3 +30,52 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Aurora / blob animations */
+@keyframes blob1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(60px, -40px) scale(1.1); }
+  66%       { transform: translate(-30px, 30px) scale(0.95); }
+}
+@keyframes blob2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(-50px, 30px) scale(1.05); }
+  66%       { transform: translate(40px, -50px) scale(1.1); }
+}
+@keyframes blob3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(30px, 50px) scale(0.9); }
+  66%       { transform: translate(-60px, -20px) scale(1.05); }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: #EC008C;
+  top: -100px;
+  left: -100px;
+  animation: blob1 12s ease-in-out infinite;
+}
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: #8B0057;
+  top: 30%;
+  right: -80px;
+  animation: blob2 15s ease-in-out infinite;
+}
+.blob-3 {
+  width: 350px;
+  height: 350px;
+  background: #EC008C;
+  bottom: 0px;
+  left: 40%;
+  animation: blob3 18s ease-in-out infinite;
+}
