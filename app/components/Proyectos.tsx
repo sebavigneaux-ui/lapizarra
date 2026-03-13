@@ -4,7 +4,7 @@ const videos = [
   { id: "mr8FCGm3RxY" },
   { id: "jpXMz12JjXU" },
   { id: "4uyNXJ2N6ow" },
-  { id: "wyRI9zvGXSE", start: 15 },
+  { id: "wyRI9zvGXSE" },
 ];
 
 export default function Proyectos() {
