@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Línea decorativa magenta */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
-      <div className="max-w-6xl mx-auto px-6 pt-44 pb-24 w-full">
+      <div className="max-w-6xl mx-auto px-6 pt-52 pb-24 w-full">
         <div className="max-w-3xl">
           {/* Etiqueta */}
           <p className="text-[#EC008C] text-sm font-bold uppercase tracking-widest mb-8">

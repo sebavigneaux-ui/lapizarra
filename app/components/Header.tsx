@@ -48,9 +48,9 @@ export default function Header() {
             <Image
               src="/logo-blanco.png"
               alt="LaPizarra"
-              width={140}
-              height={56}
-              className="h-10 w-auto object-contain"
+              width={210}
+              height={84}
+              className="h-16 w-auto object-contain"
               priority
             />
           </a>
