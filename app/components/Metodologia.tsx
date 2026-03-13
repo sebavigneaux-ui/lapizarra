@@ -53,7 +53,7 @@ export default function Metodologia() {
                   <span className="text-white font-black text-sm">{paso.num}</span>
                 </div>
                 <h3 className="text-white font-black text-base mb-3">{paso.titulo}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{paso.desc}</p>
+                <p className="text-white/50 text-base leading-relaxed">{paso.desc}</p>
               </div>
             ))}
           </div>

@@ -45,7 +45,7 @@ export default function PropuestaValor() {
 
           {/* Columna derecha */}
           <div className="border border-white/10 p-10">
-            <p className="text-white/60 text-sm leading-relaxed mb-8">
+            <p className="text-white/60 text-base leading-relaxed mb-8">
               Somos una productora boutique, lo que significa:
             </p>
             <ul className="space-y-5">
@@ -56,7 +56,7 @@ export default function PropuestaValor() {
                 </li>
               ))}
             </ul>
-            <p className="mt-10 text-white/80 text-sm leading-relaxed border-t border-white/10 pt-8">
+            <p className="mt-10 text-white/80 text-base leading-relaxed border-t border-white/10 pt-8">
               Nuestro objetivo no es solo que el evento funcione. Es que funcione perfecto y represente bien a tu marca.
             </p>
           </div>

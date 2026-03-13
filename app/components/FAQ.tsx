@@ -57,7 +57,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 {open === i && (
-                  <p className="text-[#231F20]/70 text-sm leading-relaxed pb-6">
+                  <p className="text-[#231F20]/70 text-base leading-relaxed pb-6">
                     {item.a}
                   </p>
                 )}

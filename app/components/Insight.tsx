@@ -31,7 +31,7 @@ export default function Insight() {
               {problemas.map((p, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-[#EC008C] font-black text-lg leading-none mt-0.5">—</span>
-                  <span className="text-[#231F20]/80 text-sm leading-relaxed">{p}</span>
+                  <span className="text-[#231F20]/80 text-base leading-relaxed">{p}</span>
                 </li>
               ))}
             </ul>

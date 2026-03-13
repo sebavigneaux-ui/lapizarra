@@ -51,7 +51,7 @@ export default function Diferenciadores() {
             <div key={i} className="group">
               <div className="w-8 h-0.5 bg-[#EC008C] mb-6" />
               <h3 className="text-[#231F20] font-black text-base mb-3">{item.titulo}</h3>
-              <p className="text-[#231F20]/60 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-[#231F20]/60 text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
