@@ -1,4 +1,5 @@
 import Blobs from "./Blobs";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,10 +7,14 @@ export default function Footer() {
       <Blobs />
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
         <div>
-          <span className="text-white font-black text-lg tracking-tight">
-            La<span className="text-[#EC008C]">Pizarra</span>
-          </span>
-          <p className="text-white/30 text-xs mt-1">
+          <Image
+            src="/logo-blanco.png"
+            alt="LaPizarra"
+            width={160}
+            height={64}
+            className="h-12 w-auto object-contain"
+          />
+          <p className="text-white/30 text-xs mt-2">
             Productora boutique · Santiago, Chile
           </p>
         </div>
