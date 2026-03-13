@@ -6,10 +6,17 @@ const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [logoScale, setLogoScale] = useState(1);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      // Escala progresiva: 1.0 en top → 1.4 a los 300px de scroll
+      const scale = Math.min(1 + (y / 300) * 0.4, 1.4);
+      setLogoScale(scale);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -44,13 +51,14 @@ export default function Header() {
       {/* Navbar principal */}
       <div className={`transition-all duration-300 ${scrolled ? "bg-[#231F20] shadow-lg" : "bg-[#231F20]/95"}`}>
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex items-center origin-left">
             <Image
               src="/logo-blanco.png"
               alt="LaPizarra"
               width={210}
               height={84}
-              className="h-16 w-auto object-contain"
+              className="h-16 w-auto object-contain transition-transform duration-200 ease-out origin-left"
+              style={{ transform: `scale(${logoScale})` }}
               priority
             />
           </a>
