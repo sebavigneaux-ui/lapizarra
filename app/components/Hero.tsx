@@ -82,9 +82,7 @@ export default function Hero() {
                 href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ backgroundColor: "#EC008C", color: "white", fontWeight: 700, padding: "1rem 2rem", fontSize: "1rem", textDecoration: "none", textAlign: "center", transition: "background-color 0.2s" }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c8007a")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#EC008C")}
+                className="bg-[#EC008C] hover:bg-[#c8007a] text-white font-bold px-8 py-4 text-base transition-colors text-center"
               >
                 Agendar una reunión
               </a>
