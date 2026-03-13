@@ -21,22 +21,14 @@ export default function CTAFinal() {
             Si estás evaluando una activación, un lanzamiento o un evento corporativo, conversemos. En una breve reunión podemos entender tu objetivo y ver cómo diseñar una experiencia que realmente funcione.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <div className="flex mb-8">
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#EC008C] text-white font-black px-8 py-4 text-base hover:bg-[#c8007a] transition-colors text-center"
+              className="bg-[#EC008C] text-white font-black px-10 py-4 text-base hover:bg-[#c8007a] transition-colors text-center"
             >
-              Agendar reunión
-            </a>
-            <a
-              href={WA_COTIZAR}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/30 text-white font-bold px-8 py-4 text-base hover:border-white/60 hover:bg-white/5 transition-colors text-center"
-            >
-              Solicitar cotización
+              Hablemos
             </a>
           </div>
 

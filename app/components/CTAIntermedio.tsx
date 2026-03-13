@@ -18,7 +18,7 @@ export default function CTAIntermedio() {
           rel="noopener noreferrer"
           className="bg-white text-[#EC008C] font-black px-8 py-4 text-base hover:bg-white/90 transition-colors whitespace-nowrap flex-shrink-0"
         >
-          Agendar reunión →
+          Hablemos →
         </a>
       </div>
     </section>

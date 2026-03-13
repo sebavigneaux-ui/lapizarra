@@ -32,22 +32,14 @@ export default function Hero() {
             Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex mb-12">
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#EC008C] hover:bg-[#c8007a] text-white font-bold px-8 py-4 text-base transition-colors text-center"
+              className="bg-[#EC008C] hover:bg-[#c8007a] text-white font-bold px-10 py-4 text-base transition-colors text-center"
             >
-              Agendar una reunión
-            </a>
-            <a
-              href={WA_COTIZAR}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/30 text-white font-bold px-8 py-4 text-base hover:border-white/70 hover:bg-white/5 transition-colors text-center"
-            >
-              Solicitar cotización
+              Hablemos
             </a>
           </div>
 

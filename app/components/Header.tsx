@@ -68,7 +68,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="bg-[#EC008C] text-white text-sm font-bold px-5 py-2.5 hover:bg-[#c8007a] transition-colors"
           >
-            Agendar reunión
+            Hablemos
           </a>
         </div>
       </div>
