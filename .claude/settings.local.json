@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version && npm --version)",
+      "Read(//c/Users/sebav/claude_code/**)",
+      "Bash(npx create-next-app@latest LaPizarra --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(cd /c/Users/sebav/claude_code && npx create-next-app@latest lapizarra --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(cd /c/Users/sebav/claude_code && npx create-next-app@latest lapizarra-temp --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(cp -r /c/Users/sebav/claude_code/lapizarra-temp/. /c/Users/sebav/claude_code/LaPizarra/ && rm -rf /c/Users/sebav/claude_code/lapizarra-temp)",
+      "Bash(cp -r /c/Users/sebav/claude_code/lapizarra-temp/app /c/Users/sebav/claude_code/LaPizarra/ && cp -r /c/Users/sebav/claude_code/lapizarra-temp/public /c/Users/sebav/claude_code/LaPizarra/ && cp /c/Users/sebav/claude_code/lapizarra-temp/package.json /c/Users/sebav/claude_code/LaPizarra/ && cp /c/Users/sebav/claude_code/lapizarra-temp/eslint.config.mjs /c/Users/sebav/claude_code/LaPizarra/ && cp /c/Users/sebav/claude_code/lapizarra-temp/.gitignore /c/Users/sebav/claude_code/LaPizarra/ 2>/dev/null; echo \"done\")",
+      "Bash(npm run:*)",
+      "Bash(rm -rf node_modules && npm install 2>&1 | tail -5)",
+      "Bash(git init:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}
