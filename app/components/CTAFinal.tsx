@@ -1,15 +1,16 @@
 import Blobs from "./Blobs";
+import Image from "next/image";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
-const WA_COTIZAR = "https://wa.me/56958419326?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20con%20LaPizarra";
 
 export default function CTAFinal() {
   return (
-    <section className="bg-[#231F20] py-28 px-6 relative overflow-hidden">
+    <section className="bg-[#231F20] relative overflow-hidden">
       <Blobs />
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      {/* CTA */}
+      <div className="max-w-6xl mx-auto px-6 pt-28 pb-20 relative z-10">
         <div className="max-w-2xl">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-8">
             Hablemos
@@ -34,6 +35,45 @@ export default function CTAFinal() {
 
           <p className="text-white/30 text-sm">
             Respuesta rápida. Conversación directa con el equipo senior.
+          </p>
+        </div>
+      </div>
+
+      {/* Footer fusionado */}
+      <div className="border-t border-white/10 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <Image
+              src="/logo-blanco.png"
+              alt="LaPizarra"
+              width={160}
+              height={64}
+              className="h-12 w-auto object-contain"
+            />
+            <p className="text-white/30 text-xs mt-2">
+              Productora boutique · Santiago, Chile
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-6 text-sm">
+            <a
+              href="mailto:sebastian@somoslapizarra.cl"
+              className="text-white/50 hover:text-white transition-colors"
+            >
+              sebastian@somoslapizarra.cl
+            </a>
+            <a
+              href="https://wa.me/56958419326"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white transition-colors"
+            >
+              +56 9 5841 9326
+            </a>
+          </div>
+
+          <p className="text-white/20 text-xs">
+            © {new Date().getFullYear()} LaPizarra. Todos los derechos reservados.
           </p>
         </div>
       </div>

@@ -9,7 +9,6 @@ import CTAIntermedio from "./components/CTAIntermedio";
 import Confianza from "./components/Confianza";
 import FAQ from "./components/FAQ";
 import CTAFinal from "./components/CTAFinal";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
         <FAQ />
         <CTAFinal />
       </main>
-      <Footer />
     </>
   );
 }
