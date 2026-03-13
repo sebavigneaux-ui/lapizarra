@@ -10,7 +10,7 @@ const clientes = [
 
 export default function Clientes() {
   return (
-    <section className="bg-[#231F20] py-14 border-t border-white/10 relative overflow-hidden">
+    <section className="bg-[#231F20] py-14 relative overflow-hidden">
       <Blobs />
 
       <div className="relative z-10">
