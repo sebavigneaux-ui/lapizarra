@@ -2,6 +2,9 @@ const videos = [
   { id: "zO3KVRmb7vQ" },
   { id: "lNUHjeq-81s" },
   { id: "mr8FCGm3RxY" },
+  { id: "jpXMz12JjXU" },
+  { id: "4uyNXJ2N6ow" },
+  { id: "wyRI9zvGXSE", start: 15 },
 ];
 
 export default function Proyectos() {
@@ -21,7 +24,7 @@ export default function Proyectos() {
           {videos.map((v) => (
             <div key={v.id} className="aspect-video w-full bg-[#231F20]">
               <iframe
-                src={`https://www.youtube.com/embed/${v.id}`}
+                src={`https://www.youtube.com/embed/${v.id}${v.start ? `?start=${v.start}` : ""}`}
                 title="Proyecto LaPizarra"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
