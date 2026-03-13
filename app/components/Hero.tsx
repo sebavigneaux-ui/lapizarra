@@ -39,7 +39,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="bg-[#EC008C] hover:bg-[#c8007a] text-white font-bold px-10 py-4 text-base transition-colors text-center"
             >
-              Hablemos
+              Hablemos →
             </a>
           </div>
 

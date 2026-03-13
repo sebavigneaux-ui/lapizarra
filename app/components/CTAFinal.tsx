@@ -28,7 +28,7 @@ export default function CTAFinal() {
               rel="noopener noreferrer"
               className="bg-[#EC008C] text-white font-black px-10 py-4 text-base hover:bg-[#c8007a] transition-colors text-center"
             >
-              Hablemos
+              Hablemos →
             </a>
           </div>
 
