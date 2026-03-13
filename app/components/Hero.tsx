@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
       {/* Contenido principal */}
-      <div className="max-w-6xl mx-auto px-6 pt-52 pb-20 w-full relative z-10">
+      <div className="max-w-6xl mx-auto px-6 pt-36 pb-20 w-full relative z-10">
         <div className="max-w-3xl">
           <p className="text-[#EC008C] text-sm font-bold uppercase tracking-widest mb-8">
             Productora boutique · Santiago, Chile
