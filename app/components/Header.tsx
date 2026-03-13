@@ -11,9 +11,10 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
+      const atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 10;
       setScrolled(y > 40);
-      // Escala progresiva: 1.0 en top → 1.4 a los 300px de scroll
-      const scale = Math.min(1 + (y / 300) * 0.4, 1.4);
+      // Escala progresiva: 1.0 en top → 1.4 a los 300px, vuelve a 1.0 al llegar al bottom
+      const scale = atBottom ? 1 : Math.min(1 + (y / 300) * 0.4, 1.4);
       setLogoScale(scale);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
