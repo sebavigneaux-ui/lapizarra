@@ -1,7 +1,10 @@
+import Blobs from "./Blobs";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#231F20] border-t border-white/10 py-12 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-[#231F20] border-t border-white/10 py-12 px-6 relative overflow-hidden">
+      <Blobs />
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
         <div>
           <span className="text-white font-black text-lg tracking-tight">
             La<span className="text-[#EC008C]">Pizarra</span>

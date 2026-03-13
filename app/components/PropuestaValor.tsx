@@ -1,3 +1,5 @@
+import Blobs from "./Blobs";
+
 const atributos = [
   "Estrategia",
   "Diseño",
@@ -16,8 +18,9 @@ const diferencias = [
 
 export default function PropuestaValor() {
   return (
-    <section className="bg-[#231F20] py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+      <Blobs />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Columna izquierda */}
           <div>

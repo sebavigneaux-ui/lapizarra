@@ -1,12 +1,15 @@
+import Blobs from "./Blobs";
+
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 const WA_COTIZAR = "https://wa.me/56958419326?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20con%20LaPizarra";
 
 export default function CTAFinal() {
   return (
     <section className="bg-[#231F20] py-28 px-6 relative overflow-hidden">
+      <Blobs />
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="max-w-2xl">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-8">
             Hablemos

@@ -1,3 +1,5 @@
+import Blobs from "./Blobs";
+
 const pasos = [
   {
     num: "01",
@@ -28,8 +30,9 @@ const pasos = [
 
 export default function Metodologia() {
   return (
-    <section id="metodologia" className="bg-[#231F20] py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="metodologia" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+      <Blobs />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Cómo trabajamos
