@@ -103,7 +103,11 @@ export default function Galeria() {
           }
         `}</style>
 
-        {/* Galería 1 */}
+        {/* Galería 1 — Polpaico */}
+        <div className="flex items-center gap-4 mb-4">
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Polpaico</span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
         <div className="galeria-grid">
           {fotos1.map((src, i) => (
             <div
@@ -125,8 +129,12 @@ export default function Galeria() {
           ))}
         </div>
 
-        {/* Galería 2 */}
-        <div className="galeria2-grid mt-1">
+        {/* Galería 2 — Leap Motor */}
+        <div className="flex items-center gap-4 mt-16 mb-4">
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Leap Motor</span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="galeria2-grid">
           {fotos2.map((src, i) => {
             const cls = i < 10 ? `g2-${i + 1}` : "relative";
             return (
