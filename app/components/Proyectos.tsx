@@ -14,8 +14,8 @@ export default function Proyectos() {
         <div className="mb-16">
 
           <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
-            <span className="block text-3xl md:text-7xl">Experiencias que hablan</span>
-            <span className="block text-3xl md:text-7xl"><span className="text-[#EC008C]">por sí solas.</span></span>
+            <span className="block text-5xl md:text-7xl">Experiencias que hablan</span>
+            <span className="block text-5xl md:text-7xl"><span className="text-[#EC008C]">por sí solas.</span></span>
           </h2>
         </div>
 

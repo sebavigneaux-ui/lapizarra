@@ -38,8 +38,8 @@ export default function Servicios() {
         <div className="mb-16">
 
           <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
-            <span className="block text-4xl md:text-8xl" style={{WebkitTextStroke: "2px #231F20", color: "transparent"}}>Experiencias</span>
-            <span className="block text-2xl md:text-5xl">corporativas y <span className="text-[#EC008C]">de marca</span></span>
+            <span className="block text-6xl md:text-8xl text-[#EC008C]">Experiencias</span>
+            <span className="block text-4xl md:text-5xl text-[#231F20]">corporativas y <span className="text-[#231F20]/40">de marca</span></span>
           </h2>
           <p className="text-[#231F20]/60 text-lg mt-4 max-w-xl">
             Diseñamos y producimos experiencias para empresas que necesitan alto estándar de ejecución.
