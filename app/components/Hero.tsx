@@ -160,9 +160,10 @@ export default function Hero() {
                   >
                     <option value="" disabled>Selecciona</option>
                     <option value="Menos de 50">Menos de 50</option>
-                    <option value="50–150">50–150</option>
-                    <option value="150–500">150–500</option>
-                    <option value="+500">+500</option>
+                    <option value="50–100">50–100</option>
+                    <option value="100–200">100–200</option>
+                    <option value="200–400">200–400</option>
+                    <option value="400+">400+</option>
                   </select>
                 </div>
                 <div>
@@ -189,11 +190,11 @@ export default function Hero() {
                   className={inputClass}
                 >
                   <option value="" disabled>Selecciona una opción</option>
-                  <option value="Menos de $5M">Menos de $5M</option>
-                  <option value="$5M – $15M">$5M – $15M</option>
-                  <option value="$15M – $30M">$15M – $30M</option>
-                  <option value="$30M – $60M">$30M – $60M</option>
-                  <option value="+$60M">+$60M</option>
+                  <option value="Menos de $10M">Menos de $10M</option>
+                  <option value="$10M – $20M">$10M – $20M</option>
+                  <option value="$20M – $40M">$20M – $40M</option>
+                  <option value="$40M – $80M">$40M – $80M</option>
+                  <option value="Más de $80M">Más de $80M</option>
                 </select>
               </div>
 
