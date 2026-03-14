@@ -3,7 +3,7 @@ const clientes = [
   "Stellantis", "KIA", "PUIG", "Linde", "Metso Outotec",
   "SQM", "Parque Arauco", "Ripley", "Alsea", "Kaufmann",
   "Polpaico", "CChC", "Universidad de los Andes",
-  "Clínica Universidad de los Andes", "Orsan", "Cool Carriers", "Novo Nordisk",
+  "Orsan Seguros", "Cool Carriers", "Novo Nordisk",
 ];
 
 export default function ClientesDestacados() {
@@ -15,7 +15,7 @@ export default function ClientesDestacados() {
         <div className="flex flex-col md:flex-row md:items-end gap-8 mb-16 pb-16 border-b border-[#231F20]/10">
           <div className="flex-shrink-0">
             <p className="text-[#EC008C] text-[6rem] md:text-[9rem] font-black leading-none tracking-tighter">
-              22<span className="text-[#EC008C]">+</span>
+              21<span className="text-[#EC008C]">+</span>
             </p>
           </div>
           <div className="md:pb-4">
