@@ -53,8 +53,8 @@ export default function Diferenciadores() {
           {items.map((item, i) => (
             <div key={i} className="group">
               <div className="w-8 h-0.5 bg-[#EC008C] mb-6" />
-              <h3 className="text-white font-black text-base mb-3">{item.titulo}</h3>
-              <p className="text-white/50 text-base leading-relaxed">{item.desc}</p>
+              <h3 className="text-white font-black text-lg mb-3">{item.titulo}</h3>
+              <p className="text-white/50 text-lg leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

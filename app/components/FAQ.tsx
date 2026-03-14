@@ -51,7 +51,7 @@ export default function FAQ() {
                   onClick={() => setOpen(open === i ? null : i)}
                   className="w-full flex items-center justify-between py-6 text-left group"
                 >
-                  <span className="text-white font-bold text-base pr-8 group-hover:text-[#EC008C] transition-colors">
+                  <span className="text-white font-bold text-lg pr-8 group-hover:text-[#EC008C] transition-colors">
                     {item.q}
                   </span>
                   <span className="text-[#EC008C] font-black text-xl flex-shrink-0">
@@ -59,7 +59,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 {open === i && (
-                  <p className="text-white/50 text-base leading-relaxed pb-6">
+                  <p className="text-white/50 text-lg leading-relaxed pb-6">
                     {item.a}
                   </p>
                 )}

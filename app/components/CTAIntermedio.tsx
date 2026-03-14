@@ -8,7 +8,7 @@ export default function CTAIntermedio() {
           <h2 className="text-white text-2xl md:text-3xl font-black leading-tight tracking-tight mb-3">
             Si tu próximo evento es importante, vale la pena hacerlo bien.
           </h2>
-          <p className="text-white/80 text-base">
+          <p className="text-white/80 text-lg">
             Conversemos sobre tu proyecto y veamos cómo diseñar una experiencia que represente bien a tu marca.
           </p>
         </div>

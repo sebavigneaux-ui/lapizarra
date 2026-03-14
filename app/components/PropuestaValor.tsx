@@ -27,14 +27,14 @@ export default function PropuestaValor() {
             <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight mb-8">
               Una productora que piensa como socio estratégico, no solo como proveedor.
             </h2>
-            <p className="text-white/60 text-base leading-relaxed mb-8">
+            <p className="text-white/60 text-lg leading-relaxed mb-8">
               En LaPizarra ayudamos a empresas a transformar ideas en experiencias de marca y eventos corporativos que combinan:
             </p>
             <ul className="space-y-3">
               {atributos.map((a, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#EC008C] flex-shrink-0" />
-                  <span className="text-white font-bold text-base">{a}</span>
+                  <span className="text-white font-bold text-lg">{a}</span>
                 </li>
               ))}
             </ul>
@@ -42,18 +42,18 @@ export default function PropuestaValor() {
 
           {/* Columna derecha */}
           <div className="border border-white/10 p-10">
-            <p className="text-white/60 text-base leading-relaxed mb-8">
+            <p className="text-white/60 text-lg leading-relaxed mb-8">
               Somos una productora boutique, lo que significa:
             </p>
             <ul className="space-y-5">
               {diferencias.map((d, i) => (
                 <li key={i} className="flex items-start gap-4 pb-5 border-b border-white/10 last:border-0 last:pb-0">
                   <span className="text-[#EC008C] font-black text-xl leading-none">0{i + 1}</span>
-                  <span className="text-white text-base font-medium">{d}</span>
+                  <span className="text-white text-lg font-medium">{d}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-10 text-white/80 text-base leading-relaxed border-t border-white/10 pt-8">
+            <p className="mt-10 text-white/80 text-lg leading-relaxed border-t border-white/10 pt-8">
               Nuestro objetivo no es solo que el evento funcione. Es que funcione perfecto y represente bien a tu marca.
             </p>
           </div>

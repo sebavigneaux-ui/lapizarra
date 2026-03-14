@@ -26,7 +26,7 @@ export default function QuienesSomos() {
           </div>
 
           {/* Texto */}
-          <div className="flex flex-col gap-6 text-[#231F20]/75 text-base leading-relaxed">
+          <div className="flex flex-col gap-6 text-[#231F20]/75 text-lg leading-relaxed">
             <p>
               LaPizarra nace de la unión de dos mundos que rara vez conviven bien en una misma agencia: visión de negocio y excelencia en ejecución.
             </p>

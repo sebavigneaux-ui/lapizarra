@@ -49,8 +49,8 @@ export default function Metodologia() {
                 <div className="bg-[#EC008C] w-12 h-12 flex items-center justify-center mb-6 relative z-10">
                   <span className="text-white font-black text-sm">{paso.num}</span>
                 </div>
-                <h3 className="text-white font-black text-base mb-3">{paso.titulo}</h3>
-                <p className="text-white/50 text-base leading-relaxed">{paso.desc}</p>
+                <h3 className="text-white font-black text-lg mb-3">{paso.titulo}</h3>
+                <p className="text-white/50 text-lg leading-relaxed">{paso.desc}</p>
               </div>
             ))}
           </div>

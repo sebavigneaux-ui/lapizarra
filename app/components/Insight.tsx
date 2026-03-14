@@ -24,18 +24,18 @@ export default function Insight() {
 
           {/* Columna derecha */}
           <div>
-            <p className="text-[#231F20]/70 text-base leading-relaxed mb-8">
+            <p className="text-[#231F20]/70 text-lg leading-relaxed mb-8">
               Los equipos de marketing, comunicaciones y cultura organizacional suelen enfrentarse al mismo problema cuando buscan una productora:
             </p>
             <ul className="space-y-4">
               {problemas.map((p, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-[#EC008C] font-black text-lg leading-none mt-0.5">—</span>
-                  <span className="text-[#231F20]/80 text-base leading-relaxed">{p}</span>
+                  <span className="text-[#231F20]/80 text-lg leading-relaxed">{p}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-[#231F20] font-bold text-base">
+            <p className="mt-8 text-[#231F20] font-bold text-lg">
               Porque un evento no solo tiene que funcionar. Tiene que representar bien a la empresa que está detrás.
             </p>
           </div>

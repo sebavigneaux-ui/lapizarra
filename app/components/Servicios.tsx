@@ -42,7 +42,7 @@ export default function Servicios() {
           <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
             Experiencias corporativas y de marca
           </h2>
-          <p className="text-[#231F20]/60 text-base mt-4 max-w-xl">
+          <p className="text-[#231F20]/60 text-lg mt-4 max-w-xl">
             Diseñamos y producimos experiencias para empresas que necesitan alto estándar de ejecución.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function Servicios() {
               <h3 className="text-[#231F20] font-black text-lg mt-4 mb-3 group-hover:text-[#EC008C] transition-colors">
                 {s.titulo}
               </h3>
-              <p className="text-[#231F20]/60 text-base leading-relaxed">{s.desc}</p>
+              <p className="text-[#231F20]/60 text-lg leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

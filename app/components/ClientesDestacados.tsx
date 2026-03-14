@@ -30,7 +30,7 @@ export default function ClientesDestacados() {
           {clientes.map((nombre, i) => (
             <div key={i} className="flex items-center gap-3 group">
               <span className="w-1 h-4 bg-[#EC008C] flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="text-[#231F20] text-base md:text-lg font-medium group-hover:text-[#EC008C] transition-colors">
+              <span className="text-[#231F20] text-lg font-medium group-hover:text-[#EC008C] transition-colors">
                 {nombre}
               </span>
             </div>

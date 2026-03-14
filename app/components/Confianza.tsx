@@ -17,7 +17,7 @@ export default function Confianza() {
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-[#EC008C] font-black text-3xl leading-none flex-shrink-0">✓</span>
-              <span className="text-white text-base leading-snug">{item}</span>
+              <span className="text-white text-lg leading-snug">{item}</span>
             </div>
           ))}
         </div>

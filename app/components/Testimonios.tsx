@@ -41,7 +41,7 @@ export default function Testimonios() {
         <div className="grid md:grid-cols-2 gap-8">
           {testimonios.map((t, i) => (
             <div key={i} className="border border-[#231F20]/10 p-8 flex flex-col justify-between gap-8 hover:border-[#EC008C]/40 transition-colors">
-              <p className="text-[#231F20]/80 text-base leading-relaxed">
+              <p className="text-[#231F20]/80 text-lg leading-relaxed">
                 "{t.texto}"
               </p>
               <div className="flex items-center gap-4">
