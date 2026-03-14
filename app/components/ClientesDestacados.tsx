@@ -20,7 +20,7 @@ export default function ClientesDestacados() {
           </div>
           <div className="md:pb-4">
             <p className="text-[#231F20] text-2xl md:text-3xl font-black leading-tight max-w-sm">
-              marcas que han confiado en LaPizarra para sus eventos más importantes.
+              marcas que han confiado en LaPizarra para sus eventos.
             </p>
           </div>
         </div>
