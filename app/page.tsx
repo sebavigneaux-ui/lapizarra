@@ -14,6 +14,7 @@ import FAQ from "./components/FAQ";
 import QuienesSomos from "./components/QuienesSomos";
 import CTAFinal from "./components/CTAFinal";
 import Blobs from "./components/Blobs";
+import ClientesDestacados from "./components/ClientesDestacados";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
         <CTAIntermedio />
         <Confianza />
         <Testimonios />
+        <ClientesDestacados />
         <FAQ />
         <QuienesSomos />
         <CTAFinal />
