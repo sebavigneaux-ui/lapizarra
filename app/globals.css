@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+select option {
+  background-color: #ffffff;
+  color: #231F20;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;

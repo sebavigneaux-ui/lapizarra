@@ -45,7 +45,7 @@ export default function Hero() {
     window.open(`${WA_URL}?text=${encodeURIComponent(texto)}`, "_blank");
   };
 
-  const inputClass = "w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-[#EC008C] transition-colors [&>option]:text-[#231F20] [&>option]:bg-white";
+  const inputClass = "w-full bg-white/10 border border-white/20 text-white placeholder-white/30 px-4 py-3 text-sm focus:outline-none focus:border-[#EC008C] transition-colors";
   const labelClass = "block text-white/50 text-xs uppercase tracking-widest mb-1.5";
 
   return (
