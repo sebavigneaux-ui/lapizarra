@@ -26,8 +26,8 @@ const servicios = [
   },
   {
     num: "06",
-    titulo: "Producciones a medida",
-    desc: "Experiencias únicas diseñadas desde cero para objetivos específicos.",
+    titulo: "Producciones Audiovisuales",
+    desc: "Video corporativo, cobertura de eventos y contenido audiovisual que documenta y amplifica cada experiencia.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function Servicios() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#231F20]/10">
           {servicios.map((s) => (
             <div key={s.num} className="bg-white p-8 hover:bg-[#F5F5F5] transition-colors group">
-              <span className="text-[#EC008C] text-xs font-bold tracking-widest">{s.num}</span>
+              <span className="text-[#EC008C] text-5xl font-black leading-none">{s.num}</span>
               <h3 className="text-[#231F20] font-black text-lg mt-4 mb-3 group-hover:text-[#EC008C] transition-colors">
                 {s.titulo}
               </h3>
