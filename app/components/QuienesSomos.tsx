@@ -30,16 +30,10 @@ export default function QuienesSomos() {
           {/* Texto */}
           <div className="flex flex-col gap-6 text-[#231F20]/75 text-lg leading-relaxed">
             <p>
-              LaPizarra nace de la unión de dos mundos que rara vez conviven bien en una misma agencia: visión de negocio y excelencia en ejecución.
+              <span className="text-[#231F20] font-bold">Sebastián</span> aporta visión estratégica y comercial. <span className="text-[#231F20] font-bold">Daniel</span>, años de producción y operación. Juntos fundaron LaPizarra para que una misma agencia pueda conectar con tu negocio y ejecutar un evento de alto estándar.
             </p>
             <p>
-              Por un lado, <span className="text-[#231F20] font-bold">Sebastián</span> aporta una mirada estratégica y comercial, con experiencia desarrollando negocios, detectando oportunidades y entendiendo lo que las marcas realmente necesitan para generar impacto. Por otro, <span className="text-[#231F20] font-bold">Daniel</span> aporta la experiencia de años en producción, operación y aterrizaje de proyectos, asegurando que cada idea no solo se vea bien en una presentación, sino que ocurra de verdad y con alto estándar.
-            </p>
-            <p>
-              Esa combinación es la base de LaPizarra: una agencia boutique que trabaja de forma cercana, ágil y senior, transformando ideas en experiencias con criterio, creatividad y obsesión por los detalles.
-            </p>
-            <p>
-              No creemos en soluciones genéricas ni en producir por producir. Creemos en diseñar experiencias que conecten con las personas, respondan a objetivos reales de negocio y se ejecuten con excelencia.
+              Trabajamos de forma cercana, ágil y senior. Sin soluciones genéricas: cada experiencia responde a objetivos reales y se ejecuta con obsesión por los detalles.
             </p>
           </div>
         </div>
