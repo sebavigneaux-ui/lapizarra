@@ -12,6 +12,20 @@ const fotos1 = [
   "/galeria/7.jpg",
 ];
 
+const fotos5 = [
+  "/galeria5/0.jpg",
+  "/galeria5/1.jpg",
+  "/galeria5/2.jpg",
+  "/galeria5/3.jpg",
+  "/galeria5/4.jpg",
+  "/galeria5/5.jpg",
+  "/galeria5/6.jpg",
+  "/galeria5/7.jpg",
+  "/galeria5/8.jpg",
+  "/galeria5/9.jpg",
+  "/galeria5/10.jpg",
+];
+
 const fotos4 = [
   "/galeria4/1.jpg",
   "/galeria4/2.jpg",
@@ -188,6 +202,36 @@ export default function Galeria() {
             .g4-7  { grid-column: 2;     grid-row: 4; }
             .g4-8  { grid-column: 1 / 3; grid-row: 5; }
           }
+          .galeria5-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 280px 280px 280px 280px;
+            gap: 4px;
+          }
+          .g5-1  { grid-column: 1;     grid-row: 1; }
+          .g5-2  { grid-column: 2 / 4; grid-row: 1; }
+          .g5-3  { grid-column: 1 / 3; grid-row: 2; }
+          .g5-4  { grid-column: 3;     grid-row: 2; }
+          .g5-5  { grid-column: 1;     grid-row: 3; }
+          .g5-6  { grid-column: 2;     grid-row: 3; }
+          .g5-7  { grid-column: 3;     grid-row: 3; }
+          .g5-8  { grid-column: 1 / 3; grid-row: 4; }
+          .g5-9  { grid-column: 3;     grid-row: 4; }
+          @media (max-width: 768px) {
+            .galeria5-grid {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(6, 200px);
+            }
+            .g5-1  { grid-column: 1 / 3; grid-row: 1; }
+            .g5-2  { grid-column: 1;     grid-row: 2; }
+            .g5-3  { grid-column: 2;     grid-row: 2; }
+            .g5-4  { grid-column: 1;     grid-row: 3; }
+            .g5-5  { grid-column: 2;     grid-row: 3; }
+            .g5-6  { grid-column: 1;     grid-row: 4; }
+            .g5-7  { grid-column: 2;     grid-row: 4; }
+            .g5-8  { grid-column: 1 / 3; grid-row: 5; }
+            .g5-9  { grid-column: 1 / 3; grid-row: 6; }
+          }
         `}</style>
 
         {/* Galería 1 — Polpaico */}
@@ -289,6 +333,34 @@ export default function Galeria() {
                 <Image
                   src={src}
                   alt={`Evento LaPizarra Orsan Seguros ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-3xl font-thin">+</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* Galería 5 — Stellantis · Citroën Basalt */}
+        <div className="flex items-center gap-4 mt-16 mb-4">
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Stellantis · Citroën Basalt</span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="galeria5-grid">
+          {fotos5.map((src, i) => {
+            const cls = i < 9 ? `g5-${i + 1}` : "relative";
+            return (
+              <div
+                key={i}
+                className={`${cls} relative overflow-hidden cursor-pointer group`}
+                onClick={() => setSelected(src)}
+              >
+                <Image
+                  src={src}
+                  alt={`Evento LaPizarra Stellantis Citroën Basalt ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
