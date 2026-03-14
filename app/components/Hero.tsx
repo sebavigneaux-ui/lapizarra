@@ -90,7 +90,7 @@ export default function Hero() {
             <p className="text-white font-black text-xl mb-6">Cotiza tu evento</p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>Nombre</label>
                   <input
@@ -148,7 +148,7 @@ export default function Hero() {
                 </select>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className={labelClass}>Asistentes estimados</label>
                   <select
