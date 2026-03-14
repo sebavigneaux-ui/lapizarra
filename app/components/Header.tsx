@@ -4,16 +4,27 @@ import Image from "next/image";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
+const navItems = [
+  { label: "Proyectos", href: "#galeria" },
+  { label: "Testimonios", href: "#testimonios" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Metodología", href: "#metodologia" },
+  { label: "Experiencias", href: "#proyectos" },
+  { label: "Clientes", href: "#clientes" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Quiénes somos", href: "#quienes-somos" },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [logoScale, setLogoScale] = useState(1);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       const atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 10;
       setScrolled(y > 40);
-      // Escala progresiva: 1.0 en top → 1.4 a los 300px, vuelve a 1.0 al llegar al bottom
       const scale = atBottom ? 1 : Math.min(1 + (y / 300) * 0.4, 1.4);
       setLogoScale(scale);
     };
@@ -21,9 +32,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Cenefa superior con info de contacto */}
+      {/* Cenefa superior */}
       <div className="bg-[#EC008C] px-6 py-2 hidden md:block">
         <div className="max-w-6xl mx-auto flex items-center justify-end gap-8">
           <a
@@ -52,7 +65,7 @@ export default function Header() {
       {/* Navbar principal */}
       <div className={`transition-all duration-300 ${scrolled ? "bg-[#231F20] shadow-lg" : "bg-[#231F20]/95"}`}>
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-          <a href="#" className="flex items-center origin-left">
+          <a href="#" className="flex items-center origin-left flex-shrink-0">
             <Image
               src="/logo-blanco.png"
               alt="LaPizarra"
@@ -64,22 +77,66 @@ export default function Header() {
             />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#servicios" className="text-white/70 hover:text-white text-sm transition-colors">Servicios</a>
-            <a href="#diferenciadores" className="text-white/70 hover:text-white text-sm transition-colors">Nosotros</a>
-            <a href="#metodologia" className="text-white/70 hover:text-white text-sm transition-colors">Metodología</a>
-            <a href="#faq" className="text-white/70 hover:text-white text-sm transition-colors">FAQ</a>
+          {/* Nav desktop */}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-white/60 hover:text-white text-xs font-medium transition-colors whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#EC008C] text-white text-sm font-bold px-5 py-2.5 hover:bg-[#c8007a] transition-colors"
-          >
-            Hablemos →
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#EC008C] text-white text-sm font-bold px-5 py-2.5 hover:bg-[#c8007a] transition-colors hidden sm:block"
+            >
+              Hablemos →
+            </a>
+
+            {/* Hamburguesa mobile */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="lg:hidden flex flex-col gap-1.5 p-2"
+              aria-label="Menú"
+            >
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </button>
+          </div>
         </div>
+
+        {/* Menú mobile desplegable */}
+        {menuOpen && (
+          <div className="lg:hidden bg-[#231F20] border-t border-white/10 px-6 py-6 flex flex-col gap-4">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="text-white/70 hover:text-white text-base font-medium transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="bg-[#EC008C] text-white text-sm font-bold px-5 py-3 hover:bg-[#c8007a] transition-colors text-center mt-2"
+            >
+              Hablemos →
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );
