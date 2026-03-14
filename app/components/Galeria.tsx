@@ -236,7 +236,7 @@ export default function Galeria() {
 
         {/* Galería 1 — Polpaico */}
         <div className="flex items-center gap-4 mb-4">
-          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Polpaico</span>
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Polpaico · Convención de Clientes</span>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="galeria-grid">
@@ -262,7 +262,7 @@ export default function Galeria() {
 
         {/* Galería 2 — Leap Motor */}
         <div className="flex items-center gap-4 mt-16 mb-4">
-          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Leap Motor</span>
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Stellantis · Formación Comercial Leap Motor</span>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="galeria2-grid">
@@ -290,7 +290,7 @@ export default function Galeria() {
         </div>
         {/* Galería 3 — Cool Carriers */}
         <div className="flex items-center gap-4 mt-16 mb-4">
-          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Cool Carriers</span>
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Cool Carriers · Convención Clientes</span>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="galeria3-grid">
@@ -318,7 +318,7 @@ export default function Galeria() {
         </div>
         {/* Galería 4 — Orsan Seguros */}
         <div className="flex items-center gap-4 mt-16 mb-4">
-          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Orsan Seguros</span>
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Orsan Seguros · Convención Corredores</span>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="galeria4-grid">
@@ -346,7 +346,7 @@ export default function Galeria() {
         </div>
         {/* Galería 5 — Stellantis · Citroën Basalt */}
         <div className="flex items-center gap-4 mt-16 mb-4">
-          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Stellantis · Citroën Basalt</span>
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Stellantis · Formación Comercial Citroën Basalt</span>
           <div className="flex-1 h-px bg-white/10" />
         </div>
         <div className="galeria5-grid">
