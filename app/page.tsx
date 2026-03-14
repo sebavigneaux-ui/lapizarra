@@ -22,14 +22,17 @@ export default function Home() {
       <main>
         <Hero />
         <Insight />
-        <PropuestaValor />
+        <div className="bg-[#231F20] relative overflow-hidden">
+          <Blobs />
+          <PropuestaValor />
+          <Metodologia />
+        </div>
         <Servicios />
         <Diferenciadores />
         <Proyectos />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
           <Galeria />
-          <Metodologia />
         </div>
         <CTAIntermedio />
         <Confianza />
