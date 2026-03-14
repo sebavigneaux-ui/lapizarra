@@ -27,13 +27,41 @@ export default function Galeria() {
           </h2>
         </div>
 
-        {/* Grid masonry-like */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        {/* Grid con áreas explícitas para evitar gaps */}
+        <style>{`
+          .galeria-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 280px 280px 280px;
+            gap: 4px;
+          }
+          .foto-1 { grid-column: 1; grid-row: 1 / 3; }
+          .foto-2 { grid-column: 2; grid-row: 1; }
+          .foto-3 { grid-column: 3; grid-row: 1; }
+          .foto-4 { grid-column: 2; grid-row: 2; }
+          .foto-5 { grid-column: 3; grid-row: 2; }
+          .foto-6 { grid-column: 1; grid-row: 3; }
+          .foto-7 { grid-column: 2 / 4; grid-row: 3; }
+          @media (max-width: 768px) {
+            .galeria-grid {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(4, 200px);
+            }
+            .foto-1 { grid-column: 1 / 3; grid-row: 1; }
+            .foto-2 { grid-column: 1; grid-row: 2; }
+            .foto-3 { grid-column: 2; grid-row: 2; }
+            .foto-4 { grid-column: 1; grid-row: 3; }
+            .foto-5 { grid-column: 2; grid-row: 3; }
+            .foto-6 { grid-column: 1; grid-row: 4; }
+            .foto-7 { grid-column: 2; grid-row: 4; }
+          }
+        `}</style>
+
+        <div className="galeria-grid">
           {fotos.map((src, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden cursor-pointer group ${i === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
-              style={{ aspectRatio: i === 0 ? "16/9" : "4/3" }}
+              className={`foto-${i + 1} relative overflow-hidden cursor-pointer group`}
               onClick={() => setSelected(src)}
             >
               <Image
@@ -44,7 +72,7 @@ export default function Galeria() {
                 sizes="(max-width: 768px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-2xl">+</span>
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-3xl font-thin">+</span>
               </div>
             </div>
           ))}
