@@ -36,8 +36,8 @@ export default function Hero() {
             </p>
 
             <h1 className="font-black leading-none tracking-tighter mb-10">
-              <span className="block text-5xl md:text-7xl text-white">Eventos que</span>
-              <span className="block text-5xl md:text-7xl text-white">representan bien</span>
+              <span className="block text-5xl md:text-7xl text-white">Eventos bien ejecutados</span>
+              <span className="block text-5xl md:text-7xl text-white">que representan</span>
               <span className="block text-5xl md:text-7xl text-[#EC008C]">a tu marca.</span>
             </h1>
 
