@@ -27,7 +27,7 @@ const servicios = [
   {
     num: "06",
     titulo: "Producciones Audiovisuales",
-    desc: "Video corporativo, cobertura de eventos y contenido audiovisual que documenta y amplifica cada experiencia.",
+    desc: "Video corporativo, cobertura de eventos y contenido audiovisual para documentar y amplificar tu marca.",
   },
 ];
 
