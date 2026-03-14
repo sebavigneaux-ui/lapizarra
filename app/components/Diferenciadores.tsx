@@ -1,3 +1,5 @@
+import Blobs from "./Blobs";
+
 const items = [
   {
     titulo: "Pensamiento estratégico",
@@ -35,13 +37,14 @@ const items = [
 
 export default function Diferenciadores() {
   return (
-    <section id="diferenciadores" className="bg-[#F5F5F5] py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="diferenciadores" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+      <Blobs />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Por qué LaPizarra
           </p>
-          <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
+          <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
             La diferencia está en cómo se produce cada detalle.
           </h2>
         </div>
@@ -50,8 +53,8 @@ export default function Diferenciadores() {
           {items.map((item, i) => (
             <div key={i} className="group">
               <div className="w-8 h-0.5 bg-[#EC008C] mb-6" />
-              <h3 className="text-[#231F20] font-black text-base mb-3">{item.titulo}</h3>
-              <p className="text-[#231F20]/60 text-base leading-relaxed">{item.desc}</p>
+              <h3 className="text-white font-black text-base mb-3">{item.titulo}</h3>
+              <p className="text-white/50 text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
