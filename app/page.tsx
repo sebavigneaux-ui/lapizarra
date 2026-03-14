@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Insight from "./components/Insight";
 import Servicios from "./components/Servicios";
 import Diferenciadores from "./components/Diferenciadores";
 import Proyectos from "./components/Proyectos";
@@ -26,7 +25,6 @@ export default function Home() {
           <Galeria />
         </div>
         <Servicios />
-        <Insight />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
           <Metodologia />
