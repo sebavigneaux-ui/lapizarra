@@ -26,13 +26,13 @@ export default function Home() {
           <Blobs />
           <Galeria />
         </div>
+        <Servicios />
         <Insight />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
           <PropuestaValor />
           <Metodologia />
         </div>
-        <Servicios />
         <Diferenciadores />
         <Proyectos />
         <CTAIntermedio />
