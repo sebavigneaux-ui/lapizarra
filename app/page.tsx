@@ -13,6 +13,7 @@ import Confianza from "./components/Confianza";
 import FAQ from "./components/FAQ";
 import QuienesSomos from "./components/QuienesSomos";
 import CTAFinal from "./components/CTAFinal";
+import Blobs from "./components/Blobs";
 
 export default function Home() {
   return (
@@ -25,8 +26,11 @@ export default function Home() {
         <Servicios />
         <Diferenciadores />
         <Proyectos />
-        <Galeria />
-        <Metodologia />
+        <div className="bg-[#231F20] relative overflow-hidden">
+          <Blobs />
+          <Galeria />
+          <Metodologia />
+        </div>
         <CTAIntermedio />
         <Confianza />
         <Testimonios />

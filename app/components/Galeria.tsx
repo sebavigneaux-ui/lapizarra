@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Blobs from "./Blobs";
 
 const fotos = [
   "/galeria/1.jpg",
@@ -17,9 +16,8 @@ export default function Galeria() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section id="galeria" className="bg-[#231F20] pt-24 pb-0 px-6 relative overflow-hidden">
-      <Blobs />
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="galeria" className="pt-24 pb-0 px-6 relative z-10">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Galería
