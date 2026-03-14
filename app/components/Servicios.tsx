@@ -39,8 +39,9 @@ export default function Servicios() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Servicios
           </p>
-          <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
-            Experiencias corporativas y de marca
+          <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
+            <span className="block text-6xl md:text-8xl" style={{WebkitTextStroke: "2px #231F20", color: "transparent"}}>Experiencias</span>
+            <span className="block text-4xl md:text-5xl">corporativas y <span className="text-[#EC008C]">de marca</span></span>
           </h2>
           <p className="text-[#231F20]/60 text-lg mt-4 max-w-xl">
             Diseñamos y producimos experiencias para empresas que necesitan alto estándar de ejecución.

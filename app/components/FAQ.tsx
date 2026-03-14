@@ -39,8 +39,9 @@ export default function FAQ() {
         <div className="grid md:grid-cols-3 gap-16">
           <div>
             <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">FAQ</p>
-            <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">
-              Preguntas frecuentes
+            <h2 className="text-white font-black leading-none tracking-tighter">
+              <span className="block text-6xl md:text-8xl">Preguntas</span>
+              <span className="block text-3xl md:text-4xl text-white/40">frecuentes</span>
             </h2>
           </div>
 

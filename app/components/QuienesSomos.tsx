@@ -8,8 +8,10 @@ export default function QuienesSomos() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Quiénes somos
           </p>
-          <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
-            Visión de negocio y excelencia en ejecución, en una misma agencia.
+          <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
+            <span className="block text-5xl md:text-7xl">Visión de negocio</span>
+            <span className="block text-3xl md:text-4xl text-[#231F20]/40 my-2">y excelencia en ejecución,</span>
+            <span className="block text-4xl md:text-6xl">en una misma <span className="text-[#EC008C]">agencia.</span></span>
           </h2>
         </div>
 

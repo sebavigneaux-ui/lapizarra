@@ -64,8 +64,10 @@ export default function Galeria() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Galería
           </p>
-          <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
-            Detrás de cada evento, una producción impecable.
+          <h2 className="text-white font-black leading-none tracking-tighter">
+            <span className="block text-3xl md:text-4xl text-white/50 mb-1">Detrás de cada evento,</span>
+            <span className="block text-5xl md:text-7xl">una producción</span>
+            <span className="block text-5xl md:text-7xl text-[#EC008C]">impecable.</span>
           </h2>
         </div>
 

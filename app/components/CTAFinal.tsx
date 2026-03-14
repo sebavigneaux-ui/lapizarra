@@ -15,8 +15,10 @@ export default function CTAFinal() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-8">
             Hablemos
           </p>
-          <h2 className="text-white text-3xl md:text-5xl font-black leading-tight tracking-tight mb-6">
-            Transformemos tu próxima idea en una experiencia memorable.
+          <h2 className="text-white font-black leading-none tracking-tighter mb-8">
+            <span className="block text-4xl md:text-6xl">Transformemos tu</span>
+            <span className="block text-4xl md:text-6xl">próxima idea en una</span>
+            <span className="block text-5xl md:text-7xl text-[#EC008C]">experiencia memorable.</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10">
             Si estás evaluando una activación, un lanzamiento o un evento corporativo, conversemos. En una breve reunión podemos entender tu objetivo y ver cómo diseñar una experiencia que realmente funcione.

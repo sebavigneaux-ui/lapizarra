@@ -33,8 +33,10 @@ export default function Testimonios() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Testimonios
           </p>
-          <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
-            Lo que dicen quienes han trabajado con nosotros.
+          <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
+            <span className="block text-3xl md:text-4xl text-[#231F20]/40 mb-1">Lo que dicen</span>
+            <span className="block text-5xl md:text-7xl">quienes han trabajado</span>
+            <span className="block text-5xl md:text-7xl">con <span className="text-[#EC008C]">nosotros.</span></span>
           </h2>
         </div>
 

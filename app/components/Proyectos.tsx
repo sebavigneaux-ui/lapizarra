@@ -15,8 +15,9 @@ export default function Proyectos() {
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
             Proyectos
           </p>
-          <h2 className="text-[#231F20] text-3xl md:text-4xl font-black leading-tight tracking-tight max-w-xl">
-            Experiencias que hablan por sí solas.
+          <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
+            <span className="block text-5xl md:text-7xl">Experiencias que hablan</span>
+            <span className="block text-5xl md:text-7xl"><span className="text-[#EC008C]">por sí solas.</span></span>
           </h2>
         </div>
 
