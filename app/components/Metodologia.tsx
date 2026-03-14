@@ -46,9 +46,7 @@ export default function Metodologia() {
           <div className="grid md:grid-cols-5 gap-8">
             {pasos.map((paso) => (
               <div key={paso.num} className="relative">
-                <div className="bg-[#EC008C] w-12 h-12 flex items-center justify-center mb-6 relative z-10">
-                  <span className="text-white font-black text-sm">{paso.num}</span>
-                </div>
+                <span className="block text-5xl font-black text-white leading-none mb-6">{paso.num}</span>
                 <h3 className="text-white font-black text-lg mb-3">{paso.titulo}</h3>
                 <p className="text-white/50 text-lg leading-relaxed">{paso.desc}</p>
               </div>
