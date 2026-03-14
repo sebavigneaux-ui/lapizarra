@@ -11,6 +11,7 @@ import Metodologia from "./components/Metodologia";
 import CTAIntermedio from "./components/CTAIntermedio";
 import Confianza from "./components/Confianza";
 import FAQ from "./components/FAQ";
+import QuienesSomos from "./components/QuienesSomos";
 import CTAFinal from "./components/CTAFinal";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         <Confianza />
         <Testimonios />
         <FAQ />
+        <QuienesSomos />
         <CTAFinal />
       </main>
     </>
