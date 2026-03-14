@@ -23,6 +23,7 @@ export default function Home() {
           <Blobs />
           <Galeria />
         </div>
+        <Testimonios />
         <Servicios />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
@@ -31,7 +32,6 @@ export default function Home() {
         <Proyectos />
         <CTAIntermedio />
         <Confianza />
-        <Testimonios />
         <ClientesDestacados />
         <FAQ />
         <QuienesSomos />
