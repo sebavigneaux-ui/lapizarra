@@ -1,5 +1,3 @@
-import Blobs from "./Blobs";
-
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 const WA_COTIZAR = "https://wa.me/56958419326?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20con%20LaPizarra";
 
@@ -14,7 +12,18 @@ const clientes = [
 export default function Hero() {
   return (
     <section className="bg-[#231F20] flex flex-col relative overflow-hidden">
-      <Blobs />
+      {/* Video de fondo */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+      {/* Overlay oscuro para legibilidad */}
+      <div className="absolute inset-0 bg-[#231F20]/60" />
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
       {/* Contenido principal */}
