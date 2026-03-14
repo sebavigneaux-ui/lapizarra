@@ -12,6 +12,19 @@ const fotos1 = [
   "/galeria/7.jpg",
 ];
 
+const fotos4 = [
+  "/galeria4/1.jpg",
+  "/galeria4/2.jpg",
+  "/galeria4/3.jpg",
+  "/galeria4/4.jpg",
+  "/galeria4/5.jpg",
+  "/galeria4/6.jpg",
+  "/galeria4/7.jpg",
+  "/galeria4/8.jpg",
+  "/galeria4/9.jpg",
+  "/galeria4/10.jpg",
+];
+
 const fotos3 = [
   "/galeria3/1.jpg",
   "/galeria3/2.jpg",
@@ -147,6 +160,34 @@ export default function Galeria() {
             .g3-9  { grid-column: 1;     grid-row: 6; }
             .g3-10 { grid-column: 2;     grid-row: 6; }
           }
+          .galeria4-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 260px 260px 260px;
+            gap: 4px;
+          }
+          .g4-1  { grid-column: 1 / 3; grid-row: 1; }
+          .g4-2  { grid-column: 3;     grid-row: 1; }
+          .g4-3  { grid-column: 1;     grid-row: 2; }
+          .g4-4  { grid-column: 2;     grid-row: 2; }
+          .g4-5  { grid-column: 3;     grid-row: 2; }
+          .g4-6  { grid-column: 1;     grid-row: 3; }
+          .g4-7  { grid-column: 2;     grid-row: 3; }
+          .g4-8  { grid-column: 3;     grid-row: 3; }
+          @media (max-width: 768px) {
+            .galeria4-grid {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(5, 200px);
+            }
+            .g4-1  { grid-column: 1 / 3; grid-row: 1; }
+            .g4-2  { grid-column: 1;     grid-row: 2; }
+            .g4-3  { grid-column: 2;     grid-row: 2; }
+            .g4-4  { grid-column: 1;     grid-row: 3; }
+            .g4-5  { grid-column: 2;     grid-row: 3; }
+            .g4-6  { grid-column: 1;     grid-row: 4; }
+            .g4-7  { grid-column: 2;     grid-row: 4; }
+            .g4-8  { grid-column: 1 / 3; grid-row: 5; }
+          }
         `}</style>
 
         {/* Galería 1 — Polpaico */}
@@ -220,6 +261,34 @@ export default function Galeria() {
                 <Image
                   src={src}
                   alt={`Evento LaPizarra Cool Carriers ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-3xl font-thin">+</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* Galería 4 — Orsan Seguros */}
+        <div className="flex items-center gap-4 mt-16 mb-4">
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Orsan Seguros</span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="galeria4-grid">
+          {fotos4.map((src, i) => {
+            const cls = i < 8 ? `g4-${i + 1}` : "relative";
+            return (
+              <div
+                key={i}
+                className={`${cls} relative overflow-hidden cursor-pointer group`}
+                onClick={() => setSelected(src)}
+              >
+                <Image
+                  src={src}
+                  alt={`Evento LaPizarra Orsan Seguros ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
