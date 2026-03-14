@@ -1,3 +1,5 @@
+import Blobs from "./Blobs";
+
 const items = [
   "Atención directa del equipo senior",
   "Experiencia con grandes marcas",
@@ -8,13 +10,14 @@ const items = [
 
 export default function Confianza() {
   return (
-    <section className="bg-[#F5F5F5] py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#231F20] py-20 px-6 relative overflow-hidden">
+      <Blobs />
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-5 gap-8">
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-[#EC008C] font-black text-3xl leading-none flex-shrink-0">✓</span>
-              <span className="text-[#231F20] text-base leading-snug">{item}</span>
+              <span className="text-white text-base leading-snug">{item}</span>
             </div>
           ))}
         </div>
