@@ -83,7 +83,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-white/60 hover:text-white text-xs font-medium transition-colors whitespace-nowrap"
+                className="text-white/60 hover:text-white text-sm font-medium transition-colors whitespace-nowrap"
               >
                 {item.label}
               </a>
