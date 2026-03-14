@@ -23,10 +23,10 @@ export default function Home() {
         <Servicios />
         <Diferenciadores />
         <Proyectos />
-        <Testimonios />
         <Metodologia />
         <CTAIntermedio />
         <Confianza />
+        <Testimonios />
         <FAQ />
         <CTAFinal />
       </main>
