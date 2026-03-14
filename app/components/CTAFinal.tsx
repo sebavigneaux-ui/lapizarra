@@ -51,7 +51,7 @@ export default function CTAFinal() {
               className="h-12 w-auto object-contain"
             />
             <p className="text-white/30 text-xs mt-2">
-              Productora boutique · Santiago, Chile
+              Productora · Agencia Creativa · Santiago, Chile
             </p>
           </div>
 

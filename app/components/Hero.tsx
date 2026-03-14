@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 pt-36 pb-20 w-full relative z-10">
         <div className="max-w-3xl">
           <p className="text-[#EC008C] text-sm font-bold uppercase tracking-widest mb-8">
-            Productora boutique · Santiago, Chile
+            Productora · Agencia Creativa · Santiago, Chile
           </p>
 
           <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6">
