@@ -28,7 +28,7 @@ const pasos = [
 
 export default function Metodologia() {
   return (
-    <section id="metodologia" className="pt-24 pb-24 px-6 relative z-10">
+    <section id="metodologia" className="pt-8 pb-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
