@@ -6,8 +6,8 @@ export default function CTAIntermedio() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="max-w-xl">
           <h2 className="text-white font-black leading-none tracking-tighter mb-4">
-            <span className="block text-4xl md:text-6xl">Si tu próximo evento</span>
-            <span className="block text-4xl md:text-6xl">es importante,</span>
+            <span className="block text-2xl md:text-6xl">Si tu próximo evento</span>
+            <span className="block text-2xl md:text-6xl">es importante,</span>
             <span className="block text-2xl md:text-3xl text-white/70 mt-2">vale la pena hacerlo bien.</span>
           </h2>
           <p className="text-white/80 text-lg">

@@ -37,7 +37,7 @@ export default function FAQ() {
       <Blobs />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-white font-black leading-none tracking-tighter mb-16">
-          <span className="block text-6xl md:text-8xl">Preguntas</span>
+          <span className="block text-4xl md:text-8xl">Preguntas</span>
           <span className="block text-3xl md:text-4xl text-white/40">frecuentes</span>
         </h2>
 

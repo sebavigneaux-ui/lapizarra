@@ -34,8 +34,8 @@ export default function Metodologia() {
 
           <h2 className="text-white font-black leading-none tracking-tighter">
             <span className="block text-3xl md:text-4xl text-white/40 mb-1">Un proceso claro para producir</span>
-            <span className="block text-5xl md:text-7xl">experiencias</span>
-            <span className="block text-5xl md:text-7xl text-[#EC008C]">impecables.</span>
+            <span className="block text-3xl md:text-7xl">experiencias</span>
+            <span className="block text-3xl md:text-7xl text-[#EC008C]">impecables.</span>
           </h2>
         </div>
 

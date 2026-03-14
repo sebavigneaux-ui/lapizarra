@@ -9,9 +9,9 @@ export default function QuienesSomos() {
             Quiénes somos
           </p>
           <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
-            <span className="block text-5xl md:text-7xl">Visión de negocio</span>
-            <span className="block text-3xl md:text-4xl text-[#231F20]/40 my-2">y excelencia en ejecución,</span>
-            <span className="block text-4xl md:text-6xl">en una misma <span className="text-[#EC008C]">agencia.</span></span>
+            <span className="block text-3xl md:text-7xl">Visión de negocio</span>
+            <span className="block text-xl md:text-4xl text-[#231F20]/40 my-2">y excelencia en ejecución,</span>
+            <span className="block text-2xl md:text-6xl">en una misma <span className="text-[#EC008C]">agencia.</span></span>
           </h2>
         </div>
 
