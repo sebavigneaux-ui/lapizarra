@@ -8,7 +8,7 @@ const items = [
 
 export default function Confianza() {
   return (
-    <section className="bg-white py-20 px-6 border-b border-[#231F20]/10">
+    <section className="bg-[#F5F5F5] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-5 gap-8">
           {items.map((item, i) => (
