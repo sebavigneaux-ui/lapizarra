@@ -52,8 +52,8 @@ export default function Hero() {
 
       {/* Carrusel de clientes — mismo fondo */}
       <div className="relative z-10 pb-16">
-        <p className="text-white/60 text-xs uppercase tracking-widest text-center mb-8">
-          Han confiado en nosotros
+        <p className="text-white/60 text-sm uppercase tracking-widest text-center mb-8">
+          Clientes
         </p>
 
         <div className="relative overflow-hidden">
