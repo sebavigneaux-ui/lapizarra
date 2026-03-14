@@ -17,7 +17,7 @@ export default function Galeria() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section id="galeria" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+    <section id="galeria" className="bg-[#231F20] pt-24 pb-0 px-6 relative overflow-hidden">
       <Blobs />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">

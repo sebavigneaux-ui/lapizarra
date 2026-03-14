@@ -30,7 +30,7 @@ const pasos = [
 
 export default function Metodologia() {
   return (
-    <section id="metodologia" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+    <section id="metodologia" className="bg-[#231F20] pt-24 pb-24 px-6 relative overflow-hidden">
       <Blobs />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
