@@ -31,9 +31,7 @@ export default function Metodologia() {
     <section id="metodologia" className="pt-8 pb-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
-            Cómo trabajamos
-          </p>
+
           <h2 className="text-white font-black leading-none tracking-tighter">
             <span className="block text-3xl md:text-4xl text-white/40 mb-1">Un proceso claro para producir</span>
             <span className="block text-5xl md:text-7xl">experiencias</span>

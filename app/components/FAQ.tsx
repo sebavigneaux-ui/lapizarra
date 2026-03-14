@@ -36,16 +36,12 @@ export default function FAQ() {
     <section id="faq" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
       <Blobs />
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-3 gap-16">
-          <div>
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">FAQ</p>
-            <h2 className="text-white font-black leading-none tracking-tighter">
-              <span className="block text-6xl md:text-8xl">Preguntas</span>
-              <span className="block text-3xl md:text-4xl text-white/40">frecuentes</span>
-            </h2>
-          </div>
+        <h2 className="text-white font-black leading-none tracking-tighter mb-16">
+          <span className="block text-6xl md:text-8xl">Preguntas</span>
+          <span className="block text-3xl md:text-4xl text-white/40">frecuentes</span>
+        </h2>
 
-          <div className="md:col-span-2">
+        <div className="max-w-3xl">
             {preguntas.map((item, i) => (
               <div key={i} className="border-t border-white/10 first:border-t-0">
                 <button
@@ -66,7 +62,6 @@ export default function FAQ() {
                 )}
               </div>
             ))}
-          </div>
         </div>
       </div>
     </section>

@@ -36,9 +36,7 @@ export default function Servicios() {
     <section id="servicios" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
-            Servicios
-          </p>
+
           <h2 className="text-[#231F20] font-black leading-none tracking-tighter">
             <span className="block text-6xl md:text-8xl" style={{WebkitTextStroke: "2px #231F20", color: "transparent"}}>Experiencias</span>
             <span className="block text-4xl md:text-5xl">corporativas y <span className="text-[#EC008C]">de marca</span></span>
