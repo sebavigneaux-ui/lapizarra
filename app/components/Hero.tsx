@@ -15,6 +15,7 @@ export default function Hero() {
   const [form, setForm] = useState({
     nombre: "",
     empresa: "",
+    correo: "",
     tipo: "",
     asistentes: "",
     fecha: "",
@@ -33,6 +34,7 @@ export default function Hero() {
       ``,
       `Nombre: ${form.nombre}`,
       `Empresa: ${form.empresa}`,
+      `Correo: ${form.correo}`,
       `Tipo de evento: ${form.tipo}`,
       `Asistentes estimados: ${form.asistentes}`,
       `Fecha estimada: ${form.fecha}`,
@@ -113,6 +115,19 @@ export default function Hero() {
                     className={inputClass}
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className={labelClass}>Correo</label>
+                <input
+                  name="correo"
+                  type="email"
+                  required
+                  placeholder="tu@empresa.cl"
+                  value={form.correo}
+                  onChange={handleChange}
+                  className={inputClass}
+                />
               </div>
 
               <div>
