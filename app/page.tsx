@@ -22,6 +22,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <div className="bg-[#231F20] relative overflow-hidden">
+          <Blobs />
+          <Galeria />
+        </div>
         <Insight />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
@@ -31,10 +35,6 @@ export default function Home() {
         <Servicios />
         <Diferenciadores />
         <Proyectos />
-        <div className="bg-[#231F20] relative overflow-hidden">
-          <Blobs />
-          <Galeria />
-        </div>
         <CTAIntermedio />
         <Confianza />
         <Testimonios />
