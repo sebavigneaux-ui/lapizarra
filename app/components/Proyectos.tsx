@@ -24,7 +24,7 @@ export default function Proyectos() {
           {videos.map((v) => (
             <div key={v.id} className="aspect-video w-full bg-[#231F20]">
               <iframe
-                src={`https://www.youtube.com/embed/${v.id}${v.start ? `?start=${v.start}` : ""}`}
+                src={`https://www.youtube.com/embed/${v.id}`}
                 title="Proyecto LaPizarra"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
