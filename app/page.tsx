@@ -5,6 +5,7 @@ import PropuestaValor from "./components/PropuestaValor";
 import Servicios from "./components/Servicios";
 import Diferenciadores from "./components/Diferenciadores";
 import Proyectos from "./components/Proyectos";
+import Testimonios from "./components/Testimonios";
 import Metodologia from "./components/Metodologia";
 import CTAIntermedio from "./components/CTAIntermedio";
 import Confianza from "./components/Confianza";
@@ -22,6 +23,7 @@ export default function Home() {
         <Servicios />
         <Diferenciadores />
         <Proyectos />
+        <Testimonios />
         <Metodologia />
         <CTAIntermedio />
         <Confianza />
