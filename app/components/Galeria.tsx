@@ -12,6 +12,20 @@ const fotos1 = [
   "/galeria/7.jpg",
 ];
 
+const fotos6 = [
+  "/galeria6/1.jpg",
+  "/galeria6/2.jpg",
+  "/galeria6/3.jpg",
+  "/galeria6/4.jpg",
+  "/galeria6/5.jpg",
+  "/galeria6/6.jpg",
+  "/galeria6/7.jpg",
+  "/galeria6/8.jpg",
+  "/galeria6/9.jpg",
+  "/galeria6/10.jpg",
+  "/galeria6/11.jpg",
+];
+
 const fotos5 = [
   "/galeria5/0.jpg",
   "/galeria5/1.jpg",
@@ -232,6 +246,38 @@ export default function Galeria() {
             .g5-8  { grid-column: 1 / 3; grid-row: 5; }
             .g5-9  { grid-column: 1 / 3; grid-row: 6; }
           }
+          .galeria6-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 280px 280px 280px 280px;
+            gap: 4px;
+          }
+          .g6-1  { grid-column: 1 / 3; grid-row: 1; }
+          .g6-2  { grid-column: 3;     grid-row: 1; }
+          .g6-3  { grid-column: 1;     grid-row: 2; }
+          .g6-4  { grid-column: 2;     grid-row: 2; }
+          .g6-5  { grid-column: 3;     grid-row: 2; }
+          .g6-6  { grid-column: 1;     grid-row: 3; }
+          .g6-7  { grid-column: 2 / 4; grid-row: 3; }
+          .g6-8  { grid-column: 1;     grid-row: 4; }
+          .g6-9  { grid-column: 2;     grid-row: 4; }
+          .g6-10 { grid-column: 3;     grid-row: 4; }
+          @media (max-width: 768px) {
+            .galeria6-grid {
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: repeat(6, 200px);
+            }
+            .g6-1  { grid-column: 1 / 3; grid-row: 1; }
+            .g6-2  { grid-column: 1;     grid-row: 2; }
+            .g6-3  { grid-column: 2;     grid-row: 2; }
+            .g6-4  { grid-column: 1;     grid-row: 3; }
+            .g6-5  { grid-column: 2;     grid-row: 3; }
+            .g6-6  { grid-column: 1 / 3; grid-row: 4; }
+            .g6-7  { grid-column: 1;     grid-row: 5; }
+            .g6-8  { grid-column: 2;     grid-row: 5; }
+            .g6-9  { grid-column: 1;     grid-row: 6; }
+            .g6-10 { grid-column: 2;     grid-row: 6; }
+          }
         `}</style>
 
         {/* Galería 1 — Polpaico */}
@@ -361,6 +407,34 @@ export default function Galeria() {
                 <Image
                   src={src}
                   alt={`Evento LaPizarra Stellantis Citroën Basalt ${i + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-3xl font-thin">+</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* Galería 6 — Parque Arauco */}
+        <div className="flex items-center gap-4 mt-16 mb-4">
+          <span className="text-white/40 text-xs font-bold uppercase tracking-widest">Parque Arauco · Corrida de Maipú 2024</span>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="galeria6-grid">
+          {fotos6.map((src, i) => {
+            const cls = i < 10 ? `g6-${i + 1}` : "relative";
+            return (
+              <div
+                key={i}
+                className={`${cls} relative overflow-hidden cursor-pointer group`}
+                onClick={() => setSelected(src)}
+              >
+                <Image
+                  src={src}
+                  alt={`Evento LaPizarra Parque Arauco ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
