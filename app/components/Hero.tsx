@@ -59,18 +59,6 @@ export default function Hero() {
           <div className="hidden md:block" />
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-white text-xs uppercase tracking-widest">Scroll</span>
-          <style>{`
-            @keyframes bounce-down {
-              0%, 100% { transform: translateY(0); }
-              50% { transform: translateY(6px); }
-            }
-            .scroll-arrow { animation: bounce-down 1.5s ease-in-out infinite; }
-          `}</style>
-          <span className="scroll-arrow text-white text-lg">↓</span>
-        </div>
       </div>
 
       {/* Carrusel de clientes */}
