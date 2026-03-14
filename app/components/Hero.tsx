@@ -43,7 +43,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="text-white/40 text-sm">
+          <p className="text-white/40 text-lg md:text-xl leading-relaxed">
             Trabajamos con equipos de marketing, comunicaciones y RRHH que necesitan
             experiencias bien pensadas y ejecutadas sin margen de error.
           </p>
