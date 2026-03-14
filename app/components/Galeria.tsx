@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Blobs from "./Blobs";
 
 const fotos = [
   "/galeria/1.jpg",
@@ -17,6 +18,7 @@ export default function Galeria() {
 
   return (
     <section id="galeria" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
+      <Blobs />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
           <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-6">
