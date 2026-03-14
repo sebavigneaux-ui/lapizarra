@@ -1,5 +1,4 @@
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
-const WA_COTIZAR = "https://wa.me/56958419326?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20con%20LaPizarra";
 
 const clientes = [
   "Samsung", "Nike", "Walmart", "The North Face", "Marriott",
@@ -11,55 +10,70 @@ const clientes = [
 
 export default function Hero() {
   return (
-    <section className="bg-[#231F20] flex flex-col relative overflow-hidden">
+    <section className="bg-[#231F20] flex flex-col relative overflow-hidden min-h-screen">
       {/* Video de fondo */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-55"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
-      {/* Overlay oscuro para legibilidad */}
-      <div className="absolute inset-0 bg-[#231F20]/60" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#231F20]/50" />
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
 
       {/* Contenido principal */}
-      <div className="max-w-6xl mx-auto px-6 pt-36 pb-20 w-full relative z-10">
-        <div className="max-w-3xl">
-          <p className="text-[#EC008C] text-sm font-bold uppercase tracking-widest mb-8">
-            Productora · Agencia Creativa · Santiago, Chile
-          </p>
+      <div className="max-w-6xl mx-auto px-6 pt-40 pb-20 w-full relative z-10 flex-1 flex flex-col justify-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-          <h1 className="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6">
-            Eventos corporativos que representan bien a tu marca y se ejecutan con precisión.
-          </h1>
+          {/* Columna izquierda — texto */}
+          <div>
+            <p className="text-[#EC008C] text-sm font-bold uppercase tracking-widest mb-10">
+              Productora · Agencia Creativa · Santiago, Chile
+            </p>
 
-          <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-            Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.
-          </p>
+            <h1 className="font-black leading-none tracking-tighter mb-10">
+              <span className="block text-5xl md:text-7xl text-white">Eventos que</span>
+              <span className="block text-5xl md:text-7xl text-white">representan bien</span>
+              <span className="block text-5xl md:text-7xl text-[#EC008C]">a tu marca.</span>
+            </h1>
 
-          <div className="flex mb-12">
+            <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+              Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables.
+            </p>
+
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#EC008C] hover:bg-[#c8007a] text-white font-bold px-10 py-4 text-base transition-colors text-center"
+              className="inline-block bg-[#EC008C] hover:bg-[#c8007a] text-white font-black px-10 py-4 text-base transition-colors"
             >
               Hablemos →
             </a>
           </div>
 
-          <p className="text-white/40 text-lg md:text-xl leading-relaxed">
-            Trabajamos con equipos de marketing, comunicaciones y RRHH que necesitan
-            experiencias bien pensadas y ejecutadas sin margen de error.
-          </p>
+          {/* Columna derecha — espacio intencional en desktop */}
+          <div className="hidden md:block" />
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+          <span className="text-white text-xs uppercase tracking-widest">Scroll</span>
+          <style>{`
+            @keyframes bounce-down {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(6px); }
+            }
+            .scroll-arrow { animation: bounce-down 1.5s ease-in-out infinite; }
+          `}</style>
+          <span className="scroll-arrow text-white text-lg">↓</span>
         </div>
       </div>
 
-      {/* Carrusel de clientes — mismo fondo */}
+      {/* Carrusel de clientes */}
       <div className="relative z-10 pb-16">
         <p className="text-white/60 text-sm uppercase tracking-widest text-center mb-8">
           Clientes
