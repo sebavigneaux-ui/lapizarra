@@ -71,15 +71,13 @@ const fotos2 = [
   "/galeria2/1.jpg",
   "/galeria2/2.jpg",
   "/galeria2/3.jpg",
-  "/galeria2/4.png",
+  "/galeria2/4.jpg",
   "/galeria2/5.jpg",
   "/galeria2/6.jpg",
   "/galeria2/7.jpg",
   "/galeria2/8.jpg",
   "/galeria2/9.jpg",
   "/galeria2/10.jpg",
-  "/galeria2/11.jpg",
-  "/galeria2/12.jpg",
 ];
 
 export default function Galeria() {
