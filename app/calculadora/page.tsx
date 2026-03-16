@@ -24,9 +24,12 @@ export default function CalculadoraPage() {
     canAdvanceStep2,
   } = useCalculadora();
 
-  const multiplicador = state.tipoEvento
-    ? (TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.multiplicador ?? 1)
-    : 1;
+  const tipoConfig = state.tipoEvento
+    ? TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)
+    : null;
+
+  const multiplicador = tipoConfig?.multiplicador ?? 1;
+  const bloquesRecomendados = tipoConfig?.bloquesRecomendados ?? [];
 
   const resultado =
     state.step >= 3 && state.tipoEvento && state.asistentes
@@ -108,6 +111,7 @@ export default function CalculadoraPage() {
               seleccion={state.seleccionBloques}
               asistentes={state.asistentes}
               multiplicador={multiplicador}
+              bloquesRecomendados={bloquesRecomendados}
               onToggle={toggleNivel}
               onNext={next}
               onBack={back}

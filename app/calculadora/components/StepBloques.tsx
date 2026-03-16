@@ -1,14 +1,14 @@
 "use client";
-import type { NivelId, SeleccionBloques } from "../../types/calculator";
+import type { NivelId, SeleccionBloques, RangoAsistentes } from "../../types/calculator";
 import { BLOQUES_BY_CATEGORIA } from "../../config/bloques";
 import { PROMEDIO_ASISTENTES } from "../../config/pricing";
-import type { RangoAsistentes } from "../../types/calculator";
 import { formatCLP } from "../../lib/formatters";
 
 interface Props {
   seleccion: SeleccionBloques;
   asistentes: RangoAsistentes;
   multiplicador: number;
+  bloquesRecomendados: string[];
   onToggle: (bloqueId: string, nivelId: NivelId) => void;
   onNext: () => void;
   onBack: () => void;
@@ -21,16 +21,10 @@ const NIVEL_LABELS: Record<NivelId, string> = {
   top: "Top",
 };
 
-const NIVEL_COLORS: Record<NivelId, string> = {
-  basico: "border-white/30 bg-white/5",
-  medio: "border-[#EC008C]/70 bg-[#EC008C]/10",
-  top: "border-yellow-400/60 bg-yellow-400/8",
-};
-
 const NIVEL_ACTIVE: Record<NivelId, string> = {
   basico: "border-white bg-white/15 text-white",
   medio: "border-[#EC008C] bg-[#EC008C]/20 text-white",
-  top: "border-yellow-400 bg-yellow-400/15 text-white",
+  top: "border-yellow-400 bg-yellow-400/12 text-white",
 };
 
 const NIVEL_BADGE: Record<NivelId, string> = {
@@ -43,6 +37,7 @@ export default function StepBloques({
   seleccion,
   asistentes,
   multiplicador,
+  bloquesRecomendados,
   onToggle,
   onNext,
   onBack,
@@ -62,82 +57,122 @@ export default function StepBloques({
       </p>
 
       <div className="space-y-10 mb-12">
-        {BLOQUES_BY_CATEGORIA.map(({ categoria, bloques }) => (
-          <div key={categoria.id}>
-            {/* Cabecera categoría */}
-            <div className="flex items-center gap-3 mb-4">
-              <p className="text-white/40 text-xs font-black uppercase tracking-widest">
-                {categoria.label}
-              </p>
-              <div className="flex-1 h-px bg-white/10" />
-            </div>
+        {BLOQUES_BY_CATEGORIA.map(({ categoria, bloques }) => {
+          // Recomendados primero, luego el resto
+          const recomendados = bloques.filter((b) => bloquesRecomendados.includes(b.id));
+          const opcionales = bloques.filter((b) => !bloquesRecomendados.includes(b.id));
+          const ordenados = [...recomendados, ...opcionales];
 
-            {/* Bloques de esta categoría */}
-            <div className="space-y-3">
-              {bloques.map((bloque) => {
-                const nivelActual = seleccion[bloque.id];
-                return (
-                  <div key={bloque.id} className="rounded-xl border border-white/10 overflow-hidden">
-                    {/* Nombre del bloque */}
-                    <div className="px-4 pt-4 pb-3 flex items-center justify-between">
-                      <span className={`font-black text-base transition-colors duration-200 ${nivelActual ? "text-white" : "text-white/50"}`}>
-                        {bloque.label}
-                      </span>
-                      {nivelActual && (
-                        <span className={`text-xs font-black px-2.5 py-1 rounded-full ${NIVEL_BADGE[nivelActual]}`}>
-                          {NIVEL_LABELS[nivelActual]}
+          // Si no hay ninguno relevante ni seleccionado en esta categoría, ocultarla
+          const haySeleccionado = bloques.some((b) => seleccion[b.id]);
+          if (recomendados.length === 0 && !haySeleccionado) return null;
+
+          return (
+            <div key={categoria.id}>
+              {/* Cabecera categoría */}
+              <div className="flex items-center gap-3 mb-4">
+                <p className="text-white/40 text-xs font-black uppercase tracking-widest whitespace-nowrap">
+                  {categoria.label}
+                </p>
+                <div className="flex-1 h-px bg-white/10" />
+              </div>
+
+              {/* Bloques */}
+              <div className="space-y-3">
+                {ordenados.map((bloque) => {
+                  const nivelActual = seleccion[bloque.id];
+                  const esRecomendado = bloquesRecomendados.includes(bloque.id);
+
+                  return (
+                    <div
+                      key={bloque.id}
+                      className={`rounded-xl border overflow-hidden transition-all duration-200 ${
+                        esRecomendado ? "border-white/20" : "border-white/8 opacity-70"
+                      } ${nivelActual ? "!border-white/30 !opacity-100" : ""}`}
+                    >
+                      {/* Nombre del bloque */}
+                      <div className="px-4 pt-4 pb-3 flex items-center gap-3">
+                        <span
+                          className={`font-black text-base flex-1 transition-colors duration-200 ${
+                            nivelActual ? "text-white" : esRecomendado ? "text-white/70" : "text-white/40"
+                          }`}
+                        >
+                          {bloque.label}
                         </span>
-                      )}
-                    </div>
+                        {esRecomendado && !nivelActual && (
+                          <span className="text-[#EC008C] text-xs font-black uppercase tracking-widest bg-[#EC008C]/10 border border-[#EC008C]/30 px-2.5 py-1 rounded-full">
+                            Recomendado
+                          </span>
+                        )}
+                        {nivelActual && (
+                          <span className={`text-xs font-black px-2.5 py-1 rounded-full ${NIVEL_BADGE[nivelActual]}`}>
+                            {NIVEL_LABELS[nivelActual]}
+                          </span>
+                        )}
+                      </div>
 
-                    {/* Niveles */}
-                    <div className="grid grid-cols-3 gap-2 px-3 pb-3">
-                      {bloque.niveles.map((nivel) => {
-                        const active = nivelActual === nivel.id;
-                        const costoMin = Math.round(
-                          (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * multiplicador
-                        );
-                        const costoMax = Math.round(
-                          (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * multiplicador
-                        );
+                      {/* Niveles */}
+                      <div className="grid grid-cols-3 gap-2 px-3 pb-3">
+                        {bloque.niveles.map((nivel) => {
+                          const active = nivelActual === nivel.id;
+                          const costoMin = Math.round(
+                            (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * multiplicador
+                          );
+                          const costoMax = Math.round(
+                            (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * multiplicador
+                          );
 
-                        return (
-                          <button
-                            key={nivel.id}
-                            onClick={() => onToggle(bloque.id, nivel.id)}
-                            className={`text-left p-3 rounded-lg border transition-all duration-200 group ${
-                              active
-                                ? NIVEL_ACTIVE[nivel.id]
-                                : `${NIVEL_COLORS[nivel.id]} hover:opacity-80`
-                            }`}
-                          >
-                            <span className={`block text-xs font-black mb-1 ${
-                              active ? "" : "text-white/50 group-hover:text-white/80"
-                            }`}>
-                              {nivel.label}
-                            </span>
-                            <span className={`block text-xs leading-snug mb-2 hidden sm:block ${
-                              active ? "text-white/70" : "text-white/30"
-                            }`}>
-                              {nivel.desc}
-                            </span>
-                            <span className={`block text-xs font-black ${
-                              active ? "text-white" : "text-white/40"
-                            }`}>
-                              {formatCLP(costoMin)}
-                              <span className="font-normal text-white/40"> – </span>
-                              {formatCLP(costoMax)}
-                            </span>
-                          </button>
-                        );
-                      })}
+                          return (
+                            <button
+                              key={nivel.id}
+                              onClick={() => onToggle(bloque.id, nivel.id)}
+                              className={`text-left p-3 rounded-lg border transition-all duration-200 group ${
+                                active
+                                  ? NIVEL_ACTIVE[nivel.id]
+                                  : "border-white/10 bg-white/3 hover:border-white/25 hover:bg-white/6"
+                              }`}
+                            >
+                              <span
+                                className={`block text-xs font-black mb-1 ${
+                                  active ? "" : "text-white/50 group-hover:text-white/80"
+                                }`}
+                              >
+                                {nivel.label}
+                              </span>
+                              <span
+                                className={`block text-xs leading-snug mb-2 hidden sm:block ${
+                                  active ? "text-white/60" : "text-white/25"
+                                }`}
+                              >
+                                {nivel.desc}
+                              </span>
+                              <span
+                                className={`block text-xs font-black ${
+                                  active ? "text-white" : "text-white/40"
+                                }`}
+                              >
+                                {formatCLP(costoMin)}
+                                <span className="font-normal text-white/30"> – </span>
+                                {formatCLP(costoMax)}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+
+                {/* Mostrar opcionales si hay recomendados y están ocultos */}
+                {opcionales.length > 0 && recomendados.length > 0 && (
+                  <p className="text-white/25 text-xs pl-1">
+                    ↑ Los servicios anteriores son opcionales para este tipo de evento.
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Resumen selección */}

@@ -7,7 +7,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Convención, kick off, aniversario o celebración institucional.",
     icon: "01",
     multiplicador: 1.0,
-    bloquesRecomendados: ["venue", "catering", "av_basico", "iluminacion", "fotografia"],
+    bloquesRecomendados: ["venue", "catering", "tecnica", "iluminacion", "fotografia", "staff"],
   },
   {
     id: "lanzamiento",
@@ -15,7 +15,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Presentación que genera anticipación, cobertura y recordación.",
     icon: "02",
     multiplicador: 1.25,
-    bloquesRecomendados: ["venue", "av_premium", "iluminacion", "decoracion", "video"],
+    bloquesRecomendados: ["venue", "tecnica", "iluminacion", "decoracion", "video", "fotografia"],
   },
   {
     id: "btl",
@@ -23,7 +23,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Experiencia en punto de venta, espacio público o evento masivo.",
     icon: "03",
     multiplicador: 0.85,
-    bloquesRecomendados: ["activacion", "branding_fisico", "rrhh", "fotografia"],
+    bloquesRecomendados: ["activacion", "branding_fisico", "staff", "anfitrionas", "fotografia"],
   },
   {
     id: "interno",
@@ -31,7 +31,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Evento que construye cultura, motiva equipos y refuerza pertenencia.",
     icon: "04",
     multiplicador: 0.8,
-    bloquesRecomendados: ["venue", "catering", "av_basico", "animacion"],
+    bloquesRecomendados: ["venue", "catering", "tecnica", "staff"],
   },
   {
     id: "stand",
@@ -39,7 +39,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Diseño y producción para ferias, exposiciones y activaciones.",
     icon: "05",
     multiplicador: 0.9,
-    bloquesRecomendados: ["activacion", "branding_fisico", "iluminacion", "rrhh"],
+    bloquesRecomendados: ["activacion", "branding_fisico", "iluminacion", "staff", "anfitrionas"],
   },
   {
     id: "audiovisual",
@@ -47,7 +47,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
     desc: "Cobertura, video corporativo y contenido para amplificar el evento.",
     icon: "06",
     multiplicador: 0.7,
-    bloquesRecomendados: ["video", "fotografia", "streaming"],
+    bloquesRecomendados: ["video", "fotografia", "streaming", "tecnica"],
   },
 ];
 
