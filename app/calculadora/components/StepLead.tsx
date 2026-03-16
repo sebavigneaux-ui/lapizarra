@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
 import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 import { formatRango } from "../../lib/formatters";
 import type { Resultado } from "../../types/calculator";
+
+const PDFDownloadButton = dynamic(() => import("./PDFDownloadButton"), { ssr: false });
 
 interface Props {
   nombre: string;
@@ -91,6 +94,18 @@ export default function StepLead({
 
   const canSubmit = nombre.trim() && empresa.trim() && correo.trim();
 
+  const pdfData = {
+    nombre,
+    empresa,
+    correo,
+    tipoLabel,
+    asistentesLabel,
+    regionLabel,
+    desglose: resultado.desglose,
+    total: resultado.total,
+    fecha: new Date().toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" }),
+  };
+
   // Pantalla de éxito
   if (estado === "enviado") {
     return (
@@ -103,10 +118,13 @@ export default function StepLead({
         <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-3">
           ¡Listo!
         </h2>
-        <p className="text-white/50 text-base leading-relaxed max-w-sm mx-auto">
+        <p className="text-white/50 text-base leading-relaxed max-w-sm mx-auto mb-8">
           Enviamos el PDF con tu simulación a <span className="text-white font-bold">{correo}</span>.
           Abriendo WhatsApp para coordinar...
         </p>
+        <div className="flex justify-center">
+          <PDFDownloadButton data={pdfData} />
+        </div>
       </div>
     );
   }
