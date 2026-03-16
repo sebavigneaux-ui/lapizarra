@@ -98,35 +98,35 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
         <p className="text-white/30 text-sm mt-3">Valores referenciales en pesos chilenos, sin IVA.</p>
       </div>
 
-      {/* Desglose con barras en 3 tercios */}
+      {/* Desglose — solo ítems marcados */}
       <div
-        className="mb-10 border-t border-white/10 transition-all duration-700 delay-200"
+        className="mb-4 border-t border-white/10 transition-all duration-700 delay-200"
         style={{ opacity: visible ? 1 : 0 }}
       >
-        {resultado.desglose.map((item, i) => (
-          <div
-            key={i}
-            className="py-4 border-b border-white/8 transition-all duration-500"
-            style={{ opacity: visible ? 1 : 0, transitionDelay: `${200 + i * 60}ms` }}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-white/70 text-sm font-bold">{item.label}</span>
-              <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
-            </div>
-            {item.nivelId ? (
-              <BarraTercios nivelId={item.nivelId} visible={visible} delay={300 + i * 60} />
-            ) : (
-              // Fee de producción: barra simple
-              <div className="h-1.5 bg-white/8 rounded-full mt-2 overflow-hidden">
-                <div
-                  className="h-full bg-white/20 rounded-full transition-all duration-700"
-                  style={{ width: visible ? "100%" : "0%", transitionDelay: `${300 + i * 60}ms` }}
-                />
+        {resultado.desglose
+          .filter((item) => item.nivelId !== undefined)
+          .map((item, i) => (
+            <div
+              key={i}
+              className="py-4 border-b border-white/8 transition-all duration-500"
+              style={{ opacity: visible ? 1 : 0, transitionDelay: `${200 + i * 60}ms` }}
+            >
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-white/70 text-sm font-bold">{item.label}</span>
+                <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
               </div>
-            )}
-          </div>
-        ))}
+              <BarraTercios nivelId={item.nivelId!} visible={visible} delay={300 + i * 60} />
+            </div>
+          ))}
       </div>
+
+      {/* Fee de producción — nota de texto, no como ítem gráfico */}
+      <p
+        className="text-white/25 text-xs mb-10 transition-all duration-700"
+        style={{ opacity: visible ? 1 : 0, transitionDelay: "500ms" }}
+      >
+        Incluye honorarios de producción y gestión LaPizarra ({Math.round(17)}–{Math.round(20)}%).
+      </p>
 
       {/* Recomendaciones */}
       {resultado.recomendaciones.length > 0 && (
