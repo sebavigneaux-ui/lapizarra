@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
 export default function CTAIntermedio() {
@@ -14,14 +16,22 @@ export default function CTAIntermedio() {
             Conversemos sobre tu proyecto y veamos cómo diseñar una experiencia que represente bien a tu marca.
           </p>
         </div>
-        <a
-          href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-white text-[#EC008C] font-black px-8 py-4 text-base hover:bg-white/90 transition-colors whitespace-nowrap flex-shrink-0"
-        >
-          Hablemos →
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <Link
+            href="/calculadora"
+            className="border-2 border-white text-white font-black px-7 py-4 text-base hover:bg-white/10 transition-colors whitespace-nowrap text-center"
+          >
+            Calcular mi evento
+          </Link>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#EC008C] font-black px-8 py-4 text-base hover:bg-white/90 transition-colors whitespace-nowrap text-center"
+          >
+            Hablemos →
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
@@ -90,7 +91,13 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Link
+              href="/calculadora"
+              className="text-white/60 hover:text-white text-sm font-bold px-4 py-2.5 border border-white/20 hover:border-white/50 transition-colors hidden md:block"
+            >
+              Calculadora
+            </Link>
             <a
               href={WA_URL}
               target="_blank"
@@ -126,6 +133,13 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/calculadora"
+              onClick={closeMenu}
+              className="text-white/60 text-base font-medium transition-colors border border-white/20 px-5 py-3 text-center"
+            >
+              Calculadora de eventos
+            </Link>
             <a
               href={WA_URL}
               target="_blank"
