@@ -30,7 +30,6 @@ export default function Home() {
           <Metodologia />
         </div>
         <CTAIntermedio />
-        <Confianza />
         <ClientesDestacados />
         <FAQ />
         <QuienesSomos />
