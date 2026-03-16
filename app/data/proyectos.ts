@@ -22,6 +22,11 @@ export const proyectos: Proyecto[] = [
       "/galeria/5.jpg",
       "/galeria/6.jpg",
       "/galeria/7.jpg",
+      "/galeria/8.jpg",
+      "/galeria/9.jpg",
+      "/galeria/10.jpg",
+      "/galeria/11.jpg",
+      "/galeria/12.jpg",
     ],
     objetivo:
       "Reunir a los principales clientes y distribuidores de Polpaico en un evento que reforzara el vínculo comercial, comunicara los resultados del año y proyectara la visión estratégica de la compañía para el período siguiente.",
