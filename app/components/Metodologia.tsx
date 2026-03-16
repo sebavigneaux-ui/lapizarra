@@ -29,8 +29,8 @@ const pasos = [
   },
 ];
 
-const LINE_DURATION = 2000; // ms
-const STEP_DELAYS = [200, 600, 1000, 1400, 1800]; // ms — cuándo aparece cada paso
+const LINE_DURATION = 2200; // ms
+const STEP_DELAYS = [220, 660, 1100, 1540, 1980]; // ms — cuándo aparece cada paso
 
 export default function Metodologia() {
   const [visible, setVisible] = useState(false);
