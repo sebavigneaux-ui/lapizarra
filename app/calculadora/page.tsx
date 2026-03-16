@@ -8,6 +8,7 @@ import StepBloques from "./components/StepBloques";
 import StepDetalle from "./components/StepDetalle";
 import StepResultado from "./components/StepResultado";
 import StepLead from "./components/StepLead";
+import { useEffect } from "react";
 import { useCalculadora } from "../hooks/useCalculadora";
 import { calcular } from "../lib/calculator/engine";
 import { TIPOS_EVENTO } from "../config/pricing";
@@ -26,6 +27,10 @@ export default function CalculadoraPage() {
     canAdvanceStep2,
     canAdvanceStep3,
   } = useCalculadora();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [state.step]);
 
   const tipoConfig = state.tipoEvento
     ? TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)
