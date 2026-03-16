@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useCountUp } from "../hooks/useCountUp";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
@@ -12,6 +13,8 @@ const clientes = [
 ];
 
 export default function Hero() {
+  const { count, ref } = useCountUp(21, 1000);
+
   return (
     <section className="bg-[#231F20] flex flex-col relative overflow-hidden min-h-screen">
       {/* Video de fondo */}
@@ -70,8 +73,8 @@ export default function Hero() {
 
               {/* Stats de prueba social */}
               <div className="flex gap-8 mb-10 border-t border-white/10 pt-8">
-                <div>
-                  <p className="text-white font-black text-3xl leading-none tracking-tighter">21+</p>
+                <div ref={ref}>
+                  <p className="text-white font-black text-3xl leading-none tracking-tighter">{count}+</p>
                   <p className="text-white/40 text-xs mt-1">marcas atendidas</p>
                 </div>
                 <div className="w-px bg-white/10" />

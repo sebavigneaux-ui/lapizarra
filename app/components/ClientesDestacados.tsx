@@ -1,3 +1,6 @@
+"use client";
+import { useCountUp } from "../hooks/useCountUp";
+
 const clientes = [
   "Samsung", "Nike", "Walmart", "The North Face", "Marriott",
   "Stellantis", "KIA", "PUIG", "Linde", "Metso Outotec",
@@ -7,15 +10,17 @@ const clientes = [
 ];
 
 export default function ClientesDestacados() {
+  const { count, ref } = useCountUp(21);
+
   return (
     <section id="clientes" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Stat + título */}
         <div className="flex flex-col md:flex-row md:items-end gap-8 mb-16 pb-16 border-b border-[#231F20]/10">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0" ref={ref}>
             <p className="text-[#EC008C] text-[6rem] md:text-[9rem] font-black leading-none tracking-tighter">
-              21<span className="text-[#EC008C]">+</span>
+              {count}<span className="text-[#EC008C]">+</span>
             </p>
           </div>
           <div className="md:pb-4">
