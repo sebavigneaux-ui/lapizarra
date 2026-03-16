@@ -26,6 +26,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "venue",
     label: "Venue",
     categoria: "espacio",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -54,6 +55,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "construccion_stand",
     label: "Construcción de Stand",
     categoria: "espacio",
+    diasFactor: 0.0,
     niveles: [
       {
         id: "basico",
@@ -82,6 +84,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "decoracion",
     label: "Decoración y Ambientación",
     categoria: "espacio",
+    diasFactor: 0.0,
     niveles: [
       {
         id: "basico",
@@ -110,6 +113,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "activacion",
     label: "Activación de marca",
     categoria: "espacio",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -140,6 +144,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "catering",
     label: "Catering",
     categoria: "gastronomia",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -170,6 +175,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "tecnica",
     label: "Técnica audiovisual",
     categoria: "tecnica",
+    diasFactor: 0.7,
     niveles: [
       {
         id: "basico",
@@ -200,6 +206,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "iluminacion",
     label: "Iluminación",
     categoria: "iluminacion",
+    diasFactor: 0.7,
     niveles: [
       {
         id: "basico",
@@ -230,6 +237,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "streaming",
     label: "Streaming / Híbrido",
     categoria: "streaming",
+    diasFactor: 0.9,
     niveles: [
       {
         id: "basico",
@@ -260,6 +268,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "fotografia",
     label: "Fotografía",
     categoria: "contenido",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -288,6 +297,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "video",
     label: "Video corporativo",
     categoria: "contenido",
+    diasFactor: 0.7,
     niveles: [
       {
         id: "basico",
@@ -316,6 +326,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "branding_fisico",
     label: "Branding físico",
     categoria: "contenido",
+    diasFactor: 0.0,
     niveles: [
       {
         id: "basico",
@@ -346,6 +357,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "staff",
     label: "Staff",
     categoria: "logistica",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -374,6 +386,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "anfitrionas",
     label: "Anfitrionas",
     categoria: "logistica",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",
@@ -402,6 +415,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "transporte",
     label: "Transporte",
     categoria: "logistica",
+    diasFactor: 1.0,
     niveles: [
       {
         id: "basico",

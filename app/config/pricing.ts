@@ -1,4 +1,4 @@
-import type { TipoEventoConfig, RangoAsistentes, RegionId } from "../types/calculator";
+import type { TipoEventoConfig, RangoAsistentes, RegionId, DiasId } from "../types/calculator";
 
 export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
@@ -74,6 +74,23 @@ export const LABELS_ASISTENTES: Record<RangoAsistentes, string> = {
 };
 
 export const FEE_PRODUCCION: [number, number] = [0.17, 0.20];
+
+export const DIAS_OPCIONES: { id: DiasId; label: string }[] = [
+  { id: "1", label: "1 día" },
+  { id: "2", label: "2 días" },
+  { id: "3", label: "3 días" },
+  { id: "4", label: "4 días" },
+  { id: "5", label: "5 días" },
+  { id: "otro", label: "Otro" },
+];
+
+export const DIAS_PROMEDIO: Record<DiasId, number> = {
+  "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "otro": 7,
+};
+
+export const LABELS_DIAS: Record<DiasId, string> = {
+  "1": "1 día", "2": "2 días", "3": "3 días", "4": "4 días", "5": "5 días", "otro": "+5 días",
+};
 
 export interface RegionConfig {
   id: RegionId;

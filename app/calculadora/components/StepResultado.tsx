@@ -8,6 +8,7 @@ interface Props {
   tipoLabel: string;
   asistentesLabel: string;
   regionLabel: string;
+  diasLabel: string | null;
   fechaEvento: string | null;
   onAgregar: (bloqueId: string, nivelId: NivelId) => void;
   onCambiarNivel: (bloqueId: string, nivelId: NivelId) => void;
@@ -200,7 +201,7 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
 }
 
 export default function StepResultado({
-  resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento,
+  resultado, tipoLabel, asistentesLabel, regionLabel, diasLabel, fechaEvento,
   onAgregar, onCambiarNivel, onQuitar, onNext, onBack,
 }: Props) {
   const [visible, setVisible] = useState(false);
@@ -260,6 +261,11 @@ export default function StepResultado({
         <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
           {regionLabel}
         </span>
+        {diasLabel && (
+          <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+            {diasLabel}
+          </span>
+        )}
         {fechaEvento && (
           <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
             {formatFecha(fechaEvento)}

@@ -1,16 +1,18 @@
-import type { RangoAsistentes, TipoEvento, Resultado, Recomendacion, SeleccionBloques, RegionId, NivelId } from "../../types/calculator";
+import type { RangoAsistentes, TipoEvento, Resultado, Recomendacion, SeleccionBloques, RegionId, NivelId, DiasId } from "../../types/calculator";
 import { BLOQUES_BY_ID } from "../../config/bloques";
-import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION, REGIONES } from "../../config/pricing";
+import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION, REGIONES, DIAS_PROMEDIO } from "../../config/pricing";
 
 export function calcular(
   tipoEvento: TipoEvento,
   asistentes: RangoAsistentes,
   seleccionBloques: SeleccionBloques,
-  region: RegionId = "rm"
+  region: RegionId = "rm",
+  diasEvento: DiasId = "1"
 ): Resultado {
   const tipo = TIPOS_EVENTO.find((t) => t.id === tipoEvento)!;
   const regionConfig = REGIONES.find((r) => r.id === region)!;
   const personas = PROMEDIO_ASISTENTES[asistentes];
+  const dias = DIAS_PROMEDIO[diasEvento];
   const mult = tipo.multiplicador * regionConfig.multiplicador;
 
   const desglose: Resultado["desglose"] = [];
@@ -25,8 +27,9 @@ export function calcular(
     const nivel = bloque.niveles.find((n) => n.id === nivelId);
     if (!nivel) continue;
 
-    const min = (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * mult;
-    const max = (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * mult;
+    const diasMult = 1 + (dias - 1) * bloque.diasFactor;
+    const min = (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * mult * diasMult;
+    const max = (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * mult * diasMult;
 
     desglose.push({
       label: bloque.label,

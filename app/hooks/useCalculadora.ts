@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
-import type { CalculadoraState, NivelId, TipoEvento, RangoAsistentes, RegionId } from "../types/calculator";
+import type { CalculadoraState, NivelId, TipoEvento, RangoAsistentes, RegionId, DiasId } from "../types/calculator";
 
 const initial: CalculadoraState = {
   step: 1,
   tipoEvento: null,
   asistentes: null,
   region: null,
+  diasEvento: null,
   fechaEvento: null,
   seleccionBloques: {},
   nombre: "",
@@ -26,6 +27,9 @@ export function useCalculadora() {
 
   const setRegion = (region: RegionId) =>
     setState((s) => ({ ...s, region }));
+
+  const setDiasEvento = (diasEvento: DiasId) =>
+    setState((s) => ({ ...s, diasEvento }));
 
   const setFechaEvento = (fechaEvento: string | null) =>
     setState((s) => ({ ...s, fechaEvento }));
@@ -56,7 +60,7 @@ export function useCalculadora() {
 
   const reset = () => setState(initial);
 
-  const canAdvanceStep1 = state.tipoEvento !== null && state.asistentes !== null && state.region !== null;
+  const canAdvanceStep1 = state.tipoEvento !== null && state.asistentes !== null && state.region !== null && state.diasEvento !== null;
   const canAdvanceStep2 = true; // puede avanzar aunque no haya seleccionado en paso 2
   const canAdvanceStep3 = Object.keys(state.seleccionBloques).length >= 1;
 
@@ -65,6 +69,7 @@ export function useCalculadora() {
     setTipo,
     setAsistentes,
     setRegion,
+    setDiasEvento,
     setFechaEvento,
     toggleNivel,
     goTo,

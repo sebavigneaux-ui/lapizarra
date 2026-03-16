@@ -15,6 +15,8 @@ export type RangoAsistentes =
 
 export type RegionId = "rm" | "iv" | "v" | "viii" | "ix" | "x";
 
+export type DiasId = "1" | "2" | "3" | "4" | "5" | "otro";
+
 export type NivelId = "basico" | "medio" | "top";
 
 export interface Nivel {
@@ -30,6 +32,8 @@ export interface BloqueConfig {
   label: string;
   categoria: CategoriaId;
   niveles: [Nivel, Nivel, Nivel];
+  /** 0 = no escala con días (costo único), 1 = escala completamente por día */
+  diasFactor: number;
 }
 
 export type CategoriaId =
@@ -63,6 +67,7 @@ export interface CalculadoraState {
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   region: RegionId | null;
+  diasEvento: DiasId | null;
   fechaEvento: string | null; // formato "YYYY-MM"
   seleccionBloques: SeleccionBloques;
   nombre: string;

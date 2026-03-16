@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
-import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
+import type { TipoEvento, RangoAsistentes, RegionId, DiasId } from "../../types/calculator";
+import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES, DIAS_OPCIONES } from "../../config/pricing";
 
 const RANGOS: RangoAsistentes[] = ["menos50", "50-100", "100-200", "200-400", "400plus"];
 
@@ -11,18 +11,20 @@ interface Props {
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   region: RegionId | null;
+  diasEvento: DiasId | null;
   fechaEvento: string | null;
   onTipo: (t: TipoEvento) => void;
   onAsistentes: (r: RangoAsistentes) => void;
   onRegion: (r: RegionId) => void;
+  onDias: (d: DiasId) => void;
   onFecha: (f: string | null) => void;
   onNext: () => void;
   canNext: boolean;
 }
 
 export default function StepContexto({
-  tipoEvento, asistentes, region, fechaEvento,
-  onTipo, onAsistentes, onRegion, onFecha,
+  tipoEvento, asistentes, region, diasEvento, fechaEvento,
+  onTipo, onAsistentes, onRegion, onDias, onFecha,
   onNext, canNext,
 }: Props) {
   const hoy = new Date();
@@ -124,9 +126,35 @@ export default function StepContexto({
         </div>
       </div>
 
-      {/* 04 — Fecha del evento */}
+      {/* 04 — Duración */}
       <div className="mb-12">
         <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">04 —</p>
+        <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-8 leading-tight">
+          ¿Cuántos días dura el evento?
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {DIAS_OPCIONES.map((d) => {
+            const active = diasEvento === d.id;
+            return (
+              <button
+                key={d.id}
+                onClick={() => onDias(d.id)}
+                className={`px-6 py-3 rounded-full font-black text-sm border transition-all duration-200 ${
+                  active
+                    ? "border-[#EC008C] bg-[#EC008C] text-white"
+                    : "border-white/20 text-white/60 hover:border-white/50 hover:text-white"
+                }`}
+              >
+                {d.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 05 — Fecha del evento */}
+      <div className="mb-12">
+        <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">05 —</p>
         <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-2 leading-tight">
           ¿Cuándo es el evento?
         </h2>

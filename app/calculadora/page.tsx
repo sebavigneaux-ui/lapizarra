@@ -12,7 +12,7 @@ import ContextStrip from "./components/ContextStrip";
 import { useEffect } from "react";
 import { useCalculadora } from "../hooks/useCalculadora";
 import { calcular } from "../lib/calculator/engine";
-import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../config/pricing";
+import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES, LABELS_DIAS } from "../config/pricing";
 
 export default function CalculadoraPage() {
   const {
@@ -20,6 +20,7 @@ export default function CalculadoraPage() {
     setTipo,
     setAsistentes,
     setRegion,
+    setDiasEvento,
     setFechaEvento,
     toggleNivel,
     next,
@@ -43,8 +44,8 @@ export default function CalculadoraPage() {
   const labelCortoEvento = tipoConfig?.labelCorto ?? "tu evento";
 
   const resultado =
-    state.step >= 4 && state.tipoEvento && state.asistentes && state.region
-      ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region)
+    state.step >= 4 && state.tipoEvento && state.asistentes && state.region && state.diasEvento
+      ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region, state.diasEvento)
       : null;
 
   return (
@@ -96,6 +97,7 @@ export default function CalculadoraPage() {
               tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
               asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
+              diasLabel={state.diasEvento ? LABELS_DIAS[state.diasEvento] : null}
               fechaEvento={state.fechaEvento}
             />
           )}
@@ -105,10 +107,12 @@ export default function CalculadoraPage() {
               tipoEvento={state.tipoEvento}
               asistentes={state.asistentes}
               region={state.region}
+              diasEvento={state.diasEvento}
               fechaEvento={state.fechaEvento}
               onTipo={setTipo}
               onAsistentes={setAsistentes}
               onRegion={setRegion}
+              onDias={setDiasEvento}
               onFecha={setFechaEvento}
               onNext={next}
               canNext={canAdvanceStep1}
@@ -148,6 +152,7 @@ export default function CalculadoraPage() {
               tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
               asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
+              diasLabel={state.diasEvento ? LABELS_DIAS[state.diasEvento] : null}
               fechaEvento={state.fechaEvento}
               onAgregar={toggleNivel}
               onCambiarNivel={toggleNivel}

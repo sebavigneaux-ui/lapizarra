@@ -11,10 +11,11 @@ interface Props {
   tipoLabel: string;
   asistentesLabel: string;
   regionLabel: string;
+  diasLabel: string | null;
   fechaEvento: string | null;
 }
 
-export default function ContextStrip({ tipoLabel, asistentesLabel, regionLabel, fechaEvento }: Props) {
+export default function ContextStrip({ tipoLabel, asistentesLabel, regionLabel, diasLabel, fechaEvento }: Props) {
   return (
     <div className="flex flex-wrap gap-2 mb-8">
       <span className="px-3 py-1.5 rounded-full bg-[#EC008C]/20 border border-[#EC008C]/30 text-[#EC008C] text-xs font-bold">
@@ -26,6 +27,11 @@ export default function ContextStrip({ tipoLabel, asistentesLabel, regionLabel, 
       <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
         {regionLabel}
       </span>
+      {diasLabel && (
+        <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+          {diasLabel}
+        </span>
+      )}
       {fechaEvento && (
         <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
           {formatFecha(fechaEvento)}
