@@ -54,10 +54,10 @@ export default function StepBloques({
       {/* Back button arriba */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-white/40 hover:text-white/80 text-sm font-bold transition-colors duration-200 mb-8"
+        className="flex items-center gap-2 px-6 py-3 rounded-full font-black text-sm border border-white/20 text-white/50 hover:text-white hover:border-white/40 transition-all duration-200 mb-8"
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
         </svg>
         Volver
       </button>
