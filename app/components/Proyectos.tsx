@@ -3,15 +3,15 @@ import { useState } from "react";
 import Image from "next/image";
 
 const videos = [
-  { id: "zO3KVRmb7vQ", cliente: "Samsung",                  titulo: "Video Resumen",  foto: null },
-  { id: "lNUHjeq-81s", cliente: "Cool Carriers",            titulo: "Video Resumen",  foto: "/galeria3/1.jpg" },
-  { id: "mr8FCGm3RxY", cliente: "Sofofa",                   titulo: "Video Resumen",  foto: null },
-  { id: "jpXMz12JjXU", cliente: "Stellantis · Leap Motor",  titulo: "Video Resumen",  foto: "/galeria2/1.jpg" },
-  { id: "4uyNXJ2N6ow", cliente: "Parque Arauco",            titulo: "Video Resumen",  foto: "/galeria6/1.jpg" },
-  { id: "wyRI9zvGXSE", cliente: "Sofofa",                   titulo: "Video Resumen",  foto: null },
+  { id: "zO3KVRmb7vQ", cliente: "Samsung",                  titulo: "Video Resumen" },
+  { id: "lNUHjeq-81s", cliente: "Cool Carriers",            titulo: "Video Resumen" },
+  { id: "mr8FCGm3RxY", cliente: "Sofofa",                   titulo: "Video Resumen" },
+  { id: "jpXMz12JjXU", cliente: "Stellantis · Leap Motor",  titulo: "Video Resumen" },
+  { id: "4uyNXJ2N6ow", cliente: "Parque Arauco",            titulo: "Video Resumen" },
+  { id: "wyRI9zvGXSE", cliente: "Sofofa",                   titulo: "Video Resumen" },
 ];
 
-function VideoCard({ id, cliente, titulo, foto }: typeof videos[0]) {
+function VideoCard({ id, cliente, titulo }: typeof videos[0]) {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {
@@ -33,18 +33,7 @@ function VideoCard({ id, cliente, titulo, foto }: typeof videos[0]) {
       className="aspect-video w-full relative cursor-pointer group overflow-hidden bg-[#231F20]"
       onClick={() => setPlaying(true)}
     >
-      {/* Foto de fondo */}
-      {foto ? (
-        <Image
-          src={foto}
-          alt={`${cliente} — ${titulo}`}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
-      ) : null}
-
-      {/* Logo LaPizarra como textura de fondo */}
+      {/* Logo LaPizarra como fondo */}
       <div className="absolute inset-0 flex items-center justify-center">
         <Image
           src="/logo-blanco.png"
@@ -52,12 +41,12 @@ function VideoCard({ id, cliente, titulo, foto }: typeof videos[0]) {
           width={340}
           height={136}
           className="object-contain select-none"
-          style={{ opacity: foto ? 0.07 : 0.12 }}
+          style={{ opacity: 0.12 }}
         />
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#231F20]/90 via-[#231F20]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#231F20]/90 via-[#231F20]/20 to-transparent" />
 
       {/* Texto */}
       <div className="absolute bottom-0 left-0 p-5">
