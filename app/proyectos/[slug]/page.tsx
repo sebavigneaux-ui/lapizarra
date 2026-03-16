@@ -18,6 +18,14 @@ export default async function ProyectoPage({
   const proyecto = getProyecto(slug);
   if (!proyecto) notFound();
 
+  // Shuffle determinístico basado en el slug — mismo orden siempre, distinto por proyecto
+  const seed = slug.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+  const fotos = [...proyecto.fotos];
+  for (let i = fotos.length - 1; i > 0; i--) {
+    const j = (seed * (i + 7)) % (i + 1);
+    [fotos[i], fotos[j]] = [fotos[j], fotos[i]];
+  }
+
   return (
     <main className="bg-[#231F20] min-h-screen relative overflow-hidden">
       <Blobs />
@@ -49,7 +57,7 @@ export default async function ProyectoPage({
       <div className="max-w-6xl mx-auto px-6 mb-4">
         <div className="relative w-full aspect-video overflow-hidden">
           <Image
-            src={proyecto.fotos[0]}
+            src={fotos[0]}
             alt={proyecto.titulo}
             fill
             className="object-cover"
@@ -62,7 +70,7 @@ export default async function ProyectoPage({
       {/* Grid resto de fotos */}
       <div className="max-w-6xl mx-auto px-6 mb-20">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
-          {proyecto.fotos.slice(1).map((src, i) => (
+          {fotos.slice(1).map((src, i) => (
             <div key={i} className="relative aspect-video overflow-hidden">
               <Image
                 src={src}
@@ -93,11 +101,6 @@ export default async function ProyectoPage({
           <div>
             <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-4">Resultado</p>
             <p className="text-white/70 text-lg leading-relaxed">{proyecto.resultado}</p>
-          </div>
-
-          <div>
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-4">Presupuesto</p>
-            <p className="text-white font-black text-4xl">{proyecto.presupuesto}</p>
           </div>
 
         </div>
