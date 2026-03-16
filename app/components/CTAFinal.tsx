@@ -1,5 +1,6 @@
 import Blobs from "./Blobs";
 import Image from "next/image";
+import Link from "next/link";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
@@ -24,7 +25,7 @@ export default function CTAFinal() {
             Si estás evaluando una activación, un lanzamiento o un evento corporativo, conversemos. En una breve reunión podemos entender tu objetivo y ver cómo diseñar una experiencia que realmente funcione.
           </p>
 
-          <div className="flex mb-8">
+          <div className="flex flex-wrap gap-4 mb-8">
             <a
               href={WA_URL}
               target="_blank"
@@ -33,6 +34,12 @@ export default function CTAFinal() {
             >
               Hablemos →
             </a>
+            <Link
+              href="/calculadora"
+              className="border border-white/30 text-white/70 font-black px-10 py-4 text-base hover:border-white hover:text-white transition-all duration-200 text-center"
+            >
+              Calcula tu evento →
+            </Link>
           </div>
 
           <p className="text-white/30 text-sm">
