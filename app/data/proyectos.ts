@@ -3,6 +3,7 @@ export type Proyecto = {
   cliente: string;
   titulo: string;
   fotos: string[];
+  heroFoto?: string; // fuerza una foto específica como principal
   videos?: string[]; // YouTube IDs
   objetivo: string;
   conceptoCreativo: string;
@@ -111,6 +112,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-citroen-basalt",
     cliente: "Stellantis",
     titulo: "Formación Comercial Citroën Basalt",
+    heroFoto: "/galeria5/7.jpg",
     fotos: [
       "/galeria5/0.jpg",
       "/galeria5/1.jpg",

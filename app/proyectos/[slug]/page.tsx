@@ -20,11 +20,14 @@ export default async function ProyectoPage({
 
   // Shuffle determinístico basado en el slug — mismo orden siempre, distinto por proyecto
   const seed = slug.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
-  const fotos = [...proyecto.fotos];
-  for (let i = fotos.length - 1; i > 0; i--) {
+  const restantes = proyecto.fotos.filter((f) => f !== proyecto.heroFoto);
+  for (let i = restantes.length - 1; i > 0; i--) {
     const j = (seed * (i + 7)) % (i + 1);
-    [fotos[i], fotos[j]] = [fotos[j], fotos[i]];
+    [restantes[i], restantes[j]] = [restantes[j], restantes[i]];
   }
+  const fotos = proyecto.heroFoto
+    ? [proyecto.heroFoto, ...restantes]
+    : [restantes[0], ...restantes.slice(1)];
 
   return (
     <main className="bg-[#231F20] min-h-screen relative overflow-hidden">
