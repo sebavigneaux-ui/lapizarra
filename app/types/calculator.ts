@@ -19,8 +19,8 @@ export interface Nivel {
   id: NivelId;
   label: string;
   desc: string;
-  costoFijo: [number, number];       // CLP [min, max]
-  costoPorPersona: [number, number]; // CLP adicional por persona [min, max]
+  costoFijo: [number, number];
+  costoPorPersona: [number, number];
 }
 
 export interface BloqueConfig {
@@ -44,12 +44,12 @@ export interface CategoriaConfig {
   label: string;
 }
 
-// Selección: bloqueId → NivelId elegido (o ausente = no seleccionado)
 export type SeleccionBloques = Partial<Record<string, NivelId>>;
 
 export interface TipoEventoConfig {
   id: TipoEvento;
   label: string;
+  labelCorto: string; // para el título del paso 2: "tu stand", "tu lanzamiento"…
   desc: string;
   icon: string;
   multiplicador: number;
@@ -57,7 +57,7 @@ export interface TipoEventoConfig {
 }
 
 export interface CalculadoraState {
-  step: 1 | 2 | 3 | 4;
+  step: 1 | 2 | 3 | 4 | 5;
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   seleccionBloques: SeleccionBloques;
@@ -70,6 +70,7 @@ export interface CalculadoraState {
 export interface DesgloseLine {
   label: string;
   monto: [number, number];
+  nivelId?: NivelId; // undefined = fee de producción
 }
 
 export interface Resultado {

@@ -26,21 +26,15 @@ export function calcular(
     const min = (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * mult;
     const max = (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * mult;
 
-    const nivelLabel: Record<string, string> = {
-      basico: "Básico",
-      medio: "Premium",
-      top: "Top",
-    };
-
     desglose.push({
-      label: `${bloque.label} · ${nivelLabel[nivelId] ?? nivelId}`,
+      label: bloque.label,
       monto: [min, max],
+      nivelId,
     });
     subtotalMin += min;
     subtotalMax += max;
   }
 
-  // Fee de producción y gestión LaPizarra
   const feeMin = subtotalMin * FEE_PRODUCCION[0];
   const feeMax = subtotalMax * FEE_PRODUCCION[1];
   desglose.push({ label: "Producción y gestión", monto: [feeMin, feeMax] });
@@ -54,11 +48,7 @@ export function calcular(
     tipo.bloquesRecomendados
   );
 
-  return {
-    total: [totalMin, totalMax],
-    desglose,
-    recomendaciones,
-  };
+  return { total: [totalMin, totalMax], desglose, recomendaciones };
 }
 
 function generarRecomendaciones(
@@ -70,7 +60,7 @@ function generarRecomendaciones(
   const msgs: string[] = [];
 
   if (faltantes.includes("tecnica")) {
-    msgs.push("Para este tipo de evento recomendamos incluir al menos técnica audiovisual básica.");
+    msgs.push("Para este tipo de evento recomendamos incluir al menos técnica básica.");
   }
   if (faltantes.includes("fotografia")) {
     msgs.push("El registro fotográfico es clave para aprovechar el evento en comunicaciones.");

@@ -1,12 +1,60 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Resultado } from "../../types/calculator";
+import type { Resultado, NivelId } from "../../types/calculator";
 import { formatCLP, formatRango } from "../../lib/formatters";
 
 interface Props {
   resultado: Resultado;
   onNext: () => void;
   onBack: () => void;
+}
+
+// Cuántos tercios llenar según nivel
+const NIVEL_TERCIOS: Record<NivelId, 1 | 2 | 3> = {
+  basico: 1,
+  medio: 2,
+  top: 3,
+};
+
+const TERCIO_COLOR = ["bg-white/30", "bg-[#EC008C]/70", "bg-yellow-400"];
+
+function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: boolean; delay: number }) {
+  const tercios = NIVEL_TERCIOS[nivelId] ?? 0;
+  return (
+    <div className="flex gap-0.5 mt-2">
+      {[0, 1, 2].map((i) => {
+        const lleno = i < tercios;
+        const isTop = i === 2;
+        return (
+          <div key={i} className="flex-1 flex flex-col gap-1 items-center">
+            <div className="w-full h-1.5 rounded-full bg-white/8 overflow-hidden">
+              <div
+                className={`h-full rounded-full transition-all duration-500 ${lleno ? TERCIO_COLOR[i] : ""}`}
+                style={{
+                  width: visible && lleno ? "100%" : "0%",
+                  transitionDelay: `${delay + i * 80}ms`,
+                }}
+              />
+            </div>
+            <span
+              className={`text-[10px] font-black transition-all duration-300 ${
+                lleno && isTop
+                  ? "text-yellow-400"
+                  : lleno
+                  ? i === 1
+                    ? "text-[#EC008C]/70"
+                    : "text-white/40"
+                  : "text-white/15"
+              }`}
+              style={{ transitionDelay: `${delay + 200}ms` }}
+            >
+              {i === 0 ? "Básica" : i === 1 ? "Media" : "Premium"}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default function StepResultado({ resultado, onNext, onBack }: Props) {
@@ -18,11 +66,20 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
     return () => clearTimeout(t);
   }, []);
 
-  const maxTotal = resultado.total[1];
-
   return (
     <div ref={ref} className="animate-in fade-in slide-in-from-right-4 duration-400">
-      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 3 —</p>
+      {/* Back button arriba */}
+      <button
+        onClick={onBack}
+        className="flex items-center gap-2 text-white/40 hover:text-white/80 text-sm font-bold transition-colors duration-200 mb-8"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Volver a detalles
+      </button>
+
+      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 4 — Estimación</p>
       <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-10 leading-tight">
         Tu evento podría estar<br className="hidden md:block" /> en este rango
       </h2>
@@ -30,10 +87,7 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
       {/* Número grande */}
       <div
         className="mb-10 transition-all duration-700"
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(20px)",
-        }}
+        style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
       >
         <p className="text-white/30 text-sm font-black uppercase tracking-widest mb-2">Estimación total</p>
         <p className="font-black leading-none tracking-tighter text-white">
@@ -41,43 +95,37 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
           <span className="text-3xl md:text-5xl text-white/40"> – </span>
           <span className="text-5xl md:text-7xl text-[#EC008C]">{formatCLP(resultado.total[1])}</span>
         </p>
-        <p className="text-white/30 text-sm mt-3">
-          Valores referenciales en pesos chilenos, sin IVA.
-        </p>
+        <p className="text-white/30 text-sm mt-3">Valores referenciales en pesos chilenos, sin IVA.</p>
       </div>
 
-      {/* Desglose */}
+      {/* Desglose con barras en 3 tercios */}
       <div
         className="mb-10 border-t border-white/10 transition-all duration-700 delay-200"
         style={{ opacity: visible ? 1 : 0 }}
       >
-        {resultado.desglose.map((item, i) => {
-          const pct = maxTotal > 0 ? (item.monto[1] / maxTotal) * 100 : 0;
-          return (
-            <div
-              key={i}
-              className="py-4 border-b border-white/10 transition-all duration-500"
-              style={{
-                opacity: visible ? 1 : 0,
-                transitionDelay: `${200 + i * 60}ms`,
-              }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-white/70 text-sm font-bold">{item.label}</span>
-                <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
-              </div>
-              <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+        {resultado.desglose.map((item, i) => (
+          <div
+            key={i}
+            className="py-4 border-b border-white/8 transition-all duration-500"
+            style={{ opacity: visible ? 1 : 0, transitionDelay: `${200 + i * 60}ms` }}
+          >
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-white/70 text-sm font-bold">{item.label}</span>
+              <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
+            </div>
+            {item.nivelId ? (
+              <BarraTercios nivelId={item.nivelId} visible={visible} delay={300 + i * 60} />
+            ) : (
+              // Fee de producción: barra simple
+              <div className="h-1.5 bg-white/8 rounded-full mt-2 overflow-hidden">
                 <div
-                  className="h-full bg-[#EC008C]/60 rounded-full transition-all duration-700"
-                  style={{
-                    width: visible ? `${pct}%` : "0%",
-                    transitionDelay: `${300 + i * 60}ms`,
-                  }}
+                  className="h-full bg-white/20 rounded-full transition-all duration-700"
+                  style={{ width: visible ? "100%" : "0%", transitionDelay: `${300 + i * 60}ms` }}
                 />
               </div>
-            </div>
-          );
-        })}
+            )}
+          </div>
+        ))}
       </div>
 
       {/* Recomendaciones */}
@@ -86,9 +134,7 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
           className="mb-10 p-5 rounded-xl bg-white/5 border border-white/10 transition-all duration-700 delay-500"
           style={{ opacity: visible ? 1 : 0 }}
         >
-          <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-3">
-            Te recomendamos
-          </p>
+          <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-3">Te recomendamos</p>
           <ul className="space-y-2">
             {resultado.recomendaciones.map((r, i) => (
               <li key={i} className="flex gap-2 text-sm text-white/50">

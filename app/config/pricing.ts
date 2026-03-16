@@ -4,6 +4,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
     id: "corporativo",
     label: "Evento corporativo",
+    labelCorto: "tu evento corporativo",
     desc: "Convención, kick off, aniversario o celebración institucional.",
     icon: "01",
     multiplicador: 1.0,
@@ -12,6 +13,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
     id: "lanzamiento",
     label: "Lanzamiento de producto",
+    labelCorto: "tu lanzamiento",
     desc: "Presentación que genera anticipación, cobertura y recordación.",
     icon: "02",
     multiplicador: 1.25,
@@ -20,6 +22,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
     id: "btl",
     label: "Activación BTL",
+    labelCorto: "tu activación",
     desc: "Experiencia en punto de venta, espacio público o evento masivo.",
     icon: "03",
     multiplicador: 0.85,
@@ -28,6 +31,7 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
     id: "interno",
     label: "Experiencia interna",
+    labelCorto: "tu experiencia interna",
     desc: "Evento que construye cultura, motiva equipos y refuerza pertenencia.",
     icon: "04",
     multiplicador: 0.8,
@@ -36,14 +40,16 @@ export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
     id: "stand",
     label: "Stand o espacio de marca",
+    labelCorto: "tu stand",
     desc: "Diseño y producción para ferias, exposiciones y activaciones.",
     icon: "05",
     multiplicador: 0.9,
-    bloquesRecomendados: ["activacion", "branding_fisico", "iluminacion", "staff", "anfitrionas"],
+    bloquesRecomendados: ["construccion_stand", "activacion", "branding_fisico", "iluminacion", "staff", "anfitrionas"],
   },
   {
     id: "audiovisual",
     label: "Producción audiovisual",
+    labelCorto: "tu producción",
     desc: "Cobertura, video corporativo y contenido para amplificar el evento.",
     icon: "06",
     multiplicador: 0.7,
@@ -67,5 +73,4 @@ export const LABELS_ASISTENTES: Record<RangoAsistentes, string> = {
   "400plus": "Más de 400",
 };
 
-// Honorarios de producción y gestión (% sobre el subtotal de bloques)
 export const FEE_PRODUCCION: [number, number] = [0.17, 0.20];

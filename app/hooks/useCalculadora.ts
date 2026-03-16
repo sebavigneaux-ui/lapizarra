@@ -22,7 +22,6 @@ export function useCalculadora() {
   const setAsistentes = (asistentes: RangoAsistentes) =>
     setState((s) => ({ ...s, asistentes }));
 
-  // Seleccionar un nivel para un bloque; si ya está seleccionado, lo deselecciona
   const toggleNivel = (bloqueId: string, nivelId: NivelId) =>
     setState((s) => {
       const actual = s.seleccionBloques[bloqueId];
@@ -39,7 +38,7 @@ export function useCalculadora() {
     setState((s) => ({ ...s, step }));
 
   const next = () =>
-    setState((s) => ({ ...s, step: Math.min(4, s.step + 1) as CalculadoraState["step"] }));
+    setState((s) => ({ ...s, step: Math.min(5, s.step + 1) as CalculadoraState["step"] }));
 
   const back = () =>
     setState((s) => ({ ...s, step: Math.max(1, s.step - 1) as CalculadoraState["step"] }));
@@ -50,7 +49,8 @@ export function useCalculadora() {
   const reset = () => setState(initial);
 
   const canAdvanceStep1 = state.tipoEvento !== null && state.asistentes !== null;
-  const canAdvanceStep2 = Object.keys(state.seleccionBloques).length >= 1;
+  const canAdvanceStep2 = true; // puede avanzar aunque no haya seleccionado en paso 2
+  const canAdvanceStep3 = Object.keys(state.seleccionBloques).length >= 1;
 
   return {
     state,
@@ -64,5 +64,6 @@ export function useCalculadora() {
     reset,
     canAdvanceStep1,
     canAdvanceStep2,
+    canAdvanceStep3,
   };
 }

@@ -1,14 +1,14 @@
 interface StepperProps {
   step: number;
-  total?: number;
 }
 
-const LABELS = ["Contexto", "Bloques", "Estimación", "Contacto"];
+const LABELS = ["Contexto", "Servicios", "Detalles", "Estimación", "Contacto"];
 
-export default function Stepper({ step, total = 4 }: StepperProps) {
+export default function Stepper({ step }: StepperProps) {
+  const total = LABELS.length;
   return (
     <div className="flex items-center gap-0">
-      {LABELS.slice(0, total).map((label, i) => {
+      {LABELS.map((label, i) => {
         const num = i + 1;
         const done = num < step;
         const active = num === step;
@@ -42,7 +42,7 @@ export default function Stepper({ step, total = 4 }: StepperProps) {
             </div>
             {i < total - 1 && (
               <div
-                className={`w-12 sm:w-20 h-px mx-2 mb-5 transition-all duration-500 ${
+                className={`w-8 sm:w-14 h-px mx-2 mb-5 transition-all duration-500 ${
                   done ? "bg-[#EC008C]/50" : "bg-white/10"
                 }`}
               />

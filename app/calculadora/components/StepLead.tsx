@@ -17,15 +17,9 @@ interface Props {
 }
 
 export default function StepLead({
-  nombre,
-  empresa,
-  correo,
-  mensaje,
-  tipoEvento,
-  asistentes,
-  resultado,
-  onChange,
-  onBack,
+  nombre, empresa, correo, mensaje,
+  tipoEvento, asistentes, resultado,
+  onChange, onBack,
 }: Props) {
   const tipoLabel = TIPOS_EVENTO.find((t) => t.id === tipoEvento)?.label ?? tipoEvento;
   const asistentesLabel = LABELS_ASISTENTES[asistentes];
@@ -47,15 +41,25 @@ export default function StepLead({
       .filter(Boolean)
       .join("\n");
 
-    const url = `https://wa.me/56958419326?text=${encodeURIComponent(texto)}`;
-    window.open(url, "_blank");
+    window.open(`https://wa.me/56958419326?text=${encodeURIComponent(texto)}`, "_blank");
   };
 
   const canSubmit = nombre.trim() && empresa.trim() && correo.trim();
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
-      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 4 —</p>
+      {/* Back button arriba */}
+      <button
+        onClick={onBack}
+        className="flex items-center gap-2 text-white/40 hover:text-white/80 text-sm font-bold transition-colors duration-200 mb-8"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Volver a la estimación
+      </button>
+
+      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 5 — Contacto</p>
       <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-3 leading-tight">
         Cuéntanos más sobre ti
       </h2>
@@ -83,40 +87,34 @@ export default function StepLead({
       <div className="space-y-4 mb-10">
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">
-              Nombre
-            </label>
+            <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Nombre</label>
             <input
               type="text"
               value={nombre}
               onChange={(e) => onChange("nombre", e.target.value)}
               placeholder="Tu nombre"
-              className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 focus:bg-white/8 transition-all duration-200"
+              className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200"
             />
           </div>
           <div>
-            <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">
-              Empresa
-            </label>
+            <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Empresa</label>
             <input
               type="text"
               value={empresa}
               onChange={(e) => onChange("empresa", e.target.value)}
               placeholder="Nombre de tu empresa"
-              className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 focus:bg-white/8 transition-all duration-200"
+              className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200"
             />
           </div>
         </div>
         <div>
-          <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">
-            Correo electrónico
-          </label>
+          <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Correo electrónico</label>
           <input
             type="email"
             value={correo}
             onChange={(e) => onChange("correo", e.target.value)}
             placeholder="tu@empresa.cl"
-            className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 focus:bg-white/8 transition-all duration-200"
+            className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200"
           />
         </div>
         <div>
@@ -128,7 +126,7 @@ export default function StepLead({
             onChange={(e) => onChange("mensaje", e.target.value)}
             placeholder="Fecha tentativa, venue en mente, requerimientos especiales..."
             rows={3}
-            className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 focus:bg-white/8 transition-all duration-200 resize-none"
+            className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200 resize-none"
           />
         </div>
       </div>

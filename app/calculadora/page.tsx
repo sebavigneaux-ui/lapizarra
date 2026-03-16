@@ -5,6 +5,7 @@ import Blobs from "../components/Blobs";
 import Stepper from "./components/Stepper";
 import StepContexto from "./components/StepContexto";
 import StepBloques from "./components/StepBloques";
+import StepDetalle from "./components/StepDetalle";
 import StepResultado from "./components/StepResultado";
 import StepLead from "./components/StepLead";
 import { useCalculadora } from "../hooks/useCalculadora";
@@ -22,6 +23,7 @@ export default function CalculadoraPage() {
     setLead,
     canAdvanceStep1,
     canAdvanceStep2,
+    canAdvanceStep3,
   } = useCalculadora();
 
   const tipoConfig = state.tipoEvento
@@ -30,9 +32,10 @@ export default function CalculadoraPage() {
 
   const multiplicador = tipoConfig?.multiplicador ?? 1;
   const bloquesRecomendados = tipoConfig?.bloquesRecomendados ?? [];
+  const labelCortoEvento = tipoConfig?.labelCorto ?? "tu evento";
 
   const resultado =
-    state.step >= 3 && state.tipoEvento && state.asistentes
+    state.step >= 4 && state.tipoEvento && state.asistentes
       ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques)
       : null;
 
@@ -44,28 +47,15 @@ export default function CalculadoraPage() {
       <header className="relative z-20 border-b border-white/8">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <svg
-              className="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors duration-200"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
+            <svg className="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             <span className="text-white/40 group-hover:text-white/70 text-sm font-bold transition-colors duration-200">
               Volver al sitio
             </span>
           </Link>
-
           <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/logo-blanco.png"
-              alt="LaPizarra"
-              width={120}
-              height={48}
-              className="object-contain"
-            />
+            <Image src="/logo-blanco.png" alt="LaPizarra" width={120} height={48} className="object-contain" />
           </Link>
         </div>
       </header>
@@ -79,9 +69,7 @@ export default function CalculadoraPage() {
             </p>
             <h1 className="text-white font-black leading-none tracking-tighter">
               <span className="block text-4xl md:text-6xl lg:text-7xl">Calcula tu evento</span>
-              <span className="block text-4xl md:text-6xl lg:text-7xl text-white/30">
-                en LaPizarra.
-              </span>
+              <span className="block text-4xl md:text-6xl lg:text-7xl text-white/30">en LaPizarra.</span>
             </h1>
             <p className="text-white/40 text-lg mt-6 max-w-xl leading-relaxed">
               Responde 2 preguntas, elige los bloques de tu evento y obtén una estimación
@@ -112,14 +100,28 @@ export default function CalculadoraPage() {
               asistentes={state.asistentes}
               multiplicador={multiplicador}
               bloquesRecomendados={bloquesRecomendados}
+              labelCortoEvento={labelCortoEvento}
               onToggle={toggleNivel}
               onNext={next}
               onBack={back}
-              canNext={canAdvanceStep2}
             />
           )}
 
-          {state.step === 3 && resultado && (
+          {state.step === 3 && state.asistentes && (
+            <StepDetalle
+              seleccion={state.seleccionBloques}
+              asistentes={state.asistentes}
+              multiplicador={multiplicador}
+              bloquesRecomendados={bloquesRecomendados}
+              labelCortoEvento={labelCortoEvento}
+              onToggle={toggleNivel}
+              onNext={next}
+              onBack={back}
+              canNext={canAdvanceStep3}
+            />
+          )}
+
+          {state.step === 4 && resultado && (
             <StepResultado
               resultado={resultado}
               onNext={next}
@@ -127,7 +129,7 @@ export default function CalculadoraPage() {
             />
           )}
 
-          {state.step === 4 && resultado && state.tipoEvento && state.asistentes && (
+          {state.step === 5 && resultado && state.tipoEvento && state.asistentes && (
             <StepLead
               nombre={state.nombre}
               empresa={state.empresa}
