@@ -79,48 +79,114 @@ interface BarraProps {
   onSetNivel?: (nivelId: NivelId) => void;
 }
 
+function pctToNivel(pct: number): NivelId {
+  if (pct < 0.5) return "basico";
+  if (pct < 0.833) return "medio";
+  return "top";
+}
+
 function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: BarraProps) {
   const [hover, setHover] = useState<NivelId | null>(null);
-  const activeNivel = hover ?? nivelId;
+  const [dragNivel, setDragNivel] = useState<NivelId | null>(null);
+  const [dragging, setDragging] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  const activeNivel = dragNivel ?? hover ?? nivelId;
   const niveles: NivelId[] = ["basico", "medio", "top"];
+  const interactive = !!(bloqueId && onSetNivel);
+  const fastTransition = !!(hover || dragging);
+
+  const startDrag = (clientX: number) => {
+    if (!interactive) return;
+    setDragging(true);
+
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      if (!barRef.current) return;
+      const x = "touches" in e ? e.touches[0].clientX : e.clientX;
+      const rect = barRef.current.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+      setDragNivel(pctToNivel(pct));
+    };
+
+    const onUp = (e: MouseEvent | TouchEvent) => {
+      if (!barRef.current) return;
+      const x = "changedTouches" in e ? e.changedTouches[0].clientX : e.clientX;
+      const rect = barRef.current.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+      const next = pctToNivel(pct);
+      if (next !== nivelId) onSetNivel!(next);
+      setDragging(false);
+      setDragNivel(null);
+      document.removeEventListener("mousemove", onMove as EventListener);
+      document.removeEventListener("mouseup", onUp as EventListener);
+      document.removeEventListener("touchmove", onMove as EventListener);
+      document.removeEventListener("touchend", onUp as EventListener);
+    };
+
+    document.addEventListener("mousemove", onMove as EventListener);
+    document.addEventListener("mouseup", onUp as EventListener);
+    document.addEventListener("touchmove", onMove as EventListener);
+    document.addEventListener("touchend", onUp as EventListener);
+  };
 
   return (
-    <div className="mt-2">
+    <div className="mt-2" style={{ userSelect: dragging ? "none" : undefined }}>
       {/* Barra de gradiente continuo */}
-      <div className="w-full h-1.5 rounded-full bg-white/8 overflow-hidden mb-1.5">
+      <div
+        ref={barRef}
+        className="w-full h-1.5 rounded-full bg-white/8 relative mb-1.5"
+        style={{ cursor: interactive ? "pointer" : "default" }}
+        onClick={(e) => {
+          if (!interactive || dragging) return;
+          const rect = e.currentTarget.getBoundingClientRect();
+          const pct = (e.clientX - rect.left) / rect.width;
+          const next = pctToNivel(pct);
+          if (next !== nivelId) onSetNivel!(next);
+        }}
+      >
+        {/* Fill */}
         <div
-          className="h-full rounded-full transition-all duration-500"
+          className="absolute inset-y-0 left-0 rounded-full transition-all duration-500"
           style={{
             width: visible ? NIVEL_WIDTH[activeNivel] : "0%",
-            transitionDelay: hover ? "0ms" : `${delay}ms`,
+            transitionDelay: fastTransition ? "0ms" : `${delay}ms`,
             background: "linear-gradient(to right, rgba(255,255,255,0.4), #EC008C)",
           }}
         />
+        {/* Dot handle */}
+        {interactive && visible && (
+          <div
+            className={`absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#EC008C] border border-white/20 transition-all duration-500 ${dragging ? "scale-125" : "hover:scale-125"}`}
+            style={{
+              left: `calc(${NIVEL_WIDTH[activeNivel]} - 7px)`,
+              transitionDelay: fastTransition ? "0ms" : `${delay}ms`,
+              cursor: dragging ? "grabbing" : "grab",
+              boxShadow: "0 0 8px rgba(236,0,140,0.6)",
+              touchAction: "none",
+            }}
+            onMouseDown={(e) => { e.preventDefault(); startDrag(e.clientX); }}
+            onTouchStart={(e) => { e.preventDefault(); startDrag(e.touches[0].clientX); }}
+          />
+        )}
       </div>
       {/* Etiquetas interactivas */}
       <div className="flex">
         {niveles.map((n) => {
           const isActive = n === nivelId;
-          const isHovered = n === hover;
+          const isHovered = n === (dragNivel ?? hover);
           return (
             <button
               key={n}
-              disabled={!bloqueId || !onSetNivel}
+              disabled={!interactive}
               onClick={() => {
-                if (bloqueId && onSetNivel && n !== nivelId) onSetNivel(n);
+                if (interactive && n !== nivelId) onSetNivel!(n);
               }}
-              onMouseEnter={() => bloqueId && setHover(n)}
+              onMouseEnter={() => interactive && !dragging && setHover(n)}
               onMouseLeave={() => setHover(null)}
               className={`flex-1 text-[10px] font-black transition-all duration-200 py-0.5 rounded ${
-                bloqueId && onSetNivel
-                  ? "cursor-pointer hover:bg-white/5"
-                  : "cursor-default"
+                interactive ? "cursor-pointer hover:bg-white/5" : "cursor-default"
               } ${
-                isActive
-                  ? "text-white"
-                  : isHovered
-                  ? "text-white/60"
-                  : "text-white/20"
+                isActive ? "text-white" : isHovered ? "text-white/60" : "text-white/20"
               }`}
             >
               {NIVEL_DISPLAY_LABEL[n]}
