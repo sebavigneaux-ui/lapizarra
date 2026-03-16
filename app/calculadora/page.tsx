@@ -52,7 +52,7 @@ export default function CalculadoraPage() {
       <Blobs />
 
       {/* Header */}
-      <header className="relative z-20 border-b border-white/8">
+      <header className="sticky top-0 z-20 border-b border-white/8 bg-[#231F20]/90 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <svg className="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -63,7 +63,7 @@ export default function CalculadoraPage() {
             </span>
           </Link>
           <Link href="/" className="flex-shrink-0">
-            <Image src="/logo-blanco.png" alt="LaPizarra" width={120} height={48} className="object-contain" />
+            <Image src="/logo-blanco.png" alt="LaPizarra" width={96} height={32} className="object-contain" />
           </Link>
         </div>
       </header>
