@@ -13,7 +13,7 @@ export type RangoAsistentes =
   | "200-400"
   | "400plus";
 
-export type RegionId = "rm" | "v" | "viii" | "ix" | "x";
+export type RegionId = "rm" | "iv" | "v" | "viii" | "ix" | "x";
 
 export type NivelId = "basico" | "medio" | "top";
 

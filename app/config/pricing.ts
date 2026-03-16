@@ -90,6 +90,12 @@ export const REGIONES: RegionConfig[] = [
     nota: "Mayor ecosistema de proveedores.",
   },
   {
+    id: "iv",
+    label: "IV Región",
+    multiplicador: 1.15,
+    nota: "Traslado de equipo y proveedores locales limitados.",
+  },
+  {
     id: "v",
     label: "V Región",
     multiplicador: 1.08,

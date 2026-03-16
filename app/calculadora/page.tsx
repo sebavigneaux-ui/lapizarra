@@ -80,7 +80,7 @@ export default function CalculadoraPage() {
               <span className="block text-4xl md:text-6xl lg:text-7xl text-white/30">en LaPizarra.</span>
             </h1>
             <p className="text-white/40 text-lg mt-6 max-w-xl leading-relaxed">
-              Responde 2 preguntas, elige los bloques de tu evento y obtén una estimación
+              Responde 4 preguntas, elige los bloques de tu evento y obtén una estimación
               referencial en menos de 2 minutos.
             </p>
           </div>
