@@ -13,6 +13,8 @@ export type RangoAsistentes =
   | "200-400"
   | "400plus";
 
+export type RegionId = "rm" | "v" | "viii" | "ix" | "x";
+
 export type NivelId = "basico" | "medio" | "top";
 
 export interface Nivel {
@@ -60,6 +62,7 @@ export interface CalculadoraState {
   step: 1 | 2 | 3 | 4 | 5;
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
+  region: RegionId | null;
   seleccionBloques: SeleccionBloques;
   nombre: string;
   empresa: string;

@@ -1,4 +1,4 @@
-import type { TipoEventoConfig, RangoAsistentes } from "../types/calculator";
+import type { TipoEventoConfig, RangoAsistentes, RegionId } from "../types/calculator";
 
 export const TIPOS_EVENTO: TipoEventoConfig[] = [
   {
@@ -74,3 +74,43 @@ export const LABELS_ASISTENTES: Record<RangoAsistentes, string> = {
 };
 
 export const FEE_PRODUCCION: [number, number] = [0.17, 0.20];
+
+export interface RegionConfig {
+  id: RegionId;
+  label: string;
+  multiplicador: number;
+  nota: string;
+}
+
+export const REGIONES: RegionConfig[] = [
+  {
+    id: "rm",
+    label: "Región Metropolitana",
+    multiplicador: 1.00,
+    nota: "Mayor ecosistema de proveedores.",
+  },
+  {
+    id: "v",
+    label: "V Región",
+    multiplicador: 1.08,
+    nota: "Traslado de equipo y proveedores locales limitados.",
+  },
+  {
+    id: "viii",
+    label: "VIII Región",
+    multiplicador: 1.15,
+    nota: "Flete largo y menor oferta técnica especializada.",
+  },
+  {
+    id: "ix",
+    label: "IX Región",
+    multiplicador: 1.20,
+    nota: "Logística compleja y pocos proveedores premium.",
+  },
+  {
+    id: "x",
+    label: "X Región",
+    multiplicador: 1.25,
+    nota: "Mayor distancia y costo de traslado significativo.",
+  },
+];

@@ -1,29 +1,29 @@
 "use client";
-import type { TipoEvento, RangoAsistentes } from "../../types/calculator";
-import { TIPOS_EVENTO, LABELS_ASISTENTES } from "../../config/pricing";
+import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
+import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 
 const RANGOS: RangoAsistentes[] = ["menos50", "50-100", "100-200", "200-400", "400plus"];
 
 interface Props {
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
+  region: RegionId | null;
   onTipo: (t: TipoEvento) => void;
   onAsistentes: (r: RangoAsistentes) => void;
+  onRegion: (r: RegionId) => void;
   onNext: () => void;
   canNext: boolean;
 }
 
 export default function StepContexto({
-  tipoEvento,
-  asistentes,
-  onTipo,
-  onAsistentes,
-  onNext,
-  canNext,
+  tipoEvento, asistentes, region,
+  onTipo, onAsistentes, onRegion,
+  onNext, canNext,
 }: Props) {
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
-      {/* Tipo de evento */}
+
+      {/* 01 — Tipo de evento */}
       <div className="mb-12">
         <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">01 —</p>
         <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-8 leading-tight">
@@ -42,30 +42,20 @@ export default function StepContexto({
                     : "border-white/10 bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.06]"
                 }`}
               >
-                <span
-                  className={`block font-black text-3xl mb-3 leading-none transition-colors duration-200 ${
-                    active ? "text-[#EC008C]" : "text-white/20 group-hover:text-white/40"
-                  }`}
-                >
+                <span className={`block font-black text-3xl mb-3 leading-none transition-colors duration-200 ${active ? "text-[#EC008C]" : "text-white/20 group-hover:text-white/40"}`}>
                   {tipo.icon}
                 </span>
-                <span
-                  className={`block font-black text-base mb-1 transition-colors duration-200 ${
-                    active ? "text-white" : "text-white/70 group-hover:text-white"
-                  }`}
-                >
+                <span className={`block font-black text-base mb-1 transition-colors duration-200 ${active ? "text-white" : "text-white/70 group-hover:text-white"}`}>
                   {tipo.label}
                 </span>
-                <span className="block text-sm text-white/35 leading-snug">
-                  {tipo.desc}
-                </span>
+                <span className="block text-sm text-white/35 leading-snug">{tipo.desc}</span>
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Asistentes */}
+      {/* 02 — Asistentes */}
       <div className="mb-12">
         <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">02 —</p>
         <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-8 leading-tight">
@@ -85,6 +75,42 @@ export default function StepContexto({
                 }`}
               >
                 {LABELS_ASISTENTES[r]}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 03 — Región */}
+      <div className="mb-12">
+        <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">03 —</p>
+        <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-8 leading-tight">
+          ¿Dónde es el evento?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {REGIONES.map((reg) => {
+            const active = region === reg.id;
+            const esBase = reg.multiplicador === 1.0;
+            const pct = Math.round((reg.multiplicador - 1) * 100);
+            return (
+              <button
+                key={reg.id}
+                onClick={() => onRegion(reg.id)}
+                className={`text-left p-4 rounded-xl border transition-all duration-200 group ${
+                  active
+                    ? "border-[#EC008C] bg-[#EC008C]/10"
+                    : "border-white/10 bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.06]"
+                }`}
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <span className={`font-black text-base transition-colors duration-200 ${active ? "text-white" : "text-white/70 group-hover:text-white"}`}>
+                    {reg.label}
+                  </span>
+                  <span className={`text-xs font-black ml-2 flex-shrink-0 ${active ? "text-[#EC008C]" : "text-white/25"}`}>
+                    {esBase ? "Base" : `+${pct}%`}
+                  </span>
+                </div>
+                <span className="block text-xs text-white/35 leading-snug">{reg.nota}</span>
               </button>
             );
           })}

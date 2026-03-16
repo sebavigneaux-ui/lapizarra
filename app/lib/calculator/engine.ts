@@ -1,15 +1,17 @@
-import type { RangoAsistentes, TipoEvento, Resultado, SeleccionBloques } from "../../types/calculator";
+import type { RangoAsistentes, TipoEvento, Resultado, SeleccionBloques, RegionId } from "../../types/calculator";
 import { BLOQUES_BY_ID } from "../../config/bloques";
-import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION } from "../../config/pricing";
+import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION, REGIONES } from "../../config/pricing";
 
 export function calcular(
   tipoEvento: TipoEvento,
   asistentes: RangoAsistentes,
-  seleccionBloques: SeleccionBloques
+  seleccionBloques: SeleccionBloques,
+  region: RegionId = "rm"
 ): Resultado {
   const tipo = TIPOS_EVENTO.find((t) => t.id === tipoEvento)!;
+  const regionConfig = REGIONES.find((r) => r.id === region)!;
   const personas = PROMEDIO_ASISTENTES[asistentes];
-  const mult = tipo.multiplicador;
+  const mult = tipo.multiplicador * regionConfig.multiplicador;
 
   const desglose: Resultado["desglose"] = [];
   let subtotalMin = 0;

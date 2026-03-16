@@ -1,6 +1,6 @@
 "use client";
-import type { TipoEvento, RangoAsistentes } from "../../types/calculator";
-import { TIPOS_EVENTO, LABELS_ASISTENTES } from "../../config/pricing";
+import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
+import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 import { formatRango } from "../../lib/formatters";
 import type { Resultado } from "../../types/calculator";
 
@@ -11,6 +11,7 @@ interface Props {
   mensaje: string;
   tipoEvento: TipoEvento;
   asistentes: RangoAsistentes;
+  region: RegionId;
   resultado: Resultado;
   onChange: (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) => void;
   onBack: () => void;
@@ -18,11 +19,12 @@ interface Props {
 
 export default function StepLead({
   nombre, empresa, correo, mensaje,
-  tipoEvento, asistentes, resultado,
+  tipoEvento, asistentes, region, resultado,
   onChange, onBack,
 }: Props) {
   const tipoLabel = TIPOS_EVENTO.find((t) => t.id === tipoEvento)?.label ?? tipoEvento;
   const asistentesLabel = LABELS_ASISTENTES[asistentes];
+  const regionLabel = REGIONES.find((r) => r.id === region)?.label ?? region;
   const rangoLabel = formatRango(resultado.total);
 
   const handleSubmit = () => {
@@ -31,6 +33,7 @@ export default function StepLead({
       ``,
       `*Tipo de evento:* ${tipoLabel}`,
       `*Asistentes:* ${asistentesLabel}`,
+      `*Región:* ${regionLabel}`,
       `*Estimación:* ${rangoLabel}`,
       ``,
       `*Nombre:* ${nombre}`,
@@ -76,6 +79,9 @@ export default function StepLead({
           </span>
           <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
             {asistentesLabel} asistentes
+          </span>
+          <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+            {regionLabel}
           </span>
           <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white font-black text-xs">
             {rangoLabel}
