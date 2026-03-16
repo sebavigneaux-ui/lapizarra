@@ -48,7 +48,7 @@ export default function CalculadoraPage() {
       : null;
 
   return (
-    <div className="min-h-screen bg-[#231F20] relative overflow-hidden">
+    <div className="min-h-screen bg-[#231F20] relative">
       <Blobs />
 
       {/* Header */}
