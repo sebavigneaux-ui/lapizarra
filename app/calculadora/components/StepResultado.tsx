@@ -45,13 +45,13 @@ function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: 
           }}
         />
       </div>
-      {/* Solo la etiqueta del nivel alcanzado */}
+      {/* Etiquetas: encendida solo la del nivel elegido */}
       <div className="flex">
         {(["basico", "medio", "top"] as NivelId[]).map((n, i) => (
           <div key={i} className="flex-1 flex justify-center">
             <span
               className={`text-[10px] font-black transition-all duration-300 ${
-                n === nivelId ? "text-white" : "opacity-0"
+                n === nivelId ? "text-white" : "text-white/20"
               }`}
               style={{ transitionDelay: `${delay + 200}ms` }}
             >
