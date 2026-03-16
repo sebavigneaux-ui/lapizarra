@@ -1,11 +1,11 @@
-import type { BloqueId, RangoAsistentes, TipoEvento, Resultado } from "../../types/calculator";
+import type { RangoAsistentes, TipoEvento, Resultado, SeleccionBloques } from "../../types/calculator";
 import { BLOQUES_BY_ID } from "../../config/bloques";
 import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION } from "../../config/pricing";
 
 export function calcular(
   tipoEvento: TipoEvento,
   asistentes: RangoAsistentes,
-  bloquesSeleccionados: BloqueId[]
+  seleccionBloques: SeleccionBloques
 ): Resultado {
   const tipo = TIPOS_EVENTO.find((t) => t.id === tipoEvento)!;
   const personas = PROMEDIO_ASISTENTES[asistentes];
@@ -15,16 +15,27 @@ export function calcular(
   let subtotalMin = 0;
   let subtotalMax = 0;
 
-  for (const id of bloquesSeleccionados) {
-    const bloque = BLOQUES_BY_ID[id];
+  for (const [bloqueId, nivelId] of Object.entries(seleccionBloques)) {
+    if (!nivelId) continue;
+    const bloque = BLOQUES_BY_ID[bloqueId];
     if (!bloque) continue;
 
-    const min =
-      (bloque.costoFijo[0] + bloque.costoPorPersona[0] * personas) * mult;
-    const max =
-      (bloque.costoFijo[1] + bloque.costoPorPersona[1] * personas) * mult;
+    const nivel = bloque.niveles.find((n) => n.id === nivelId);
+    if (!nivel) continue;
 
-    desglose.push({ label: bloque.label, monto: [min, max] });
+    const min = (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * mult;
+    const max = (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * mult;
+
+    const nivelLabel: Record<string, string> = {
+      basico: "Básico",
+      medio: "Premium",
+      top: "Top",
+    };
+
+    desglose.push({
+      label: `${bloque.label} · ${nivelLabel[nivelId] ?? nivelId}`,
+      monto: [min, max],
+    });
     subtotalMin += min;
     subtotalMax += max;
   }
@@ -39,7 +50,7 @@ export function calcular(
 
   const recomendaciones = generarRecomendaciones(
     tipoEvento,
-    bloquesSeleccionados,
+    Object.keys(seleccionBloques),
     tipo.bloquesRecomendados
   );
 
@@ -52,14 +63,14 @@ export function calcular(
 
 function generarRecomendaciones(
   tipo: TipoEvento,
-  seleccionados: BloqueId[],
-  recomendados: BloqueId[]
+  seleccionados: string[],
+  recomendados: string[]
 ): string[] {
   const faltantes = recomendados.filter((id) => !seleccionados.includes(id));
   const msgs: string[] = [];
 
-  if (faltantes.includes("av_basico") && !seleccionados.includes("av_premium")) {
-    msgs.push("Para este tipo de evento recomendamos incluir al menos AV básico.");
+  if (faltantes.includes("tecnica")) {
+    msgs.push("Para este tipo de evento recomendamos incluir al menos técnica audiovisual básica.");
   }
   if (faltantes.includes("fotografia")) {
     msgs.push("El registro fotográfico es clave para aprovechar el evento en comunicaciones.");
@@ -70,7 +81,7 @@ function generarRecomendaciones(
   if (tipo === "corporativo" && !seleccionados.includes("catering")) {
     msgs.push("El catering mejora significativamente la experiencia en eventos corporativos.");
   }
-  if (seleccionados.length < 3) {
+  if (seleccionados.length < 2) {
     msgs.push("Considera agregar más bloques para tener una estimación más completa.");
   }
 

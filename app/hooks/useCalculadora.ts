@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import type { CalculadoraState, BloqueId, TipoEvento, RangoAsistentes } from "../types/calculator";
+import type { CalculadoraState, NivelId, TipoEvento, RangoAsistentes } from "../types/calculator";
 
 const initial: CalculadoraState = {
   step: 1,
   tipoEvento: null,
   asistentes: null,
-  bloquesSeleccionados: [],
+  seleccionBloques: {},
   nombre: "",
   empresa: "",
   correo: "",
@@ -22,13 +22,18 @@ export function useCalculadora() {
   const setAsistentes = (asistentes: RangoAsistentes) =>
     setState((s) => ({ ...s, asistentes }));
 
-  const toggleBloque = (id: BloqueId) =>
-    setState((s) => ({
-      ...s,
-      bloquesSeleccionados: s.bloquesSeleccionados.includes(id)
-        ? s.bloquesSeleccionados.filter((b) => b !== id)
-        : [...s.bloquesSeleccionados, id],
-    }));
+  // Seleccionar un nivel para un bloque; si ya está seleccionado, lo deselecciona
+  const toggleNivel = (bloqueId: string, nivelId: NivelId) =>
+    setState((s) => {
+      const actual = s.seleccionBloques[bloqueId];
+      const nueva = { ...s.seleccionBloques };
+      if (actual === nivelId) {
+        delete nueva[bloqueId];
+      } else {
+        nueva[bloqueId] = nivelId;
+      }
+      return { ...s, seleccionBloques: nueva };
+    });
 
   const goTo = (step: CalculadoraState["step"]) =>
     setState((s) => ({ ...s, step }));
@@ -45,13 +50,13 @@ export function useCalculadora() {
   const reset = () => setState(initial);
 
   const canAdvanceStep1 = state.tipoEvento !== null && state.asistentes !== null;
-  const canAdvanceStep2 = state.bloquesSeleccionados.length >= 1;
+  const canAdvanceStep2 = Object.keys(state.seleccionBloques).length >= 1;
 
   return {
     state,
     setTipo,
     setAsistentes,
-    toggleBloque,
+    toggleNivel,
     goTo,
     next,
     back,

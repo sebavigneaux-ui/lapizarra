@@ -1,24 +1,56 @@
 "use client";
-import type { BloqueId } from "../../types/calculator";
-import { BLOQUES } from "../../config/bloques";
-
-const CATEGORIAS = [
-  { id: "espacio", label: "Espacio y decoración" },
-  { id: "gastronomia", label: "Gastronomía" },
-  { id: "tecnologia", label: "Tecnología" },
-  { id: "contenido", label: "Contenido" },
-  { id: "logistica", label: "Logística" },
-];
+import type { NivelId, SeleccionBloques } from "../../types/calculator";
+import { BLOQUES_BY_CATEGORIA } from "../../config/bloques";
+import { PROMEDIO_ASISTENTES } from "../../config/pricing";
+import type { RangoAsistentes } from "../../types/calculator";
+import { formatCLP } from "../../lib/formatters";
 
 interface Props {
-  seleccionados: BloqueId[];
-  onToggle: (id: BloqueId) => void;
+  seleccion: SeleccionBloques;
+  asistentes: RangoAsistentes;
+  multiplicador: number;
+  onToggle: (bloqueId: string, nivelId: NivelId) => void;
   onNext: () => void;
   onBack: () => void;
   canNext: boolean;
 }
 
-export default function StepBloques({ seleccionados, onToggle, onNext, onBack, canNext }: Props) {
+const NIVEL_LABELS: Record<NivelId, string> = {
+  basico: "Básico",
+  medio: "Premium",
+  top: "Top",
+};
+
+const NIVEL_COLORS: Record<NivelId, string> = {
+  basico: "border-white/30 bg-white/5",
+  medio: "border-[#EC008C]/70 bg-[#EC008C]/10",
+  top: "border-yellow-400/60 bg-yellow-400/8",
+};
+
+const NIVEL_ACTIVE: Record<NivelId, string> = {
+  basico: "border-white bg-white/15 text-white",
+  medio: "border-[#EC008C] bg-[#EC008C]/20 text-white",
+  top: "border-yellow-400 bg-yellow-400/15 text-white",
+};
+
+const NIVEL_BADGE: Record<NivelId, string> = {
+  basico: "bg-white/20 text-white",
+  medio: "bg-[#EC008C] text-white",
+  top: "bg-yellow-400 text-[#231F20]",
+};
+
+export default function StepBloques({
+  seleccion,
+  asistentes,
+  multiplicador,
+  onToggle,
+  onNext,
+  onBack,
+  canNext,
+}: Props) {
+  const personas = PROMEDIO_ASISTENTES[asistentes];
+  const totalSeleccionados = Object.keys(seleccion).length;
+
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
       <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 2 —</p>
@@ -26,65 +58,100 @@ export default function StepBloques({ seleccionados, onToggle, onNext, onBack, c
         ¿Qué necesitas para tu evento?
       </h2>
       <p className="text-white/40 text-sm mb-10">
-        Selecciona uno o más bloques. Puedes agregar lo que quieras.
+        Elige el nivel de cada servicio. Los precios consideran ~{personas} asistentes.
       </p>
 
-      <div className="space-y-8 mb-12">
-        {CATEGORIAS.map((cat) => {
-          const bloques = BLOQUES.filter((b) => b.categoria === cat.id);
-          return (
-            <div key={cat.id}>
-              <p className="text-white/30 text-xs font-black uppercase tracking-widest mb-3">
-                {cat.label}
+      <div className="space-y-10 mb-12">
+        {BLOQUES_BY_CATEGORIA.map(({ categoria, bloques }) => (
+          <div key={categoria.id}>
+            {/* Cabecera categoría */}
+            <div className="flex items-center gap-3 mb-4">
+              <p className="text-white/40 text-xs font-black uppercase tracking-widest">
+                {categoria.label}
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                {bloques.map((bloque) => {
-                  const active = seleccionados.includes(bloque.id);
-                  return (
-                    <button
-                      key={bloque.id}
-                      onClick={() => onToggle(bloque.id)}
-                      className={`text-left p-4 rounded-xl border transition-all duration-200 group relative ${
-                        active
-                          ? "border-[#EC008C] bg-[#EC008C]/10"
-                          : "border-white/10 bg-white/[0.03] hover:border-white/25 hover:bg-white/[0.05]"
-                      }`}
-                    >
-                      {active && (
-                        <span className="absolute top-3 right-3 w-5 h-5 rounded-full bg-[#EC008C] flex items-center justify-center">
-                          <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        </span>
-                      )}
-                      <span
-                        className={`block font-black text-sm mb-1 transition-colors duration-200 ${
-                          active ? "text-white" : "text-white/70 group-hover:text-white"
-                        }`}
-                      >
+              <div className="flex-1 h-px bg-white/10" />
+            </div>
+
+            {/* Bloques de esta categoría */}
+            <div className="space-y-3">
+              {bloques.map((bloque) => {
+                const nivelActual = seleccion[bloque.id];
+                return (
+                  <div key={bloque.id} className="rounded-xl border border-white/10 overflow-hidden">
+                    {/* Nombre del bloque */}
+                    <div className="px-4 pt-4 pb-3 flex items-center justify-between">
+                      <span className={`font-black text-base transition-colors duration-200 ${nivelActual ? "text-white" : "text-white/50"}`}>
                         {bloque.label}
                       </span>
-                      <span className="block text-xs text-white/35 leading-snug">
-                        {bloque.desc}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+                      {nivelActual && (
+                        <span className={`text-xs font-black px-2.5 py-1 rounded-full ${NIVEL_BADGE[nivelActual]}`}>
+                          {NIVEL_LABELS[nivelActual]}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Niveles */}
+                    <div className="grid grid-cols-3 gap-2 px-3 pb-3">
+                      {bloque.niveles.map((nivel) => {
+                        const active = nivelActual === nivel.id;
+                        const costoMin = Math.round(
+                          (nivel.costoFijo[0] + nivel.costoPorPersona[0] * personas) * multiplicador
+                        );
+                        const costoMax = Math.round(
+                          (nivel.costoFijo[1] + nivel.costoPorPersona[1] * personas) * multiplicador
+                        );
+
+                        return (
+                          <button
+                            key={nivel.id}
+                            onClick={() => onToggle(bloque.id, nivel.id)}
+                            className={`text-left p-3 rounded-lg border transition-all duration-200 group ${
+                              active
+                                ? NIVEL_ACTIVE[nivel.id]
+                                : `${NIVEL_COLORS[nivel.id]} hover:opacity-80`
+                            }`}
+                          >
+                            <span className={`block text-xs font-black mb-1 ${
+                              active ? "" : "text-white/50 group-hover:text-white/80"
+                            }`}>
+                              {nivel.label}
+                            </span>
+                            <span className={`block text-xs leading-snug mb-2 hidden sm:block ${
+                              active ? "text-white/70" : "text-white/30"
+                            }`}>
+                              {nivel.desc}
+                            </span>
+                            <span className={`block text-xs font-black ${
+                              active ? "text-white" : "text-white/40"
+                            }`}>
+                              {formatCLP(costoMin)}
+                              <span className="font-normal text-white/40"> – </span>
+                              {formatCLP(costoMax)}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       {/* Resumen selección */}
-      {seleccionados.length > 0 && (
+      {totalSeleccionados > 0 && (
         <div className="mb-8 p-4 rounded-xl bg-[#EC008C]/10 border border-[#EC008C]/30">
           <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-2">
-            {seleccionados.length} bloque{seleccionados.length > 1 ? "s" : ""} seleccionado{seleccionados.length > 1 ? "s" : ""}
+            {totalSeleccionados} servicio{totalSeleccionados > 1 ? "s" : ""} incluido{totalSeleccionados > 1 ? "s" : ""}
           </p>
-          <p className="text-white/60 text-sm">
-            {seleccionados
-              .map((id) => BLOQUES.find((b) => b.id === id)?.label)
+          <p className="text-white/60 text-sm leading-relaxed">
+            {Object.entries(seleccion)
+              .map(([id, nivel]) => {
+                const b = BLOQUES_BY_CATEGORIA.flatMap((c) => c.bloques).find((b) => b.id === id);
+                return b ? `${b.label} (${NIVEL_LABELS[nivel!]})` : null;
+              })
               .filter(Boolean)
               .join(" · ")}
           </p>

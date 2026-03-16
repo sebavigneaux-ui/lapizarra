@@ -13,31 +13,39 @@ export type RangoAsistentes =
   | "200-400"
   | "400plus";
 
-export type BloqueId =
-  | "venue"
-  | "catering"
-  | "av_basico"
-  | "av_premium"
-  | "iluminacion"
-  | "decoracion"
-  | "fotografia"
-  | "video"
-  | "animacion"
-  | "rrhh"
-  | "transporte"
-  | "activacion"
-  | "streaming"
-  | "branding_fisico";
+export type NivelId = "basico" | "medio" | "top";
 
-export interface BloqueConfig {
-  id: BloqueId;
+export interface Nivel {
+  id: NivelId;
   label: string;
   desc: string;
-  icon: string;
-  costoFijo: [number, number]; // CLP [min, max]
+  costoFijo: [number, number];       // CLP [min, max]
   costoPorPersona: [number, number]; // CLP adicional por persona [min, max]
-  categoria: "espacio" | "gastronomia" | "tecnologia" | "contenido" | "logistica";
 }
+
+export interface BloqueConfig {
+  id: string;
+  label: string;
+  categoria: CategoriaId;
+  niveles: [Nivel, Nivel, Nivel];
+}
+
+export type CategoriaId =
+  | "espacio"
+  | "gastronomia"
+  | "tecnica"
+  | "iluminacion"
+  | "streaming"
+  | "contenido"
+  | "logistica";
+
+export interface CategoriaConfig {
+  id: CategoriaId;
+  label: string;
+}
+
+// Selección: bloqueId → NivelId elegido (o ausente = no seleccionado)
+export type SeleccionBloques = Partial<Record<string, NivelId>>;
 
 export interface TipoEventoConfig {
   id: TipoEvento;
@@ -45,14 +53,14 @@ export interface TipoEventoConfig {
   desc: string;
   icon: string;
   multiplicador: number;
-  bloquesRecomendados: BloqueId[];
+  bloquesRecomendados: string[];
 }
 
 export interface CalculadoraState {
   step: 1 | 2 | 3 | 4;
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
-  bloquesSeleccionados: BloqueId[];
+  seleccionBloques: SeleccionBloques;
   nombre: string;
   empresa: string;
   correo: string;

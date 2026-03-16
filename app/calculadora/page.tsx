@@ -9,13 +9,14 @@ import StepResultado from "./components/StepResultado";
 import StepLead from "./components/StepLead";
 import { useCalculadora } from "../hooks/useCalculadora";
 import { calcular } from "../lib/calculator/engine";
+import { TIPOS_EVENTO } from "../config/pricing";
 
 export default function CalculadoraPage() {
   const {
     state,
     setTipo,
     setAsistentes,
-    toggleBloque,
+    toggleNivel,
     next,
     back,
     setLead,
@@ -23,14 +24,17 @@ export default function CalculadoraPage() {
     canAdvanceStep2,
   } = useCalculadora();
 
+  const multiplicador = state.tipoEvento
+    ? (TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.multiplicador ?? 1)
+    : 1;
+
   const resultado =
     state.step >= 3 && state.tipoEvento && state.asistentes
-      ? calcular(state.tipoEvento, state.asistentes, state.bloquesSeleccionados)
+      ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques)
       : null;
 
   return (
     <div className="min-h-screen bg-[#231F20] relative overflow-hidden">
-      {/* Fondo con blobs */}
       <Blobs />
 
       {/* Header */}
@@ -63,9 +67,8 @@ export default function CalculadoraPage() {
         </div>
       </header>
 
-      {/* Contenido principal */}
+      {/* Contenido */}
       <main className="relative z-10 max-w-5xl mx-auto px-6 py-12 md:py-20">
-        {/* Título hero */}
         {state.step === 1 && (
           <div className="mb-16">
             <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-4">
@@ -84,12 +87,10 @@ export default function CalculadoraPage() {
           </div>
         )}
 
-        {/* Stepper — visible en todos los pasos */}
         <div className="mb-10">
           <Stepper step={state.step} />
         </div>
 
-        {/* Pasos */}
         <div className="max-w-3xl">
           {state.step === 1 && (
             <StepContexto
@@ -102,10 +103,12 @@ export default function CalculadoraPage() {
             />
           )}
 
-          {state.step === 2 && (
+          {state.step === 2 && state.asistentes && (
             <StepBloques
-              seleccionados={state.bloquesSeleccionados}
-              onToggle={toggleBloque}
+              seleccion={state.seleccionBloques}
+              asistentes={state.asistentes}
+              multiplicador={multiplicador}
+              onToggle={toggleNivel}
               onNext={next}
               onBack={back}
               canNext={canAdvanceStep2}
