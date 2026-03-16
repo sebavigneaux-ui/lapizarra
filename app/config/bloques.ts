@@ -29,21 +29,21 @@ export const BLOQUES: BloqueConfig[] = [
     niveles: [
       {
         id: "basico",
-        label: "Básica",
+        label: "Básico",
         desc: "Salón funcional, sin producción adicional.",
         costoFijo: [2_000_000, 3_200_000],
         costoPorPersona: [0, 0],
       },
       {
         id: "medio",
-        label: "Media",
+        label: "Medio",
         desc: "Hotel de categoría o venue de diseño.",
         costoFijo: [4_000_000, 6_500_000],
         costoPorPersona: [0, 0],
       },
       {
         id: "top",
-        label: "Top",
+        label: "Premium",
         desc: "Espacio exclusivo con montaje completo.",
         costoFijo: [8_000_000, 13_000_000],
         costoPorPersona: [0, 0],

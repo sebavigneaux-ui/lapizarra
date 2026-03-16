@@ -5,6 +5,9 @@ import { formatCLP, formatRango } from "../../lib/formatters";
 
 interface Props {
   resultado: Resultado;
+  tipoLabel: string;
+  asistentesLabel: string;
+  regionLabel: string;
   onNext: () => void;
   onBack: () => void;
 }
@@ -57,7 +60,7 @@ function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: 
   );
 }
 
-export default function StepResultado({ resultado, onNext, onBack }: Props) {
+export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, onNext, onBack }: Props) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -83,6 +86,19 @@ export default function StepResultado({ resultado, onNext, onBack }: Props) {
       <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-10 leading-tight">
         Tu evento podría estar<br className="hidden md:block" /> en este rango
       </h2>
+
+      {/* Contexto del evento */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        <span className="px-3 py-1.5 rounded-full bg-[#EC008C]/20 border border-[#EC008C]/30 text-[#EC008C] text-xs font-bold">
+          {tipoLabel}
+        </span>
+        <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+          {asistentesLabel} asistentes
+        </span>
+        <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+          {regionLabel}
+        </span>
+      </div>
 
       {/* Número grande */}
       <div

@@ -11,7 +11,7 @@ import StepLead from "./components/StepLead";
 import { useEffect } from "react";
 import { useCalculadora } from "../hooks/useCalculadora";
 import { calcular } from "../lib/calculator/engine";
-import { TIPOS_EVENTO } from "../config/pricing";
+import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../config/pricing";
 
 export default function CalculadoraPage() {
   const {
@@ -129,9 +129,12 @@ export default function CalculadoraPage() {
             />
           )}
 
-          {state.step === 4 && resultado && (
+          {state.step === 4 && resultado && state.tipoEvento && state.asistentes && state.region && (
             <StepResultado
               resultado={resultado}
+              tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
+              asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
+              regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
               onNext={next}
               onBack={back}
             />
