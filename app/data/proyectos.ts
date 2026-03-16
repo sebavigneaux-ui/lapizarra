@@ -156,7 +156,7 @@ export const proyectos: Proyecto[] = [
     conceptoCreativo:
       "La producción integró todos los elementos de una carrera de alto estándar con una identidad visual coherente con la marca. El recorrido, la señalética, la zona de partida y llegada, el sistema de cronometraje y la premiación fueron diseñados como una experiencia unificada que reflejara los valores de Parque Arauco: familia, comunidad y bienestar.",
     resultado:
-      "Más de 1.500 corredores participaron en las distintas categorías del evento. La cobertura en redes sociales superó las proyecciones iniciales, con miles de menciones orgánicas durante el día de la carrera. El evento se consolidó como un referente deportivo en la comuna de Maipú.",
+      "Más de 5.000 corredores participaron en las distintas categorías del evento. La cobertura en redes sociales superó las proyecciones iniciales, con miles de menciones orgánicas durante el día de la carrera. El evento se consolidó como un referente deportivo en la comuna de Maipú.",
   },
 ];
 
