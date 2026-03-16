@@ -8,8 +8,16 @@ interface Props {
   tipoLabel: string;
   asistentesLabel: string;
   regionLabel: string;
+  fechaEvento: string | null;
   onNext: () => void;
   onBack: () => void;
+}
+
+const MESES_LARGO = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+function formatFecha(f: string): string {
+  const [anio, mes] = f.split("-");
+  return `${MESES_LARGO[parseInt(mes) - 1]} ${anio}`;
 }
 
 // Cuántos tercios llenar según nivel
@@ -64,7 +72,7 @@ function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: 
   );
 }
 
-export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, onNext, onBack }: Props) {
+export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento, onNext, onBack }: Props) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -102,6 +110,11 @@ export default function StepResultado({ resultado, tipoLabel, asistentesLabel, r
         <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
           {regionLabel}
         </span>
+        {fechaEvento && (
+          <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/60 text-xs font-bold">
+            {formatFecha(fechaEvento)}
+          </span>
+        )}
       </div>
 
       {/* Número grande */}
