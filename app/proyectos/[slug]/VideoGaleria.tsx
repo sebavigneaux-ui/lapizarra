@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 function VideoCard({ id }: { id: string }) {
   const [playing, setPlaying] = useState(false);
@@ -23,14 +24,20 @@ function VideoCard({ id }: { id: string }) {
       className="aspect-video w-full relative cursor-pointer group overflow-hidden bg-[#231F20]"
       onClick={() => setPlaying(true)}
     >
-      {/* Thumbnail YouTube */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
-        alt="Video del proyecto"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-all duration-300" />
+      {/* Portada: logo LaPizarra centrado */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Image
+          src="/logo-blanco.png"
+          alt=""
+          width={340}
+          height={136}
+          className="object-contain select-none"
+          style={{ opacity: 0.12 }}
+        />
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#231F20]/90 via-[#231F20]/20 to-transparent group-hover:from-[#231F20]/95 transition-all duration-300" />
 
       {/* Botón play */}
       <div className="absolute inset-0 flex items-center justify-center">
