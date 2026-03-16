@@ -74,7 +74,8 @@ export interface CalculadoraState {
 export interface DesgloseLine {
   label: string;
   monto: [number, number];
-  nivelId?: NivelId; // undefined = fee de producción
+  nivelId?: NivelId;  // undefined = fee de producción
+  bloqueId?: string;  // undefined for fee line
 }
 
 export interface Recomendacion {

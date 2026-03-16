@@ -10,23 +10,12 @@ interface Props {
   regionLabel: string;
   fechaEvento: string | null;
   onAgregar: (bloqueId: string, nivelId: NivelId) => void;
+  onCambiarNivel: (bloqueId: string, nivelId: NivelId) => void;
   onNext: () => void;
   onBack: () => void;
 }
 
-const MESES_LARGO = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-function formatFecha(f: string): string {
-  const [anio, mes] = f.split("-");
-  return `${MESES_LARGO[parseInt(mes) - 1]} ${anio}`;
-}
-
-// Cuántos tercios llenar según nivel
-const NIVEL_TERCIOS: Record<NivelId, 1 | 2 | 3> = {
-  basico: 1,
-  medio: 2,
-  top: 3,
-};
+const NIVEL_TERCIOS: Record<NivelId, 1 | 2 | 3> = { basico: 1, medio: 2, top: 3 };
 
 const NIVEL_WIDTH: Record<NivelId, string> = {
   basico: "33.33%",
@@ -40,42 +29,116 @@ const NIVEL_DISPLAY_LABEL: Record<NivelId, string> = {
   top: "Premium",
 };
 
-function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: boolean; delay: number }) {
+const MESES_LARGO = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+function formatFecha(f: string): string {
+  const [anio, mes] = f.split("-");
+  return `${MESES_LARGO[parseInt(mes) - 1]} ${anio}`;
+}
+
+function useAnimatedTotal(total: [number, number]) {
+  const [display, setDisplay] = useState<[number, number]>(total);
+  const prev = useRef<[number, number]>(total);
+  const raf = useRef<number | null>(null);
+
+  useEffect(() => {
+    const [fromMin, fromMax] = prev.current;
+    const [toMin, toMax] = total;
+    if (fromMin === toMin && fromMax === toMax) return;
+
+    if (raf.current) cancelAnimationFrame(raf.current);
+
+    const duration = 500;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const p = Math.min((now - start) / duration, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      setDisplay([
+        Math.round(fromMin + (toMin - fromMin) * e),
+        Math.round(fromMax + (toMax - fromMax) * e),
+      ]);
+      if (p < 1) {
+        raf.current = requestAnimationFrame(tick);
+      } else {
+        prev.current = total;
+      }
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => { if (raf.current) cancelAnimationFrame(raf.current); };
+  }, [total[0], total[1]]);
+
+  return display;
+}
+
+interface BarraProps {
+  nivelId: NivelId;
+  bloqueId?: string;
+  visible: boolean;
+  delay: number;
+  onSetNivel?: (nivelId: NivelId) => void;
+}
+
+function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: BarraProps) {
+  const [hover, setHover] = useState<NivelId | null>(null);
+  const activeNivel = hover ?? nivelId;
+  const niveles: NivelId[] = ["basico", "medio", "top"];
+
   return (
     <div className="mt-2">
       {/* Barra de gradiente continuo */}
       <div className="w-full h-1.5 rounded-full bg-white/8 overflow-hidden mb-1.5">
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-full transition-all duration-500"
           style={{
-            width: visible ? NIVEL_WIDTH[nivelId] : "0%",
-            transitionDelay: `${delay}ms`,
+            width: visible ? NIVEL_WIDTH[activeNivel] : "0%",
+            transitionDelay: hover ? "0ms" : `${delay}ms`,
             background: "linear-gradient(to right, rgba(255,255,255,0.4), #EC008C)",
           }}
         />
       </div>
-      {/* Etiquetas: encendida solo la del nivel elegido */}
+      {/* Etiquetas interactivas */}
       <div className="flex">
-        {(["basico", "medio", "top"] as NivelId[]).map((n, i) => (
-          <div key={i} className="flex-1 flex justify-center">
-            <span
-              className={`text-[10px] font-black transition-all duration-300 ${
-                n === nivelId ? "text-white" : "text-white/20"
+        {niveles.map((n) => {
+          const isActive = n === nivelId;
+          const isHovered = n === hover;
+          return (
+            <button
+              key={n}
+              disabled={!bloqueId || !onSetNivel}
+              onClick={() => {
+                if (bloqueId && onSetNivel && n !== nivelId) onSetNivel(n);
+              }}
+              onMouseEnter={() => bloqueId && setHover(n)}
+              onMouseLeave={() => setHover(null)}
+              className={`flex-1 text-[10px] font-black transition-all duration-200 py-0.5 rounded ${
+                bloqueId && onSetNivel
+                  ? "cursor-pointer hover:bg-white/5"
+                  : "cursor-default"
+              } ${
+                isActive
+                  ? "text-white"
+                  : isHovered
+                  ? "text-white/60"
+                  : "text-white/20"
               }`}
-              style={{ transitionDelay: `${delay + 200}ms` }}
             >
               {NIVEL_DISPLAY_LABEL[n]}
-            </span>
-          </div>
-        ))}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
 }
 
-export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento, onAgregar, onNext, onBack }: Props) {
+export default function StepResultado({
+  resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento,
+  onAgregar, onCambiarNivel, onNext, onBack,
+}: Props) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const displayTotal = useAnimatedTotal(resultado.total);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
@@ -118,21 +181,21 @@ export default function StepResultado({ resultado, tipoLabel, asistentesLabel, r
         )}
       </div>
 
-      {/* Número grande */}
+      {/* Número grande animado */}
       <div
         className="mb-10 transition-all duration-700"
         style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
       >
         <p className="text-white/30 text-sm font-black uppercase tracking-widest mb-2">Estimación total</p>
         <p className="font-black leading-none tracking-tighter text-white">
-          <span className="text-5xl md:text-7xl">{formatCLP(resultado.total[0])}</span>
+          <span className="text-5xl md:text-7xl">{formatCLP(displayTotal[0])}</span>
           <span className="text-3xl md:text-5xl text-white/40"> – </span>
-          <span className="text-5xl md:text-7xl text-[#EC008C]">{formatCLP(resultado.total[1])}</span>
+          <span className="text-5xl md:text-7xl text-[#EC008C]">{formatCLP(displayTotal[1])}</span>
         </p>
         <p className="text-white/30 text-sm mt-3">Valores referenciales en pesos chilenos, sin IVA.</p>
       </div>
 
-      {/* Desglose — solo ítems marcados */}
+      {/* Desglose — barras interactivas */}
       <div
         className="mb-4 border-t border-white/10 transition-all duration-700 delay-200"
         style={{ opacity: visible ? 1 : 0 }}
@@ -149,12 +212,18 @@ export default function StepResultado({ resultado, tipoLabel, asistentesLabel, r
                 <span className="text-white/70 text-sm font-bold">{item.label}</span>
                 <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
               </div>
-              <BarraTercios nivelId={item.nivelId!} visible={visible} delay={300 + i * 60} />
+              <BarraInteractiva
+                nivelId={item.nivelId!}
+                bloqueId={item.bloqueId}
+                visible={visible}
+                delay={300 + i * 60}
+                onSetNivel={item.bloqueId ? (n) => onCambiarNivel(item.bloqueId!, n) : undefined}
+              />
             </div>
           ))}
       </div>
 
-      {/* Fee de producción — nota de texto, no como ítem gráfico */}
+      {/* Fee de producción */}
       <p
         className="text-white/25 text-xs mb-10 transition-all duration-700"
         style={{ opacity: visible ? 1 : 0, transitionDelay: "500ms" }}

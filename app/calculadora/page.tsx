@@ -8,6 +8,7 @@ import StepBloques from "./components/StepBloques";
 import StepDetalle from "./components/StepDetalle";
 import StepResultado from "./components/StepResultado";
 import StepLead from "./components/StepLead";
+import ContextStrip from "./components/ContextStrip";
 import { useEffect } from "react";
 import { useCalculadora } from "../hooks/useCalculadora";
 import { calcular } from "../lib/calculator/engine";
@@ -90,6 +91,15 @@ export default function CalculadoraPage() {
         </div>
 
         <div className="max-w-3xl">
+          {state.step >= 2 && state.tipoEvento && state.asistentes && state.region && (
+            <ContextStrip
+              tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
+              asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
+              regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
+              fechaEvento={state.fechaEvento}
+            />
+          )}
+
           {state.step === 1 && (
             <StepContexto
               tipoEvento={state.tipoEvento}
@@ -140,6 +150,7 @@ export default function CalculadoraPage() {
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
               fechaEvento={state.fechaEvento}
               onAgregar={toggleNivel}
+              onCambiarNivel={toggleNivel}
               onNext={next}
               onBack={back}
             />

@@ -32,6 +32,7 @@ export function calcular(
       label: bloque.label,
       monto: [min, max],
       nivelId,
+      bloqueId,
     });
     subtotalMin += min;
     subtotalMax += max;
