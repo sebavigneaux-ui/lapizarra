@@ -19,43 +19,47 @@ const NIVEL_TERCIOS: Record<NivelId, 1 | 2 | 3> = {
   top: 3,
 };
 
-const TERCIO_COLOR = ["bg-white/30", "bg-[#EC008C]/70", "bg-yellow-400"];
+const NIVEL_WIDTH: Record<NivelId, string> = {
+  basico: "33.33%",
+  medio: "66.66%",
+  top: "100%",
+};
+
+const NIVEL_LABEL_COLOR: Record<NivelId, string> = {
+  basico: "text-white/40",
+  medio: "text-white/60",
+  top: "text-[#EC008C]",
+};
 
 function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: boolean; delay: number }) {
-  const tercios = NIVEL_TERCIOS[nivelId] ?? 0;
   return (
-    <div className="flex gap-0.5 mt-2">
-      {[0, 1, 2].map((i) => {
-        const lleno = i < tercios;
-        const isTop = i === 2;
-        return (
-          <div key={i} className="flex-1 flex flex-col gap-1 items-center">
-            <div className="w-full h-1.5 rounded-full bg-white/8 overflow-hidden">
-              <div
-                className={`h-full rounded-full transition-all duration-500 ${lleno ? TERCIO_COLOR[i] : ""}`}
-                style={{
-                  width: visible && lleno ? "100%" : "0%",
-                  transitionDelay: `${delay + i * 80}ms`,
-                }}
-              />
-            </div>
+    <div className="mt-2">
+      {/* Barra de gradiente continuo */}
+      <div className="w-full h-1.5 rounded-full bg-white/8 overflow-hidden mb-1.5">
+        <div
+          className="h-full rounded-full transition-all duration-700"
+          style={{
+            width: visible ? NIVEL_WIDTH[nivelId] : "0%",
+            transitionDelay: `${delay}ms`,
+            background: "linear-gradient(to right, rgba(255,255,255,0.4), #EC008C)",
+          }}
+        />
+      </div>
+      {/* Etiquetas de los tres puntos */}
+      <div className="flex">
+        {(["Básica", "Media", "Premium"] as const).map((label, i) => (
+          <div key={i} className="flex-1 flex justify-center">
             <span
-              className={`text-[10px] font-black transition-all duration-300 ${
-                lleno && isTop
-                  ? "text-yellow-400"
-                  : lleno
-                  ? i === 1
-                    ? "text-[#EC008C]/70"
-                    : "text-white/40"
-                  : "text-white/15"
+              className={`text-[10px] font-black transition-colors duration-300 ${
+                i < NIVEL_TERCIOS[nivelId] ? NIVEL_LABEL_COLOR[nivelId] : "text-white/15"
               }`}
               style={{ transitionDelay: `${delay + 200}ms` }}
             >
-              {i === 0 ? "Básica" : i === 1 ? "Media" : "Premium"}
+              {label}
             </span>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }

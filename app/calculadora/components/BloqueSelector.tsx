@@ -23,14 +23,14 @@ const NIVEL_BADGE_LABEL: Record<NivelId, string> = {
 
 const NIVEL_BADGE_STYLE: Record<NivelId, string> = {
   basico: "bg-white/20 text-white",
-  medio: "bg-[#EC008C] text-white",
-  top: "bg-yellow-400 text-[#231F20]",
+  medio: "bg-white/35 text-white",
+  top: "bg-[#EC008C] text-white",
 };
 
 const NIVEL_ACTIVE_STYLE: Record<NivelId, string> = {
-  basico: "border-white/80 bg-white/12 text-white",
-  medio: "border-[#EC008C] bg-[#EC008C]/20 text-white",
-  top: "border-yellow-400 bg-yellow-400/12 text-white",
+  basico: "border-white/60 bg-white/10 text-white",
+  medio: "border-white/80 bg-white/15 text-white",
+  top: "border-[#EC008C] bg-[#EC008C]/20 text-white",
 };
 
 export default function BloqueSelector({
@@ -91,11 +91,6 @@ export default function BloqueSelector({
                       >
                         {bloque.label}
                       </span>
-                      {esRecomendado && !nivelActual && (
-                        <span className="text-[#EC008C] text-xs font-black uppercase tracking-widest bg-[#EC008C]/10 border border-[#EC008C]/30 px-2.5 py-1 rounded-full">
-                          Recomendado
-                        </span>
-                      )}
                       {nivelActual && (
                         <span className={`text-xs font-black px-2.5 py-1 rounded-full ${NIVEL_BADGE_STYLE[nivelActual]}`}>
                           {NIVEL_BADGE_LABEL[nivelActual]}
