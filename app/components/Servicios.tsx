@@ -41,9 +41,7 @@ export default function Servicios() {
   const toggle = (num: string) => setAbierto(abierto === num ? null : num);
 
   return (
-    <section id="servicios" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
-      <Blobs />
-
+    <section id="servicios" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
           <h2 className="text-white font-black leading-none tracking-tighter">

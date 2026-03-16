@@ -19,9 +19,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Servicios />
         <div className="bg-[#231F20] relative overflow-hidden">
           <Blobs />
+          <Servicios />
           <Galeria />
         </div>
         <Testimonios />
