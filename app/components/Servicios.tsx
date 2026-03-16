@@ -79,7 +79,7 @@ export default function Servicios() {
 
                 {/* Descripción desplegable */}
                 <div className={`overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? "max-h-40 pb-8" : "max-h-0"}`}>
-                  <p className="text-white/50 text-lg leading-relaxed pl-18 md:pl-0 md:ml-18 max-w-2xl" style={{ marginLeft: "4.5rem" }}>
+                  <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
                     {s.desc}
                   </p>
                 </div>
