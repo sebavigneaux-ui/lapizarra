@@ -63,7 +63,7 @@ export default function CalculadoraPage() {
             </span>
           </Link>
           <Link href="/" className="flex-shrink-0">
-            <Image src="/logo-blanco.png" alt="LaPizarra" width={96} height={32} className="object-contain" />
+            <Image src="/logo-blanco.png" alt="LaPizarra" width={96} height={32} className="object-contain object-right" />
           </Link>
         </div>
       </header>
