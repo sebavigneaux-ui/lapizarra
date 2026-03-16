@@ -80,24 +80,34 @@ export default function Galeria() {
               </div>
 
               {/* Foto 3 — CTA al proyecto */}
-              <div className="p3 relative overflow-hidden group">
+              <Link href={`/proyectos/${proyecto.slug}`} className="p3 relative overflow-hidden group block">
                 <Image
                   src={proyecto.fotos[2]}
                   alt={`${proyecto.titulo} 3`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-108"
                   sizes="(max-width: 640px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-all duration-300 flex items-end p-4">
-                  <Link
-                    href={`/proyectos/${proyecto.slug}`}
-                    className="text-white border border-white/70 hover:border-white px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Ver proyecto →
-                  </Link>
+                {/* Overlay base */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/50" />
+                {/* Línea magenta inferior */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#EC008C] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                {/* Contenido */}
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                  <p className="text-[#EC008C] text-[10px] font-black uppercase tracking-widest mb-1 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                    {proyecto.cliente}
+                  </p>
+                  <p className="text-white font-black text-sm leading-tight mb-3 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                    {proyecto.titulo}
+                  </p>
+                  <div className="flex items-center gap-2 text-white text-xs font-black uppercase tracking-widest">
+                    <span className="transition-all duration-300 group-hover:mr-1">Ver proyecto</span>
+                    <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         ))}
