@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Blobs from "./Blobs";
 
 const servicios = [
@@ -34,6 +36,10 @@ const servicios = [
 ];
 
 export default function Servicios() {
+  const [abierto, setAbierto] = useState<string | null>(null);
+
+  const toggle = (num: string) => setAbierto(abierto === num ? null : num);
+
   return (
     <section id="servicios" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
       <Blobs />
@@ -49,91 +55,37 @@ export default function Servicios() {
           </p>
         </div>
 
-        <style>{`
-          .srv-acordeon {
-            display: flex;
-            height: 540px;
-            border: 1px solid rgba(255,255,255,0.08);
-          }
-          .srv-col {
-            flex: 1;
-            min-width: 90px;
-            transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            position: relative;
-            border-right: 1px solid rgba(255,255,255,0.08);
-            cursor: default;
-          }
-          .srv-col:last-child { border-right: none; }
-          .srv-col:hover { flex: 6; background: rgba(255,255,255,0.03); }
+        <div className="border-t border-white/10">
+          {servicios.map((s) => {
+            const isOpen = abierto === s.num;
+            return (
+              <div
+                key={s.num}
+                className="border-b border-white/10 cursor-pointer group"
+                onClick={() => toggle(s.num)}
+              >
+                {/* Fila principal */}
+                <div className="flex items-center gap-6 py-6 md:py-8">
+                  <span className="text-[#EC008C] font-black text-2xl md:text-3xl w-12 flex-shrink-0">
+                    {s.num}
+                  </span>
+                  <h3 className={`font-black text-xl md:text-3xl flex-1 transition-colors duration-200 ${isOpen ? "text-[#EC008C]" : "text-white group-hover:text-[#EC008C]"}`}>
+                    {s.titulo}
+                  </h3>
+                  <span className={`text-white/40 text-2xl font-thin flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-45 text-[#EC008C]" : "group-hover:text-white"}`}>
+                    +
+                  </span>
+                </div>
 
-          .srv-rotado {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 0 2rem;
-            transition: opacity 0.15s ease;
-            gap: 1.5rem;
-          }
-          .srv-col:hover .srv-rotado { opacity: 0; pointer-events: none; }
-
-          .srv-num-col {
-            font-size: 2.5rem;
-            font-weight: 900;
-            line-height: 1;
-            color: #EC008C;
-          }
-          .srv-titulo-vertical {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            white-space: nowrap;
-            font-weight: 900;
-            font-size: 1rem;
-            letter-spacing: 0.03em;
-            color: rgba(255,255,255,0.6);
-          }
-
-          .srv-expandido {
-            position: absolute;
-            inset: 0;
-            padding: 2.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease 0.15s;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-          }
-          .srv-col:hover .srv-expandido { opacity: 1; }
-        `}</style>
-
-        {/* Acordeón horizontal — desktop */}
-        <div className="srv-acordeon hidden md:flex">
-          {servicios.map((s) => (
-            <div key={s.num} className="srv-col">
-              <div className="srv-rotado">
-                <span className="srv-num-col">{s.num}</span>
-                <span className="srv-titulo-vertical">{s.titulo}</span>
+                {/* Descripción desplegable */}
+                <div className={`overflow-hidden transition-all duration-400 ease-in-out ${isOpen ? "max-h-40 pb-8" : "max-h-0"}`}>
+                  <p className="text-white/50 text-lg leading-relaxed pl-18 md:pl-0 md:ml-18 max-w-2xl" style={{ marginLeft: "4.5rem" }}>
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-              <div className="srv-expandido">
-                <span className="text-[#EC008C] font-black text-6xl leading-none mb-6">{s.num}</span>
-                <h3 className="text-white font-black text-xl mb-3 leading-tight">{s.titulo}</h3>
-                <p className="text-white/50 text-lg leading-relaxed">{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile — grid 2 columnas */}
-        <div className="md:hidden grid grid-cols-2 gap-px bg-white/10">
-          {servicios.map((s) => (
-            <div key={s.num} className="bg-[#231F20] p-6">
-              <span className="text-[#EC008C] font-black text-4xl leading-none block mb-4">{s.num}</span>
-              <h3 className="text-white font-black text-base mb-2 leading-tight">{s.titulo}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
