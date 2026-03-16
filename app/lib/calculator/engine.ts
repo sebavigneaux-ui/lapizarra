@@ -45,8 +45,8 @@ export function calcular(
   const feeMax = subtotalMax * FEE_PRODUCCION[1];
   desglose.push({ label: "Producción y gestión", monto: [feeMin, feeMax] });
 
-  const totalMin = Math.round((subtotalMin + feeMin) / 500_000) * 500_000;
-  const totalMax = Math.round((subtotalMax + feeMax) / 500_000) * 500_000;
+  const totalMin = Math.round((subtotalMin + feeMin) / 250_000) * 250_000;
+  const totalMax = Math.round((subtotalMax + feeMax) / 250_000) * 250_000;
 
   const recomendaciones = generarRecomendaciones(
     tipoEvento,

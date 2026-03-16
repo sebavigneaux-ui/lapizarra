@@ -68,4 +68,4 @@ export const LABELS_ASISTENTES: Record<RangoAsistentes, string> = {
 };
 
 // Honorarios de producción y gestión (% sobre el subtotal de bloques)
-export const FEE_PRODUCCION: [number, number] = [0.15, 0.22];
+export const FEE_PRODUCCION: [number, number] = [0.17, 0.20];
