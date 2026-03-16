@@ -246,7 +246,7 @@ export default function StepResultado({
         Volver
       </button>
 
-      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 4 — Estimación</p>
+      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 5 — Tu simulación</p>
       <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-10 leading-tight">
         Tu evento podría estar<br className="hidden md:block" /> en este rango
       </h2>
@@ -383,15 +383,17 @@ export default function StepResultado({
           </svg>
           Volver
         </button>
-        <button
-          onClick={onNext}
+        <a
+          href="https://wa.me/56958419326?text=Hola%2C%20acabo%20de%20simular%20mi%20evento%20en%20la%20calculadora%20de%20LaPizarra%20y%20me%20gustar%C3%ADa%20que%20me%20contactaran"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-3 px-8 py-4 rounded-full font-black text-base bg-[#EC008C] text-white hover:bg-[#EC008C]/90 hover:gap-4 transition-all duration-300"
         >
-          Quiero que me contacten
+          Agendar una reunión
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   );

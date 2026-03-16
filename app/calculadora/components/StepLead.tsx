@@ -19,6 +19,7 @@ interface Props {
   resultado: Resultado;
   onChange: (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) => void;
   onBack: () => void;
+  onNext: () => void;
 }
 
 type Estado = "idle" | "enviando" | "enviado" | "error";
@@ -26,7 +27,7 @@ type Estado = "idle" | "enviando" | "enviado" | "error";
 export default function StepLead({
   nombre, empresa, correo, mensaje,
   tipoEvento, asistentes, region, resultado,
-  onChange, onBack,
+  onChange, onBack, onNext,
 }: Props) {
   const [estado, setEstado] = useState<Estado>("idle");
 
@@ -116,15 +117,20 @@ export default function StepLead({
           </svg>
         </div>
         <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-3">
-          ¡Listo!
+          ¡Todo listo!
         </h2>
         <p className="text-white/50 text-base leading-relaxed max-w-sm mx-auto mb-8">
-          Enviamos el PDF con tu simulación a <span className="text-white font-bold">{correo}</span>.
-          Abriendo WhatsApp para coordinar...
+          Tu simulación está lista. También enviamos un resumen a <span className="text-white font-bold">{correo}</span>.
         </p>
-        <div className="flex justify-center">
-          <PDFDownloadButton data={pdfData} />
-        </div>
+        <button
+          onClick={onNext}
+          className="flex items-center gap-3 px-8 py-4 rounded-full font-black text-base bg-[#EC008C] text-white hover:bg-[#EC008C]/90 hover:gap-4 transition-all duration-300 mx-auto"
+        >
+          Ver mi simulación
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
       </div>
     );
   }
@@ -143,12 +149,12 @@ export default function StepLead({
         Volver
       </button>
 
-      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 5 — Contacto</p>
+      <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">Paso 4 — Contacto</p>
       <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-3 leading-tight">
         Cuéntanos más sobre ti
       </h2>
       <p className="text-white/40 text-sm mb-10">
-        Te enviamos el PDF con tu simulación y coordinamos una llamada para afinar la propuesta.
+        Ingresa tus datos para desbloquear la simulación completa. Te enviamos el PDF de inmediato.
       </p>
 
       {/* Resumen */}
@@ -263,7 +269,7 @@ export default function StepLead({
             </>
           ) : (
             <>
-              Recibir PDF y coordinar
+              Ver mi simulación
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

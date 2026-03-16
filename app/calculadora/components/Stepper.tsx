@@ -2,7 +2,7 @@ interface StepperProps {
   step: number;
 }
 
-const LABELS = ["Contexto", "Servicios", "Detalles", "Estimación", "Contacto"];
+const LABELS = ["Contexto", "Servicios", "Detalles", "Contacto", "Estimación"];
 
 export default function Stepper({ step }: StepperProps) {
   const total = LABELS.length;

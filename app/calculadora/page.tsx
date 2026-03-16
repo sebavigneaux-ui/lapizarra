@@ -147,6 +147,22 @@ export default function CalculadoraPage() {
           )}
 
           {state.step === 4 && resultado && state.tipoEvento && state.asistentes && state.region && (
+            <StepLead
+              nombre={state.nombre}
+              empresa={state.empresa}
+              correo={state.correo}
+              mensaje={state.mensaje}
+              tipoEvento={state.tipoEvento}
+              asistentes={state.asistentes}
+              region={state.region}
+              resultado={resultado}
+              onChange={setLead}
+              onBack={back}
+              onNext={next}
+            />
+          )}
+
+          {state.step === 5 && resultado && state.tipoEvento && state.asistentes && state.region && (
             <StepResultado
               resultado={resultado}
               tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
@@ -158,21 +174,6 @@ export default function CalculadoraPage() {
               onCambiarNivel={toggleNivel}
               onQuitar={toggleNivel}
               onNext={next}
-              onBack={back}
-            />
-          )}
-
-          {state.step === 5 && resultado && state.tipoEvento && state.asistentes && state.region && (
-            <StepLead
-              nombre={state.nombre}
-              empresa={state.empresa}
-              correo={state.correo}
-              mensaje={state.mensaje}
-              tipoEvento={state.tipoEvento}
-              asistentes={state.asistentes}
-              region={state.region}
-              resultado={resultado}
-              onChange={setLead}
               onBack={back}
             />
           )}
