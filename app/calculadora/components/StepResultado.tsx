@@ -25,10 +25,10 @@ const NIVEL_WIDTH: Record<NivelId, string> = {
   top: "100%",
 };
 
-const NIVEL_LABEL_COLOR: Record<NivelId, string> = {
-  basico: "text-white/40",
-  medio: "text-white/60",
-  top: "text-[#EC008C]",
+const NIVEL_DISPLAY_LABEL: Record<NivelId, string> = {
+  basico: "Básica",
+  medio: "Media",
+  top: "Premium",
 };
 
 function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: boolean; delay: number }) {
@@ -45,17 +45,17 @@ function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: 
           }}
         />
       </div>
-      {/* Etiquetas de los tres puntos */}
+      {/* Solo la etiqueta del nivel alcanzado */}
       <div className="flex">
-        {(["Básica", "Media", "Premium"] as const).map((label, i) => (
+        {(["basico", "medio", "top"] as NivelId[]).map((n, i) => (
           <div key={i} className="flex-1 flex justify-center">
             <span
-              className={`text-[10px] font-black transition-colors duration-300 ${
-                i < NIVEL_TERCIOS[nivelId] ? NIVEL_LABEL_COLOR[nivelId] : "text-white/15"
+              className={`text-[10px] font-black transition-all duration-300 ${
+                n === nivelId ? "text-white" : "opacity-0"
               }`}
               style={{ transitionDelay: `${delay + 200}ms` }}
             >
-              {label}
+              {NIVEL_DISPLAY_LABEL[n]}
             </span>
           </div>
         ))}
