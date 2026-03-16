@@ -77,8 +77,14 @@ export interface DesgloseLine {
   nivelId?: NivelId; // undefined = fee de producción
 }
 
+export interface Recomendacion {
+  msg: string;
+  bloqueId?: string;  // si tiene, muestra botón "Agregar"
+  nivelId?: NivelId;  // nivel a aplicar al hacer click
+}
+
 export interface Resultado {
   total: [number, number];
   desglose: DesgloseLine[];
-  recomendaciones: string[];
+  recomendaciones: Recomendacion[];
 }

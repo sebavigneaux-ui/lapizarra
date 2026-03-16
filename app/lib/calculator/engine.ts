@@ -1,4 +1,4 @@
-import type { RangoAsistentes, TipoEvento, Resultado, SeleccionBloques, RegionId } from "../../types/calculator";
+import type { RangoAsistentes, TipoEvento, Resultado, Recomendacion, SeleccionBloques, RegionId, NivelId } from "../../types/calculator";
 import { BLOQUES_BY_ID } from "../../config/bloques";
 import { TIPOS_EVENTO, PROMEDIO_ASISTENTES, FEE_PRODUCCION, REGIONES } from "../../config/pricing";
 
@@ -89,45 +89,48 @@ const UPGRADE_MSGS: Record<string, { basico?: string; medio?: string }> = {
   },
 };
 
-// Cross-sell: [condición: tienes A, no tienes B] → mensaje
-type CrossSell = { tiene: string; noTiene: string; tipos?: TipoEvento[]; msg: string };
+const NIVEL_SIGUIENTE: Record<string, NivelId> = { basico: "medio", medio: "top" };
+
+// Cross-sell: [condición: tienes A, no tienes B] → recomendación
+type CrossSell = { tiene: string; noTiene: string; nivelSugerido: NivelId; tipos?: TipoEvento[]; msg: string };
 
 const CROSS_SELLS: CrossSell[] = [
   // Espacio → complementos
-  { tiene: "venue",             noTiene: "decoracion",        msg: "Decoración temática en el venue refuerza la identidad de marca y genera cohesión visual desde la entrada." },
-  { tiene: "venue",             noTiene: "catering",          msg: "Sin catering el venue queda desaprovechado — la gastronomía prolonga la estadía y mejora la valoración del evento." },
-  { tiene: "construccion_stand",noTiene: "activacion",        msg: "Una activación de marca en el stand convierte visitantes en leads y multiplica el retorno de la inversión." },
-  // Técnica → iluminación y viceversa
-  { tiene: "tecnica",           noTiene: "iluminacion",       msg: "La iluminación escénica es el complemento directo de la técnica: juntos transforman el espacio en una experiencia visual completa." },
-  { tiene: "iluminacion",       noTiene: "tecnica",           msg: "La técnica audiovisual es la base que potencia cualquier diseño de iluminación — sin ella, el impacto visual pierde soporte." },
+  { tiene: "venue",              noTiene: "decoracion",       nivelSugerido: "basico", msg: "Decoración y Ambientación en el venue refuerza la identidad de marca y genera cohesión visual desde la entrada." },
+  { tiene: "venue",              noTiene: "catering",         nivelSugerido: "basico", msg: "Sin catering el venue queda desaprovechado — la gastronomía prolonga la estadía y mejora la valoración del evento." },
+  { tiene: "construccion_stand", noTiene: "activacion",       nivelSugerido: "basico", msg: "Una activación de marca en el stand convierte visitantes en leads y multiplica el retorno de la inversión." },
+  // Técnica ↔ iluminación
+  { tiene: "tecnica",            noTiene: "iluminacion",      nivelSugerido: "basico", msg: "La iluminación escénica es el complemento directo de la técnica: juntos transforman el espacio en una experiencia visual completa." },
+  { tiene: "iluminacion",        noTiene: "tecnica",          nivelSugerido: "basico", msg: "La técnica audiovisual es la base que potencia cualquier diseño de iluminación — sin ella, el impacto visual pierde soporte." },
   // Contenido — foto/video se complementan
-  { tiene: "fotografia",        noTiene: "video",             msg: "Sumar video corporativo a la cobertura fotográfica multiplica las piezas de comunicación y el alcance post-evento." },
-  { tiene: "video",             noTiene: "fotografia",        msg: "La fotografía editorial complementa el video: te da material inmediato para redes, prensa y comunicación el mismo día." },
+  { tiene: "fotografia",         noTiene: "video",            nivelSugerido: "basico", msg: "Sumar video corporativo a la cobertura fotográfica multiplica las piezas de comunicación y el alcance post-evento." },
+  { tiene: "video",              noTiene: "fotografia",       nivelSugerido: "basico", msg: "La fotografía editorial complementa el video: te da material inmediato para redes, prensa y comunicación el mismo día." },
   // Streaming → contenido
-  { tiene: "streaming",         noTiene: "video",             msg: "Un video de producción complementa el streaming y te deja un activo de comunicación de alto valor para después del evento." },
-  { tiene: "streaming",         noTiene: "fotografia",        msg: "El registro fotográfico editorial junto al streaming asegura cobertura completa en todos los canales." },
+  { tiene: "streaming",          noTiene: "video",            nivelSugerido: "basico", msg: "Un video de producción complementa el streaming y te deja un activo de comunicación de alto valor para después del evento." },
+  { tiene: "streaming",          noTiene: "fotografia",       nivelSugerido: "basico", msg: "El registro fotográfico editorial junto al streaming asegura cobertura completa en todos los canales." },
   // Logística
-  { tiene: "catering",          noTiene: "staff",             msg: "El staff de coordinación es clave para que el catering fluya sin contratiempos y los asistentes tengan atención de calidad." },
-  { tiene: "staff",             noTiene: "anfitrionas",       msg: "Las anfitrionas añaden protocolo y elegancia al staff: una combinación que marca la diferencia en eventos de alto perfil." },
-  { tiene: "venue",             noTiene: "transporte",        msg: "Un servicio de transporte coordinado garantiza puntualidad y proyecta cuidado hacia los asistentes desde el primer momento." },
-  // Por tipo de evento — cross-sells específicos
-  { tiene: "tecnica",           noTiene: "branding_fisico",   tipos: ["corporativo","lanzamiento","interno"], msg: "El branding físico (credenciales, señalética y material gráfico) es la capa de comunicación que ancla la experiencia técnica al mensaje de marca." },
-  { tiene: "venue",             noTiene: "branding_fisico",   tipos: ["corporativo","interno"],               msg: "Credenciales y señalética con diseño editorial convierten el venue en un espacio de marca coherente de principio a fin." },
-  { tiene: "construccion_stand",noTiene: "branding_fisico",   tipos: ["stand","btl"],                        msg: "El branding físico —gráficas, credenciales y señalética— es lo que hace que el stand cuente una historia de marca consistente." },
+  { tiene: "catering",           noTiene: "staff",            nivelSugerido: "basico", msg: "El staff de coordinación es clave para que el catering fluya sin contratiempos y los asistentes tengan atención de calidad." },
+  { tiene: "staff",              noTiene: "anfitrionas",      nivelSugerido: "basico", msg: "Las anfitrionas añaden protocolo y elegancia al staff: una combinación que marca la diferencia en eventos de alto perfil." },
+  { tiene: "venue",              noTiene: "transporte",       nivelSugerido: "basico", msg: "Un servicio de transporte coordinado garantiza puntualidad y proyecta cuidado hacia los asistentes desde el primer momento." },
+  // Por tipo de evento
+  { tiene: "tecnica",            noTiene: "branding_fisico",  nivelSugerido: "basico", tipos: ["corporativo","lanzamiento","interno"], msg: "El branding físico (credenciales, señalética y material gráfico) ancla la experiencia técnica al mensaje de marca." },
+  { tiene: "venue",              noTiene: "branding_fisico",  nivelSugerido: "basico", tipos: ["corporativo","interno"],               msg: "Credenciales y señalética con diseño editorial convierten el venue en un espacio de marca coherente de principio a fin." },
+  { tiene: "construccion_stand", noTiene: "branding_fisico",  nivelSugerido: "basico", tipos: ["stand","btl"],                        msg: "El branding físico —gráficas y señalética— es lo que hace que el stand cuente una historia de marca consistente." },
 ];
 
-function generarRecomendaciones(tipo: TipoEvento, seleccion: SeleccionBloques): string[] {
-  const upgrades: string[] = [];
-  const crossSells: string[] = [];
+function generarRecomendaciones(tipo: TipoEvento, seleccion: SeleccionBloques): Recomendacion[] {
+  const upgrades: Recomendacion[] = [];
+  const crossSells: Recomendacion[] = [];
 
-  // — Upgrades (1 máximo, el más impactante) —
+  // — Upgrade (1 máximo, el más impactante) —
   const prioridadUpgrade = ["venue", "tecnica", "catering", "iluminacion", "video", "fotografia", "streaming", "construccion_stand", "decoracion"];
   for (const bloqueId of prioridadUpgrade) {
     if (upgrades.length >= 1) break;
     const nivelActual = seleccion[bloqueId];
-    if (!nivelActual) continue;
-    const upgrade = UPGRADE_MSGS[bloqueId]?.[nivelActual as "basico" | "medio"];
-    if (upgrade) upgrades.push(upgrade);
+    if (!nivelActual || nivelActual === "top") continue;
+    if (nivelActual !== "basico" && nivelActual !== "medio") continue;
+    const msg = UPGRADE_MSGS[bloqueId]?.[nivelActual];
+    if (msg) upgrades.push({ msg, bloqueId, nivelId: NIVEL_SIGUIENTE[nivelActual] });
   }
 
   // — Cross-sells (hasta 2) —
@@ -135,16 +138,14 @@ function generarRecomendaciones(tipo: TipoEvento, seleccion: SeleccionBloques): 
     if (crossSells.length >= 2) break;
     if (cs.tipos && !cs.tipos.includes(tipo)) continue;
     if (seleccion[cs.tiene] && !seleccion[cs.noTiene]) {
-      crossSells.push(cs.msg);
+      crossSells.push({ msg: cs.msg, bloqueId: cs.noTiene, nivelId: cs.nivelSugerido });
     }
   }
 
-  // Combinar: 1 upgrade + cross-sells hasta llegar a 3 total
   const resultado = [...upgrades, ...crossSells].slice(0, 3);
 
-  // Fallback si no se generó nada
   if (resultado.length === 0) {
-    resultado.push("El registro fotográfico profesional es el activo de comunicación más rentable que puedes añadir al evento.");
+    resultado.push({ msg: "El registro fotográfico profesional es el activo de comunicación más rentable que puedes añadir al evento.", bloqueId: "fotografia", nivelId: "basico" });
   }
 
   return resultado;

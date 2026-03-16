@@ -9,6 +9,7 @@ interface Props {
   asistentesLabel: string;
   regionLabel: string;
   fechaEvento: string | null;
+  onAgregar: (bloqueId: string, nivelId: NivelId) => void;
   onNext: () => void;
   onBack: () => void;
 }
@@ -72,7 +73,7 @@ function BarraTercios({ nivelId, visible, delay }: { nivelId: NivelId; visible: 
   );
 }
 
-export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento, onNext, onBack }: Props) {
+export default function StepResultado({ resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento, onAgregar, onNext, onBack }: Props) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -167,12 +168,22 @@ export default function StepResultado({ resultado, tipoLabel, asistentesLabel, r
           className="mb-10 p-5 rounded-xl bg-white/5 border border-white/10 transition-all duration-700 delay-500"
           style={{ opacity: visible ? 1 : 0 }}
         >
-          <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-3">Te recomendamos</p>
-          <ul className="space-y-2">
+          <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-4">Te recomendamos</p>
+          <ul className="space-y-4">
             {resultado.recomendaciones.map((r, i) => (
-              <li key={i} className="flex gap-2 text-sm text-white/50">
-                <span className="text-[#EC008C] mt-0.5 flex-shrink-0">→</span>
-                {r}
+              <li key={i} className="flex items-start justify-between gap-4">
+                <div className="flex gap-2 text-sm text-white/50 flex-1">
+                  <span className="text-[#EC008C] mt-0.5 flex-shrink-0">→</span>
+                  {r.msg}
+                </div>
+                {r.bloqueId && r.nivelId && (
+                  <button
+                    onClick={() => onAgregar(r.bloqueId!, r.nivelId!)}
+                    className="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-black border border-[#EC008C]/50 text-[#EC008C] hover:bg-[#EC008C] hover:text-white transition-all duration-200"
+                  >
+                    + Agregar
+                  </button>
+                )}
               </li>
             ))}
           </ul>

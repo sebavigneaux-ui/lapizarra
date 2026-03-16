@@ -139,6 +139,7 @@ export default function CalculadoraPage() {
               asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
               fechaEvento={state.fechaEvento}
+              onAgregar={toggleNivel}
               onNext={next}
               onBack={back}
             />

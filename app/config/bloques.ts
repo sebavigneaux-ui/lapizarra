@@ -52,7 +52,7 @@ export const BLOQUES: BloqueConfig[] = [
   },
   {
     id: "construccion_stand",
-    label: "Construcción del stand",
+    label: "Construcción de Stand",
     categoria: "espacio",
     niveles: [
       {
@@ -80,7 +80,7 @@ export const BLOQUES: BloqueConfig[] = [
   },
   {
     id: "decoracion",
-    label: "Decoración",
+    label: "Decoración y Ambientación",
     categoria: "espacio",
     niveles: [
       {
