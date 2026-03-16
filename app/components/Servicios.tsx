@@ -4,32 +4,32 @@ const servicios = [
   {
     num: "01",
     titulo: "Eventos corporativos",
-    desc: "Convenciones, kick offs, celebraciones internas y eventos institucionales.",
+    desc: "Convenciones, kick offs, aniversarios y celebraciones institucionales diseñados para impactar a tu equipo y representar bien a tu empresa.",
   },
   {
     num: "02",
     titulo: "Lanzamientos de producto",
-    desc: "Experiencias diseñadas para generar impacto y posicionamiento de marca.",
+    desc: "Presentaciones que generan anticipación, cobertura y recordación. Desde el concepto hasta la ejecución, todo pensado para que tu producto llegue con fuerza.",
   },
   {
     num: "03",
     titulo: "Activaciones BTL",
-    desc: "Experiencias de contacto directo que conectan marca y audiencia.",
+    desc: "Experiencias en punto de venta, espacios públicos o eventos masivos que crean contacto real entre tu marca y las personas.",
   },
   {
     num: "04",
     titulo: "Experiencias internas",
-    desc: "Eventos que fortalecen cultura organizacional y engagement.",
+    desc: "Eventos que construyen cultura, motivan equipos y refuerzan el sentido de pertenencia. Porque tu gente también merece una experiencia bien producida.",
   },
   {
     num: "05",
-    titulo: "Stands y experiencias de marca",
-    desc: "Diseño y producción de espacios para ferias, exposiciones y activaciones.",
+    titulo: "Stands y espacios de marca",
+    desc: "Diseño y producción de espacios para ferias, exposiciones y activaciones. Cada metro cuadrado trabajado para comunicar quién eres.",
   },
   {
     num: "06",
-    titulo: "Producciones Audiovisuales",
-    desc: "Video corporativo, cobertura de eventos y contenido audiovisual para documentar y amplificar tu marca.",
+    titulo: "Producciones audiovisuales",
+    desc: "Cobertura de eventos, video corporativo y contenido audiovisual para documentar lo que construiste y amplificarlo más allá del día del evento.",
   },
 ];
 
@@ -52,12 +52,12 @@ export default function Servicios() {
         <style>{`
           .srv-acordeon {
             display: flex;
-            height: 520px;
+            height: 540px;
             border: 1px solid rgba(255,255,255,0.08);
           }
           .srv-col {
             flex: 1;
-            min-width: 56px;
+            min-width: 90px;
             transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             position: relative;
@@ -65,7 +65,7 @@ export default function Servicios() {
             cursor: default;
           }
           .srv-col:last-child { border-right: none; }
-          .srv-col:hover { flex: 5; }
+          .srv-col:hover { flex: 6; background: rgba(255,255,255,0.03); }
 
           .srv-rotado {
             position: absolute;
@@ -73,20 +73,26 @@ export default function Servicios() {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 0;
+            padding: 2rem 0 2rem;
             transition: opacity 0.15s ease;
+            gap: 1.5rem;
           }
           .srv-col:hover .srv-rotado { opacity: 0; pointer-events: none; }
 
+          .srv-num-col {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #EC008C;
+          }
           .srv-titulo-vertical {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
             white-space: nowrap;
             font-weight: 900;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            color: rgba(255,255,255,0.5);
-            margin-top: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+            color: rgba(255,255,255,0.6);
           }
 
           .srv-expandido {
@@ -100,22 +106,18 @@ export default function Servicios() {
             justify-content: flex-end;
           }
           .srv-col:hover .srv-expandido { opacity: 1; }
-          .srv-col:hover { background: rgba(255,255,255,0.03); }
         `}</style>
 
         {/* Acordeón horizontal — desktop */}
         <div className="srv-acordeon hidden md:flex">
           {servicios.map((s) => (
             <div key={s.num} className="srv-col">
-              {/* Estado colapsado */}
               <div className="srv-rotado">
-                <span className="text-[#EC008C] font-black text-sm">{s.num}</span>
+                <span className="srv-num-col">{s.num}</span>
                 <span className="srv-titulo-vertical">{s.titulo}</span>
               </div>
-
-              {/* Estado expandido */}
               <div className="srv-expandido">
-                <span className="text-[#EC008C] font-black text-5xl leading-none mb-6">{s.num}</span>
+                <span className="text-[#EC008C] font-black text-6xl leading-none mb-6">{s.num}</span>
                 <h3 className="text-white font-black text-xl mb-3 leading-tight">{s.titulo}</h3>
                 <p className="text-white/50 text-lg leading-relaxed">{s.desc}</p>
               </div>
@@ -123,13 +125,13 @@ export default function Servicios() {
           ))}
         </div>
 
-        {/* Versión mobile — lista vertical */}
-        <div className="md:hidden flex flex-col divide-y divide-white/10 border border-white/10">
+        {/* Mobile — grid 2 columnas */}
+        <div className="md:hidden grid grid-cols-2 gap-px bg-white/10">
           {servicios.map((s) => (
-            <div key={s.num} className="px-6 py-8">
+            <div key={s.num} className="bg-[#231F20] p-6">
               <span className="text-[#EC008C] font-black text-4xl leading-none block mb-4">{s.num}</span>
-              <h3 className="text-white font-black text-lg mb-2">{s.titulo}</h3>
-              <p className="text-white/50 text-lg leading-relaxed">{s.desc}</p>
+              <h3 className="text-white font-black text-base mb-2 leading-tight">{s.titulo}</h3>
+              <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
