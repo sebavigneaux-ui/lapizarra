@@ -84,7 +84,7 @@ export const BLOQUES: BloqueConfig[] = [
     id: "decoracion",
     label: "Decoración y Ambientación",
     categoria: "espacio",
-    diasFactor: 0.0,
+    diasFactor: 0.7,
     niveles: [
       {
         id: "basico",
