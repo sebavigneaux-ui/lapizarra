@@ -91,7 +91,7 @@ export default function Hero() {
                 href="/calculadora"
                 className="group flex items-center justify-between w-full bg-[#EC008C] hover:bg-[#d4007d] text-white font-black px-6 py-5 transition-all duration-300 mb-4"
               >
-                <span className="text-lg">Calcula tu evento en LaPizarra →</span>
+                <span className="text-lg">Calcula tu evento en LaPizarra</span>
                 <span className="w-10 h-10 bg-white/20 group-hover:bg-white/30 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
