@@ -7,6 +7,7 @@ const initial: CalculadoraState = {
   tipoEvento: null,
   asistentes: null,
   region: null,
+  fechaEvento: null,
   seleccionBloques: {},
   nombre: "",
   empresa: "",
@@ -25,6 +26,9 @@ export function useCalculadora() {
 
   const setRegion = (region: RegionId) =>
     setState((s) => ({ ...s, region }));
+
+  const setFechaEvento = (fechaEvento: string | null) =>
+    setState((s) => ({ ...s, fechaEvento }));
 
   const toggleNivel = (bloqueId: string, nivelId: NivelId) =>
     setState((s) => {
@@ -61,6 +65,7 @@ export function useCalculadora() {
     setTipo,
     setAsistentes,
     setRegion,
+    setFechaEvento,
     toggleNivel,
     goTo,
     next,

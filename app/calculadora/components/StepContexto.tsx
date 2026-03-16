@@ -1,25 +1,32 @@
 "use client";
+import { useState } from "react";
 import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
 import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 
 const RANGOS: RangoAsistentes[] = ["menos50", "50-100", "100-200", "200-400", "400plus"];
 
+const MESES = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+
 interface Props {
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   region: RegionId | null;
+  fechaEvento: string | null;
   onTipo: (t: TipoEvento) => void;
   onAsistentes: (r: RangoAsistentes) => void;
   onRegion: (r: RegionId) => void;
+  onFecha: (f: string | null) => void;
   onNext: () => void;
   canNext: boolean;
 }
 
 export default function StepContexto({
-  tipoEvento, asistentes, region,
-  onTipo, onAsistentes, onRegion,
+  tipoEvento, asistentes, region, fechaEvento,
+  onTipo, onAsistentes, onRegion, onFecha,
   onNext, canNext,
 }: Props) {
+  const hoy = new Date();
+  const [anioVista, setAnioVista] = useState(hoy.getFullYear());
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
 
@@ -111,6 +118,68 @@ export default function StepContexto({
                   </span>
                 </div>
                 <span className="block text-xs text-white/35 leading-snug">{reg.nota}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 04 — Fecha del evento */}
+      <div className="mb-12">
+        <p className="text-white/40 text-xs font-black uppercase tracking-widest mb-2">04 —</p>
+        <h2 className="text-white font-black text-2xl md:text-3xl tracking-tight mb-2 leading-tight">
+          ¿Cuándo es el evento?
+        </h2>
+        <p className="text-white/40 text-sm mb-8">Opcional — nos ayuda a planificar contigo.</p>
+
+        {/* Navegación de año */}
+        <div className="flex items-center gap-4 mb-5">
+          <button
+            onClick={() => setAnioVista((a) => a - 1)}
+            className="w-8 h-8 rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white/50 flex items-center justify-center transition-all duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <span className="text-white font-black text-lg w-16 text-center">{anioVista}</span>
+          <button
+            onClick={() => setAnioVista((a) => a + 1)}
+            className="w-8 h-8 rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white/50 flex items-center justify-center transition-all duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          {fechaEvento && (
+            <button
+              onClick={() => onFecha(null)}
+              className="ml-2 text-white/30 hover:text-white/60 text-xs font-bold transition-colors duration-200"
+            >
+              Limpiar
+            </button>
+          )}
+        </div>
+
+        {/* Grid de meses */}
+        <div className="grid grid-cols-4 gap-2">
+          {MESES.map((mes, i) => {
+            const key = `${anioVista}-${String(i + 1).padStart(2, "0")}`;
+            const esPasado = anioVista < hoy.getFullYear() || (anioVista === hoy.getFullYear() && i < hoy.getMonth());
+            const active = fechaEvento === key;
+            return (
+              <button
+                key={key}
+                onClick={() => onFecha(active ? null : key)}
+                className={`py-3 rounded-xl text-sm font-black border transition-all duration-200 ${
+                  active
+                    ? "border-[#EC008C] bg-[#EC008C] text-white"
+                    : esPasado
+                    ? "border-white/8 text-white/20 hover:border-white/20 hover:text-white/40"
+                    : "border-white/15 text-white/60 hover:border-white/40 hover:text-white"
+                }`}
+              >
+                {mes}
               </button>
             );
           })}

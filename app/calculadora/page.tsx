@@ -19,6 +19,7 @@ export default function CalculadoraPage() {
     setTipo,
     setAsistentes,
     setRegion,
+    setFechaEvento,
     toggleNivel,
     next,
     back,
@@ -94,9 +95,11 @@ export default function CalculadoraPage() {
               tipoEvento={state.tipoEvento}
               asistentes={state.asistentes}
               region={state.region}
+              fechaEvento={state.fechaEvento}
               onTipo={setTipo}
               onAsistentes={setAsistentes}
               onRegion={setRegion}
+              onFecha={setFechaEvento}
               onNext={next}
               canNext={canAdvanceStep1}
             />

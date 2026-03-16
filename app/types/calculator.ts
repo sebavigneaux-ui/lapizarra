@@ -63,6 +63,7 @@ export interface CalculadoraState {
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   region: RegionId | null;
+  fechaEvento: string | null; // formato "YYYY-MM"
   seleccionBloques: SeleccionBloques;
   nombre: string;
   empresa: string;
