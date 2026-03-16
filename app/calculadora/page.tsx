@@ -151,6 +151,7 @@ export default function CalculadoraPage() {
               fechaEvento={state.fechaEvento}
               onAgregar={toggleNivel}
               onCambiarNivel={toggleNivel}
+              onQuitar={toggleNivel}
               onNext={next}
               onBack={back}
             />

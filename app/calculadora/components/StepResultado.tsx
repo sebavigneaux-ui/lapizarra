@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Resultado, NivelId } from "../../types/calculator";
+import type { Resultado, NivelId, Recomendacion } from "../../types/calculator";
 import { formatCLP, formatRango } from "../../lib/formatters";
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
   fechaEvento: string | null;
   onAgregar: (bloqueId: string, nivelId: NivelId) => void;
   onCambiarNivel: (bloqueId: string, nivelId: NivelId) => void;
+  onQuitar: (bloqueId: string, nivelId: NivelId) => void;
   onNext: () => void;
   onBack: () => void;
 }
@@ -200,11 +201,30 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
 
 export default function StepResultado({
   resultado, tipoLabel, asistentesLabel, regionLabel, fechaEvento,
-  onAgregar, onCambiarNivel, onNext, onBack,
+  onAgregar, onCambiarNivel, onQuitar, onNext, onBack,
 }: Props) {
   const [visible, setVisible] = useState(false);
+  const [removedItems, setRemovedItems] = useState<Recomendacion[]>([]);
   const ref = useRef<HTMLDivElement>(null);
   const displayTotal = useAnimatedTotal(resultado.total);
+
+  const handleQuitar = (bloqueId: string, nivelId: NivelId, label: string) => {
+    setRemovedItems((prev) => [
+      { msg: `Tenías ${label} (${NIVEL_DISPLAY_LABEL[nivelId]}) en tu estimación.`, bloqueId, nivelId },
+      ...prev.filter((r) => r.bloqueId !== bloqueId),
+    ]);
+    onQuitar(bloqueId, nivelId);
+  };
+
+  const handleAgregar = (bloqueId: string, nivelId: NivelId) => {
+    setRemovedItems((prev) => prev.filter((r) => r.bloqueId !== bloqueId));
+    onAgregar(bloqueId, nivelId);
+  };
+
+  const todasRecomendaciones = [
+    ...removedItems,
+    ...resultado.recomendaciones.filter((r) => !removedItems.some((rm) => rm.bloqueId === r.bloqueId)),
+  ];
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 80);
@@ -274,9 +294,19 @@ export default function StepResultado({
               className="py-4 border-b border-white/8 transition-all duration-500"
               style={{ opacity: visible ? 1 : 0, transitionDelay: `${200 + i * 60}ms` }}
             >
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-white/70 text-sm font-bold">{item.label}</span>
-                <span className="text-white font-black text-sm">{formatRango(item.monto)}</span>
+              <div className="flex items-center justify-between mb-1 gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="text-white/70 text-sm font-bold">{item.label}</span>
+                  {item.bloqueId && (
+                    <button
+                      onClick={() => handleQuitar(item.bloqueId!, item.nivelId!, item.label)}
+                      className="flex-shrink-0 px-2 py-0.5 rounded-full text-[10px] font-black border border-white/15 text-white/30 hover:border-red-400/40 hover:text-red-400/60 transition-all duration-200"
+                    >
+                      Quitar
+                    </button>
+                  )}
+                </div>
+                <span className="text-white font-black text-sm flex-shrink-0">{formatRango(item.monto)}</span>
               </div>
               <BarraInteractiva
                 nivelId={item.nivelId!}
@@ -298,14 +328,14 @@ export default function StepResultado({
       </p>
 
       {/* Recomendaciones */}
-      {resultado.recomendaciones.length > 0 && (
+      {todasRecomendaciones.length > 0 && (
         <div
           className="mb-10 p-5 rounded-xl bg-white/5 border border-white/10 transition-all duration-700 delay-500"
           style={{ opacity: visible ? 1 : 0 }}
         >
           <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-4">Te recomendamos</p>
           <ul className="space-y-4">
-            {resultado.recomendaciones.map((r, i) => (
+            {todasRecomendaciones.map((r, i) => (
               <li key={i} className="flex items-start justify-between gap-4">
                 <div className="flex gap-2 text-sm text-white/50 flex-1">
                   <span className="text-[#EC008C] mt-0.5 flex-shrink-0">→</span>
@@ -313,7 +343,7 @@ export default function StepResultado({
                 </div>
                 {r.bloqueId && r.nivelId && (
                   <button
-                    onClick={() => onAgregar(r.bloqueId!, r.nivelId!)}
+                    onClick={() => handleAgregar(r.bloqueId!, r.nivelId!)}
                     className="flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-black border border-[#EC008C]/50 text-[#EC008C] hover:bg-[#EC008C] hover:text-white transition-all duration-200"
                   >
                     + Agregar
