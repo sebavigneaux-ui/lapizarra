@@ -44,6 +44,18 @@ function VideoCard({ id, cliente, titulo, foto }: typeof videos[0]) {
         />
       ) : null}
 
+      {/* Logo LaPizarra como textura de fondo */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <Image
+          src="/logo-blanco.png"
+          alt=""
+          width={340}
+          height={136}
+          className="object-contain select-none"
+          style={{ opacity: foto ? 0.07 : 0.12 }}
+        />
+      </div>
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#231F20]/90 via-[#231F20]/40 to-transparent" />
 
