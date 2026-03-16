@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { proyectos, getProyecto } from "../../data/proyectos";
+import Blobs from "../../components/Blobs";
 
 export function generateStaticParams() {
   return proyectos.map((p) => ({ slug: p.slug }));
@@ -17,7 +18,10 @@ export default async function ProyectoPage({
   if (!proyecto) notFound();
 
   return (
-    <main className="bg-[#231F20] min-h-screen">
+    <main className="bg-[#231F20] min-h-screen relative overflow-hidden">
+      <Blobs />
+      {/* Contenido sobre los blobs */}
+      <div className="relative z-10">
       {/* Barra superior */}
       <div className="border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
@@ -106,6 +110,7 @@ export default async function ProyectoPage({
             Ver más proyectos →
           </Link>
         </div>
+      </div>
       </div>
     </main>
   );
