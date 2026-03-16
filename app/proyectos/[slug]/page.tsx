@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { proyectos, getProyecto } from "../../data/proyectos";
 import Blobs from "../../components/Blobs";
-import VideoGaleria from "./VideoGaleria";
 
 export function generateStaticParams() {
   return proyectos.map((p) => ({ slug: p.slug }));
@@ -102,16 +101,6 @@ export default async function ProyectoPage({
 
         </div>
       </div>
-
-      {/* Videos del proyecto */}
-      {proyecto.videos && proyecto.videos.length > 0 && (
-        <div className="border-t border-white/10">
-          <div className="max-w-6xl mx-auto px-6 py-16">
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-8">Video resumen</p>
-            <VideoGaleria videos={proyecto.videos} />
-          </div>
-        </div>
-      )}
 
       {/* Footer mínimo */}
       <div className="border-t border-white/10">

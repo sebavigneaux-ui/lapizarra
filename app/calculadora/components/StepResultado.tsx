@@ -93,10 +93,11 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
   const [dragging, setDragging] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
 
-  const activeNivel = dragNivel ?? hover ?? nivelId;
+  const barNivel = dragNivel ?? nivelId;       // mueve barra y dot
+  const labelHover = dragNivel ?? hover;       // ilumina labels
   const niveles: NivelId[] = ["basico", "medio", "top"];
   const interactive = !!(bloqueId && onSetNivel);
-  const fastTransition = !!(hover || dragging);
+  const fastTransition = !!dragging;
 
   const startDrag = (clientX: number) => {
     if (!interactive) return;
@@ -150,7 +151,7 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
         <div
           className="absolute inset-y-0 left-0 rounded-full transition-all duration-500"
           style={{
-            width: visible ? NIVEL_WIDTH[activeNivel] : "0%",
+            width: visible ? NIVEL_WIDTH[barNivel] : "0%",
             transitionDelay: fastTransition ? "0ms" : `${delay}ms`,
             background: "linear-gradient(to right, rgba(255,255,255,0.4), #EC008C)",
           }}
@@ -160,7 +161,7 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
           <div
             className={`absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-[#EC008C] border border-white/20 transition-all duration-500 ${dragging ? "scale-125" : "hover:scale-125"}`}
             style={{
-              left: `calc(${NIVEL_WIDTH[activeNivel]} - 7px)`,
+              left: `calc(${NIVEL_WIDTH[barNivel]} - 7px)`,
               transitionDelay: fastTransition ? "0ms" : `${delay}ms`,
               cursor: dragging ? "grabbing" : "grab",
               boxShadow: "0 0 8px rgba(236,0,140,0.6)",
@@ -175,7 +176,7 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
       <div className="flex">
         {niveles.map((n) => {
           const isActive = n === nivelId;
-          const isHovered = n === (dragNivel ?? hover);
+          const isHovered = n === labelHover;
           return (
             <button
               key={n}
