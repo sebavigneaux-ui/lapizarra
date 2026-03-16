@@ -27,7 +27,6 @@ export default function CalculadoraPage() {
     back,
     setLead,
     canAdvanceStep1,
-    canAdvanceStep2,
     canAdvanceStep3,
   } = useCalculadora();
 
@@ -44,7 +43,7 @@ export default function CalculadoraPage() {
   const labelCortoEvento = tipoConfig?.labelCorto ?? "tu evento";
 
   const resultado =
-    state.step >= 4 && state.tipoEvento && state.asistentes && state.region && state.diasEvento
+    state.step >= 5 && state.tipoEvento && state.asistentes && state.region && state.diasEvento
       ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region, state.diasEvento)
       : null;
 
@@ -146,7 +145,7 @@ export default function CalculadoraPage() {
             />
           )}
 
-          {state.step === 4 && resultado && state.tipoEvento && state.asistentes && state.region && (
+          {state.step === 4 && state.tipoEvento && state.asistentes && state.region && (
             <StepLead
               nombre={state.nombre}
               empresa={state.empresa}
@@ -155,7 +154,6 @@ export default function CalculadoraPage() {
               tipoEvento={state.tipoEvento}
               asistentes={state.asistentes}
               region={state.region}
-              resultado={resultado}
               onChange={setLead}
               onBack={back}
               onNext={next}

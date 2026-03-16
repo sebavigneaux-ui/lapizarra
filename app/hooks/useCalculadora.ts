@@ -46,9 +46,6 @@ export function useCalculadora() {
       return { ...s, seleccionBloques: nueva };
     });
 
-  const goTo = (step: CalculadoraState["step"]) =>
-    setState((s) => ({ ...s, step }));
-
   const next = () =>
     setState((s) => ({ ...s, step: Math.min(5, s.step + 1) as CalculadoraState["step"] }));
 
@@ -61,7 +58,7 @@ export function useCalculadora() {
   const reset = () => setState(initial);
 
   const canAdvanceStep1 = state.tipoEvento !== null && state.asistentes !== null && state.region !== null && state.diasEvento !== null;
-  const canAdvanceStep2 = true; // puede avanzar aunque no haya seleccionado en paso 2
+  const canAdvanceStep2 = true;
   const canAdvanceStep3 = Object.keys(state.seleccionBloques).length >= 1;
 
   return {
@@ -72,7 +69,6 @@ export function useCalculadora() {
     setDiasEvento,
     setFechaEvento,
     toggleNivel,
-    goTo,
     next,
     back,
     setLead,
