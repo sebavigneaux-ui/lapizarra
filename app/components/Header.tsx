@@ -92,12 +92,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/calculadora"
-              className="text-white/60 hover:text-white text-sm font-bold px-4 py-2.5 border border-white/20 hover:border-white/50 transition-colors hidden md:block"
-            >
-              Calculadora
-            </Link>
             <a
               href={WA_URL}
               target="_blank"
@@ -133,13 +127,6 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <Link
-              href="/calculadora"
-              onClick={closeMenu}
-              className="text-white/60 text-base font-medium transition-colors border border-white/20 px-5 py-3 text-center"
-            >
-              Calculadora de eventos
-            </Link>
             <a
               href={WA_URL}
               target="_blank"
