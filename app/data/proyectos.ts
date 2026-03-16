@@ -3,6 +3,7 @@ export type Proyecto = {
   cliente: string;
   titulo: string;
   fotos: string[];
+  videos?: string[]; // YouTube IDs
   objetivo: string;
   conceptoCreativo: string;
   resultado: string;
@@ -40,6 +41,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-leap-motor",
     cliente: "Stellantis",
     titulo: "Formación Comercial Leap Motor",
+    videos: ["jpXMz12JjXU"],
     fotos: [
       "/galeria2/1.jpg",
       "/galeria2/2.jpg",
@@ -64,6 +66,7 @@ export const proyectos: Proyecto[] = [
     slug: "cool-carriers-convencion",
     cliente: "Cool Carriers",
     titulo: "Convención de Clientes 2025",
+    videos: ["lNUHjeq-81s"],
     fotos: [
       "/galeria3/1.jpg",
       "/galeria3/2.jpg",
@@ -138,6 +141,7 @@ export const proyectos: Proyecto[] = [
     slug: "parque-arauco-corrida-maipu",
     cliente: "Parque Arauco",
     titulo: "Corrida de Maipú 2024",
+    videos: ["4uyNXJ2N6ow"],
     fotos: [
       "/galeria6/1.jpg",
       "/galeria6/2.jpg",
