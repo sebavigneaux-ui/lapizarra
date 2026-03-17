@@ -160,14 +160,18 @@ export default function CalculadoraPage() {
             />
           )}
 
-          {state.step === 5 && resultado && state.tipoEvento && state.asistentes && state.region && (
+          {state.step === 5 && resultado && state.tipoEvento && state.asistentes && state.region && state.diasEvento && (
             <StepResultado
               resultado={resultado}
               tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
               asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
+              asistentes={state.asistentes}
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
-              diasLabel={state.diasEvento ? LABELS_DIAS[state.diasEvento] : null}
+              diasLabel={LABELS_DIAS[state.diasEvento]}
+              diasEvento={state.diasEvento}
               fechaEvento={state.fechaEvento}
+              onChangeAsistentes={setAsistentes}
+              onChangeDias={setDiasEvento}
               onAgregar={toggleNivel}
               onCambiarNivel={toggleNivel}
               onQuitar={toggleNivel}

@@ -1,15 +1,28 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import type { Resultado, NivelId, Recomendacion } from "../../types/calculator";
+import type { Resultado, NivelId, Recomendacion, RangoAsistentes, DiasId } from "../../types/calculator";
 import { formatCLP, formatRango } from "../../lib/formatters";
+import { DIAS_OPCIONES } from "../../config/pricing";
+
+const ASISTENTES_OPCIONES: { id: RangoAsistentes; label: string }[] = [
+  { id: "menos50", label: "<50" },
+  { id: "50-100", label: "50–100" },
+  { id: "100-200", label: "100–200" },
+  { id: "200-400", label: "200–400" },
+  { id: "400plus", label: "+400" },
+];
 
 interface Props {
   resultado: Resultado;
   tipoLabel: string;
   asistentesLabel: string;
+  asistentes: RangoAsistentes;
   regionLabel: string;
   diasLabel: string | null;
+  diasEvento: DiasId;
   fechaEvento: string | null;
+  onChangeAsistentes: (v: RangoAsistentes) => void;
+  onChangeDias: (v: DiasId) => void;
   onAgregar: (bloqueId: string, nivelId: NivelId) => void;
   onCambiarNivel: (bloqueId: string, nivelId: NivelId) => void;
   onQuitar: (bloqueId: string, nivelId: NivelId) => void;
@@ -202,8 +215,8 @@ function BarraInteractiva({ nivelId, bloqueId, visible, delay, onSetNivel }: Bar
 }
 
 export default function StepResultado({
-  resultado, tipoLabel, asistentesLabel, regionLabel, diasLabel, fechaEvento,
-  onAgregar, onCambiarNivel, onQuitar, onNext, onBack,
+  resultado, tipoLabel, asistentesLabel, asistentes, regionLabel, diasLabel, diasEvento, fechaEvento,
+  onChangeAsistentes, onChangeDias, onAgregar, onCambiarNivel, onQuitar, onNext, onBack,
 }: Props) {
   const [visible, setVisible] = useState(false);
   const [removedItems, setRemovedItems] = useState<Recomendacion[]>([]);
@@ -272,6 +285,47 @@ export default function StepResultado({
             {formatFecha(fechaEvento)}
           </span>
         )}
+      </div>
+
+      {/* Ajustar parámetros */}
+      <div className="mb-8 p-4 rounded-xl bg-white/5 border border-white/10">
+        <p className="text-white/30 text-xs font-black uppercase tracking-widest mb-4">Ajustar simulación</p>
+        <div className="mb-4">
+          <p className="text-white/40 text-xs font-bold mb-2">Asistentes</p>
+          <div className="flex flex-wrap gap-2">
+            {ASISTENTES_OPCIONES.map((opt) => (
+              <button
+                key={opt.id}
+                onClick={() => onChangeAsistentes(opt.id)}
+                className={`px-3 py-1.5 rounded-full text-xs font-black transition-all duration-200 border ${
+                  asistentes === opt.id
+                    ? "border-white text-white bg-white/10"
+                    : "border-white/20 text-white/40 hover:border-white/40 hover:text-white/70"
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className="text-white/40 text-xs font-bold mb-2">Días de duración</p>
+          <div className="flex flex-wrap gap-2">
+            {DIAS_OPCIONES.map((opt) => (
+              <button
+                key={opt.id}
+                onClick={() => onChangeDias(opt.id)}
+                className={`px-3 py-1.5 rounded-full text-xs font-black transition-all duration-200 border ${
+                  diasEvento === opt.id
+                    ? "border-white text-white bg-white/10"
+                    : "border-white/20 text-white/40 hover:border-white/40 hover:text-white/70"
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Número grande animado */}
