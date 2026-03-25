@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { useCountUp } from "../hooks/useCountUp";
 
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
@@ -14,11 +15,25 @@ const clientes = [
 
 export default function Hero() {
   const { count, ref } = useCountUp(21, 1000);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const handleTimeUpdate = () => {
+      if (video.duration && video.currentTime >= video.duration - 0.2) {
+        video.currentTime = 0;
+      }
+    };
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
 
   return (
     <section className="bg-[#231F20] flex flex-col relative overflow-hidden min-h-screen">
       {/* Video de fondo */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
