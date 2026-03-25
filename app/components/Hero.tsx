@@ -21,7 +21,7 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
     const handleTimeUpdate = () => {
-      if (video.duration && video.currentTime >= video.duration - 0.2) {
+      if (video.duration && video.currentTime >= video.duration - 0.8) {
         video.currentTime = 0;
       }
     };
