@@ -134,6 +134,29 @@ export const proyectos: Proyecto[] = [
       "La jornada impactó a 60 vendedores de la red Citroën. El 95% de los participantes calificó el evento como excelente o muy bueno. En las semanas posteriores, el equipo comercial reportó mayor seguridad y convicción al momento de presentar el modelo a los clientes finales.",
   },
   {
+    slug: "stellantis-jeep-commander",
+    cliente: "Stellantis",
+    titulo: "Formación Comercial Jeep Commander",
+    fotos: [
+      "/galeria7/1.jpg",
+      "/galeria7/2.jpg",
+      "/galeria7/3.jpg",
+      "/galeria7/4.jpg",
+      "/galeria7/5.jpg",
+      "/galeria7/6.jpg",
+      "/galeria7/7.jpg",
+      "/galeria7/8.jpg",
+      "/galeria7/9.jpg",
+      "/galeria7/10.jpg",
+    ],
+    objetivo:
+      "Preparar al equipo comercial de Jeep Chile para el lanzamiento del Commander, dotándolos de un conocimiento profundo del modelo, sus argumentos de venta diferenciadores y la experiencia de marca necesaria para transmitir con convicción la propuesta de valor a sus clientes.",
+    conceptoCreativo:
+      "Diseñamos la jornada como una experiencia de inmersión en el universo Jeep: aventura, capacidad y libertad. Cada módulo del programa estuvo pensado para que los vendedores vivieran en primera persona los atributos del Commander, desde las especificaciones técnicas hasta una sesión de manejo que les permitió descubrir el auto desde adentro antes de presentarlo al mercado.",
+    resultado:
+      "La formación impactó a toda la red comercial de Jeep Chile. Los participantes cerraron la jornada con materiales de apoyo completos, argumentarios de venta consolidados y una experiencia directa con el vehículo que se tradujo en mayor seguridad y entusiasmo al momento de enfrentar a los primeros compradores.",
+  },
+  {
     slug: "parque-arauco-corrida-maipu",
     cliente: "Parque Arauco",
     titulo: "Corrida de Maipú 2024",
