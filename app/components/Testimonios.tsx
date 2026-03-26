@@ -59,9 +59,6 @@ export default function Testimonios() {
           ))}
         </div>
 
-        <p className="text-[#231F20]/30 text-xs text-center mt-10">
-          * Textos provisorios — pendiente validación de los clientes.
-        </p>
       </div>
     </section>
   );
