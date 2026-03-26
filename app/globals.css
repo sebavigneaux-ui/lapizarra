@@ -26,6 +26,7 @@ select option {
 }
 
 html {
+  zoom: 0.85;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
