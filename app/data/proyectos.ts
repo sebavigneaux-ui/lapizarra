@@ -137,6 +137,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-jeep-commander",
     cliente: "Stellantis",
     titulo: "Formación Comercial Jeep Commander",
+    videos: ["503CFR2-nbc"],
     fotos: [
       "/galeria7/1.jpg",
       "/galeria7/2.jpg",
