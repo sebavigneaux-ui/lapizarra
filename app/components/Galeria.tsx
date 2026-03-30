@@ -117,7 +117,7 @@ export default function Galeria() {
             href="/proyectos"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 text-white/60 font-black text-sm hover:text-white hover:border-white/50 transition-all duration-200"
           >
-            Ver todos los proyectos
+            Ver más proyectos
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
