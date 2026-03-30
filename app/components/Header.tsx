@@ -6,14 +6,14 @@ import Link from "next/link";
 const WA_URL = "https://wa.me/56958419326?text=Hola%2C%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20con%20LaPizarra";
 
 const navItems = [
-  { label: "Proyectos", href: "#galeria" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Metodología", href: "#metodologia" },
-  { label: "Ferias & Stands", href: "#ferias-stands" },
-  { label: "Clientes", href: "#clientes" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Quiénes somos", href: "#quienes-somos" },
+  { label: "Proyectos", href: "/#galeria" },
+  { label: "Testimonios", href: "/#testimonios" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Metodología", href: "/#metodologia" },
+  { label: "Ferias & Stands", href: "/#ferias-stands" },
+  { label: "Clientes", href: "/#clientes" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Quiénes somos", href: "/#quienes-somos" },
 ];
 
 export default function Header() {
