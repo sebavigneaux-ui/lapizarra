@@ -87,9 +87,9 @@ const fases = [
 ];
 
 const stats = [
-  { valor: "+300%", label: "Aumento en captura de leads calificados" },
-  { valor: "12", label: "Empresas diagnosticadas en terreno" },
-  { valor: "72 hrs", label: "De diagnóstico a propuesta personalizada" },
+  { valor: "Hasta 2X", label: "Aumento de captura de leads" },
+  { valor: "+50", label: "Empresas diagnosticadas en terreno" },
+  { valor: "96 hrs", label: "Desde el diagnóstico a la propuesta personalizada" },
   { valor: "3", label: "Niveles de inversión adaptados a cada presupuesto" },
 ];
 
