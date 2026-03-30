@@ -88,7 +88,7 @@ const fases = [
 
 const stats = [
   { valor: "+300%", label: "Aumento en captura de leads calificados" },
-  { valor: "12", label: "Empresas diagnosticadas en Aquasur 2026" },
+  { valor: "12", label: "Empresas diagnosticadas en terreno" },
   { valor: "72 hrs", label: "De diagnóstico a propuesta personalizada" },
   { valor: "3", label: "Niveles de inversión adaptados a cada presupuesto" },
 ];
