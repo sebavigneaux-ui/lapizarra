@@ -151,8 +151,8 @@ export default function FeriasStandsPage() {
               <span className="block text-5xl md:text-7xl text-[#EC008C]">conversión comercial.</span>
             </h1>
             <p className="text-white/50 text-xl max-w-2xl leading-relaxed">
-              La mayoría de las marcas invierte en estar en ferias, pero pocas miden cuántas reuniones generó su stand.
-              Nosotros transformamos esa inversión en resultados comerciales concretos y medibles.
+              La mayoría de las marcas invierte en estar en ferias, pero pocas miden lo que realmente importa: leads calificados, tiempo de permanencia, recordación de marca o conversiones post-evento.
+              Nosotros transformamos esa inversión en resultados concretos, medibles y comparables entre ediciones.
             </p>
           </div>
         </section>
