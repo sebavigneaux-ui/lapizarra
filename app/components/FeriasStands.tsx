@@ -87,10 +87,10 @@ const fases = [
 ];
 
 const stats = [
-  { valor: "Hasta 2X", label: "Aumento de captura de leads" },
-  { valor: "+50", label: "Empresas diagnosticadas en terreno" },
-  { valor: "96 hrs", label: "Desde el diagnóstico a la propuesta personalizada" },
-  { valor: "3", label: "Niveles de inversión adaptados a cada presupuesto" },
+  { valor: "Hasta 2X", label: "Aumento de captura de leads", cls: "text-3xl md:text-4xl" },
+  { valor: "+50", label: "Empresas diagnosticadas en terreno", cls: "text-4xl md:text-5xl" },
+  { valor: "96 hrs", label: "Desde el diagnóstico a la propuesta personalizada", cls: "text-3xl md:text-4xl" },
+  { valor: "3", label: "Niveles de inversión adaptados a cada presupuesto", cls: "text-4xl md:text-5xl" },
 ];
 
 export default function FeriasStands() {
@@ -120,7 +120,7 @@ export default function FeriasStands() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden mb-24">
           {stats.map((s) => (
             <div key={s.valor} className="bg-[#231F20] px-6 py-8 text-center">
-              <span className="block text-4xl md:text-5xl font-black text-[#EC008C] mb-2">{s.valor}</span>
+              <span className={`block font-black text-[#EC008C] mb-2 whitespace-nowrap ${s.cls}`}>{s.valor}</span>
               <span className="text-white/40 text-xs leading-snug">{s.label}</span>
             </div>
           ))}
