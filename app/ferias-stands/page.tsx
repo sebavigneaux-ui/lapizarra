@@ -11,7 +11,7 @@ const niveles = [
   {
     num: "01",
     tag: "NIVEL 1",
-    titulo: "Mejora Rápida",
+    titulo: "Mejoras rápidas",
     subtitulo: "Inversión baja · Impacto inmediato",
     desc: "Intervenciones estratégicas de alto impacto con bajo tiempo de implementación. Para empresas que quieren resultados concretos antes de la próxima feria.",
     items: [
@@ -109,7 +109,7 @@ const diferenciadores = [
 const preguntas = [
   {
     q: "¿En qué ferias tienen experiencia?",
-    a: "Hemos trabajado en las principales ferias industriales, tecnológicas y de consumo del país, incluyendo Aquasur, Espacio Riesco y otros recintos ferias de primer nivel. Si tu feria es en regiones, también podemos ayudarte — tenemos red de proveedores fuera de Santiago.",
+    a: "Hemos trabajado en las principales ferias industriales, tecnológicas y de consumo del país, incluyendo Aquasur, Edifica, Sodimac, Food and Service y otros recintos ferias de primer nivel. Si tu feria es en regiones, también podemos ayudarte — tenemos red de proveedores fuera de Santiago.",
   },
   {
     q: "¿Pueden encargarse solo del diseño comercial sin la construcción?",
@@ -168,7 +168,7 @@ export default function FeriasStandsPage() {
                 </h2>
                 <p className="text-white/50 text-lg leading-relaxed">
                   La mayoría de los stands están diseñados para verse atractivos. Pocos están diseñados para generar reuniones,
-                  capturar leads calificados o mover a un visitante de "me llevo el folleto" a "agendemos una reunión esta semana".
+                  capturar leads calificados o mover a un visitante a la conversión deseada.
                 </p>
               </div>
               <div className="mt-12 md:mt-0 grid grid-cols-1 gap-4">

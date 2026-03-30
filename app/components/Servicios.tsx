@@ -32,7 +32,7 @@ const servicios = [
   {
     num: "05",
     titulo: "Stands y espacios de marca",
-    desc: "En ferias y exposiciones tienes segundos para capturar la atención de alguien que camina entre decenas de competidores. Diseñamos y construimos stands que comunican quién eres antes de que abras la boca — desde estructuras modulares hasta carpintería a medida con producción completa. También producimos espacios de marca para activaciones y showrooms. Si vas a Espacio Riesco, FIL u otro evento, te ayudamos a que tu espacio sea el que la gente recuerde.",
+    desc: "En ferias y exposiciones tienes segundos para capturar la atención de alguien que camina entre decenas de competidores. Diseñamos y construimos stands que comunican quién eres antes de que abras la boca — desde estructuras modulares hasta carpintería a medida con producción completa. También producimos espacios de marca para activaciones y showrooms.",
     wa: WA_BASE + encodeURIComponent("Hola, me interesa cotizar un stand o espacio de marca con LaPizarra"),
   },
   {
