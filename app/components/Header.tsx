@@ -88,7 +88,7 @@ export default function Header() {
       {/* Navbar principal */}
       <div className={`transition-all duration-300 ${scrolled ? "bg-[#231F20] shadow-lg" : "bg-[#231F20]/95"}`}>
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-          <a href="#" className="flex items-center origin-left flex-shrink-0">
+          <a href="/" className="flex items-center origin-left flex-shrink-0">
             <Image
               src="/logo-blanco.png"
               alt="LaPizarra"
