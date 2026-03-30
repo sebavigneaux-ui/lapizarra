@@ -39,7 +39,7 @@ export default function Galeria() {
           }
         `}</style>
 
-        {proyectos.map((proyecto, idx) => (
+        {proyectos.filter(p => ["polpaico-convencion-clientes", "cool-carriers-convencion", "stellantis-jeep-commander"].includes(p.slug)).map((proyecto, idx) => (
           <div key={proyecto.slug} className={idx > 0 ? "mt-16" : ""}>
             <div className="flex items-center gap-4 mb-4">
               <span className="text-white/40 text-xs font-bold uppercase tracking-widest">
@@ -111,6 +111,18 @@ export default function Galeria() {
             </div>
           </div>
         ))}
+        {/* CTA ver todos */}
+        <div className="mt-16 flex justify-center">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 text-white/60 font-black text-sm hover:text-white hover:border-white/50 transition-all duration-200"
+          >
+            Ver todos los proyectos
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
 
       {/* Lightbox */}
