@@ -7,6 +7,7 @@ import Testimonios from "./components/Testimonios";
 import Metodologia from "./components/Metodologia";
 import CTAIntermedio from "./components/CTAIntermedio";
 import Confianza from "./components/Confianza";
+import FeriasStands from "./components/FeriasStands";
 import FAQ from "./components/FAQ";
 import QuienesSomos from "./components/QuienesSomos";
 import CTAFinal from "./components/CTAFinal";
@@ -30,6 +31,10 @@ export default function Home() {
           <Metodologia />
         </div>
         <CTAIntermedio />
+        <div className="bg-[#231F20] relative overflow-hidden">
+          <Blobs />
+          <FeriasStands />
+        </div>
         <ClientesDestacados />
         <FAQ />
         <QuienesSomos />

@@ -10,7 +10,7 @@ const navItems = [
   { label: "Testimonios", href: "#testimonios" },
   { label: "Servicios", href: "#servicios" },
   { label: "Metodología", href: "#metodologia" },
-  { label: "Experiencias", href: "#proyectos" },
+  { label: "Ferias & Stands", href: "#ferias-stands" },
   { label: "Clientes", href: "#clientes" },
   { label: "FAQ", href: "#faq" },
   { label: "Quiénes somos", href: "#quienes-somos" },
