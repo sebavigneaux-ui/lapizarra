@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
 import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 
@@ -12,19 +13,26 @@ interface Props {
   region: RegionId;
   onChange: (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) => void;
   onBack: () => void;
-  onNext: () => void;
+  onSubmit: () => Promise<void>;
 }
 
 export default function StepLead({
   nombre, empresa, correo, mensaje,
   tipoEvento, asistentes, region,
-  onChange, onBack, onNext,
+  onChange, onBack, onSubmit,
 }: Props) {
+  const [isLoading, setIsLoading] = useState(false);
   const tipoLabel = TIPOS_EVENTO.find((t) => t.id === tipoEvento)?.label ?? tipoEvento;
   const asistentesLabel = LABELS_ASISTENTES[asistentes];
   const regionLabel = REGIONES.find((r) => r.id === region)?.label ?? region;
 
-  const canSubmit = nombre.trim() && empresa.trim() && correo.trim();
+  const canSubmit = nombre.trim() && empresa.trim() && correo.trim() && !isLoading;
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    await onSubmit();
+    setIsLoading(false);
+  };
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
@@ -124,7 +132,7 @@ export default function StepLead({
           Volver
         </button>
         <button
-          onClick={onNext}
+          onClick={handleSubmit}
           disabled={!canSubmit}
           className={`flex items-center gap-3 px-8 py-4 rounded-full font-black text-base transition-all duration-300 ${
             canSubmit
@@ -132,10 +140,22 @@ export default function StepLead({
               : "bg-white/10 text-white/30 cursor-not-allowed"
           }`}
         >
-          Ver mi simulación
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          {isLoading ? (
+            <>
+              <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+              </svg>
+              Preparando simulación...
+            </>
+          ) : (
+            <>
+              Ver mi simulación
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </>
+          )}
         </button>
       </div>
     </div>

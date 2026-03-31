@@ -43,9 +43,39 @@ export default function CalculadoraPage() {
   const labelCortoEvento = tipoConfig?.labelCorto ?? "tu evento";
 
   const resultado =
-    state.step >= 5 && state.tipoEvento && state.asistentes && state.region && state.diasEvento
+    state.step >= 4 && state.tipoEvento && state.asistentes && state.region && state.diasEvento
       ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region, state.diasEvento)
       : null;
+
+  const handleSubmitLead = async () => {
+    if (resultado) {
+      const tipoLabel = TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? "";
+      const asistentesLabel = LABELS_ASISTENTES[state.asistentes!];
+      const regionLabel = REGIONES.find((r) => r.id === state.region)?.label ?? "";
+      const fecha = new Date().toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
+
+      try {
+        await fetch("/api/cotizacion", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            nombre: state.nombre,
+            empresa: state.empresa,
+            correo: state.correo,
+            tipoLabel,
+            asistentesLabel,
+            regionLabel,
+            desglose: resultado.desglose,
+            total: resultado.total,
+            fecha,
+          }),
+        });
+      } catch {
+        // Falla silenciosa — el usuario igual avanza a la simulación
+      }
+    }
+    next();
+  };
 
   return (
     <div className="min-h-screen bg-[#231F20] relative">
@@ -156,7 +186,7 @@ export default function CalculadoraPage() {
               region={state.region}
               onChange={setLead}
               onBack={back}
-              onNext={next}
+              onSubmit={handleSubmitLead}
             />
           )}
 
