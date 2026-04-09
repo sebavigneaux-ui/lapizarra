@@ -47,6 +47,37 @@ export default function CalculadoraPage() {
       ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region, state.diasEvento)
       : null;
 
+  const handleLeadSubmit = async () => {
+    const res = state.tipoEvento && state.asistentes && state.region && state.diasEvento
+      ? calcular(state.tipoEvento, state.asistentes, state.seleccionBloques, state.region, state.diasEvento)
+      : null;
+
+    try {
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: state.nombre,
+          empresa: state.empresa,
+          correo: state.correo,
+          mensaje: state.mensaje,
+          tipoLabel: TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? state.tipoEvento,
+          asistentesLabel: LABELS_ASISTENTES[state.asistentes!],
+          regionLabel: REGIONES.find((r) => r.id === state.region)?.label ?? state.region,
+          diasLabel: state.diasEvento ? LABELS_DIAS[state.diasEvento] : "",
+          fechaEvento: state.fechaEvento,
+          seleccionBloques: state.seleccionBloques,
+          totalMin: res?.total[0] ?? 0,
+          totalMax: res?.total[1] ?? 0,
+        }),
+      });
+    } catch (e) {
+      console.error("Error guardando lead:", e);
+    }
+
+    next();
+  };
+
   return (
     <div className="min-h-screen bg-[#231F20] relative">
       <Blobs />
@@ -156,7 +187,7 @@ export default function CalculadoraPage() {
               region={state.region}
               onChange={setLead}
               onBack={back}
-              onNext={next}
+              onNext={handleLeadSubmit}
             />
           )}
 

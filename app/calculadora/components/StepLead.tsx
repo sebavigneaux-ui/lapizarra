@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
 import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 
@@ -12,7 +13,7 @@ interface Props {
   region: RegionId;
   onChange: (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) => void;
   onBack: () => void;
-  onNext: () => void;
+  onNext: () => Promise<void>;
 }
 
 export default function StepLead({
@@ -20,11 +21,20 @@ export default function StepLead({
   tipoEvento, asistentes, region,
   onChange, onBack, onNext,
 }: Props) {
+  const [loading, setLoading] = useState(false);
+
   const tipoLabel = TIPOS_EVENTO.find((t) => t.id === tipoEvento)?.label ?? tipoEvento;
   const asistentesLabel = LABELS_ASISTENTES[asistentes];
   const regionLabel = REGIONES.find((r) => r.id === region)?.label ?? region;
 
   const canSubmit = nombre.trim() && empresa.trim() && correo.trim();
+
+  const handleSubmit = async () => {
+    if (!canSubmit || loading) return;
+    setLoading(true);
+    await onNext();
+    setLoading(false);
+  };
 
   return (
     <div className="animate-in fade-in slide-in-from-right-4 duration-400">
@@ -124,18 +134,20 @@ export default function StepLead({
           Volver
         </button>
         <button
-          onClick={onNext}
-          disabled={!canSubmit}
+          onClick={handleSubmit}
+          disabled={!canSubmit || loading}
           className={`flex items-center gap-3 px-8 py-4 rounded-full font-black text-base transition-all duration-300 ${
-            canSubmit
+            canSubmit && !loading
               ? "bg-[#EC008C] text-white hover:bg-[#EC008C]/90 hover:gap-4"
               : "bg-white/10 text-white/30 cursor-not-allowed"
           }`}
         >
-          Ver mi simulación
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          {loading ? "Guardando..." : "Ver mi simulación"}
+          {!loading && (
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          )}
         </button>
       </div>
     </div>
