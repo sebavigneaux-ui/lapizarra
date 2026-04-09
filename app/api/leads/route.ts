@@ -15,6 +15,10 @@ export async function POST(req: NextRequest) {
     }
 
     const credentials = JSON.parse(credentialsJson);
+    // Vercel escapa los \n del private_key — los restauramos
+    if (credentials.private_key) {
+      credentials.private_key = credentials.private_key.replace(/\\n/g, "\n");
+    }
 
     const auth = new google.auth.GoogleAuth({
       credentials,

@@ -53,7 +53,7 @@ export default function CalculadoraPage() {
       : null;
 
     try {
-      await fetch("/api/leads", {
+      const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -71,6 +71,8 @@ export default function CalculadoraPage() {
           totalMax: res?.total[1] ?? 0,
         }),
       });
+      const json = await response.json();
+      if (!json.ok) console.error("API leads error:", json.error);
     } catch (e) {
       console.error("Error guardando lead:", e);
     }
