@@ -13,6 +13,7 @@ const initial: CalculadoraState = {
   nombre: "",
   empresa: "",
   correo: "",
+  telefono: "",
   mensaje: "",
 };
 
@@ -52,7 +53,7 @@ export function useCalculadora() {
   const back = () =>
     setState((s) => ({ ...s, step: Math.max(1, s.step - 1) as CalculadoraState["step"] }));
 
-  const setLead = (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) =>
+  const setLead = (field: "nombre" | "empresa" | "correo" | "telefono" | "mensaje", value: string) =>
     setState((s) => ({ ...s, [field]: value }));
 
   const reset = () => setState(initial);

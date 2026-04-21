@@ -60,6 +60,7 @@ export default function CalculadoraPage() {
           nombre: state.nombre,
           empresa: state.empresa,
           correo: state.correo,
+          telefono: state.telefono,
           mensaje: state.mensaje,
           tipoLabel: TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? state.tipoEvento,
           asistentesLabel: LABELS_ASISTENTES[state.asistentes!],
@@ -183,6 +184,7 @@ export default function CalculadoraPage() {
               nombre={state.nombre}
               empresa={state.empresa}
               correo={state.correo}
+              telefono={state.telefono}
               mensaje={state.mensaje}
               tipoEvento={state.tipoEvento}
               asistentes={state.asistentes}

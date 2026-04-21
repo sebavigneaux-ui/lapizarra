@@ -7,17 +7,18 @@ interface Props {
   nombre: string;
   empresa: string;
   correo: string;
+  telefono: string;
   mensaje: string;
   tipoEvento: TipoEvento;
   asistentes: RangoAsistentes;
   region: RegionId;
-  onChange: (field: "nombre" | "empresa" | "correo" | "mensaje", value: string) => void;
+  onChange: (field: "nombre" | "empresa" | "correo" | "telefono" | "mensaje", value: string) => void;
   onBack: () => void;
   onNext: () => Promise<void>;
 }
 
 export default function StepLead({
-  nombre, empresa, correo, mensaje,
+  nombre, empresa, correo, telefono, mensaje,
   tipoEvento, asistentes, region,
   onChange, onBack, onNext,
 }: Props) {
@@ -27,7 +28,7 @@ export default function StepLead({
   const asistentesLabel = LABELS_ASISTENTES[asistentes];
   const regionLabel = REGIONES.find((r) => r.id === region)?.label ?? region;
 
-  const canSubmit = nombre.trim() && empresa.trim() && correo.trim();
+  const canSubmit = nombre.trim() && empresa.trim() && correo.trim() && telefono.trim();
 
   const handleSubmit = async () => {
     if (!canSubmit || loading) return;
@@ -105,6 +106,16 @@ export default function StepLead({
             value={correo}
             onChange={(e) => onChange("correo", e.target.value)}
             placeholder="tu@empresa.cl"
+            className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200"
+          />
+        </div>
+        <div>
+          <label className="block text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Teléfono</label>
+          <input
+            type="tel"
+            value={telefono}
+            onChange={(e) => onChange("telefono", e.target.value)}
+            placeholder="+569 1234 5678"
             className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white placeholder-white/25 text-sm font-medium focus:outline-none focus:border-[#EC008C]/60 transition-all duration-200"
           />
         </div>

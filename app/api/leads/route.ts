@@ -41,6 +41,7 @@ export async function POST(req: NextRequest) {
       body.nombre,
       body.empresa,
       body.correo,
+      body.telefono || "",
       body.mensaje || "",
       body.tipoLabel,
       body.asistentesLabel,
@@ -65,7 +66,7 @@ export async function POST(req: NextRequest) {
         valueInputOption: "USER_ENTERED",
         requestBody: {
           values: [[
-            "Fecha", "Nombre", "Empresa", "Correo", "Mensaje",
+            "Fecha", "Nombre", "Empresa", "Correo", "Teléfono", "Mensaje",
             "Tipo de evento", "Asistentes", "Región", "Días", "Fecha evento",
             "Servicios seleccionados", "Total MIN", "Total MAX",
           ]],
@@ -75,7 +76,7 @@ export async function POST(req: NextRequest) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
-      range: "A:M",
+      range: "A:N",
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [row] },
     });
