@@ -81,6 +81,35 @@ export async function POST(req: NextRequest) {
       requestBody: { values: [row] },
     });
 
+    // Notificación WhatsApp vía Green API
+    const greenId = process.env.GREENAPI_ID_INSTANCE;
+    const greenToken = process.env.GREENAPI_TOKEN;
+    if (greenId && greenToken) {
+      const servicios = bloquesStr || "Ninguno seleccionado";
+      const mensaje = [
+        "🔔 *Nuevo lead — LaPizarra*",
+        "",
+        `👤 ${body.nombre} · ${body.empresa}`,
+        `📞 ${body.telefono || "No indicado"}`,
+        `📧 ${body.correo}`,
+        `📅 ${body.tipoLabel} · ${body.asistentesLabel} asist. · ${body.regionLabel} · ${body.diasLabel}`,
+        body.fechaEvento ? `🗓 Fecha evento: ${body.fechaEvento}` : "",
+        "",
+        `🛠 ${servicios}`,
+        `💰 ${fmt(body.totalMin)} — ${fmt(body.totalMax)}`,
+        body.mensaje ? `\n💬 "${body.mensaje}"` : "",
+      ].filter((l) => l !== undefined).join("\n").trim();
+
+      await fetch(
+        `https://7107.api.greenapi.com/waInstance${greenId}/sendMessage/${greenToken}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chatId: "56958419326@c.us", message: mensaje }),
+        }
+      ).catch((e) => console.error("WhatsApp error:", e));
+    }
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Error guardando lead:", err);
