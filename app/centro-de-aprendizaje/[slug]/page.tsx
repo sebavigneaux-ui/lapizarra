@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 import { ARTICULOS, type SeccionArticulo } from "../../data/articulos";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -14,7 +14,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const articulo = ARTICULOS.find((a) => a.slug === params.slug);
+  const { slug } = await params;
+  const articulo = ARTICULOS.find((a) => a.slug === slug);
   if (!articulo) return {};
   return {
     title: articulo.metaTitle,
@@ -159,8 +160,9 @@ function RenderSeccion({ seccion }: { seccion: SeccionArticulo }) {
   }
 }
 
-export default function ArticuloPage({ params }: Props) {
-  const articulo = ARTICULOS.find((a) => a.slug === params.slug);
+export default async function ArticuloPage({ params }: Props) {
+  const { slug } = await params;
+  const articulo = ARTICULOS.find((a) => a.slug === slug);
   if (!articulo) notFound();
 
   const relacionados = ARTICULOS.filter(
