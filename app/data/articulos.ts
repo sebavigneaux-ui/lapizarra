@@ -36,6 +36,126 @@ export interface Articulo {
 
 export const ARTICULOS: Articulo[] = [
   {
+    slug: "datos-sentimiento-6-innovaciones-para-medir-eventos",
+    titulo: "Datos de Sentimiento: 6 Innovaciones que Cambiarán la Forma en que Mides tus Eventos",
+    excerpt:
+      "Las encuestas post-evento dicen que todo estuvo 'muy bien'. Los datos de sentimiento dicen la verdad. Conoce las 6 innovaciones que están transformando la forma en que las marcas miden el impacto real de sus experiencias.",
+    categoria: "experiencia-de-marca",
+    categoriaLabel: "Experiencia de marca",
+    fecha: "2026-04-22",
+    readTime: 6,
+    metaTitle: "Datos de Sentimiento: 6 Innovaciones para Medir el Impacto de tus Eventos | LaPizarra",
+    metaDescription:
+      "Descubre cómo la tecnología de sentiment data y la IA están revolucionando la medición de eventos: emociones en tiempo real, optimización de contenido y ROI concreto.",
+    secciones: [
+      {
+        type: "intro",
+        content:
+          "Los mejores eventos generan una respuesta visceral en sus asistentes. Capturar esas emociones y traducirlas en datos concretos entrega una base poderosa para demostrar el impacto real de una experiencia. Sin embargo, comparado con el mundo data-driven del marketing digital, muchas organizaciones de eventos todavía dependen de métricas anticuadas o simplemente de la intuición para justificar su inversión. Aquí es donde entran los datos de sentimiento.",
+      },
+      {
+        type: "h2",
+        content: "¿Por qué las encuestas tradicionales no son suficientes?",
+      },
+      {
+        type: "p",
+        content:
+          "Imagina que te invitan a cenar y al final te preguntan cómo estuvo. La mayoría responderá 'muy bien', aunque no haya sido así. Es amable, pero no es útil. Los datos de sentimiento superan ese problema: en lugar de preguntar, analizan expresiones faciales para capturar reacciones honestas e involuntarias.",
+      },
+      {
+        type: "highlight",
+        content:
+          "\"Las micro-expresiones —reacciones faciales inconscientes que ocurren en milisegundos— no pueden ser controladas conscientemente. Dado que los asistentes a un evento no intentan mantener una cara de póker, estas reacciones entregan insights sorprendentemente honestos.\" — Ron Schneider, Co-Fundador de THESE GUYS.",
+      },
+      {
+        type: "p",
+        content:
+          "La tecnología NEURAL, desarrollada por THESE GUYS, rastrea 35 emociones individuales agrupadas en seis clústeres: euforia, felicidad, atención, indiferencia, incomodidad y rechazo. Al analizar los peaks y valles de estas emociones —y el contexto que los rodea— los organizadores pueden entender qué los provocó y cuán exitoso fue realmente el evento.",
+      },
+      {
+        type: "h2",
+        content: "Las 6 innovaciones en datos de sentimiento que debes conocer",
+      },
+      {
+        type: "h3",
+        content: "1. Emoción de salida (Exit Emotion)",
+      },
+      {
+        type: "p",
+        content:
+          "El peak —o valle— emocional al final del evento es quizás el dato más crítico que puedes capturar. Como dice Schneider: 'Es como correr una maratón y detenerse justo antes de la meta. Gran esfuerzo, pero sin medalla.' Un cierre poderoso asegura que tu audiencia se vaya con una impresión duradera, capaz de superar incluso los errores cometidos durante el camino.",
+      },
+      {
+        type: "h3",
+        content: "2. Optimización en tiempo real",
+      },
+      {
+        type: "p",
+        content:
+          "Los datos de sentimiento son valiosos para mejorar la comunicación post-evento, pero su verdadero poder está en la funcionalidad en tiempo real. Imagina una keynote donde puedes detectar momentos de confusión o duda mientras ocurren y ajustar el flujo del evento en vivo. Algunos speakers incluso pueden abordar las preocupaciones de la audiencia directamente, convirtiendo la incertidumbre en engagement.",
+      },
+      {
+        type: "h3",
+        content: "3. Selección de contenido",
+      },
+      {
+        type: "p",
+        content:
+          "Para el lanzamiento mundial del ŠKODA Elroq —el primer SUV eléctrico compacto de la marca— se utilizó NEURAL para identificar el loop de contenido óptimo para la audiencia presente. El análisis en tiempo real generó un aumento del 28% en atención y un 67% en tiempo de visualización. Los datos de sentimiento permiten adaptar el contenido con una precisión imposible con métodos tradicionales.",
+      },
+      {
+        type: "highlight",
+        stat: "+67%",
+        content: "de aumento en tiempo de visualización logrado al optimizar el contenido en tiempo real mediante datos de sentimiento en el lanzamiento del ŠKODA Elroq.",
+      },
+      {
+        type: "h3",
+        content: "4. Ubicación del mensaje",
+      },
+      {
+        type: "p",
+        content:
+          "El mejor mensaje cae en saco roto si se entrega en el momento equivocado. Cuando la audiencia está viviendo un momento de euforia, su capacidad de absorber contenido informativo se reduce. Sin embargo, muchas marcas siguen colocando sus mensajes clave justo después de esos peaks, donde corren el riesgo de desaparecer. Los datos de sentimiento optimizan no solo qué decir, sino cuándo decirlo.",
+      },
+      {
+        type: "h3",
+        content: "5. Insights visibles para el asistente",
+      },
+      {
+        type: "p",
+        content:
+          "Los asistentes aman los datos. Compartir los insights —en lugar de guardarlos— puede transformar los datos de sentimiento en una experiencia interactiva, donde los propios asistentes exploran sus comportamientos subconscientes. Imagina emojis que visualizan en tiempo real el sentimiento colectivo de la sala, mientras cada persona puede 'votar' con sus propias emociones simultáneamente.",
+      },
+      {
+        type: "h3",
+        content: "6. Potencial predictivo",
+      },
+      {
+        type: "p",
+        content:
+          "¿Y si pudieras predecir cómo se sentirá tu audiencia antes de que el evento comience? Los datos de sentimiento pueden integrarse directamente en los discursos mostrando palabras clave en pantalla —organizadas en categorías como 'emocionado por' o 'dudando sobre'— para que el speaker interactúe con ellas en tiempo real. Esto no solo genera conversaciones más significativas, sino que también puede moldear la emoción de salida final.",
+      },
+      {
+        type: "h2",
+        content: "¿Qué significa esto para los eventos en Chile?",
+      },
+      {
+        type: "p",
+        content:
+          "Para eventos B2C, métricas como 'sonrisas por minuto' pueden medirse contra los KPIs del evento. Para eventos B2B —como convenciones, lanzamientos de producto o ferias comerciales— los indicadores clave suelen girar en torno a la atención y el engagement, y detectar señales de cansancio o desconexión puede ser especialmente valioso.",
+      },
+      {
+        type: "p",
+        content:
+          "La adopción de estas tecnologías en Latinoamérica aún está en etapas tempranas, lo que representa una ventaja competitiva real para las marcas que las incorporen antes que su competencia. Los datos de sentimiento no son el futuro de los eventos: son el presente.",
+      },
+      {
+        type: "cta-inline",
+        label: "¿Quieres producir un evento que genere impacto medible? Simula tu presupuesto.",
+      },
+    ],
+  },
+  {
     slug: "marketing-experiencial-2026-guia-tendencias-eventos",
     titulo: "Marketing Experiencial 2026: Guía Completa de las Tendencias que Transformarán tus Eventos",
     excerpt:
