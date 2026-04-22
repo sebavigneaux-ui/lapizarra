@@ -185,6 +185,16 @@ export default async function ArticuloPage({ params }: Props) {
     image: "https://somoslapizarra.cl/og-image.jpg",
   };
 
+  const schemaBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://somoslapizarra.cl" },
+      { "@type": "ListItem", position: 2, name: "Centro de Aprendizaje", item: "https://somoslapizarra.cl/centro-de-aprendizaje" },
+      { "@type": "ListItem", position: 3, name: articulo.titulo, item: `https://somoslapizarra.cl/centro-de-aprendizaje/${articulo.slug}` },
+    ],
+  };
+
   return (
     <div className="bg-[#231F20] min-h-screen">
       <Header />
@@ -193,6 +203,10 @@ export default async function ArticuloPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArticle) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
       />
 
       {/* Breadcrumb + navegación */}
