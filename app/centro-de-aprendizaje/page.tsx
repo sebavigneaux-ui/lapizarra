@@ -35,7 +35,7 @@ export default function CentroAprendizajePage() {
       <Header />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 pb-20 px-6">
+      <section className="relative overflow-hidden pt-44 md:pt-52 pb-20 px-6">
         <Blobs />
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EC008C]" />
         <div className="max-w-6xl mx-auto relative z-10">

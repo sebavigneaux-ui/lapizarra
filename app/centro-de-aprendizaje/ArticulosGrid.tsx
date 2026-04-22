@@ -29,10 +29,10 @@ export default function ArticulosGrid({ articulos }: Props) {
   return (
     <>
       {/* Filtro por categoría */}
-      <div className="flex flex-wrap gap-2 mb-16">
+      <div className="flex gap-2 mb-16 overflow-x-auto pb-2 scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap">
         <button
           onClick={() => setCategoriaActiva("todos")}
-          className={`px-5 py-2.5 rounded-full text-sm font-black uppercase tracking-wider transition-all duration-200 ${
+          className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-black uppercase tracking-wider transition-all duration-200 ${
             categoriaActiva === "todos"
               ? "bg-[#EC008C] text-white"
               : "border border-white/20 text-white/50 hover:text-white hover:border-white/40"
@@ -44,7 +44,7 @@ export default function ArticulosGrid({ articulos }: Props) {
           <button
             key={cat.id}
             onClick={() => setCategoriaActiva(cat.id)}
-            className={`px-5 py-2.5 rounded-full text-sm font-black uppercase tracking-wider transition-all duration-200 ${
+            className={`flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-black uppercase tracking-wider transition-all duration-200 ${
               categoriaActiva === cat.id
                 ? "bg-[#EC008C] text-white"
                 : "border border-white/20 text-white/50 hover:text-white hover:border-white/40"
