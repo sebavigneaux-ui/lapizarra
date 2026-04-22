@@ -36,6 +36,183 @@ export interface Articulo {
 
 export const ARTICULOS: Articulo[] = [
   {
+    slug: "expo-2025-osaka-lecciones-diseno-experiencias-eventos",
+    titulo: "Expo 2025 Osaka: 7 Lecciones de Diseño de Experiencias que Puedes Aplicar en tus Eventos",
+    excerpt:
+      "La Expo 2025 Osaka reunió los pabellones más innovadores del mundo en diseño de experiencias. Estas son las lecciones concretas que puedes trasladar a tus próximos eventos corporativos, activaciones y stands.",
+    categoria: "experiencia-de-marca",
+    categoriaLabel: "Experiencia de marca",
+    fecha: "2026-04-22",
+    readTime: 8,
+    metaTitle: "Expo 2025 Osaka: 7 Lecciones de Diseño de Experiencias para tus Eventos | LaPizarra",
+    metaDescription:
+      "Analizamos los pabellones más innovadores de la Expo 2025 Osaka y extraemos lecciones concretas de diseño de experiencias aplicables a eventos corporativos, activaciones y stands en Chile.",
+    secciones: [
+      {
+        type: "intro",
+        content:
+          "La Expo 2025 Osaka es, antes que todo, una demostración en tiempo real de lo que es posible cuando el diseño de experiencias se toma en serio. Más de 150 países construyeron pabellones que compiten no por metro cuadrado, sino por impacto emocional, claridad de mensaje y capacidad de transportar al visitante a otro estado mental. Revisamos los pabellones que empujaron los límites del diseño experiencial y extraemos las lecciones que cualquier organización puede aplicar en sus eventos, activaciones y stands.",
+      },
+      {
+        type: "h2",
+        content: "1. El storytelling en capas retiene a la audiencia más tiempo",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de Pasona Natureverse, inspirado en la forma del amonites —una criatura marina que sobrevivió múltiples extinciones—, no se conformó con tener una pieza estrella. Tenía muchas. Su exhibición central, el 'iPS Heart', es un modelo tridimensional de corazón creado con células vivas mediante bioingeniería. Por sí solo, habría bastado para generar una oleada de grabaciones. Pero el pabellón construyó una narrativa guiada por personajes icónicos —Astroboy y Black Jack— que dieron coherencia a todo el recorrido, desde el pasado evolutivo hasta el futuro de la medicina, el sueño y la agricultura.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: una pieza impresionante atrae. Una narrativa coherente que conecta cada momento retiene, emociona y convierte al asistente en embajador.",
+      },
+      {
+        type: "h2",
+        content: "2. Una marca de lujo puede convertirse en arquitectura",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de Francia, titulado 'Theatre of Life', fue co-producido con el grupo LVMH. Louis Vuitton no apareció como sponsor en un banner: sus maletas icónicas se convirtieron en el material de construcción de dos salas completas. En la primera, 84 baúles apilados formaron un espacio fluido. En la segunda, baúles blancos construyeron una esfera cinética de gran escala que funcionó como lienzo para arte digital.",
+      },
+      {
+        type: "p",
+        content:
+          "Dior tuvo su propio espacio: una galería completamente blanca con sus diseños, infundida por proyecciones de modelos. La marca no interrumpió la experiencia, la fue.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: integrar la marca en el diseño del espacio —no en la señalética— es la diferencia entre patrocinar un evento y protagonizarlo.",
+      },
+      {
+        type: "h2",
+        content: "3. La tecnología más poderosa es la que genera emoción real",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de Singapur, apodado 'Little Red Dot' en referencia al apodo del país, presentó el 'Dream Sphere': una estructura envuelta en miles de discos reciclados, imposible de ignorar. Pero el momento más potente no fue visual: fue cuando los visitantes compartieron sus sueños y vieron cómo la tecnología los hacía iluminar la esfera en tiempo real.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: la tecnología no impresiona por ser sofisticada. Impresiona cuando hace que el asistente sienta que es parte de algo más grande que él mismo.",
+      },
+      {
+        type: "h2",
+        content: "4. La arquitectura reactiva redefine qué es un stand",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón Null², diseñado por el estudio NOIZ, está construido con módulos tipo vóxel cubiertos por una membrana espejada que se mueve y hace sonidos en respuesta al entorno. En el interior, gemelos digitales responden a la presencia de los visitantes, brazos robóticos interactúan con superficies espejadas, y usuarios remotos pueden participar a través de avatares robóticos.",
+      },
+      {
+        type: "p",
+        content:
+          "No es un stand. Es un organismo. Y esa distinción cambia completamente la relación entre el espacio y quien lo habita.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: un espacio que responde a la presencia del visitante genera una experiencia imposible de replicar en digital y difícil de olvidar.",
+      },
+      {
+        type: "h2",
+        content: "5. La narrativa necesita un clímax",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de Estados Unidos construyó su recorrido sobre la exploración espacial como la mayor aventura de la humanidad. Videos, pantallas y displays estáticos prepararon el terreno. Pero el momento cumbre fue la simulación de despegue hacia la Luna —con energía de parque temático— seguida de la oportunidad de ver una muestra lunar real recolectada en la misión Apollo.",
+      },
+      {
+        type: "p",
+        content:
+          "El contenido previo no fue relleno: fue la construcción emocional necesaria para que el clímax funcionara.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: todo evento necesita un momento cumbre claramente diseñado. Sin clímax, la experiencia se siente plana, independiente de cuánto presupuesto se haya invertido.",
+      },
+      {
+        type: "h2",
+        content: "6. Lo analógico puede ser el elemento de mayor impacto",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de España jugó con el contraste cromático —azules oceánicos y un espacio final rojo-naranja— para contar la historia de la Corriente de Kuroshio que conecta Oriente y Occidente. Hologramas y laboratorios interactivos dominaron el recorrido. Pero el espacio final, lleno de postales físicas y posts de redes sociales impresos, fue el más memorable.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: en un entorno saturado de tecnología, un elemento analógico bien ejecutado puede ser el momento que el asistente recuerde y comparta.",
+      },
+      {
+        type: "h2",
+        content: "7. Lo multisensorial no es un extra: es la experiencia",
+      },
+      {
+        type: "p",
+        content:
+          "El pabellón de Brasil regaló ponchos de colores a los visitantes que llegaban bajo la lluvia. Las persianas exteriores se levantaban para revelar esculturas inflables que se movían con la música y la luz. El espacio comenzaba completamente blanco y vivía una transformación dramática: las esculturas se desinflaban y 'morían', para luego renacer. Y en algún punto del recorrido: café auténtico.",
+      },
+      {
+        type: "p",
+        content:
+          "Vista, tacto, sonido, movimiento y olfato. Cinco sentidos comprometidos al mismo tiempo. La experiencia no solo se vio: se vivió.",
+      },
+      {
+        type: "highlight",
+        content:
+          "La lección: los eventos más recordados son aquellos que comprometen más de un sentido. El café de Brasil no fue un detalle de hospitalidad: fue parte del diseño de la experiencia.",
+      },
+      {
+        type: "h2",
+        content: "¿Qué tienen en común estos pabellones?",
+      },
+      {
+        type: "list",
+        items: [
+          {
+            titulo: "Propósito antes que estética",
+            descripcion: "Cada decisión de diseño sirvió a una narrativa clara, no al revés.",
+          },
+          {
+            titulo: "El asistente como protagonista",
+            descripcion: "Los mejores pabellones no fueron shows: fueron experiencias donde el visitante tenía agencia.",
+          },
+          {
+            titulo: "Clímax diseñado",
+            descripcion: "Todos construyeron hacia un momento cumbre. Ninguno terminó de forma plana.",
+          },
+          {
+            titulo: "Integración sensorial",
+            descripcion: "Sonido, movimiento, tacto y olfato no fueron extras: fueron parte del diseño desde el inicio.",
+          },
+        ],
+      },
+      {
+        type: "p",
+        content:
+          "Estos principios no requieren el presupuesto de un pabellón de Expo. Requieren el criterio correcto desde el briefing inicial. Y eso es exactamente lo que distingue a un evento bien producido de uno verdaderamente memorable.",
+      },
+      {
+        type: "p",
+        content:
+          "Fuente: Event Marketer — Expo 2025 Osaka, Part One: Experience Design Ideas from the Pavilions (Anna Huddleston, junio 2025). Ver artículo original en eventmarketer.com",
+      },
+      {
+        type: "cta-inline",
+        label: "¿Quieres producir un evento que deje huella? Simula tu presupuesto en 2 minutos.",
+      },
+    ],
+  },
+  {
     slug: "datos-sentimiento-6-innovaciones-para-medir-eventos",
     titulo: "Datos de Sentimiento: 6 Innovaciones que Cambiarán la Forma en que Mides tus Eventos",
     excerpt:
