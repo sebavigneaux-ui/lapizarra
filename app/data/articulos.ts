@@ -51,7 +51,7 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "intro",
         content:
-          "La pregunta más frecuente que recibimos es también la más difícil de responder con un solo número: ¿cuánto cuesta un evento corporativo en Chile? La razón es simple: el costo no es una cifra fija, es el resultado de múltiples decisiones —algunas obvias, otras que se pasan por alto— que en conjunto definen qué tan compleja y exigente será la producción. Este artículo te ayuda a entender esas variables antes de que pidas un presupuesto, para que la conversación con cualquier productora sea mucho más productiva.",
+          "La pregunta más frecuente que recibimos es también la más difícil de responder con un solo número: ¿cuánto cuesta un evento corporativo en Chile? La razón es simple: el costo no es una cifra fija, es el resultado de múltiples decisiones —algunas obvias, otras que se pasan por alto— que en conjunto definen qué tan compleja y exigente será la producción. Conocer esas variables de antemano hace que la conversación con cualquier productora sea mucho más productiva y que el presupuesto que recibas refleje realmente lo que necesitas.",
       },
       {
         type: "h2",
@@ -130,7 +130,21 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "Producir fuera de la Región Metropolitana tiene costos adicionales, principalmente por logística y traslado de equipos técnicos. Un mismo evento en Santiago y en otra región del país puede tener diferencias relevantes en el presupuesto final. Mientras más al sur o al norte, más se encarece la producción.",
+          "Producir fuera de la Región Metropolitana tiene costos adicionales, principalmente por logística y traslado de equipos técnicos. Un mismo evento en Santiago puede tener un presupuesto notablemente distinto al de ese mismo evento en Puerto Montt: no cambia el concepto ni los servicios, cambia lo que cuesta llevar todo hasta allá y operar en terreno.",
+      },
+      {
+        type: "h2",
+        content: "Una nota sobre el fee de producción",
+      },
+      {
+        type: "p",
+        content:
+          "Cuando recibes un presupuesto de una productora, parte de ese valor corresponde al fee de producción: el cargo por la gestión integral del proyecto. Esto incluye la búsqueda y coordinación de proveedores, la dirección del proyecto, la logística, la presencia en terreno el día del evento y la capacidad de respuesta ante imprevistos.",
+      },
+      {
+        type: "p",
+        content:
+          "Es importante entender qué cubre ese fee y cómo está presentado en el presupuesto. Algunas productoras lo detallan como una línea separada; otras lo distribuyen dentro de cada ítem. Lo relevante es que puedas leer el presupuesto con claridad y entender qué estás pagando por servicios directos y qué por la gestión que los hace funcionar.",
       },
       {
         type: "h2",
@@ -144,23 +158,7 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "Lo que sí podemos hacer es darte una estimación simulada según el tipo de evento, los servicios que necesitas y la región —y eso lo puedes hacer tú mismo en nuestra calculadora en menos de 2 minutos. O si prefieres, conversamos directamente: con 30 minutos de reunión y buenas preguntas, podemos entender tu proyecto y enviarte una propuesta detallada en 48 horas.",
-      },
-      {
-        type: "cta-inline",
-        label: "Simula el presupuesto de tu evento",
-      },
-    ],
-  },
-  {
-    slug: "expo-2025-osaka-lecciones-diseno-experiencias-eventos",
-        content:
-          "La forma más rápida de tener un presupuesto real es usar nuestra calculadora. En menos de 2 minutos puedes seleccionar el tipo de evento, los bloques de servicio que necesitas, la región y el nivel de producción. El resultado es un estimado desglosado por bloque —no un número mágico sin explicación.",
-      },
-      {
-        type: "p",
-        content:
-          "Si prefieres hablar directamente, también podemos hacer una reunión de 30 minutos para entender tu proyecto y enviarte una propuesta en 48 horas. No cobramos por cotizar.",
+          "Lo que sí podemos hacer es darte una estimación simulada según el tipo de evento, los servicios que necesitas y la región —y eso lo puedes hacer en nuestra calculadora en menos de 2 minutos. O si prefieres, conversamos directamente: con una reunión para entender bien tu necesidad y tus objetivos, podemos enviarte una propuesta detallada en 48 horas.",
       },
       {
         type: "cta-inline",
