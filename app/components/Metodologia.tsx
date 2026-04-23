@@ -27,10 +27,15 @@ const pasos = [
     titulo: "Acompañamos hasta el cierre",
     desc: "Nos aseguramos de que cada momento del evento funcione como fue pensado.",
   },
+  {
+    num: "06",
+    titulo: "Post evento",
+    desc: "Entregamos reporte de resultados, galería de fotos y feedback para mejorar la siguiente edición.",
+  },
 ];
 
-const LINE_DURATION = 2200; // ms
-const STEP_DELAYS = [220, 660, 1100, 1540, 1980]; // ms — cuándo aparece cada paso
+const LINE_DURATION = 2400; // ms
+const STEP_DELAYS = [180, 540, 900, 1260, 1620, 1980]; // ms — cuándo aparece cada paso
 
 export default function Metodologia() {
   const [visible, setVisible] = useState(false);
@@ -60,7 +65,7 @@ export default function Metodologia() {
         <div className="hidden md:block relative">
 
           {/* Números arriba */}
-          <div className="grid grid-cols-5 mb-4">
+          <div className="grid grid-cols-6 mb-4">
             {pasos.map((paso, i) => (
               <div key={paso.num} className="flex justify-center">
                 <span
@@ -109,7 +114,7 @@ export default function Metodologia() {
           </div>
 
           {/* Títulos y descripciones abajo */}
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-6 gap-6">
             {pasos.map((paso, i) => (
               <div
                 key={paso.num}
