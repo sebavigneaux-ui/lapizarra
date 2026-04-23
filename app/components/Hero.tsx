@@ -59,7 +59,7 @@ export default function Hero() {
             <h1 className="font-black leading-none tracking-tighter mb-10">
               <span className="block text-5xl md:text-7xl text-white">Productora de Eventos</span>
               <span className="block text-5xl md:text-7xl text-white">Corporativos en Chile</span>
-              <span className="block text-3xl md:text-4xl text-[#EC008C] mt-2">Activaciones, Ferias y Lanzamientos</span>
+              <span className="block text-3xl md:text-4xl text-[#EC008C] mt-2">Convenciones, Lanzamientos, Ferias y Celebraciones</span>
             </h1>
 
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-lg">
