@@ -37,127 +37,123 @@ export interface Articulo {
 export const ARTICULOS: Articulo[] = [
   {
     slug: "cuanto-cuesta-evento-corporativo-chile",
-    titulo: "¿Cuánto cuesta un evento corporativo en Chile? Rangos reales y desglose por bloque",
+    titulo: "¿Cuánto cuesta un evento corporativo en Chile? Las variables que debes conocer antes de presupuestar",
     excerpt:
-      "Desde $3 millones hasta $80 millones: los rangos reales de producción de eventos corporativos en Chile, desglosados por bloque de servicio, tipo de evento y región. Sin rodeos.",
+      "El costo de un evento corporativo no es una cifra plana: depende del tipo de evento, los bloques de servicio, el nivel de producción y la región. Te explicamos cómo se construye un presupuesto y qué preguntas hacerte antes de pedirlo.",
     categoria: "eventos-corporativos",
     categoriaLabel: "Eventos corporativos",
     fecha: "2026-04-22",
     readTime: 5,
-    metaTitle: "¿Cuánto cuesta un evento corporativo en Chile? Precios reales 2026 | LaPizarra",
+    metaTitle: "¿Cuánto cuesta un evento corporativo en Chile? Variables y niveles de producción | LaPizarra",
     metaDescription:
-      "Rangos reales de costo para eventos corporativos en Chile: venue, catering, técnica, iluminación y producción. Ejemplos con presupuestos de $5M, $20M y $50M+ según tipo de evento y región.",
+      "Antes de presupuestar un evento corporativo en Chile, necesitas entender qué variables determinan el costo: tipo de evento, bloques de servicio, nivel de producción y región. Guía práctica de LaPizarra.",
     secciones: [
       {
         type: "intro",
         content:
-          "La pregunta más común que recibimos —y también la que más rodeos genera en el mercado— es esta: ¿cuánto cuesta producir un evento corporativo en Chile? La respuesta honesta tiene dos partes. Primero: depende de varias variables que vamos a desgranar en este artículo. Segundo: tenemos datos reales, y te los vamos a mostrar sin eufemismos. Llevamos más de 21 marcas producidas y hemos aprendido que la transparencia en los precios genera mejores proyectos —no al revés.",
+          "La pregunta más frecuente que recibimos es también la más difícil de responder con un solo número: ¿cuánto cuesta un evento corporativo en Chile? La razón es simple: el costo no es una cifra fija, es el resultado de múltiples decisiones —algunas obvias, otras que se pasan por alto— que en conjunto definen qué tan compleja y exigente será la producción. Este artículo te ayuda a entender esas variables antes de que pidas un presupuesto, para que la conversación con cualquier productora sea mucho más productiva.",
       },
       {
         type: "h2",
-        content: "Las variables que mueven el presupuesto",
+        content: "Lo primero: ¿qué tipo de evento es?",
       },
       {
         type: "p",
         content:
-          "El costo de un evento corporativo no es una cifra plana. Es el resultado de al menos cuatro variables que se multiplican entre sí: el tipo de evento, el tamaño (número de asistentes), los bloques de servicio que incluyes y la región donde se realiza. Cambia uno de estos factores y el presupuesto puede moverse un 25% hacia arriba o hacia abajo.",
-      },
-      {
-        type: "h3",
-        content: "Variable 1: Tipo de evento",
+          "No es lo mismo producir un kick-off interno para 60 personas que un lanzamiento de producto para 400 invitados de prensa y distribuidores. El tipo de evento define las expectativas —tanto las de la audiencia como las del equipo que produce— y con eso, el nivel de infraestructura necesario.",
       },
       {
         type: "list",
         items: [
-          { titulo: "Evento interno (incentivos, kick-off, celebración de equipo)", descripcion: "El más acotado en producción. Exige menos infraestructura técnica y el estándar de venue es más flexible. Factorización: ×0.80 sobre base." },
-          { titulo: "Activación BTL o de marca", descripcion: "Requiere mayor creatividad en diseño, pero los eventos son más cortos y en espacios no convencionales. Factorización: ×0.85." },
-          { titulo: "Stand o presencia en feria", descripcion: "El costo depende casi enteramente del stand y los materiales. La logística de transporte es intensiva. Factorización: ×0.90." },
-          { titulo: "Evento corporativo estándar (convención, seminario, gala)", descripcion: "La base de cálculo. Incluye venue profesional, técnica completa y catering formal. Factorización: ×1.00." },
-          { titulo: "Lanzamiento de producto", descripcion: "El más exigente en producción audiovisual y diseño de experiencia. Las expectativas son altas y el margen de error, bajo. Factorización: ×1.25." },
+          { titulo: "Eventos internos", descripcion: "Incentivos, kick-offs, celebraciones de equipo. Son los más acotados en producción: el estándar de venue es más flexible, la técnica puede ser sencilla y el foco está en el contenido y la experiencia del equipo. Menor complejidad, menor costo base." },
+          { titulo: "Activaciones BTL y de marca", descripcion: "Requieren más creatividad en el diseño del espacio y en la mecánica de participación, pero suelen ser eventos más cortos y en locaciones no convencionales. La ingeniería del concepto importa más que la infraestructura." },
+          { titulo: "Ferias y stands", descripcion: "Aquí el costo está concentrado en el diseño y construcción del stand, los materiales y la logística de transporte. La producción técnica en sala es secundaria." },
+          { titulo: "Convenciones, seminarios y galas", descripcion: "El evento corporativo clásico. Venue profesional, catering formal, técnica completa y coordinación extendida. Es el punto de referencia desde el cual se ajustan los demás tipos." },
+          { titulo: "Lanzamientos de producto", descripcion: "El más exigente en producción audiovisual, diseño de experiencia y precisión de ejecución. Las expectativas son altas porque hay prensa, clientes y distribuidores presentes, y el margen de error es bajo." },
         ],
       },
       {
-        type: "h3",
-        content: "Variable 2: Región",
-      },
-      {
-        type: "p",
-        content:
-          "Producir fuera de la Región Metropolitana encarece el proyecto principalmente por logística y transporte de equipos técnicos. Los multiplicadores regionales que usamos como referencia son: Región Metropolitana ×1.00 (base), Región de Valparaíso ×1.08, Regiones IV y VIII ×1.15, Región IX ×1.20, y Región X hacia el sur ×1.25. Un evento de $20 millones en Santiago puede costar cerca de $25 millones en Puerto Montt.",
-      },
-      {
         type: "h2",
-        content: "Desglose por bloque: cuánto cuesta cada componente",
+        content: "Los bloques que componen un evento",
       },
       {
         type: "p",
         content:
-          "Un evento corporativo se construye por bloques de servicio. Cada bloque tiene tres niveles de producción —básico, intermedio y premium— y el costo total es la suma de los bloques que eliges. Estos son los rangos reales que manejamos:",
+          "Un evento corporativo no se compra como un paquete único: se construye por bloques. Cada bloque es un área de servicio —venue, catering, técnica, iluminación, escenografía, fotografía— y cada uno tiene distintos niveles de calidad y complejidad. El presupuesto total es la suma de las decisiones que tomas en cada bloque.",
       },
       {
         type: "list",
         items: [
-          { titulo: "Venue / espacio", descripcion: "Entre $2.000.000 y $10.000.000 dependiendo del aforo, la ubicación y si incluye equipamiento básico. Un salón de hotel 5 estrellas para 200 personas cuesta entre $4M y $7M." },
-          { titulo: "Catering y alimentación", descripcion: "Entre $15.000 y $100.000 por persona. Un coffee break básico para 100 personas puede salir en $1.5M; un cóctel de gala con barra abierta para 200 personas puede superar los $12M." },
-          { titulo: "Técnica (audio, video, streaming)", descripcion: "Entre $1.500.000 y $14.000.000. Aquí entran sonido, pantallas, operación técnica en sala y transmisión en vivo. Un nivel básico para 80 personas con pantalla y sonido: $1.5M-$2.5M. Un evento producido para 500 personas con múltiples pantallas, cámaras y streaming: $8M-$14M." },
-          { titulo: "Iluminación y ambientación", descripcion: "Entre $500.000 y $5.500.000. Una puesta de luz básica para un auditorio puede costar $500K. Un diseño de iluminación para escenario de gala o lanzamiento con luces moving y efectos especiales puede llegar a $5.5M." },
-          { titulo: "Escenografía y producción física", descripcion: "Entre $800.000 y $8.000.000. Desde tarimas estándar hasta sets construidos a medida con impresión en gran formato, estructuras de tensión y diseño de marca integrado." },
-          { titulo: "Fotografía y video profesional", descripcion: "Entre $300.000 y $2.500.000. Un fotógrafo para medio día de evento: $300K-$500K. Un equipo audiovisual completo con video aéreo, cobertura multipunto y edición en 48 horas: $1.5M-$2.5M." },
-          { titulo: "Producción general y coordinación", descripcion: "El fee de producción se calcula como un porcentaje sobre el total neto de servicios: entre el 17% y el 20%. No es un cobro arbitrario: cubre la dirección de proyecto, proveedores, logística, contingencias y ejecución en terreno." },
+          { titulo: "Venue y espacio", descripcion: "El contenedor del evento. Puede ser una sala de hotel, un centro de eventos, un espacio industrial o una locación a medida. Las variables son el aforo, la ubicación, los servicios incluidos y la exclusividad del espacio." },
+          { titulo: "Catering y alimentación", descripcion: "Desde un coffee break hasta un cóctel de gala con barra abierta. Es uno de los ítems con mayor rango de costo por persona, y también uno de los que más impacto tiene en la percepción del evento." },
+          { titulo: "Técnica: audio, video y streaming", descripcion: "Sonido, pantallas, iluminación de escenario, operación técnica en sala y, si aplica, transmisión en vivo. La diferencia entre un nivel básico y un nivel de producción broadcast puede ser muy significativa." },
+          { titulo: "Escenografía y diseño de espacio", descripcion: "Desde tarimas e impresión de señalética hasta sets construidos a medida con estructuras, materiales especiales y diseño de marca integrado. Define la primera impresión del espacio." },
+          { titulo: "Contenido y producción audiovisual", descripcion: "Fotografía, video del evento, producción de piezas para pantalla, motion graphics y edición post-evento. Muchas organizaciones subestiman este bloque hasta que ven el resultado de no haberlo incluido." },
+          { titulo: "Producción general y coordinación", descripcion: "El bloque que hace que todo funcione: dirección del proyecto, coordinación de proveedores, logística, presencia en terreno y gestión de contingencias. Es transversal a todos los demás y garantiza que los otros bloques se ejecuten como se planificaron." },
         ],
       },
       {
         type: "h2",
-        content: "Tres ejemplos reales de presupuesto",
+        content: "Los niveles de producción: básico, intermedio y premium",
       },
       {
         type: "p",
         content:
-          "Para hacer esto más concreto, aquí tienes tres escenarios que representan rangos reales del mercado chileno de producción de eventos corporativos:",
+          "Cada bloque puede ejecutarse en distintos niveles. No se trata de \"barato vs. caro\", sino de qué estándar necesita tu evento dado el objetivo que persigues y la audiencia que estará presente.",
       },
       {
         type: "ordered-list",
         items: [
           {
-            titulo: "Evento interno · 80 personas · Santiago · $5M–$8M",
-            descripcion: "Kick-off de equipo en sala de hotel. Incluye venue con coffee break, técnica básica (pantalla + sonido), presentaciones y moderación. Sin escenografía elaborada. Fee de producción incluido. Ideal para comunicar resultados anuales o lanzar un nuevo período.",
+            titulo: "Nivel básico",
+            descripcion: "Cubre la funcionalidad del evento. El espacio está bien habilitado, la técnica funciona correctamente y los asistentes tienen lo que necesitan para participar. Es el nivel adecuado para eventos internos o instancias de trabajo donde el contenido es el protagonista.",
           },
           {
-            titulo: "Convención corporativa · 200 personas · Santiago · $18M–$28M",
-            descripcion: "Salón de hotel o centro de eventos, catering completo (almuerzo + cocktail), técnica con pantallas dobles, iluminación de escenario, fotografía profesional y producción general. Este rango cubre el 80% de los eventos corporativos que producimos en Chile.",
+            titulo: "Nivel intermedio",
+            descripcion: "Incorpora diseño y atención al detalle. El espacio refleja la identidad de la marca, la producción técnica está bien ejecutada y los asistentes perciben que hubo planificación detrás. Es el nivel de la mayoría de los eventos corporativos formales.",
           },
           {
-            titulo: "Lanzamiento de producto · 300 personas · Valparaíso · $45M–$65M",
-            descripcion: "Venue experiencial, producción audiovisual de alto nivel, diseño de escenografía a medida, catering gourmet, video aéreo, livestreaming y equipo de producción completo por 2 días. El multiplicador regional (+8%) y el multiplicador de lanzamiento (+25%) elevan significativamente la base respecto a un evento corporativo estándar en RM.",
+            titulo: "Nivel premium",
+            descripcion: "Producción de alto estándar en todos los frentes. Desde la selección del venue hasta el cierre del evento, cada elemento está diseñado para generar una experiencia memorable. Es el nivel requerido para lanzamientos de producto, eventos con presencia de prensa o instancias donde la marca necesita impresionar.",
           },
         ],
       },
       {
         type: "highlight",
         content:
-          "El rango más común en el mercado chileno para un evento corporativo bien producido de 100-200 personas está entre $12M y $30M todo incluido.",
-        stat: "$12M–$30M",
+          "La decisión más importante no es cuánto gastar, sino en qué bloques concentrar la inversión según el objetivo del evento. Un lanzamiento necesita producción audiovisual premium; un kick-off interno puede tener catering intermedio y escenografía básica sin perder impacto.",
       },
       {
         type: "h2",
-        content: "Lo que nadie te dice sobre el fee de producción",
+        content: "La región también importa",
       },
       {
         type: "p",
         content:
-          "Muchas productoras presentan presupuestos que ocultan el fee dentro de los ítems, inflando artificialmente el costo de cada proveedor. En LaPizarra separamos el fee de producción como una línea explícita —entre el 17% y el 20%— porque creemos que el cliente merece saber qué paga por gestión y qué paga por servicios.",
+          "Producir fuera de la Región Metropolitana tiene costos adicionales, principalmente por logística y traslado de equipos técnicos. Un mismo evento en Santiago y en otra región del país puede tener diferencias relevantes en el presupuesto final. Mientras más al sur o al norte, más se encarece la producción.",
+      },
+      {
+        type: "h2",
+        content: "Por qué es difícil darte un número sin conocer tu proyecto",
       },
       {
         type: "p",
         content:
-          "Ese fee cubre: búsqueda y negociación con proveedores, dirección de proyecto, coordinación logística, presencia en terreno el día del evento, gestión de contingencias y reportería post-evento. No es un margen de ganancia encubierto: es el costo de tener un equipo que responde por el resultado.",
-      },
-      {
-        type: "h2",
-        content: "¿Cómo obtener una estimación precisa para tu evento?",
+          "Cuando alguien nos pregunta \"¿cuánto cuesta un evento para 200 personas?\", la respuesta honesta es: no lo sabemos todavía. Porque no conocemos los objetivos del evento, qué rol juega en la estrategia de la organización, qué expectativas tiene la audiencia ni qué nivel de producción es coherente con la marca. Esas preguntas definen el presupuesto más que el número de personas.",
       },
       {
         type: "p",
+        content:
+          "Lo que sí podemos hacer es darte una estimación simulada según el tipo de evento, los servicios que necesitas y la región —y eso lo puedes hacer tú mismo en nuestra calculadora en menos de 2 minutos. O si prefieres, conversamos directamente: con 30 minutos de reunión y buenas preguntas, podemos entender tu proyecto y enviarte una propuesta detallada en 48 horas.",
+      },
+      {
+        type: "cta-inline",
+        label: "Simula el presupuesto de tu evento",
+      },
+    ],
+  },
+  {
+    slug: "expo-2025-osaka-lecciones-diseno-experiencias-eventos",
         content:
           "La forma más rápida de tener un presupuesto real es usar nuestra calculadora. En menos de 2 minutos puedes seleccionar el tipo de evento, los bloques de servicio que necesitas, la región y el nivel de producción. El resultado es un estimado desglosado por bloque —no un número mágico sin explicación.",
       },
