@@ -41,7 +41,7 @@ export default function FeriasStands() {
         {/* ── CTA ── */}
         <div className="flex justify-start">
           <Link
-            href="/ferias-stands"
+            href="/servicios/ferias-stands"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 text-white/60 font-black text-sm hover:text-white hover:border-white/50 transition-all duration-200"
           >
             Conocer nuestra metodología

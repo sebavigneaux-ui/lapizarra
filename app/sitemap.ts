@@ -20,10 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${BASE}/ferias-stands`,
+      url: `${BASE}/servicios/ferias-stands`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${BASE}/proyectos`,
