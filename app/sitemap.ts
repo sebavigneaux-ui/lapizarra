@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ARTICULOS } from "./data/articulos";
+import { SERVICIOS } from "./data/servicios";
 import { proyectos } from "./data/proyectos";
 
 const BASE = "https://somoslapizarra.cl";
@@ -38,6 +39,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const serviciosPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/servicios`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    ...SERVICIOS.map((s) => ({
+      url: `${BASE}/servicios/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+  ];
+
   const proyectosPages: MetadataRoute.Sitemap = proyectos.map((p) => ({
     url: `${BASE}/proyectos/${p.slug}`,
     lastModified: new Date(),
@@ -52,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...proyectosPages, ...articulosPages];
+  return [...staticPages, ...serviciosPages, ...proyectosPages, ...articulosPages];
 }
