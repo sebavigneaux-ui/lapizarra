@@ -2,13 +2,15 @@ export type CategoriaArticulo =
   | "eventos-corporativos"
   | "activaciones-btl"
   | "ferias-stands"
-  | "experiencia-de-marca";
+  | "experiencia-de-marca"
+  | "casos-de-estudio";
 
 export const CATEGORIAS: { id: CategoriaArticulo; label: string }[] = [
   { id: "eventos-corporativos", label: "Eventos corporativos" },
   { id: "activaciones-btl", label: "Activaciones BTL" },
   { id: "ferias-stands", label: "Ferias & Stands" },
   { id: "experiencia-de-marca", label: "Experiencia de marca" },
+  { id: "casos-de-estudio", label: "Casos de Estudio" },
 ];
 
 export type SeccionArticulo =
@@ -19,7 +21,9 @@ export type SeccionArticulo =
   | { type: "list"; items: (string | { titulo: string; descripcion: string })[] }
   | { type: "ordered-list"; items: { titulo: string; descripcion: string }[] }
   | { type: "highlight"; content: string; stat?: string }
-  | { type: "cta-inline"; label: string };
+  | { type: "cta-inline"; label: string; href?: string; buttonLabel?: string }
+  | { type: "quote"; content: string; author: string }
+  | { type: "table"; headers: [string, string]; rows: [string, string][] };
 
 export interface Articulo {
   slug: string;
@@ -1072,6 +1076,363 @@ export const ARTICULOS: Articulo[] = [
         type: "p",
         content:
           "Las organizaciones que tratan los eventos corporativos como inversiones estratégicas —no como gastos operativos— son las que logran que sus equipos, clientes y marcas recuerden cada experiencia durante años. El estándar es posible. Solo requiere el enfoque correcto.",
+      },
+    ],
+  },
+
+  // ─── CASOS DE ESTUDIO ────────────────────────────────────────────────────────
+
+  {
+    slug: "stands-que-convierten-instacart-groceryshop-2024",
+    titulo: "Stands que Convierten: Cómo Instacart Generó Engagement (y Cómo Replicarlo en Ferias Chilenas)",
+    excerpt:
+      "Case study de Instacart en Groceryshop 2024: cómo un stand con gamification y diseño inmersivo transformó visitors en prospects cualificados. 5 principios adaptables a ferias chilenas.",
+    categoria: "casos-de-estudio",
+    categoriaLabel: "Casos de Estudio",
+    fecha: "2026-04-23",
+    readTime: 10,
+    metaTitle:
+      "Stands que Convierten: Cómo Instacart Generó Engagement (Y Adaptarlo a Chile) | LaPizarra",
+    metaDescription:
+      "Case study Instacart en Groceryshop 2024. Framework visual + experiencia + gamification para stands. 5 principios adaptables a ferias chilenas.",
+    secciones: [
+      {
+        type: "intro",
+        content:
+          "Bonitos. Llenos de gente. Muchas fotos para Instagram. Pero después: ¿cuántos leads? ¿cuántas conversiones? Silencio. Un stand que impresiona no es lo mismo que un stand que convierte. Instacart lo entendió — y en Groceryshop 2024 no hicieron un stand bonito. Hicieron un sistema de conversión disfrazado de diversión.",
+      },
+      { type: "h3", content: "Por qué este caso importa para ti" },
+      {
+        type: "p",
+        content:
+          "Instacart es una empresa tech B2B2C. Sus clientes son retailers. En Groceryshop 2024 —la feria de retail más importante de EE.UU., octubre 2024, Las Vegas, 1.000+ retailers asistentes— estaban lanzando una nueva feature: Gamification en Caper Carts (carros inteligentes con IA). Objetivo: que retailers vieran el valor de gamification, no que solo lo escucharan en una presentación. Resultado: stand viral que convirtió curiosos en prospects cualificados.",
+      },
+
+      // SECCIÓN 1: EL DESAFÍO
+      { type: "h2", content: "El desafío: stand bonito ≠ stand que vende" },
+      {
+        type: "p",
+        content:
+          "Instacart sabía: si no diferenciaban, eran un stand más entre 100. Y cuando todos los stands son bonitos, ninguno destaca.",
+      },
+      { type: "h3", content: "Lo que la mayoría de empresas hace" },
+      {
+        type: "list",
+        items: [
+          "Renta booth estándar (10×10, 20×20)",
+          "Pone nombre de marca grande y bien iluminado",
+          "Pone product mockups",
+          "Pone gente vendiendo (\"Hablemos de soluciones\")",
+          "Espera que la gente entre",
+        ],
+      },
+      {
+        type: "p",
+        content: "Resultado típico: 50–100 visitas, 10–15 leads débiles.",
+      },
+      {
+        type: "highlight",
+        content:
+          "El verdadero competidor no es el stand de al lado. Es la apatía. La gente camina por la feria pensando: ¿Para qué me acerco?",
+      },
+      { type: "h3", content: "El síntoma: mucha gente, pocos leads" },
+      {
+        type: "p",
+        content:
+          "Antes de Groceryshop 2024, Instacart había hecho stands tradicionales. El resultado típico: 300 personas pasaban por el booth, 80 se detenían a hablar, 15–20 eran prospects reales. Eso es 5–7% de conversión de visitas a leads. En B2B, no es suficiente.",
+      },
+      { type: "h3", content: "La raíz del problema" },
+      {
+        type: "list",
+        items: [
+          {
+            titulo: "Sin diferenciación experiencial",
+            descripcion:
+              "Cuando todos los stands son 'presentación + vendedor', ninguno destaca.",
+          },
+          {
+            titulo: "Sin razón emocional para entrar",
+            descripcion:
+              "Las personas no entran por 'aprender sobre soluciones'. Entran por curiosidad, entretenimiento o porque alguien las invitó.",
+          },
+          {
+            titulo: "Sin conversación profunda post-entrada",
+            descripcion:
+              "Sin conexión emocional previa, el pitch es solo ruido.",
+          },
+        ],
+      },
+      {
+        type: "highlight",
+        stat: "5×",
+        content:
+          "Instacart investigó: ¿qué hacen retailers cuando prueban una experiencia vs. cuando solo la escuchan? Cuando experimentan, entienden 5× mejor el valor.",
+      },
+      {
+        type: "p",
+        content:
+          "Ese fue el insight clave. No querían que retailers escucharan sobre gamification. Querían que experimentaran la diversión que gamification genera — para que luego entendieran cómo eso se traduce a cliente feliz en tienda.",
+      },
+
+      // SECCIÓN 2: LOS OBJETIVOS
+      {
+        type: "h2",
+        content: "Los objetivos: qué debería lograr un stand (de verdad)",
+      },
+      {
+        type: "p",
+        content:
+          "\"Queremos leads\" no es un objetivo. Es el mínimo. Un objetivo real es específico, medible y diferenciado. Instacart definió cuatro.",
+      },
+      {
+        type: "ordered-list",
+        items: [
+          {
+            titulo: "Diferenciación (Break Through The Noise)",
+            descripcion:
+              "Ser el stand más memorable de la feria. No competir en 'presentación bonita' sino en 'experiencia divertida e inesperada'. Métrica: % de retailers que lo recuerdan a las 2 semanas.",
+          },
+          {
+            titulo: "Educación a través de la experiencia",
+            descripcion:
+              "Que retailers entiendan qué es gamification sin necesidad de explicación. El booth ES gamification: entras, juegas, ganas, experimentas. Conexión lógica automática: 'si esto es divertido, mis clientes también lo sentirán así.'",
+          },
+          {
+            titulo: "Engagement (crear conversación memorable)",
+            descripcion:
+              "Cuando alguien entra a jugar y gana un premio, el equipo no vende: pregunta '¿Cómo fue la experiencia?'. Ahí empieza la conversación real. Meta: 5+ minutos de conversación promedio vs. 30 segundos típico.",
+          },
+          {
+            titulo: "Conversión cualificada (leads que cierren)",
+            descripcion:
+              "Meta: 25–30% de visitors convertidos en qualified leads. Visitors que experimentan + conversan = quieren conocer más. Follow-up post-feria con contexto real.",
+          },
+        ],
+      },
+      {
+        type: "table",
+        headers: ["Objetivo normal", "Objetivo Instacart"],
+        rows: [
+          [
+            "Leads",
+            "Leads cualificados de retailers que experimentaron la diferencia",
+          ],
+          [
+            "Visitas al booth",
+            "Visitors que se detienen más de 3 minutos",
+          ],
+          [
+            "Booth traffic",
+            "Conversación memorable + conversión",
+          ],
+        ],
+      },
+      {
+        type: "p",
+        content:
+          "Instacart no optimizó para 'cantidad de gente'. Optimizó para 'calidad de conversación post-experiencia'.",
+      },
+
+      // SECCIÓN 3: LA PROPUESTA
+      { type: "h2", content: "La propuesta: el framework (y cómo adaptarlo)" },
+      {
+        type: "p",
+        content:
+          "Instacart no hizo un stand tradicional. Hizo un ambiente experiencial con 5 elementos clave.",
+      },
+      {
+        type: "h3",
+        content: "Elemento 1: Diferenciación visual — break the pattern",
+      },
+      {
+        type: "p",
+        content:
+          "Stand de 20×40 pies con checkerboard patterns y bright, splashy colors. En una feria donde todos los stands son 'profesionales' (grises, negros, azules), el contraste hace que destaque sin necesidad de ser el más grande.",
+      },
+      {
+        type: "p",
+        content:
+          "Cómo adaptarlo: no copies el diseño de Instacart. Copia el principio: ¿Cómo se ve el stand desde 50 metros? ¿Es visualmente diferente a todo lo demás? ¿Invita a entrar sin decir nada?",
+      },
+      {
+        type: "h3",
+        content: "Elemento 2: Experiencia inmersiva — no solo showcase",
+      },
+      {
+        type: "p",
+        content:
+          "En lugar de mostrar carros inteligentes, Instacart creó dos ambientes (home y store) conectados por puertas de refrigerador. El recorrido enseña el valor de forma fluida: entra como customer, experimenta la app, cruza como retailer, entiende el impacto en tienda.",
+      },
+      {
+        type: "p",
+        content:
+          "Cómo adaptarlo: diseña una entrada provocadora, zonas de experiencia (no de presentación), un recorrido lógico que enseña tu valor, y una salida con reconocimiento o sorpresa.",
+      },
+      {
+        type: "h3",
+        content: "Elemento 3: Gamification — crea motivación para entrar",
+      },
+      {
+        type: "p",
+        content:
+          "Plinko Game: las personas tiran una moneda 3D-printed que cae por pegs y aterriza en un slot con premio (swag, gift cards, membresía Instacart+). El juego genera diversión inmediata, suspense real y refuerza el valor del producto: la membresía como premio es el producto.",
+      },
+      {
+        type: "p",
+        content:
+          "Cómo adaptarlo para ferias en Chile: no copies Plinko. Copia el principio: ¿qué juego o experiencia tiene suspense y enseña tu valor? Puede ser un AR filter que muestra la diferencia de tu servicio, un quiz que entretiene mientras educa, o una demo interactiva que muestra el producto en acción.",
+      },
+      {
+        type: "h3",
+        content: "Elemento 4: Conversación estratégica — captura real",
+      },
+      {
+        type: "p",
+        content:
+          "El Plinko no era entretenimiento gratis. Mientras esperabas en la fila, el equipo hablaba contigo, preguntaba sobre tu empresa y tu uso de Caper Carts. Durante el juego observaban tu nivel de engagement. Post-juego: '¿Viste algo interesante? Conversemos.' La conversación era natural, no forzada.",
+      },
+      {
+        type: "h3",
+        content: "Elemento 5: Sostenibilidad — reutilización inteligente",
+      },
+      {
+        type: "p",
+        content:
+          "El stand fue construido con elementos reutilizables de stands anteriores de Instacart. Más allá de la sustentabilidad de marca, la lección es de eficiencia: estructuras probadas + diseñador que sabe cómo adaptarlas = menor costo y riesgo en cada nueva feria.",
+      },
+
+      // SECCIÓN 4: RESULTADOS
+      { type: "h2", content: "Los resultados" },
+      { type: "h3", content: "¿Fue el stand más memorable? ✓" },
+      {
+        type: "p",
+        content:
+          "Event Marketer lo destacó como case study. Instacart lo incluyó en su portfolio de eventos. Retailers lo comentaron en redes. El stand rompió el patrón sin ser el más caro ni el más grande.",
+      },
+      {
+        type: "highlight",
+        content: "Experiencia > presupuesto.",
+      },
+      { type: "h3", content: "¿Conversaciones más largas? ✓" },
+      {
+        type: "quote",
+        content:
+          "What struck us most was how naturally these interactive touchpoints sparked deeper conversations about consumer engagement.",
+        author: "Stephanie Paturzo Swingle, Senior Director B2B Marketing, Instacart",
+      },
+      {
+        type: "p",
+        content:
+          "Personas que normalmente huyen después de 30 segundos querían hablar sobre lo que habían experimentado. Las conversaciones fluyeron de forma natural, sin pitch.",
+      },
+      { type: "h3", content: "¿Entendieron gamification sin explicación? ✓" },
+      {
+        type: "quote",
+        content:
+          "When attendees experienced our booth, they could immediately see how gamification can transform routine shopping trips into memorable experiences.",
+        author: "Stephanie Paturzo Swingle, Senior Director B2B Marketing, Instacart",
+      },
+      {
+        type: "p",
+        content:
+          "No explicaron gamification. La demostraron. Retailers la vivieron en el Plinko game y la conexión fue inmediata: 'Ah, esto es lo que mis clientes sentirían.'",
+      },
+      { type: "h3", content: "¿Validación de marca y conversión? ✓" },
+      {
+        type: "quote",
+        content:
+          "At Groceryshop, we wanted to reimagine how people experience our technology by creating an environment that mirrors what we do best: making shopping more interactive and engaging.",
+        author: "Stephanie Paturzo Swingle, Senior Director B2B Marketing, Instacart",
+      },
+      {
+        type: "p",
+        content:
+          "Instacart predicaba que su plataforma hace la compra más interactiva — y su booth lo demostró. Esa consistencia genera credibilidad instantánea.",
+      },
+      {
+        type: "highlight",
+        content:
+          "El verdadero ROI: tu stand es tan exitoso que se convierte en el case study que otros estudian.",
+      },
+
+      // SECCIÓN 5: ADAPTACIÓN CHILENA
+      {
+        type: "h2",
+        content: "Cómo adaptar este framework a ferias en Chile",
+      },
+      {
+        type: "p",
+        content:
+          "El framework de Instacart aplica a cualquier feria, pero el contexto chileno tiene sus particularidades. No copies los detalles: copia los principios.",
+      },
+      { type: "h3", content: "Construtech / Inmobiliaria" },
+      {
+        type: "p",
+        content:
+          "En lugar de maqueta estática: crea una zona de experiencia (pre, durante, post construcción) con una AR app que muestre el proyecto en 3D. El premio puede ser un descuento. La conversación natural: '¿Viste cómo se puede visualizar el proyecto así?'",
+      },
+      { type: "h3", content: "Expo Retail / CPG" },
+      {
+        type: "p",
+        content:
+          "En lugar de mostrar el producto: crea una estación de experiencia que muestre la diferencia entre el punto de vista del cliente y el del retailer. Un quiz que enseña el valor de tu marca. El premio: muestras + descuento.",
+      },
+      { type: "h3", content: "B2B Services (marketing, tech)" },
+      {
+        type: "p",
+        content:
+          "En lugar de pura presentación: una estación interactiva que muestre resultados antes/después. Un simulador que cuantifique el impacto de tu servicio. El premio: consultoría gratis o acceso a herramienta premium.",
+      },
+      { type: "h3", content: "Los 5 principios (no los detalles)" },
+      {
+        type: "list",
+        items: [
+          {
+            titulo: "Diferenciación visual",
+            descripcion:
+              "Visualmente diferente a los otros stands = break through noise sin necesidad de ser el más grande.",
+          },
+          {
+            titulo: "Experiencia inmersiva",
+            descripcion:
+              "Los visitors experimentan tu valor = entienden sin pitch.",
+          },
+          {
+            titulo: "Gamification",
+            descripcion:
+              "Un juego simple = motivación para entrar y participar.",
+          },
+          {
+            titulo: "Conversación natural",
+            descripcion:
+              "La experiencia abre la conversación de forma fluida, sin presión.",
+          },
+          {
+            titulo: "Reutilización",
+            descripcion:
+              "Elementos reutilizables = eficiencia y coherencia a lo largo de múltiples ferias.",
+          },
+        ],
+      },
+
+      // SECCIÓN 6: CTA
+      { type: "h2", content: "Lo que Instacart descubrió" },
+      {
+        type: "p",
+        content:
+          "Stands que convierten no son los más caros. Son los que hacen experimentar en lugar de exponer. Engagement más largo, conversiones más altas, validación de marca y prospects cualificados: no como consecuencia del presupuesto, sino del diseño de la experiencia.",
+      },
+      {
+        type: "cta-inline",
+        label:
+          "¿Tu próxima feria necesita un stand que venda, no solo que se vea bien? Diseñémoslo juntos.",
+        href: "/servicios/ferias-stands",
+        buttonLabel: "Ver servicio Ferias & Stands",
+      },
+      {
+        type: "p",
+        content:
+          "Fuente: Event Marketer — \"How Instacart Leveled Up Booth Engagement with Gamification\", Groceryshop 2024.",
       },
     ],
   },

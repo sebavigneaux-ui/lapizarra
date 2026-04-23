@@ -132,26 +132,90 @@ function RenderSeccion({ seccion }: { seccion: SeccionArticulo }) {
         </div>
       );
 
-    case "cta-inline":
+    case "cta-inline": {
+      const href = seccion.href ?? "/calculadora";
+      const label = seccion.buttonLabel ?? "Simular ahora";
+      const isExternal = href.startsWith("http");
       return (
         <div className="my-10 p-7 border border-[#EC008C]/20 rounded-2xl bg-[#EC008C]/[0.04] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <div>
             <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-1">
-              Calculadora de eventos
+              LaPizarra
             </p>
             <p className="text-white font-black text-lg leading-tight">
               {seccion.label}
             </p>
           </div>
-          <Link
-            href="/calculadora"
-            className="flex-shrink-0 inline-flex items-center gap-3 bg-[#EC008C] text-white font-black px-7 py-3.5 hover:bg-[#d4007d] transition-colors duration-200 whitespace-nowrap"
-          >
-            Simular ahora
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+          {isExternal ? (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 inline-flex items-center gap-3 bg-[#EC008C] text-white font-black px-7 py-3.5 hover:bg-[#d4007d] transition-colors duration-200 whitespace-nowrap"
+            >
+              {label}
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          ) : (
+            <Link
+              href={href}
+              className="flex-shrink-0 inline-flex items-center gap-3 bg-[#EC008C] text-white font-black px-7 py-3.5 hover:bg-[#d4007d] transition-colors duration-200 whitespace-nowrap"
+            >
+              {label}
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          )}
+        </div>
+      );
+    }
+
+    case "quote":
+      return (
+        <blockquote className="my-10 border-l-4 border-[#EC008C] pl-6 py-2">
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed italic mb-3">
+            &ldquo;{seccion.content}&rdquo;
+          </p>
+          <cite className="text-white/40 text-sm font-medium not-italic">
+            — {seccion.author}
+          </cite>
+        </blockquote>
+      );
+
+    case "table":
+      return (
+        <div className="my-10 overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                {seccion.headers.map((header, i) => (
+                  <th
+                    key={i}
+                    className="text-left text-[#EC008C] text-xs font-black uppercase tracking-widest py-3 px-4 border-b border-white/20 bg-white/[0.03]"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {seccion.rows.map((row, i) => (
+                <tr key={i} className="border-b border-white/10 hover:bg-white/[0.02] transition-colors duration-150">
+                  {row.map((cell, j) => (
+                    <td
+                      key={j}
+                      className={`py-3 px-4 text-sm leading-relaxed ${j === 0 ? "text-white/50" : "text-white/70"}`}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       );
 
