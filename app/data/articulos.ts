@@ -158,7 +158,12 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "Lo que sí podemos hacer es darte una estimación simulada según el tipo de evento, los servicios que necesitas y la región —y eso lo puedes hacer en nuestra calculadora en menos de 2 minutos. O si prefieres, conversamos directamente: con una reunión para entender bien tu necesidad y tus objetivos, podemos enviarte una propuesta detallada en 48 horas.",
+          "Nuestra calculadora te da un rango aproximado según el tipo de evento, los servicios y la región —útil para tener una noción del gasto que implica lo que estás visualizando, comparar con otros presupuestos o alinear expectativas internas antes de pedir una propuesta formal.",
+      },
+      {
+        type: "p",
+        content:
+          "Para un presupuesto preciso, la mejor forma es una reunión donde podamos entender bien tu necesidad, tus objetivos y el contexto del evento. Con eso en mano, podemos enviarte una propuesta detallada y desglosada en 48 horas.",
       },
       {
         type: "cta-inline",
