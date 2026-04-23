@@ -36,6 +36,155 @@ export interface Articulo {
 
 export const ARTICULOS: Articulo[] = [
   {
+    slug: "5-claves-stand-exitoso-ferias-comerciales",
+    titulo: "5 claves para un stand exitoso en ferias comerciales",
+    excerpt:
+      "Identidad visual, iluminación, frase descriptiva, demostración activa y diseño limpio: los cinco elementos que separan un stand que convierte de uno que pasa desapercibido. Basado en la observación directa de cientos de exhibiciones internacionales.",
+    categoria: "ferias-stands",
+    categoriaLabel: "Ferias & Stands",
+    fecha: "2026-04-22",
+    readTime: 5,
+    metaTitle: "5 claves para un stand exitoso en ferias comerciales | LaPizarra",
+    metaDescription:
+      "Guía práctica para optimizar la presencia de tu marca en ferias: identidad visual, iluminación LED, frase descriptiva, demostración de producto y diseño limpio. Aprende de errores reales y casos concretos.",
+    secciones: [
+      {
+        type: "intro",
+        content:
+          "Participar en una feria comercial es una de las inversiones más tangibles que puede hacer una marca: pagas por el espacio, construyes el stand, movilizas a tu equipo y dedicas días completos a estar frente a tu mercado. Pero entre stand y stand, la diferencia de resultados puede ser abismal —y rara vez tiene que ver con el presupuesto. Tiene que ver con decisiones de diseño, comunicación y ejecución que se repiten (o se ignoran) en casi todos los pabellones. Estas son las cinco que más impacto tienen.",
+      },
+      {
+        type: "h2",
+        content: "1. Identidad visual: el nombre y el logo son prioridad, no decoración",
+      },
+      {
+        type: "p",
+        content:
+          "El error más común —y más costoso— en ferias comerciales es la falta de visibilidad de marca. Existen empresas que invierten millones en un espacio y olvidan que su nombre debe ser lo primero que vea un asistente desde cualquier ángulo del pasillo, no solo desde el frente.",
+      },
+      {
+        type: "p",
+        content:
+          "El faldón de la mesa suele quedar bloqueado por la multitud. Los códigos QR pequeños nadie los escanea al pasar. Y confiar en que \"ya nos conocen\" es una apuesta que falla sistemáticamente en entornos con decenas de stands compitiendo por la misma atención. Tu nombre y tu logo deben estar al frente, en grande, al centro. Todo lo demás es secundario.",
+      },
+      {
+        type: "h2",
+        content: "2. Iluminación LED: la inversión con mejor retorno por metro cuadrado",
+      },
+      {
+        type: "p",
+        content:
+          "Un stand oscuro en un salón con luz tenue pasa desapercibido, aunque su diseño sea impecable. La iluminación no es un detalle de ambientación: es una herramienta de atracción.",
+      },
+      {
+        type: "list",
+        items: [
+          { titulo: "Banners y torres retroiluminados (backlit)", descripcion: "Actúan como un faro dentro del salón. La retroiluminación LED hace que el material gráfico se vea más limpio, más profesional y desde mayor distancia." },
+          { titulo: "Diferenciación por contraste", descripcion: "Un stand bien iluminado hace que el vecino parezca invisible. No por competencia desleal —sino porque el ojo humano sigue la luz de forma instintiva." },
+          { titulo: "Temperatura y color de la luz", descripcion: "La luz cálida genera cercanía; la fría, tecnicismo y precisión. Elige según el tipo de producto o servicio que estás comunicando." },
+        ],
+      },
+      {
+        type: "highlight",
+        content:
+          "La iluminación es una de las pocas inversiones en un stand que impacta tanto en la atracción (que el visitante se acerque) como en la percepción de calidad (que quiera quedarse).",
+      },
+      {
+        type: "h2",
+        content: "3. La frase descriptiva: claridad antes que creatividad",
+      },
+      {
+        type: "p",
+        content:
+          "Tienes entre tres y cinco segundos mientras un asistente pasa frente a tu stand para que entienda qué hace tu empresa. Si en ese tiempo no queda claro, ya se fue.",
+      },
+      {
+        type: "p",
+        content:
+          "Una frase descriptiva eficaz cumple una función de filtro: atrae a quienes sí son tu público y libera a tu equipo de responder preguntas básicas a personas que no van a comprar. \"Expertos en seguimiento de movimiento para industria logística\" abre una conversación de negocios de inmediato. \"Soluciones integrales para el futuro\" no le dice nada a nadie.",
+      },
+      {
+        type: "list",
+        items: [
+          { titulo: "Sé específico sobre lo que haces", descripcion: "Nombra la industria, el problema que resuelves o el resultado que entregas. Cuanto más concreto, mejor." },
+          { titulo: "Evita las generalidades", descripcion: "Frases como \"tecnología avanzada\", \"innovación\" o \"calidad de excelencia\" son tan comunes que se vuelven invisibles." },
+          { titulo: "Ponla en el lugar más visible del stand", descripcion: "No en un folleto. No en la parte inferior del banner. Arriba, junto al logo, en tamaño legible desde tres metros." },
+        ],
+      },
+      {
+        type: "h2",
+        content: "4. Demostración activa: que el visitante lo viva, no solo lo escuche",
+      },
+      {
+        type: "p",
+        content:
+          "El objetivo de estar en una feria no es repartir folletos: es que la gente interactúe con lo que vendes. La conexión emocional que genera tocar, probar o ver un producto en funcionamiento es imposible de replicar con una presentación en PowerPoint.",
+      },
+      {
+        type: "ordered-list",
+        items: [
+          {
+            titulo: "Productos físicos",
+            descripcion: "Permita que los asistentes los tomen, los operen, los prueben. Elimina barreras entre el producto y el visitante. El \"no tocar\" es el mayor enemigo de la conversión en ferias.",
+          },
+          {
+            titulo: "Software o servicios digitales",
+            descripcion: "Usa iPads o pantallas táctiles para recorridos guiados en tiempo real. Muestra la interfaz en movimiento, no capturas de pantalla estáticas. Si puedes hacer una demo personalizada en 3 minutos, hazla.",
+          },
+          {
+            titulo: "Servicios intangibles",
+            descripcion: "Apóyate en casos reales, videos de proyectos anteriores o testimonios en pantalla. El antes y después bien contado genera más confianza que cualquier argumento de venta.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        content: "5. Diseño limpio: tu stand no es un folleto",
+      },
+      {
+        type: "p",
+        content:
+          "Existe una tentación difícil de resistir: llenar cada centímetro del stand con información. Características del producto, certificaciones, historia de la empresa, casos de éxito, redes sociales, código QR, folletos apilados. El resultado es un stand que comunica todo y no dice nada.",
+      },
+      {
+        type: "p",
+        content:
+          "Un diseño limpio, con gráficos potentes y poco texto, comunica más en menos tiempo —que es exactamente lo que necesitas en un entorno donde la atención dura segundos. Los detalles los cuentas en la conversación; el stand solo tiene que lograr que esa conversación ocurra.",
+      },
+      {
+        type: "list",
+        items: [
+          { titulo: "Evita párrafos de texto en los paneles", descripcion: "Si necesitas más de diez palabras para explicar algo en un banner, ese algo no debería estar en el banner." },
+          { titulo: "Usa imágenes de impacto", descripcion: "Una buena fotografía del producto en uso vale más que cualquier lista de características técnicas." },
+          { titulo: "El origen como diferenciador", descripcion: "Si tu producto viene de un país con reputación en ingeniería, manufactura o diseño, mencionarlo suma valor de marca de inmediato." },
+        ],
+      },
+      {
+        type: "h2",
+        content: "El factor que lo puede arruinar todo: el equipo",
+      },
+      {
+        type: "p",
+        content:
+          "Un stand con diseño sobresaliente, iluminación perfecta y una frase cristalina puede fallar si el equipo que lo representa no está a la altura. Y al revés: un stand mediocre puede dar resultados notables si quien lo atiende tiene habilidades reales de comunicación y venta.",
+      },
+      {
+        type: "p",
+        content:
+          "El personal debe estar presente en el stand en todo momento, ser capaz de explicar la propuesta de valor en menos de un minuto y saber cuándo invitar a una conversación más profunda y cuándo soltar al visitante. La actitud pasiva —esperar a que el cliente se acerque solo, mirando el teléfono— es el error que más oportunidades desperdicia en una feria.",
+      },
+      {
+        type: "highlight",
+        content:
+          "El stand convoca. El equipo convierte. Los dos son indispensables, pero si tienes que elegir dónde invertir más energía antes de la feria, invierte en preparar a las personas.",
+      },
+      {
+        type: "cta-inline",
+        label: "Cotiza tu stand con LaPizarra",
+      },
+    ],
+  },
+  {
     slug: "cuanto-cuesta-evento-corporativo-chile",
     titulo: "¿Cuánto cuesta un evento corporativo en Chile? Las variables que debes conocer antes de presupuestar",
     excerpt:
