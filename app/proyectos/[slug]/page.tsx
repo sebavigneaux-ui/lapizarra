@@ -89,23 +89,31 @@ export default async function ProyectoPage({
 
       {/* Descripción estructurada */}
       <div className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
-
-          <div>
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-4">Objetivo</p>
-            <p className="text-white/70 text-lg leading-relaxed">{proyecto.objetivo}</p>
-          </div>
-
-          <div>
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-4">Concepto Creativo</p>
-            <p className="text-white/70 text-lg leading-relaxed">{proyecto.conceptoCreativo}</p>
-          </div>
-
-          <div>
-            <p className="text-[#EC008C] text-xs font-bold uppercase tracking-widest mb-4">Resultado</p>
-            <p className="text-white/70 text-lg leading-relaxed">{proyecto.resultado}</p>
-          </div>
-
+        <div className="max-w-6xl mx-auto px-6 py-20 space-y-0">
+          {[
+            { num: "01", label: "Objetivo", text: proyecto.objetivo },
+            { num: "02", label: "Concepto Creativo", text: proyecto.conceptoCreativo },
+            { num: "03", label: "Resultado", text: proyecto.resultado },
+          ].map(({ num, label, text }) => (
+            <div
+              key={label}
+              className="grid md:grid-cols-[180px_1fr] gap-8 md:gap-16 border-t border-white/10 py-16"
+            >
+              {/* Label columna */}
+              <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-2">
+                <span className="text-[#EC008C] font-black text-5xl md:text-7xl leading-none opacity-20 select-none">
+                  {num}
+                </span>
+                <p className="text-[#EC008C] text-xs font-black uppercase tracking-widest md:mt-2">
+                  {label}
+                </p>
+              </div>
+              {/* Texto */}
+              <p className="text-white/65 text-base md:text-lg leading-relaxed md:leading-[1.85]">
+                {text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
