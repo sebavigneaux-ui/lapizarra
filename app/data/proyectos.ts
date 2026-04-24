@@ -182,6 +182,24 @@ export const proyectos: Proyecto[] = [
     resultado:
       "Más de 5.000 corredores participaron en las distintas categorías del evento. La cobertura en redes sociales superó las proyecciones iniciales, con miles de menciones orgánicas durante el día de la carrera. El evento se consolidó como un referente deportivo en la comuna de Maipú.",
   },
+  {
+    slug: "stellantis-capsulas-formacion",
+    cliente: "Stellantis",
+    titulo: "Cápsulas de Formación Corporativa",
+    fotos: [
+      "/galeria8/1.jpg",
+      "/galeria8/2.jpg",
+      "/galeria8/3.jpg",
+      "/galeria8/4.jpg",
+      "/galeria8/5.jpg",
+    ],
+    objetivo:
+      "Las organizaciones líderes enfrentan un desafío constante: mantener a sus equipos alineados, actualizados y preparados en entornos cada vez más dinámicos. Bajo esa necesidad, desarrollamos junto a Stellantis un proyecto audiovisual enfocado en fortalecer la comunicación interna y los procesos de formación mediante una biblioteca de más de 200 cápsulas de alto estándar. El objetivo fue transformar información relevante para la operación diaria —productos, procesos, cultura de servicio, protocolos— en piezas audiovisuales claras, ágiles y atractivas, capaces de facilitar comprensión, reforzar mensajes clave y mejorar la experiencia de aprendizaje de los equipos de venta y postventa. Más que producir videos aislados, el desafío consistió en construir un sistema de contenidos consistente, escalable y sostenible en el tiempo.",
+    conceptoCreativo:
+      "La idea central fue simple: comunicar y enseñar con los códigos actuales de consumo de contenido. Diseñamos una metodología basada en cápsulas breves, visuales y directas, enfocadas en transmitir mensajes de forma clara y memorable. Cada pieza fue desarrollada bajo principios de microlearning audiovisual, combinando síntesis, ritmo narrativo y una producción cuidada para elevar la percepción del contenido interno. La producción se desarrolla en INACAP Vitacura, espacio que permite operar con eficiencia logística, jornadas estructuradas de grabación y condiciones técnicas adecuadas para un proyecto de alto volumen. Desde lo visual, nos alejamos del formato corporativo tradicional para acercarnos a estándares contemporáneos de comunicación digital: dirección audiovisual profesional, iluminación cuidada, sonido limpio, edición ágil, motion graphics corporativos e identidad visual consistente en cada pieza. Desde lo narrativo, cada cápsula sigue una estructura diseñada para maximizar atención y comprensión: inicio dinámico, contexto claro, desarrollo concreto, refuerzo visual y cierre orientado a aplicación real.",
+    resultado:
+      "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
+  },
 ];
 
 export function getProyecto(slug: string): Proyecto | undefined {
