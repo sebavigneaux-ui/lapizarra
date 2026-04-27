@@ -307,6 +307,24 @@ export default async function ArticuloPage({ params }: Props) {
         </div>
       </header>
 
+      {/* Imagen de header */}
+      {articulo.imagen && (
+        <div className="relative z-10 px-6 pb-2">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-sm">
+              <Image
+                src={articulo.imagen}
+                alt={articulo.titulo}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Cuerpo del artículo */}
       <article className="py-14 px-6 relative z-10">
         <div className="max-w-3xl mx-auto">

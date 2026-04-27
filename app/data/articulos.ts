@@ -33,6 +33,7 @@ export interface Articulo {
   categoriaLabel: string;
   fecha: string;
   readTime: number;
+  imagen?: string;
   metaTitle: string;
   metaDescription: string;
   secciones: SeccionArticulo[];
@@ -48,6 +49,7 @@ export const ARTICULOS: Articulo[] = [
     categoriaLabel: "Ferias & Stands",
     fecha: "2026-04-22",
     readTime: 5,
+    imagen: "/articulos/5-claves-stand-exitoso-ferias-comerciales.jpg",
     metaTitle: "5 claves para un stand exitoso en ferias comerciales | LaPizarra",
     metaDescription:
       "Guía práctica para optimizar la presencia de tu marca en ferias: identidad visual, iluminación LED, frase descriptiva, demostración de producto y diseño limpio. Aprende de errores reales y casos concretos.",
