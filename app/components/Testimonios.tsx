@@ -23,6 +23,12 @@ const testimonios = [
     cargo: "Commercial Director",
     empresa: "Cool Carriers",
   },
+  {
+    texto: "Destaco especialmente la creatividad de la propuesta bajo un presupuesto limitado — se diferenciaron completamente frente a otras opciones tradicionales. La puntualidad y el profesionalismo de todo el equipo fueron notables, todo se desarrolló de manera ordenada y sin inconvenientes. Quedé muy conforme y la experiencia para los asistentes fue espectacular.",
+    nombre: "Mauricio Liani",
+    cargo: "Marketing Manager",
+    empresa: "Adecco",
+  },
 ];
 
 export default function Testimonios() {
