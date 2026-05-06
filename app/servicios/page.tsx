@@ -7,10 +7,10 @@ import { SERVICIOS } from "../data/servicios";
 export const metadata: Metadata = {
   title: "Servicios de Producción de Eventos Corporativos en Chile | LaPizarra",
   description:
-    "Producción de eventos corporativos, activaciones BTL, ferias y stands, lanzamientos de producto, eventos internos y producción audiovisual en Chile. LaPizarra.",
+    "Servicios de producción de eventos: corporativos, activaciones BTL, stands para ferias, lanzamientos de producto, eventos internos y producción audiovisual. Atendemos Santiago y 5 regiones de Chile.",
   openGraph: {
     title: "Servicios de Producción de Eventos | LaPizarra",
-    description: "Eventos corporativos, activaciones BTL, ferias, lanzamientos, cultura organizacional y producción audiovisual en Chile.",
+    description: "Servicios de producción de eventos: corporativos, activaciones BTL, stands para ferias, lanzamientos de producto, eventos internos y producción audiovisual. Atendemos Santiago y 5 regiones de Chile.",
     url: "https://somoslapizarra.cl/servicios",
     siteName: "LaPizarra",
     images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
