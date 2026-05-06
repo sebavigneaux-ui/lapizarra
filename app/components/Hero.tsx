@@ -62,11 +62,11 @@ export default function Hero() {
               <span className="block text-5xl md:text-7xl text-white">Santiago, Chile</span>
             </h1>
             <p className="text-3xl md:text-4xl font-black leading-none tracking-tighter text-[#EC008C] mb-10">
-              Convenciones, Lanzamientos, Ferias y Celebraciones
+              Convenciones · Lanzamientos de Productos · Activaciones BTL · Stands
             </p>
 
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-lg">
-              Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables.
+              Diseñamos y producimos eventos corporativos en Chile para empresas que exigen alto estándar de ejecución y resultados reales.
             </p>
           </div>
 
