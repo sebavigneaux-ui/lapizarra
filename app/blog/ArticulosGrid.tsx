@@ -67,7 +67,7 @@ export default function ArticulosGrid({ articulos }: Props) {
           {filtrados.map((articulo) => (
             <Link
               key={articulo.slug}
-              href={`/centro-de-aprendizaje/${articulo.slug}`}
+              href={`/blog/${articulo.slug}`}
               className="group flex flex-col border border-white/10 rounded-2xl p-7 hover:border-white/25 transition-all duration-300 bg-white/[0.02] hover:bg-white/[0.04]"
             >
               {/* Categoría */}

@@ -6,26 +6,26 @@ import ArticulosGrid from "./ArticulosGrid";
 import { ARTICULOS } from "../data/articulos";
 
 export const metadata: Metadata = {
-  title: "Centro de Aprendizaje — Recursos sobre eventos corporativos | LaPizarra",
+  title: "Blog — Recursos sobre eventos corporativos | LaPizarra",
   description:
     "Guías, metodologías y recursos estratégicos sobre eventos corporativos, activaciones BTL, ferias y stands, y experiencia de marca. Por el equipo de LaPizarra.",
   openGraph: {
-    title: "Centro de Aprendizaje — Recursos sobre eventos corporativos | LaPizarra",
+    title: "Blog — Recursos sobre eventos corporativos | LaPizarra",
     description:
       "Guías, metodologías y recursos estratégicos sobre eventos corporativos, activaciones BTL, ferias y stands, y experiencia de marca.",
-    url: "https://somoslapizarra.cl/centro-de-aprendizaje",
+    url: "https://somoslapizarra.cl/blog",
     siteName: "LaPizarra",
     images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Centro de Aprendizaje | LaPizarra",
+    title: "Blog | LaPizarra",
     description: "Guías y recursos sobre eventos corporativos, activaciones BTL, ferias y experiencia de marca.",
     images: ["https://somoslapizarra.cl/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://somoslapizarra.cl/centro-de-aprendizaje",
+    canonical: "https://somoslapizarra.cl/blog",
   },
 };
 

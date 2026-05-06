@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${BASE}/centro-de-aprendizaje`,
+      url: `${BASE}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const articulosPages: MetadataRoute.Sitemap = ARTICULOS.map((a) => ({
-    url: `${BASE}/centro-de-aprendizaje/${a.slug}`,
+    url: `${BASE}/blog/${a.slug}`,
     lastModified: new Date(a.fecha),
     changeFrequency: "monthly" as const,
     priority: 0.7,

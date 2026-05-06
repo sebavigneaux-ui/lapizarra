@@ -14,7 +14,7 @@ const navItems = [
   { label: "Clientes", href: "/#clientes" },
   { label: "FAQ", href: "/#faq" },
   { label: "Quiénes somos", href: "/#quienes-somos" },
-  { label: "Blog", href: "/centro-de-aprendizaje" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Header() {

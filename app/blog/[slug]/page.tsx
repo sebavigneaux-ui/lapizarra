@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: articulo.metaTitle,
       description: articulo.metaDescription,
-      url: `https://somoslapizarra.cl/centro-de-aprendizaje/${articulo.slug}`,
+      url: `https://somoslapizarra.cl/blog/${articulo.slug}`,
       siteName: "LaPizarra",
       images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
       type: "article",
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: ["https://somoslapizarra.cl/og-image.jpg"],
     },
     alternates: {
-      canonical: `https://somoslapizarra.cl/centro-de-aprendizaje/${articulo.slug}`,
+      canonical: `https://somoslapizarra.cl/blog/${articulo.slug}`,
     },
   };
 }
@@ -245,7 +245,7 @@ export default async function ArticuloPage({ params }: Props) {
       logo: { "@type": "ImageObject", url: "https://somoslapizarra.cl/logo-blanco.png" },
     },
     datePublished: articulo.fecha,
-    url: `https://somoslapizarra.cl/centro-de-aprendizaje/${articulo.slug}`,
+    url: `https://somoslapizarra.cl/blog/${articulo.slug}`,
     image: "https://somoslapizarra.cl/og-image.jpg",
   };
 
@@ -254,8 +254,8 @@ export default async function ArticuloPage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: "https://somoslapizarra.cl" },
-      { "@type": "ListItem", position: 2, name: "Centro de Aprendizaje", item: "https://somoslapizarra.cl/centro-de-aprendizaje" },
-      { "@type": "ListItem", position: 3, name: articulo.titulo, item: `https://somoslapizarra.cl/centro-de-aprendizaje/${articulo.slug}` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://somoslapizarra.cl/blog" },
+      { "@type": "ListItem", position: 3, name: articulo.titulo, item: `https://somoslapizarra.cl/blog/${articulo.slug}` },
     ],
   };
 
@@ -280,8 +280,8 @@ export default async function ArticuloPage({ params }: Props) {
             Inicio
           </Link>
           <span>/</span>
-          <Link href="/centro-de-aprendizaje" className="hover:text-white/60 transition-colors duration-150">
-            Centro de Aprendizaje
+          <Link href="/blog" className="hover:text-white/60 transition-colors duration-150">
+            Blog
           </Link>
           <span>/</span>
           <span className="text-white/50 truncate max-w-[200px]">{articulo.titulo}</span>
@@ -377,7 +377,7 @@ export default async function ArticuloPage({ params }: Props) {
               {relacionados.map((rel) => (
                 <Link
                   key={rel.slug}
-                  href={`/centro-de-aprendizaje/${rel.slug}`}
+                  href={`/blog/${rel.slug}`}
                   className="group border border-white/10 rounded-2xl p-6 hover:border-white/25 transition-all duration-300"
                 >
                   <span className="text-[#EC008C] text-xs font-black uppercase tracking-widest mb-3 block">
@@ -401,13 +401,13 @@ export default async function ArticuloPage({ params }: Props) {
             <Image src="/logo-blanco.png" alt="LaPizarra" width={80} height={26} className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-200" />
           </Link>
           <Link
-            href="/centro-de-aprendizaje"
+            href="/blog"
             className="flex items-center gap-2 text-white/40 text-sm font-bold hover:text-white/70 transition-colors duration-200"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Centro de Aprendizaje
+            Blog
           </Link>
         </div>
       </footer>
