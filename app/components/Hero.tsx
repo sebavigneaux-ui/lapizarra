@@ -56,11 +56,14 @@ export default function Hero() {
               Productora · Agencia Creativa · Santiago, Chile
             </p>
 
-            <h1 className="font-black leading-none tracking-tighter mb-10">
+            <h1 className="font-black leading-none tracking-tighter mb-4">
               <span className="block text-5xl md:text-7xl text-white">Productora de Eventos</span>
-              <span className="block text-5xl md:text-7xl text-white">Corporativos en Chile</span>
-              <span className="block text-3xl md:text-4xl text-[#EC008C] mt-2">Convenciones, Lanzamientos, Ferias y Celebraciones</span>
+              <span className="block text-5xl md:text-7xl text-white">Corporativos en</span>
+              <span className="block text-5xl md:text-7xl text-white">Santiago, Chile</span>
             </h1>
+            <p className="text-3xl md:text-4xl font-black leading-none tracking-tighter text-[#EC008C] mb-10">
+              Convenciones, Lanzamientos, Ferias y Celebraciones
+            </p>
 
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-lg">
               Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables.
