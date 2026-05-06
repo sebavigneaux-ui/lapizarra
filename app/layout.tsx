@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description: "Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.",
     images: ["https://somoslapizarra.cl/og-image.jpg"],
   },
+  verification: {
+    google: "BzXBzQBx_ZLjc7-w8dSwjNGeIcnQxrfYOGf2_XdhliM",
+  },
 };
 
 const schemaOrganization = {
