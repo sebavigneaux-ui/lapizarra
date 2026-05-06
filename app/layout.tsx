@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
-  description: "Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.",
+  description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
-    description: "Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.",
+    description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
     url: "https://somoslapizarra.cl",
     siteName: "LaPizarra",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
-    description: "Combinamos estrategia, creatividad y producción rigurosa para transformar ideas en experiencias memorables para empresas exigentes.",
+    description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
     images: ["https://somoslapizarra.cl/og-image.jpg"],
   },
   verification: {
