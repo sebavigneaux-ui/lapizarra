@@ -13,7 +13,7 @@ const navItems = [
   { label: "Ferias & Stands", href: "/#ferias-stands" },
   { label: "Clientes", href: "/#clientes" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Quiénes somos", href: "/#quienes-somos" },
+  { label: "Quiénes somos", href: "/quienes-somos" },
   { label: "Blog", href: "/blog" },
 ];
 
