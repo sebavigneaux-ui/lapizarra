@@ -61,6 +61,30 @@ const schemaOrganization = {
         areaServed: "CL",
         availableLanguage: "Spanish",
       },
+      foundingDate: "2023",
+      founders: [
+        {
+          "@type": "Person",
+          name: "Sebastián Vigneaux",
+          jobTitle: "Co-fundador y Director Comercial",
+          description: "18 años de experiencia en gestión corporativa y dirección comercial en empresas de primer nivel.",
+        },
+        {
+          "@type": "Person",
+          name: "Daniel Soto",
+          jobTitle: "Co-fundador y Director de Producción",
+          description: "15 años de experiencia como productor de eventos corporativos y experiencias de marca.",
+        },
+      ],
+      knowsAbout: [
+        "Producción de eventos corporativos en Chile",
+        "Activaciones BTL y experiencias de marca",
+        "Ferias y stands feriales",
+        "Lanzamientos de producto",
+        "Eventos internos empresariales",
+        "Producción audiovisual corporativa",
+        "Convenciones y kick-offs corporativos",
+      ],
     },
     {
       "@type": "LocalBusiness",

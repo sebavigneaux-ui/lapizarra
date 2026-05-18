@@ -27,10 +27,10 @@ export default function QuienesSomos() {
           {/* Texto */}
           <div className="flex flex-col gap-6 text-[#231F20]/75 text-lg leading-relaxed">
             <p>
-              <span className="text-[#231F20] font-bold">Sebastián</span> aporta visión estratégica y comercial. <span className="text-[#231F20] font-bold">Daniel</span>, años de producción y operación. Juntos fundaron LaPizarra para que una misma agencia pueda conectar con tu negocio y ejecutar un evento de alto estándar.
+              <span className="text-[#231F20] font-bold">Sebastián Vigneaux</span> tiene 18 años de experiencia en gestión corporativa y dirección comercial. <span className="text-[#231F20] font-bold">Daniel Soto</span> lleva 15 años produciendo eventos de alto estándar para empresas de primera línea. Juntos fundaron LaPizarra en 2023 para reunir en una sola agencia la visión estratégica del negocio y la excelencia en ejecución.
             </p>
             <p>
-              Trabajamos de forma cercana, ágil y senior. Sin soluciones genéricas: cada experiencia responde a objetivos reales y se ejecuta con obsesión por los detalles.
+              Con más de 200 eventos de experiencia acumulada, trabajamos de forma cercana, ágil y senior. Sin soluciones genéricas: cada experiencia responde a objetivos reales y se ejecuta con obsesión por los detalles.
             </p>
           </div>
         </div>

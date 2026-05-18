@@ -23,7 +23,7 @@ const schemaFAQ = {
       name: "¿Trabajan proyectos pequeños o solo eventos grandes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Trabajamos ambos. Lo importante no es el tamaño del evento, sino el impacto que tiene para la organización o la marca.",
+        text: "Trabajamos ambos, y esa distinción nos importa menos de lo que se podría pensar. Hemos producido eventos para 30 personas y para varios cientos. Lo que nos define es el nivel de exigencia: cada proyecto tiene un equipo dedicado, un proceso de planificación real y un estándar de ejecución que no baja independientemente del tamaño. Si hay un objetivo claro y un cliente que quiere hacerlo bien, ahí estamos.",
       },
     },
     {
@@ -31,7 +31,7 @@ const schemaFAQ = {
       name: "¿Con cuánto tiempo de anticipación conviene cotizar?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depende del tipo de proyecto, pero idealmente entre 4 y 8 semanas. En algunos casos también podemos trabajar con tiempos más ajustados.",
+        text: "Entre 4 y 8 semanas es el rango ideal para la mayoría de los proyectos: hay tiempo para definir bien el concepto, cotizar proveedores con calma y no improvisar en los detalles. Para eventos más complejos —convenciones grandes, stands feriales o lanzamientos con producción audiovisual— 2 a 3 meses es mejor. Dicho eso, hemos trabajado con tiempos más ajustados cuando el proyecto lo exige. No es lo ideal, pero sabemos movernos.",
       },
     },
     {
@@ -39,7 +39,7 @@ const schemaFAQ = {
       name: "¿Pueden hacerse cargo de la creatividad y de la producción?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Podemos desarrollar la experiencia desde el concepto creativo hasta la ejecución completa.",
+        text: "Sí, y eso es algo que nos define. No somos solo un proveedor de logística que recibe un brief cerrado: podemos entrar desde la pregunta inicial —qué quiere lograr el evento, qué tiene que sentir el asistente— y desde ahí desarrollar el concepto, el diseño, la ambientación, la agenda y la ejecución completa. Para clientes que ya tienen el concepto claro, también trabajamos en modo producción pura. Depende de lo que necesite cada proyecto.",
       },
     },
     {
@@ -47,7 +47,7 @@ const schemaFAQ = {
       name: "¿Trabajan con lineamientos corporativos exigentes?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Estamos acostumbrados a trabajar con manuales de marca, compliance y estándares corporativos.",
+        text: "Sí, y es algo a lo que estamos bien acostumbrados. Hemos trabajado con empresas multinacionales que tienen manuales de marca globales, procesos de aprobación rigurosos y estándares de compliance estrictos. Sabemos movernos dentro de esos marcos sin que eso frene la ejecución. Si tienes un equipo de marketing corporativo con criterios bien definidos, lo más probable es que ya hayamos trabajado en contextos similares.",
       },
     },
     {
@@ -55,7 +55,7 @@ const schemaFAQ = {
       name: "¿Pueden adaptarse a cambios de último minuto?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los eventos cambian constantemente. Nuestro proceso y equipo están preparados para adaptarse sin comprometer la calidad de ejecución.",
+        text: "Los cambios en los eventos son la norma, no la excepción. Cambia el número de asistentes, cambia el espacio, cambia el presupuesto, cambia el brief a mitad del proceso. Nuestra forma de trabajar está construida asumiendo eso: proceso modular, proveedores de confianza y un equipo que no se quiebra bajo presión. No prometemos que los cambios no cuestan nada, pero sí que los manejamos sin que el evento lo acuse.",
       },
     },
     {
@@ -63,7 +63,7 @@ const schemaFAQ = {
       name: "¿Atienden solo Santiago?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Trabajamos principalmente en Santiago, pero también desarrollamos proyectos en regiones cuando el proyecto lo requiere.",
+        text: "La mayor parte de nuestros proyectos ocurre en Santiago y la Región Metropolitana, que es donde tenemos la red de proveedores más consolidada. También hemos trabajado en regiones —Valparaíso, Biobío, La Araucanía y Los Lagos, entre otras— cuando el proyecto lo requiere. En esos casos la logística es más exigente, pero el estándar de ejecución es el mismo.",
       },
     },
   ],
