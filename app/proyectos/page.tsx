@@ -24,10 +24,13 @@ export default function ProyectosPage() {
               Volver al inicio
             </Link>
             <p className="text-[#EC008C] font-black text-sm tracking-widest uppercase mb-4">Proyectos</p>
-            <h1 className="text-white font-black leading-none tracking-tighter">
+            <h1 className="text-white font-black leading-none tracking-tighter mb-8">
               <span className="block text-5xl md:text-7xl">Cada proyecto,</span>
               <span className="block text-5xl md:text-7xl text-white/30">una historia.</span>
             </h1>
+            <p className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl">
+              Convenciones, lanzamientos, activaciones BTL y stands feriales. Proyectos para empresas que exigen alto estándar de ejecución y resultados concretos.
+            </p>
           </div>
 
           {/* Grid de proyectos */}
