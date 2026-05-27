@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Header from "../../components/Header";
+import CasosExito from "./CasosExito";
 
 const WA_BASE = "https://wa.me/56958419326?text=";
 const WA_FERIA = WA_BASE + encodeURIComponent("Hola, quiero mejorar los resultados comerciales de mi presencia en ferias con LaPizarra");
@@ -256,6 +257,9 @@ export default function FeriasStandsContent() {
             </div>
           </div>
         </section>
+
+        {/* ── CASOS DE ÉXITO ── */}
+        <CasosExito />
 
         {/* ── DIFERENCIADORES ── */}
         <section className="py-24 px-6 border-t border-white/5">
