@@ -200,6 +200,29 @@ export const proyectos: Proyecto[] = [
     resultado:
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
+  {
+    slug: "claro-empresas-fiesta-clientes-2024",
+    cliente: "Claro Empresas",
+    titulo: "Fiesta de Clientes 2024",
+    heroFoto: "/galeria9/1.jpg",
+    fotos: [
+      "/galeria9/1.jpg",
+      "/galeria9/2.jpg",
+      "/galeria9/3.jpg",
+      "/galeria9/4.jpg",
+      "/galeria9/5.jpg",
+      "/galeria9/6.jpg",
+      "/galeria9/7.jpg",
+      "/galeria9/8.jpg",
+      "/galeria9/9.jpg",
+    ],
+    objetivo:
+      "Claro Empresas, la división B2B de Claro Chile, reúne a miles de empresas del país en torno a una propuesta de conectividad, tecnología y soluciones digitales que transforma la forma en que los negocios operan. Para una marca que vende innovación, la relación con sus clientes no puede limitarse a una propuesta comercial: debe vivirse. Bajo ese contexto, y en el marco de un partnership estratégico con La Tropa —productora de experiencias con quien compartimos la visión de que los eventos deben ser memorables en cada detalle— diseñamos y produjimos la Fiesta de Clientes Claro Empresas 2024. El evento reunió a los principales clientes corporativos de la compañía en una experiencia outdoor de alto estándar, con el skyline de Santiago como telón de fondo y una propuesta que integraba celebración, tecnología y marca de manera orgánica. El objetivo era claro: que cada asistente viviera en carne propia lo que Claro Empresas promete a sus clientes todos los días —conectividad, innovación y cercanía— pero en formato de fiesta.",
+    conceptoCreativo:
+      "El concepto giró en torno a una idea simple pero poderosa: una fiesta que se vive con la misma energía que la marca proyecta en el mercado. El rojo Claro fue el hilo conductor visual de toda la experiencia: desde el arco de entrada con estructura geométrica branded hasta el vestuario del equipo de anfitriones, pasando por la señalética y los puntos de activación distribuidos en el espacio. El venue outdoor con vistas al skyline corporativo de Santiago no fue un telón de fondo casual —fue un mensaje: Claro Empresas opera donde los negocios ocurren, en el corazón de la ciudad. Las activaciones tecnológicas fueron el alma del evento. La experiencia de realidad virtual RINESIX por Claro Empresas permitió a los asistentes explorar una demostración inmersiva de las soluciones de la compañía, convirtiendo un concepto abstracto como la conectividad empresarial en algo tangible y sorprendente. Los robots interactivos Cisco reforzaron el mensaje tech y funcionaron como puntos de conversación espontánea entre los asistentes. La Barra Zero —una barra de coctelería sin alcohol con estética marquesina y diseño artesanal— añadió un guiño contemporáneo e inclusivo a la experiencia social. La DJ en rojo, las sombrillas blancas, el pasto verde y el formato de circulación libre crearon una atmósfera que equilibraba perfectamente la escala corporativa con la calidez de una fiesta bien pensada.",
+    resultado:
+      "La Fiesta de Clientes Claro Empresas 2024 logró lo que los mejores eventos de relacionamiento corporativo deben lograr: hacer sentir a cada asistente que es parte de algo que vale la pena celebrar. La experiencia VR y los robots generaron fila espontánea desde los primeros minutos, convirtiéndose en los puntos de mayor densidad social del evento y en los temas de conversación de la noche. El formato outdoor con activaciones distribuidas favoreció el movimiento natural de los asistentes por el espacio, garantizando que cada zona cumpliera su rol: acreditar, activar, conectar, celebrar. La coherencia visual fue total: cualquier fotografía tomada en el evento comunicaba instantáneamente la identidad de Claro Empresas sin necesidad de un logo en primer plano. Para LaPizarra y La Tropa, este proyecto es un ejemplo de lo que puede lograrse cuando dos equipos con visión compartida suman sus capacidades: una producción técnicamente impecable, con alma creativa y un resultado que la marca puede mostrar con orgullo.",
+  },
 ];
 
 export function getProyecto(slug: string): Proyecto | undefined {
