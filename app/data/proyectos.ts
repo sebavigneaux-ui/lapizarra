@@ -201,6 +201,27 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "entel-empresas-gira-2023",
+    cliente: "Entel Empresas",
+    titulo: "Gira 2023",
+    heroFoto: "/galeria12/1.jpg",
+    fotos: [
+      "/galeria12/1.jpg",
+      "/galeria12/2.jpg",
+      "/galeria12/3.jpg",
+      "/galeria12/4.jpg",
+      "/galeria12/5.jpg",
+      "/galeria12/6.jpg",
+      "/galeria12/7.jpg",
+    ],
+    objetivo:
+      "Entel Empresas es la unidad de negocios B2B de Entel, referente en conectividad, nube y soluciones tecnológicas para el mercado corporativo en Chile. En 2023, la compañía tomó una decisión estratégica que pocos ejecutan con convicción: llevar su propuesta de valor a los clientes en sus propios territorios. La Gira Entel Empresas 2023 fue un roadshow nacional que recorrió las principales ciudades del país, reuniendo en cada parada a los clientes y prospectos más relevantes de cada región en un evento de alto impacto productivo. El objetivo no era solo comunicar el portafolio de soluciones —era demostrar, con la escala y calidad de la propia producción, que Entel Empresas opera en el estándar de las mejores marcas tecnológicas del mundo. Desarrollado en partnership con La Tropa, el evento debía funcionar como una declaración de posicionamiento en cada ciudad: aquí está Entel Empresas, y esto es lo que significa trabajar con nosotros.",
+    conceptoCreativo:
+      "El concepto de la Gira fue construido sobre una premisa de coherencia total: si Entel Empresas vende tecnología de punta, la experiencia del evento tiene que ser tecnológicamente impactante. Diseñamos una producción de escenografía full LED —piso LED en formato runway, pantalla corrida de gran formato y paneles laterales— que sumergía a los asistentes en una atmósfera digital de conectividad y redes desde el primer momento. La paleta azul eléctrica, el pattern de nodos interconectados y el diseño de contenidos en pantalla reforzaron el lenguaje visual de Entel de manera coherente en cada ciudad. Los partners tecnológicos de Entel —Google, Microsoft, Cisco y Fortinet— tuvieron presencia protagónica en la producción: no como logos en un banner, sino integrados en el sistema de pantallas y en los puntos de contacto del venue, subrayando la solidez del ecosistema tecnológico que la marca representa. La gira incorporó además elementos de alto impacto emocional: un acróbata aéreo que intervino el espacio de manera inesperada y la actuación en vivo de López, uno de los artistas más relevantes de la escena musical chilena contemporánea. La combinación de tecnología, entretenimiento y negocio convirtió cada fecha en un evento que los asistentes recordarían mucho más allá de los contenidos corporativos.",
+    resultado:
+      "La Gira Entel Empresas 2023 recorrió las principales ciudades de Chile con una producción que igualó —y en varios aspectos superó— el estándar de los grandes eventos tecnológicos internacionales. En cada parada, el evento generó impacto inmediato desde la llegada al venue: pantallas en el lobby, branding inmersivo y una producción de escenario que comunicaba por sí sola el nivel de la propuesta. La integración de los partners tech en la narrativa visual del evento reforzó la credibilidad del ecosistema Entel Empresas de manera más efectiva que cualquier presentación de diapositivas. El cierre musical con López y la intervención aérea crearon momentos de impacto colectivo que sellaron cada jornada con una experiencia emocional que los asistentes no esperaban en un evento corporativo. Para LaPizarra y La Tropa, este proyecto demuestra que un roadshow bien producido es uno de los instrumentos más poderosos del marketing B2B: lleva la marca al territorio de los clientes y hace que cada ciudad sienta que fue elegida, valorada y visitada con intención.",
+  },
+  {
     slug: "bci-pagos-casa-espoz",
     cliente: "BCI Pagos",
     titulo: "Evento de Clientes en Casa Espoz",
