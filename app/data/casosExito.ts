@@ -37,4 +37,27 @@ export const casosExito: CasoExito[] = [
     partnerMention:
       "La construcción e implementación de este proyecto fue desarrollada en base a la alianza de largo plazo que mantenemos con nuestro proveedor Esferical.",
   },
+  {
+    id: "movistar",
+    cliente: "Telefónica / Movistar",
+    titulo: "Stand Tecnológico en Feria Minera",
+    sector: "Telecomunicaciones · Minería",
+    feria: "Exponor, Antofagasta",
+    heroImage: "/casos/movistar/movistar-01.jpg",
+    images: [
+      "/casos/movistar/movistar-02.jpg",
+      "/casos/movistar/movistar-03.jpg",
+      "/casos/movistar/movistar-04.jpg",
+      "/casos/movistar/movistar-05.jpg",
+      "/casos/movistar/movistar-06.jpg",
+    ],
+    objetivo:
+      "Posicionar a Telefónica/Movistar como el socio tecnológico de referencia para la industria minera en Chile, comunicando su propuesta de conectividad convergente como pilar fundamental del desarrollo tecnológico del sector. El stand debía demostrar en vivo las capacidades de la red y generar conversaciones comerciales con operadores, gerentes de tecnología y stakeholders del ecosistema minero.",
+    metodologia:
+      "Se diseñó una experiencia inmersiva de doble impacto: un piso LED de gran formato con imágenes aéreas de faenas mineras y un mensaje ancla —'Conectividad para acortar las distancias en la Minería'— que activaba el concepto desde el ingreso al stand. El interior integraba pantallas con demostraciones de producto, kioscos interactivos, zona lounge para reuniones y un ambient wall de tonos Movistar que proyectaba el relato de marca sobre soluciones convergentes para la industria.",
+    resultados:
+      "Stand de alta recordación dentro de la feria por su propuesta visual y tecnológica diferenciada. El piso LED funcionó como elemento de atracción de tráfico espontáneo, mientras la zona lounge facilitó reuniones comerciales de alto nivel. La narrativa de conectividad para minería quedó instalada de forma coherente en cada punto de contacto del stand.",
+    partnerMention:
+      "La construcción e implementación de este proyecto fue desarrollada en base a la alianza de largo plazo que mantenemos con nuestro proveedor Esferical.",
+  },
 ];
