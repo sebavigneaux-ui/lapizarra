@@ -157,6 +157,9 @@ export default function FeriasStandsContent() {
           </div>
         </section>
 
+        {/* ── CASOS DE ÉXITO ── */}
+        <CasosExito />
+
         {/* ── EL PROBLEMA ── */}
         <section className="py-24 px-6 border-t border-white/5">
           <div className="max-w-6xl mx-auto">
@@ -257,9 +260,6 @@ export default function FeriasStandsContent() {
             </div>
           </div>
         </section>
-
-        {/* ── CASOS DE ÉXITO ── */}
-        <CasosExito />
 
         {/* ── DIFERENCIADORES ── */}
         <section className="py-24 px-6 border-t border-white/5">
