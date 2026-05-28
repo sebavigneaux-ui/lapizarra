@@ -61,7 +61,7 @@ const UPGRADE_MSGS: Record<string, { basico?: string; medio?: string }> = {
   },
   catering: {
     basico: "Pasar a Catering Medio (cóctel con bocados) transforma la experiencia gastronómica y prolonga la estadía.",
-    medio:  "Una cena de gala con menú y maridaje convierte el evento en una experiencia memorable que los asistentes recuerdan.",
+    medio:  "Una cena de gala con menú y maridaje convierte el evento en una experiencia inolvidable que los asistentes recuerdan.",
   },
   tecnica: {
     basico: "Con Técnica Media sumas pantallas múltiples y audio profesional: el contenido llega con mucho más impacto.",
@@ -88,7 +88,7 @@ const UPGRADE_MSGS: Record<string, { basico?: string; medio?: string }> = {
     medio:  "Carpintería a medida con producción completa hace que tu stand destaque frente a la competencia en feria.",
   },
   decoracion: {
-    basico: "Montaje temático con elementos de marca genera cohesión visual y una experiencia de ingreso memorable.",
+    basico: "Montaje temático con elementos de marca genera cohesión visual y una experiencia de ingreso inolvidable.",
     medio:  "Un diseño integral de espacio con producción escénica convierte el venue en una extensión de tu marca.",
   },
 };

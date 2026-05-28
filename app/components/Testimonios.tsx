@@ -12,7 +12,7 @@ const testimonios = [
     empresa: "Grupo Stellantis Chile",
   },
   {
-    texto: "Para nosotros era fundamental que el evento reflejara los valores y estándares de Novo Nordisk. LaPizarra lo logró con creces. Cada detalle estuvo pensado y el resultado fue una experiencia memorable para todos los asistentes.",
+    texto: "Para nosotros era fundamental que el evento reflejara los valores y estándares de Novo Nordisk. LaPizarra lo logró con creces. Cada detalle estuvo pensado y el resultado fue una experiencia inolvidable para todos los asistentes.",
     nombre: "Javiera Jara",
     cargo: "Public Affairs & Communications Manager Chile",
     empresa: "Novo Nordisk",

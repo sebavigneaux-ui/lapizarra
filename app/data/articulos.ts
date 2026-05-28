@@ -269,7 +269,7 @@ export const ARTICULOS: Articulo[] = [
           },
           {
             titulo: "Nivel premium",
-            descripcion: "Producción de alto estándar en todos los frentes. Desde la selección del venue hasta el cierre del evento, cada elemento está diseñado para generar una experiencia memorable. Es el nivel requerido para lanzamientos de producto, eventos con presencia de prensa o instancias donde la marca necesita impresionar.",
+            descripcion: "Producción de alto estándar en todos los frentes. Desde la selección del venue hasta el cierre del evento, cada elemento está diseñado para generar una experiencia inolvidable. Es el nivel requerido para lanzamientos de producto, eventos con presencia de prensa o instancias donde la marca necesita impresionar.",
           },
         ],
       },
@@ -436,7 +436,7 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "El pabellón de España jugó con el contraste cromático —azules oceánicos y un espacio final rojo-naranja— para contar la historia de la Corriente de Kuroshio que conecta Oriente y Occidente. Hologramas y laboratorios interactivos dominaron el recorrido. Pero el espacio final, lleno de postales físicas y posts de redes sociales impresos, fue el más memorable.",
+          "El pabellón de España jugó con el contraste cromático —azules oceánicos y un espacio final rojo-naranja— para contar la historia de la Corriente de Kuroshio que conecta Oriente y Occidente. Hologramas y laboratorios interactivos dominaron el recorrido. Pero el espacio final, lleno de postales físicas y posts de redes sociales impresos, fue el más inolvidable.",
       },
       {
         type: "highlight",
@@ -490,7 +490,7 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "Estos principios no requieren el presupuesto de un pabellón de Expo. Requieren el criterio correcto desde el briefing inicial. Y eso es exactamente lo que distingue a un evento bien producido de uno verdaderamente memorable.",
+          "Estos principios no requieren el presupuesto de un pabellón de Expo. Requieren el criterio correcto desde el briefing inicial. Y eso es exactamente lo que distingue a un evento bien producido de uno verdaderamente inolvidable.",
       },
       {
         type: "p",
@@ -869,7 +869,7 @@ export const ARTICULOS: Articulo[] = [
       {
         type: "p",
         content:
-          "Independientemente del tipo de evento, hay elementos que determinan la diferencia entre una experiencia memorable y una jornada olvidable. Estos son los que más impactan en la percepción final de los asistentes.",
+          "Independientemente del tipo de evento, hay elementos que determinan la diferencia entre una experiencia inolvidable y una jornada olvidable. Estos son los que más impactan en la percepción final de los asistentes.",
       },
       {
         type: "list",
@@ -1192,7 +1192,7 @@ export const ARTICULOS: Articulo[] = [
           {
             titulo: "Diferenciación (Break Through The Noise)",
             descripcion:
-              "Ser el stand más memorable de la feria. No competir en 'presentación bonita' sino en 'experiencia divertida e inesperada'. Métrica: % de retailers que lo recuerdan a las 2 semanas.",
+              "Ser el stand más inolvidable de la feria. No competir en 'presentación bonita' sino en 'experiencia divertida e inesperada'. Métrica: % de retailers que lo recuerdan a las 2 semanas.",
           },
           {
             titulo: "Educación a través de la experiencia",
@@ -1200,7 +1200,7 @@ export const ARTICULOS: Articulo[] = [
               "Que retailers entiendan qué es gamification sin necesidad de explicación. El booth ES gamification: entras, juegas, ganas, experimentas. Conexión lógica automática: 'si esto es divertido, mis clientes también lo sentirán así.'",
           },
           {
-            titulo: "Engagement (crear conversación memorable)",
+            titulo: "Engagement (crear conversación inolvidable)",
             descripcion:
               "Cuando alguien entra a jugar y gana un premio, el equipo no vende: pregunta '¿Cómo fue la experiencia?'. Ahí empieza la conversación real. Meta: 5+ minutos de conversación promedio vs. 30 segundos típico.",
           },
@@ -1225,7 +1225,7 @@ export const ARTICULOS: Articulo[] = [
           ],
           [
             "Booth traffic",
-            "Conversación memorable + conversión",
+            "Conversación inolvidable + conversión",
           ],
         ],
       },
@@ -1305,7 +1305,7 @@ export const ARTICULOS: Articulo[] = [
 
       // SECCIÓN 4: RESULTADOS
       { type: "h2", content: "Los resultados" },
-      { type: "h3", content: "¿Fue el stand más memorable? ✓" },
+      { type: "h3", content: "¿Fue el stand más inolvidable? ✓" },
       {
         type: "p",
         content:

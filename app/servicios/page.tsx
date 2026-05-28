@@ -35,7 +35,7 @@ export default function ServiciosPage() {
           <h1 className="text-white font-black leading-none tracking-tighter mb-8">
             <span className="block text-4xl md:text-6xl lg:text-7xl">Todo lo que necesitas</span>
             <span className="block text-4xl md:text-6xl lg:text-7xl">para producir una</span>
-            <span className="block text-4xl md:text-6xl lg:text-7xl text-[#EC008C]">experiencia memorable.</span>
+            <span className="block text-4xl md:text-6xl lg:text-7xl text-[#EC008C]">experiencia inolvidable.</span>
           </h1>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl">
             Desde eventos corporativos hasta producción audiovisual. Diseñamos y ejecutamos cada proyecto con el mismo criterio: impacto real y ejecución impecable.
