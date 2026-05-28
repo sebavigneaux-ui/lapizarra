@@ -201,6 +201,23 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "bci-pagos-casa-espoz",
+    cliente: "BCI Pagos",
+    titulo: "Evento de Clientes en Casa Espoz",
+    heroFoto: "/galeria11/1.jpg",
+    fotos: [
+      "/galeria11/1.jpg",
+      "/galeria11/2.jpg",
+      "/galeria11/3.jpg",
+    ],
+    objetivo:
+      "BCI Pagos, la división de soluciones de pago para empresas de BCI, opera en un mercado donde la confianza y la relación comercial son tan determinantes como la tecnología. Para una unidad de negocio cuya propuesta se resume en ser más que un proveedor —ser un partner estratégico— la comunicación de ese posicionamiento no puede limitarse a un deck o un correo. Tiene que vivirse. En el marco de un partnership con La Tropa, diseñamos y produjimos un evento de relacionamiento con clientes y socios comerciales en Casa Espoz, uno de los venues más singulares de Santiago: un espacio con alma propia, madera, vegetación y una atmósfera que favorece exactamente el tipo de conversaciones que BCI Pagos quería generar. El objetivo era reunir a los principales clientes y partners de la compañía en una instancia donde el mensaje «Más que un banco, un partner» dejara de ser un slogan y se convirtiera en una experiencia.",
+    conceptoCreativo:
+      "La elección de Casa Espoz fue en sí misma una declaración de posicionamiento. Un banco podría haber organizado un cóctel en una sala corporativa con branding prolijo; BCI Pagos eligió un espacio con carácter, irregular, vivo, que comunica apertura y criterio. Esa decisión fue el primer gesto creativo del evento. La producción fue diseñada para integrarse al espacio sin imponerle una identidad genérica: iluminación que respetaba la calidez del venue, pantalla LED como punto focal sin dominar el ambiente, señalética mínima y precisa. El foco estaba puesto en la calidad de la experiencia social: gastronomía de nivel, servicio atento y un formato de circulación libre que favorecía el encuentro espontáneo entre los asistentes. El mensaje de marca —desplegado en pantalla y presente en cada pieza de comunicación del evento— reforzó con coherencia el posicionamiento de BCI Pagos como socio tecnológico y financiero de sus clientes, no como un proveedor transaccional.",
+    resultado:
+      "El evento reunió a clientes y partners de BCI Pagos en una noche que cumplió su propósito central: generar conversaciones de valor en un contexto que la marca podía controlar y que los asistentes podían disfrutar. La atmósfera de Casa Espoz hizo el trabajo que ningún salón de convenciones hubiera logrado: crear un clima de informalidad productiva donde los vínculos comerciales se construyen con más naturalidad. Para LaPizarra y La Tropa, este proyecto confirma que el venue es parte del mensaje: elegir bien dónde ocurre un evento de relacionamiento es ya una decisión estratégica.",
+  },
+  {
     slug: "seat-move-art",
     cliente: "SEAT",
     titulo: "Move Art",
