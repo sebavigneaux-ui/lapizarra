@@ -201,6 +201,32 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "seat-move-art",
+    cliente: "SEAT",
+    titulo: "Move Art",
+    heroFoto: "/galeria10/1.jpg",
+    fotos: [
+      "/galeria10/1.jpg",
+      "/galeria10/2.jpg",
+      "/galeria10/3.jpg",
+      "/galeria10/4.jpg",
+      "/galeria10/5.jpg",
+      "/galeria10/6.jpg",
+      "/galeria10/7.jpg",
+      "/galeria10/8.jpg",
+      "/galeria10/9.jpg",
+      "/galeria10/10.jpg",
+      "/galeria10/11.jpg",
+      "/galeria10/12.jpg",
+    ],
+    objetivo:
+      "SEAT es una marca que lleva décadas construyendo su identidad en torno a dos ejes: diseño y movimiento. Para una compañía cuyo lenguaje de marca cruza el mundo del automóvil con el del arte urbano y la cultura contemporánea, el desafío no era comunicar esos valores con palabras —era materializarlos en una experiencia que no pudiera explicarse sin verse. Bajo ese desafío, y en el marco de un partnership estratégico con La Tropa, desarrollamos Move Art: una activación de marca que convirtió a un SEAT en el instrumento de creación de una obra de arte monumental. El objetivo era generar un momento único, imposible de ignorar y difícil de olvidar, que asociara la marca con creatividad, movimiento y expresión en su forma más literal y poderosa.",
+    conceptoCreativo:
+      "El concepto de Move Art parte de una pregunta simple y radical: ¿qué pasa cuando un auto deja de ser un objeto y se convierte en un pincel? La respuesta fue suspender un SEAT del techo de un venue de gran formato, cargar sus neumáticos con pintura y utilizar el movimiento del vehículo —guiado sobre un lienzo monumental desplegado bajo él— como gesto artístico. Los neumáticos, con su textura característica, dejaron huellas que ninguna mano humana podría replicar: trazos anchos, patrones de banda de rodadura, velocidades distintas que generaron capas de color y densidad variables. Un artista trabajó en paralelo sobre el mismo lienzo, respondiendo en tiempo real a lo que el auto iba creando: completando, interrumpiendo, amplificando los gestos mecánicos con intervenciones manuales. El resultado no fue una obra hecha por una máquina ni por un humano, sino por la tensión creativa entre ambos. La pieza final —enorme, vibrante, con la huella literal del SEAT impresa en cada centímetro— fue simultáneamente una obra de arte y el argumento más poderoso que la marca podría haber hecho sobre su identidad.",
+    resultado:
+      "Move Art produjo una obra monumental que existe como artefacto físico de la identidad de SEAT: irrepetible, co-creada entre máquina y artista, y con la huella literal de los neumáticos de la marca en cada trazo. La activación generó contenido visual de alto impacto en todas sus etapas —el auto suspendido antes del inicio, el proceso de creación en vivo, los detalles del lienzo terminado— convirtiéndose en una pieza de comunicación que la marca puede usar mucho más allá del evento en sí. Para LaPizarra y La Tropa, este proyecto representa un límite: el punto donde la producción de eventos deja de ser logística y se convierte en autoría. Cuando una marca nos da la confianza de llevar una idea hasta sus últimas consecuencias, esto es lo que puede ocurrir.",
+  },
+  {
     slug: "claro-empresas-fiesta-clientes-2024",
     cliente: "Claro Empresas",
     titulo: "Fiesta de Clientes 2024",
