@@ -48,7 +48,7 @@ export function useCalculadora() {
     });
 
   const next = () =>
-    setState((s) => ({ ...s, step: Math.min(5, s.step + 1) as CalculadoraState["step"] }));
+    setState((s) => ({ ...s, step: Math.min(6, s.step + 1) as CalculadoraState["step"] }));
 
   const back = () =>
     setState((s) => ({ ...s, step: Math.max(1, s.step - 1) as CalculadoraState["step"] }));

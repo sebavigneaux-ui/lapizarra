@@ -63,7 +63,7 @@ export interface TipoEventoConfig {
 }
 
 export interface CalculadoraState {
-  step: 1 | 2 | 3 | 4 | 5;
+  step: 1 | 2 | 3 | 4 | 5 | 6;
   tipoEvento: TipoEvento | null;
   asistentes: RangoAsistentes | null;
   region: RegionId | null;
