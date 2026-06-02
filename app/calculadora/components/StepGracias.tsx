@@ -19,6 +19,8 @@ declare global {
 
 export default function StepGracias({ nombre, tipoLabel, asistentesLabel, regionLabel, totalMin, totalMax }: Props) {
   useEffect(() => {
+    window.history.pushState({}, "", "/calculadora/thank-you");
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "calculadora_completada",
