@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { proyectos } from "../data/proyectos";
+import { proyectosPublicados } from "../data/proyectos";
 import Header from "../components/Header";
 
 export const metadata = {
@@ -35,7 +35,7 @@ export default function ProyectosPage() {
 
           {/* Grid de proyectos */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {proyectos.map((proyecto) => {
+            {proyectosPublicados.map((proyecto) => {
               const hero = proyecto.heroFoto ?? proyecto.fotos[0];
               return (
                 <Link

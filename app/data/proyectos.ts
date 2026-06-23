@@ -8,6 +8,7 @@ export type Proyecto = {
   objetivo: string;
   conceptoCreativo: string;
   resultado: string;
+  published?: boolean;
 };
 
 export const proyectos: Proyecto[] = [
@@ -201,6 +202,7 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    published: false,
     slug: "entel-empresas-gira-2023",
     cliente: "Entel Empresas",
     titulo: "Gira 2023",
@@ -222,6 +224,7 @@ export const proyectos: Proyecto[] = [
       "La Gira Entel Empresas 2023 recorrió las principales ciudades de Chile con una producción que igualó —y en varios aspectos superó— el estándar de los grandes eventos tecnológicos internacionales. En cada parada, el evento generó impacto inmediato desde la llegada al venue: pantallas en el lobby, branding inmersivo y una producción de escenario que comunicaba por sí sola el nivel de la propuesta. La integración de los partners tech en la narrativa visual del evento reforzó la credibilidad del ecosistema Entel Empresas de manera más efectiva que cualquier presentación de diapositivas. El cierre musical con López y la intervención aérea crearon momentos de impacto colectivo que sellaron cada jornada con una experiencia emocional que los asistentes no esperaban en un evento corporativo. Para LaPizarra y La Tropa, este proyecto demuestra que un roadshow bien producido es uno de los instrumentos más poderosos del marketing B2B: lleva la marca al territorio de los clientes y hace que cada ciudad sienta que fue elegida, valorada y visitada con intención.",
   },
   {
+    published: false,
     slug: "bci-pagos-casa-espoz",
     cliente: "BCI Pagos",
     titulo: "Evento de Clientes en Casa Espoz",
@@ -239,6 +242,7 @@ export const proyectos: Proyecto[] = [
       "El evento reunió a clientes y partners de BCI Pagos en una noche que cumplió su propósito central: generar conversaciones de valor en un contexto que la marca podía controlar y que los asistentes podían disfrutar. La atmósfera de Casa Espoz hizo el trabajo que ningún salón de convenciones hubiera logrado: crear un clima de informalidad productiva donde los vínculos comerciales se construyen con más naturalidad. Para LaPizarra y La Tropa, este proyecto confirma que el venue es parte del mensaje: elegir bien dónde ocurre un evento de relacionamiento es ya una decisión estratégica.",
   },
   {
+    published: false,
     slug: "seat-move-art",
     cliente: "SEAT",
     titulo: "Move Art",
@@ -265,6 +269,7 @@ export const proyectos: Proyecto[] = [
       "Move Art produjo una obra monumental que existe como artefacto físico de la identidad de SEAT: irrepetible, co-creada entre máquina y artista, y con la huella literal de los neumáticos de la marca en cada trazo. La activación generó contenido visual de alto impacto en todas sus etapas —el auto suspendido antes del inicio, el proceso de creación en vivo, los detalles del lienzo terminado— convirtiéndose en una pieza de comunicación que la marca puede usar mucho más allá del evento en sí. Para LaPizarra y La Tropa, este proyecto representa un límite: el punto donde la producción de eventos deja de ser logística y se convierte en autoría. Cuando una marca nos da la confianza de llevar una idea hasta sus últimas consecuencias, esto es lo que puede ocurrir.",
   },
   {
+    published: false,
     slug: "claro-empresas-fiesta-clientes-2024",
     cliente: "Claro Empresas",
     titulo: "Fiesta de Clientes 2024",
@@ -288,6 +293,8 @@ export const proyectos: Proyecto[] = [
       "La Fiesta de Clientes Claro Empresas 2024 logró lo que los mejores eventos de relacionamiento corporativo deben lograr: hacer sentir a cada asistente que es parte de algo que vale la pena celebrar. La experiencia VR y los robots generaron fila espontánea desde los primeros minutos, convirtiéndose en los puntos de mayor densidad social del evento y en los temas de conversación de la noche. El formato outdoor con activaciones distribuidas favoreció el movimiento natural de los asistentes por el espacio, garantizando que cada zona cumpliera su rol: acreditar, activar, conectar, celebrar. La coherencia visual fue total: cualquier fotografía tomada en el evento comunicaba instantáneamente la identidad de Claro Empresas sin necesidad de un logo en primer plano. Para LaPizarra y La Tropa, este proyecto es un ejemplo de lo que puede lograrse cuando dos equipos con visión compartida suman sus capacidades: una producción técnicamente impecable, con alma creativa y un resultado que la marca puede mostrar con orgullo.",
   },
 ];
+
+export const proyectosPublicados = proyectos.filter((p) => p.published !== false);
 
 export function getProyecto(slug: string): Proyecto | undefined {
   return proyectos.find((p) => p.slug === slug);
