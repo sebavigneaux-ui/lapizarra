@@ -6,7 +6,6 @@ import Stepper from "./components/Stepper";
 import StepContexto from "./components/StepContexto";
 import StepBloques from "./components/StepBloques";
 import StepDetalle from "./components/StepDetalle";
-import StepResultado from "./components/StepResultado";
 import StepLead from "./components/StepLead";
 import StepGracias from "./components/StepGracias";
 import ContextStrip from "./components/ContextStrip";
@@ -121,7 +120,7 @@ export default function CalculadoraPage() {
           </div>
         )}
 
-        {state.step < 6 && (
+        {state.step < 5 && (
           <div className="mb-10">
             <Stepper step={state.step} />
           </div>
@@ -199,26 +198,6 @@ export default function CalculadoraPage() {
           )}
 
           {state.step === 5 && resultado && state.tipoEvento && state.asistentes && state.region && state.diasEvento && (
-            <StepResultado
-              resultado={resultado}
-              tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
-              asistentesLabel={LABELS_ASISTENTES[state.asistentes!]}
-              asistentes={state.asistentes}
-              regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
-              diasLabel={LABELS_DIAS[state.diasEvento]}
-              diasEvento={state.diasEvento}
-              fechaEvento={state.fechaEvento}
-              onChangeAsistentes={setAsistentes}
-              onChangeDias={setDiasEvento}
-              onAgregar={toggleNivel}
-              onCambiarNivel={toggleNivel}
-              onQuitar={toggleNivel}
-              onNext={next}
-              onBack={back}
-            />
-          )}
-
-          {state.step === 6 && resultado && state.tipoEvento && state.asistentes && state.region && (
             <StepGracias
               nombre={state.nombre}
               tipoLabel={TIPOS_EVENTO.find((t) => t.id === state.tipoEvento)?.label ?? ""}
@@ -226,6 +205,7 @@ export default function CalculadoraPage() {
               regionLabel={REGIONES.find((r) => r.id === state.region)?.label ?? ""}
               totalMin={resultado.total[0]}
               totalMax={resultado.total[1]}
+              resultado={resultado}
             />
           )}
         </div>
