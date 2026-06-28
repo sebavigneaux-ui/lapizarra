@@ -14,6 +14,7 @@ interface Props {
 declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
+    gtag: (...args: unknown[]) => void;
   }
 }
 
@@ -21,6 +22,23 @@ export default function StepGracias({ nombre, tipoLabel, asistentesLabel, region
   useEffect(() => {
     window.history.pushState({}, "", "/calculadora/thank-you");
 
+    // GA4: registrar visita a /calculadora/thank-you como page_view
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: "/calculadora/thank-you",
+        page_title: "Gracias | LaPizarra",
+      });
+      // Evento de conversión para Google Ads
+      window.gtag("event", "lead_calculadora", {
+        currency: "CLP",
+        value: totalMin,
+        tipo_evento: tipoLabel,
+        asistentes: asistentesLabel,
+        region: regionLabel,
+      });
+    }
+
+    // dataLayer para GTM
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "calculadora_completada",
@@ -29,6 +47,7 @@ export default function StepGracias({ nombre, tipoLabel, asistentesLabel, region
       region: regionLabel,
       total_min: totalMin,
       total_max: totalMax,
+      page_path: "/calculadora/thank-you",
     });
   }, []);
 
