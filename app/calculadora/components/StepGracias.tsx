@@ -27,20 +27,7 @@ export default function StepGracias({ nombre, tipoLabel, asistentesLabel, region
   useEffect(() => {
     window.history.pushState({}, "", "/calculadora/thank-you");
 
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "page_view", {
-        page_path: "/calculadora/thank-you",
-        page_title: "Gracias | LaPizarra",
-      });
-      window.gtag("event", "lead_calculadora", {
-        currency: "CLP",
-        value: totalMin,
-        tipo_evento: tipoLabel,
-        asistentes: asistentesLabel,
-        region: regionLabel,
-      });
-    }
-
+    // dataLayer para GTM (siempre disponible)
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "calculadora_completada",
@@ -51,6 +38,32 @@ export default function StepGracias({ nombre, tipoLabel, asistentesLabel, region
       total_max: totalMax,
       page_path: "/calculadora/thank-you",
     });
+
+    // GA4: enviar page_view de la nueva URL + evento de conversión
+    // Para SPAs se usa gtag('config', ...) en lugar de gtag('event', 'page_view', ...)
+    const sendGA4 = () => {
+      window.gtag("config", "G-G253MBG3ZL", {
+        page_path: "/calculadora/thank-you",
+        page_title: "Gracias | LaPizarra",
+      });
+      window.gtag("event", "lead_calculadora", {
+        currency: "CLP",
+        value: totalMin,
+        tipo_evento: tipoLabel,
+        asistentes: asistentesLabel,
+        region: regionLabel,
+      });
+    };
+
+    if (typeof window.gtag === "function") {
+      sendGA4();
+    } else {
+      // gtag aún no cargó — esperar y reintentar
+      const timer = setTimeout(() => {
+        if (typeof window.gtag === "function") sendGA4();
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const nombreCorto = nombre.split(" ")[0] || "tu evento";
