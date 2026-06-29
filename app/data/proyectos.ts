@@ -202,6 +202,22 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "novo-nordisk-unordinary-drives-change",
+    cliente: "Novo Nordisk",
+    titulo: "Unordinary Drives Change — Branding de Oficinas",
+    heroFoto: "/galeria15/2.jpg",
+    fotos: [
+      "/galeria15/2.jpg",
+      "/galeria15/1.jpg",
+    ],
+    objetivo:
+      "Novo Nordisk es una compañía que opera bajo una convicción profunda: las personas que trabajan en ella no son ordinarias. Son científicos, representantes médicos, líderes y operadores que dedican su carrera a cambiar la vida de los pacientes. Esa convicción tiene nombre a nivel global: «Unordinary Drives Change». La campaña de employer branding de Novo Nordisk nació para celebrar y comunicar lo que hace extraordinaria a su cultura interna, y para recordarle a cada colaborador —todos los días, desde el espacio físico donde trabaja— que lo que hace importa. En Chile, Novo Nordisk nos convocó para materializar esa campaña en sus oficinas de Santiago. El encargo fue concreto: traducir el lenguaje visual y conceptual de «Unordinary Drives Change» a intervenciones de branding interno que transformaran el espacio de trabajo en un entorno que hablara de propósito, identidad y pertenencia.",
+    conceptoCreativo:
+      "Las intervenciones tomaron el sistema visual de la campaña global —azul profundo, fotos de colaboradores reales, tipografía bold y el claim «Unordinary Drives Change... And It Starts With You»— y lo desplegaron en los puntos de mayor tráfico y visibilidad de la oficina. Una columna cilíndrica en el área de colaboración fue forrada con la gráfica de campaña dividida en capas conceptuales: «Unordinary Dedication», «Unordinary Development» y el mensaje central en el tercio inferior. Las fotos de colaboradores reales de Novo Nordisk integraron la pieza, haciendo que el concepto no fuera abstracto sino reconocible: estas son las personas que hacen que la compañía sea lo que es. El pasillo principal de la oficina fue intervenido con un mural fotográfico de largo recorrido que cubría de pared a pared y de piso a techo, con imágenes de colaboradores de la compañía en sus facetas más auténticas —no poses corporativas, sino momentos reales de pasión, creatividad y vida. En la parte inferior del mural, el claim de campaña en azul acompañaba cada paso del trayecto, convirtiendo el corredor en una experiencia de inmersión en la cultura de la compañía. El neón «Yo transformo la vida de mis pacientes» instalado en el área de reuniones completó el relato: del propósito colectivo a la voz individual de quien trabaja ahí.",
+    resultado:
+      "Las intervenciones transformaron las oficinas de Novo Nordisk Chile en un espacio que comunica cultura desde el primer momento en que alguien entra. Colaboradores, visitas y nuevos ingresos se encuentran con un entorno que no necesita explicarse: habla por sí solo de quiénes son las personas que trabajan ahí y por qué lo hacen. Para LaPizarra, este proyecto representa una dimensión estratégica del branding de espacios: cuando el entorno físico de una empresa refleja con precisión sus valores y su propósito, el espacio deja de ser infraestructura y se convierte en cultura visible. Eso es exactamente lo que «Unordinary Drives Change» logró en las oficinas de Novo Nordisk Santiago.",
+  },
+  {
     slug: "novo-nordisk-wegovy-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Lanzamiento Wegovy — Intervención de Oficinas",
