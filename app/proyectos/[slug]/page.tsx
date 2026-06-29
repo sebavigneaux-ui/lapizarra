@@ -64,6 +64,7 @@ export default async function ProyectoPage({
             alt={proyecto.titulo}
             fill
             className="object-cover"
+            style={{ objectPosition: proyecto.heroPosition ?? "center" }}
             sizes="(max-width: 768px) 100vw, 1152px"
             priority
           />

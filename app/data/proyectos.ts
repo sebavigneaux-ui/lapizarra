@@ -4,6 +4,7 @@ export type Proyecto = {
   titulo: string;
   fotos: string[];
   heroFoto?: string; // fuerza una foto específica como principal
+  heroPosition?: string; // object-position del hero, ej: "center top"
   videos?: string[]; // YouTube IDs
   objetivo: string;
   conceptoCreativo: string;
