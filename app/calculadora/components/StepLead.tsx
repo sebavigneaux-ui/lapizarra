@@ -3,6 +3,12 @@ import { useState } from "react";
 import type { TipoEvento, RangoAsistentes, RegionId } from "../../types/calculator";
 import { TIPOS_EVENTO, LABELS_ASISTENTES, REGIONES } from "../../config/pricing";
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+  }
+}
+
 interface Props {
   nombre: string;
   empresa: string;
@@ -33,6 +39,13 @@ export default function StepLead({
   const handleSubmit = async () => {
     if (!canSubmit || loading) return;
     setLoading(true);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "cta_ver_simulacion",
+      tipo_evento: tipoLabel,
+      asistentes: asistentesLabel,
+      region: regionLabel,
+    });
     await onNext();
     setLoading(false);
   };
