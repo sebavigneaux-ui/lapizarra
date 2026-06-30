@@ -203,6 +203,23 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "novo-nordisk-vive-ligero-lanzamiento",
+    cliente: "Novo Nordisk",
+    titulo: "Vive Ligero — Lanzamiento Interno de Campaña",
+    heroFoto: "/galeria17/1.jpg",
+    fotos: [
+      "/galeria17/1.jpg",
+      "/galeria17/2.jpg",
+      "/galeria17/3.jpg",
+    ],
+    objetivo:
+      "Novo Nordisk necesitaba comunicar el lanzamiento de su campaña 'Vive Ligero con Wegovy®' a su equipo de manera que el concepto no se explicara, sino que se viviera. Los colaboradores que acompañarían el posicionamiento del producto debían sentir el espíritu de la campaña desde adentro: ligereza, bienestar y disfrute como experiencia real, no como promesa publicitaria. El encargo fue diseñar un evento de lanzamiento interno que generara ese impacto.",
+    conceptoCreativo:
+      "La experiencia se construyó alrededor de dos regalos cuidadosamente concebidos bajo el concepto 'Vive Ligero': unas pantuflas Atakama personalizadas —un guiño literal a la ligereza de los pies, diseñadas para descansar— y unos audífonos Huawei con el claim 'Vive Ligero con Wegovy®' grabado en la tapa, acompañados de un QR que abría una playlist de Spotify con música que relaja e invita a disfrutar la vida plenamente. El packaging de ambos regalos fue completamente personalizado con los códigos visuales de la campaña, convirtiendo cada objeto en una pieza de comunicación por sí sola. Como sorpresa especial para los asistentes, invitamos al mago Jean Paul Olhaberry para un show íntimo cuyo hilo conductor estaba directamente conectado al propósito del lanzamiento: la magia de vivir sin peso, de soltar lo que no necesitamos, de moverse con más libertad. El show fue pensado como una metáfora en acción del concepto de campaña.",
+    resultado:
+      "La experiencia superó todas las expectativas. Los colaboradores de Novo Nordisk vivieron el lanzamiento de 'Vive Ligero' como protagonistas, no como audiencia pasiva. Los regalos —únicos, coherentes con el concepto y de alta calidad— generaron conversaciones espontáneas que extendieron el mensaje de campaña de manera orgánica desde el primer momento. El show de Jean Paul Olhaberry sorprendió genuinamente a todos los asistentes, convirtiendo el lanzamiento interno en un momento memorable que el equipo no olvidará fácilmente. Para LaPizarra, este proyecto refuerza una convicción: los lanzamientos internos más efectivos no son los que informan, sino los que transforman la relación del equipo con lo que están a punto de comunicar al mundo.",
+  },
+  {
     slug: "adecco-retrato-ejecutivo-hr-conference",
     cliente: "Adecco",
     titulo: "Retrato Ejecutivo — The Annual HR Conference 2026",
