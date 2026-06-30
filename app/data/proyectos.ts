@@ -206,11 +206,12 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-vive-ligero-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Vive Ligero — Lanzamiento Interno de Campaña",
-    heroFoto: "/galeria17/1.jpg",
+    heroFoto: "/galeria17/3.jpg",
+    heroPosition: "center top",
     fotos: [
+      "/galeria17/3.jpg",
       "/galeria17/1.jpg",
       "/galeria17/2.jpg",
-      "/galeria17/3.jpg",
     ],
     objetivo:
       "Novo Nordisk necesitaba comunicar el lanzamiento de su campaña 'Vive Ligero con Wegovy®' a su equipo de manera que el concepto no se explicara, sino que se viviera. Los colaboradores que acompañarían el posicionamiento del producto debían sentir el espíritu de la campaña desde adentro: ligereza, bienestar y disfrute como experiencia real, no como promesa publicitaria. El encargo fue diseñar un evento de lanzamiento interno que generara ese impacto.",
