@@ -84,7 +84,9 @@ export async function POST(req: NextRequest) {
     // Notificación WhatsApp vía Green API
     const greenId = process.env.GREENAPI_ID_INSTANCE;
     const greenToken = process.env.GREENAPI_TOKEN;
-    if (greenId && greenToken) {
+    if (!greenId || !greenToken) {
+      console.error("WhatsApp: GREENAPI_ID_INSTANCE o GREENAPI_TOKEN no configurados");
+    } else {
       const servicios = bloquesStr || "Ninguno seleccionado";
       const mensaje = [
         "🔔 *Nuevo lead — LaPizarra*",
@@ -100,14 +102,20 @@ export async function POST(req: NextRequest) {
         body.mensaje ? `\n💬 "${body.mensaje}"` : "",
       ].filter((l) => l !== undefined).join("\n").trim();
 
-      await fetch(
-        `https://7107.api.greenapi.com/waInstance${greenId}/sendMessage/${greenToken}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chatId: "56958419326@c.us", message: mensaje }),
-        }
-      ).catch((e) => console.error("WhatsApp error:", e));
+      try {
+        const waRes = await fetch(
+          `https://7107.api.greenapi.com/waInstance${greenId}/sendMessage/${greenToken}`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chatId: "56958419326@c.us", message: mensaje }),
+          }
+        );
+        const waJson = await waRes.json();
+        console.log("WhatsApp response:", JSON.stringify(waJson));
+      } catch (e) {
+        console.error("WhatsApp fetch error:", e);
+      }
     }
 
     return NextResponse.json({ ok: true });
