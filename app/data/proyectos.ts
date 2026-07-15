@@ -203,6 +203,28 @@ export const proyectos: Proyecto[] = [
       "El resultado es una plataforma audiovisual sólida y escalable para Stellantis, diseñada para acompañar procesos internos de formación y comunicación de manera moderna y eficiente. La organización cuenta hoy con una biblioteca audiovisual de más de 200 piezas que puede crecer, actualizarse y seguir generando valor en el tiempo. Los equipos reciben contenido breve, claro y atractivo que mejora predisposición, atención y recordación. Los mensajes se distribuyen de forma homogénea, fortaleciendo alineación interna. Nuevas necesidades comunicacionales pueden transformarse rápidamente en contenido útil y bien producido. Las cápsulas pueden revisarse cuando sea necesario, facilitando consulta, onboarding y reforzamiento continuo. Este proyecto confirma algo esencial: LaPizarra no solo desarrolla eventos y experiencias presenciales; también crea experiencias audiovisuales que fortalecen a las organizaciones desde adentro. Cuando una empresa necesita transformar información en impacto, nos convertimos en el socio estratégico capaz de lograrlo.",
   },
   {
+    slug: "stellantis-ram-dakota-formacion-comercial",
+    cliente: "Stellantis",
+    titulo: "Formación Comercial RAM Dakota",
+    heroFoto: "/galeria18/1.jpg",
+    videos: ["yGZWBmZTJvA"],
+    fotos: [
+      "/galeria18/1.jpg",
+      "/galeria18/2.jpg",
+      "/galeria18/3.jpg",
+      "/galeria18/4.jpg",
+      "/galeria18/5.jpg",
+      "/galeria18/6.jpg",
+      "/galeria18/7.jpg",
+    ],
+    objetivo:
+      "El lanzamiento de una nueva pickup al mercado chileno exige algo más que un evento de prensa: exige una fuerza de ventas capaz de transmitir con convicción cada atributo del producto a sus clientes. Bajo ese desafío, Stellantis nos convocó para diseñar y producir la Formación Comercial RAM Dakota, una jornada de traspaso de experiencia dirigida a su equipo de ventas, realizada en dos días consecutivos en Santa Martina, Lo Barnechea, con 80 asistentes por jornada. El objetivo era preciso: que cada vendedor viviera en primera persona el comportamiento del vehículo, tanto en ciudad como fuera de ella, para que pudiera argumentar cada atributo de la RAM Dakota desde el conocimiento real y no desde una ficha técnica. En un segmento donde la decisión de compra está fuertemente influida por la confianza que transmite el vendedor, fortalecer ese argumentario comercial a través de la experiencia directa se convertía en una inversión estratégica para el éxito del lanzamiento.",
+    conceptoCreativo:
+      "El concepto de la jornada se construyó en torno a una idea simple: no se puede vender lo que no se ha sentido. Diseñamos un programa de test drive en dos formatos complementarios —on road y offroad— que permitió a cada vendedor experimentar la versatilidad real de la RAM Dakota en los escenarios donde sus clientes la usarían. El entorno de Santa Martina, con su combinación de caminos pavimentados y terreno agreste en las faldas de la cordillera, fue clave para ese propósito: un solo venue que ofrecía ambas condiciones de manejo sin necesidad de trasladar a los participantes entre locaciones. La experiencia offroad puso a prueba la capacidad de tracción, la suspensión y el comportamiento del vehículo en pendientes y terreno irregular, mientras que el circuito on road permitió evaluar comportamiento, torque y confort en condiciones de uso cotidiano. Cada asistente pasó por ambos recorridos guiado por instructores que reforzaban, en tiempo real, los atributos técnicos y los argumentos de venta asociados a cada maniobra. La producción de la jornada —logística de dos días, coordinación de vehículos, instructores y flujo de 80 personas por fecha— fue diseñada para que la experiencia de manejo fuera el centro absoluto, sin fricciones operativas que restaran foco al aprendizaje.",
+    resultado:
+      "La Formación Comercial RAM Dakota impactó a 160 vendedores de la red Stellantis a lo largo de las dos jornadas en Santa Martina. Cada participante completó ambos recorridos —on road y offroad— saliendo de la experiencia con un conocimiento directo y tangible del vehículo que ninguna capacitación teórica podría haber entregado. El formato de test drive dual demostró ser especialmente efectivo para un producto cuya propuesta de valor combina uso urbano y capacidad todo terreno: los vendedores pudieron verificar en carne propia ambos atributos y traducirlos en argumentos de venta concretos frente a sus clientes. Para LaPizarra, este proyecto reafirma un principio que aplicamos en cada formación comercial que producimos: cuando la fuerza de ventas vive el producto antes de venderlo, la seguridad y la convicción con la que lo presenta al mercado cambian por completo.",
+  },
+  {
     slug: "novo-nordisk-vive-ligero-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Vive Ligero — Lanzamiento Interno de Campaña",
