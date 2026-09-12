@@ -225,6 +225,27 @@ export const proyectos: Proyecto[] = [
       "La Formación Comercial RAM Dakota impactó a 160 vendedores de la red Stellantis a lo largo de las dos jornadas en Santa Martina. Cada participante completó ambos recorridos —on road y offroad— saliendo de la experiencia con un conocimiento directo y tangible del vehículo que ninguna capacitación teórica podría haber entregado. El formato de test drive dual demostró ser especialmente efectivo para un producto cuya propuesta de valor combina uso urbano y capacidad todo terreno: los vendedores pudieron verificar en carne propia ambos atributos y traducirlos en argumentos de venta concretos frente a sus clientes. Para LaPizarra, este proyecto reafirma un principio que aplicamos en cada formación comercial que producimos: cuando la fuerza de ventas vive el producto antes de venderlo, la seguridad y la convicción con la que lo presenta al mercado cambian por completo.",
   },
   {
+    slug: "cabify-celebracion-18-septiembre",
+    cliente: "Cabify",
+    titulo: "Celebración 18 de Septiembre",
+    heroFoto: "/galeria19/4.jpg",
+    fotos: [
+      "/galeria19/4.jpg",
+      "/galeria19/5.jpg",
+      "/galeria19/6.jpg",
+      "/galeria19/2.jpg",
+      "/galeria19/1.jpg",
+      "/galeria19/3.jpg",
+      "/galeria19/7.jpg",
+    ],
+    objetivo:
+      "Cabify es una de las plataformas de movilidad más relevantes de Latinoamérica, con un equipo en Chile que combina áreas comerciales, operaciones y tecnología en una cultura de trabajo intensa y en constante movimiento. Organizar una celebración de Fiestas Patrias para empresas es, para compañías de este tipo, mucho más que un punto en el calendario: es una de las pocas instancias del año donde equipos que normalmente no comparten espacio pueden encontrarse fuera del contexto operativo. Bajo esa premisa, Cabify nos convocó para diseñar y producir su Celebración de Fiestas Patrias 2026, un evento corporativo para 85 colaboradores realizado en Estero Arrayán, cuyo objetivo central era la integración de equipo. El encargo era preciso: generar una actividad de integración para empresas que se sintiera genuinamente dieciochera —con asado, música y ambiente de campo— pero con la identidad de marca de Cabify presente en cada detalle, de modo que la celebración reforzara al mismo tiempo la cultura interna y el sentido de pertenencia a la compañía.",
+    conceptoCreativo:
+      "El concepto creativo de este evento de Fiestas Patrias corporativo partió de una idea simple: una celebración dieciochera con la identidad de Cabify integrada de principio a fin, sin perder la calidez y la informalidad que ese tipo de actividad de integración de equipo exige. Estero Arrayán, con su entorno arbolado y natural, fue el escenario ideal para combinar la tradición chilena del 18 de septiembre con el sello visual de la marca. Ambientamos el espacio con guirnaldas y banderines patrios conviviendo con branding Cabify en cada punto de contacto: una carpa de marca como punto de encuentro y speeches, letras corpóreas y un letrero neón como fondo fotográfico, estaciones de carga de celular con la identidad de la compañía y zonas de descanso con mobiliario en el morado característico de Cabify. La jornada combinó momentos formales —speeches del equipo directivo sobre un stage bajo los árboles en flor— con una experiencia gastronómica de asado chileno servido a la mesa, y una batería de juegos y activaciones branded pensada específicamente para dinamizar la integración entre áreas: un Jenga gigante personalizado con el logo Cabify grabado en cada pieza y mesas de beer pong ploteadas en el morado corporativo, diseñadas para activar la competencia sana y la conversación espontánea entre equipos de comercial, operaciones y tecnología que en el día a día rara vez comparten espacio.",
+    resultado:
+      "La Celebración de Fiestas Patrias de Cabify en Estero Arrayán reunió a 85 colaboradores en una jornada que cumplió con precisión su objetivo de integración de equipo. La combinación de asado, música, juegos branded y speeches en un entorno natural generó un ambiente distendido donde las conversaciones fluyeron entre áreas y jerarquías, algo que rara vez ocurre en el ritmo habitual de trabajo. Las activaciones de marca —el Jenga gigante, las mesas de beer pong y la zona lounge fotográfica— funcionaron como catalizadores de interacción, dando a los asistentes motivos concretos para acercarse, jugar y compartir entre equipos. Para Cabify, la celebración logró exactamente lo que una buena actividad de integración de fin de año o de fechas patrias debe lograr: que el equipo vuelva a sus funciones con vínculos más cercanos entre áreas, más allá de la coincidencia en un organigrama. Para LaPizarra, este proyecto confirma que las celebraciones de Fiestas Patrias para empresas, bien producidas y con identidad de marca coherente, son una herramienta de cultura organizacional tan valiosa como cualquier jornada de trabajo formal: cuando el equipo se conecta fuera del contexto operativo, esa cercanía vuelve con ellos al día a día.",
+  },
+  {
     slug: "novo-nordisk-vive-ligero-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Vive Ligero — Lanzamiento Interno de Campaña",
