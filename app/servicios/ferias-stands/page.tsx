@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ferias & Stands — Sistemas de Conversión Comercial | LaPizarra",
     description: "No diseñamos stands. Diseñamos sistemas de conversión comercial para ferias industriales, tecnológicas y de consumo en Chile.",
-    url: "https://somoslapizarra.cl/servicios/ferias-stands",
+    url: "https://www.somoslapizarra.cl/servicios/ferias-stands",
     siteName: "LaPizarra",
-    images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
-  alternates: { canonical: "https://somoslapizarra.cl/servicios/ferias-stands" },
+  alternates: { canonical: "https://www.somoslapizarra.cl/servicios/ferias-stands" },
 };
 
 export default function FeriasStandsPage() {

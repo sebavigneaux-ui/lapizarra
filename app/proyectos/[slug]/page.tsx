@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,33 @@ import VideoGaleria from "./VideoGaleria";
 
 export function generateStaticParams() {
   return proyectos.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const proyecto = getProyecto(slug);
+  if (!proyecto) return {};
+  const title = `${proyecto.cliente} — ${proyecto.titulo} | LaPizarra`;
+  const description = `Caso de éxito: ${proyecto.titulo} para ${proyecto.cliente}, producido por LaPizarra.`;
+  const url = `https://www.somoslapizarra.cl/proyectos/${proyecto.slug}`;
+  const image = proyecto.heroFoto ?? proyecto.fotos[0];
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "LaPizarra",
+      images: [{ url: image, width: 1200, height: 630 }],
+      type: "article",
+    },
+    alternates: { canonical: url },
+  };
 }
 
 export default async function ProyectoPage({

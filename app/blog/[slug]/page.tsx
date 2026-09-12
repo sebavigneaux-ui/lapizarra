@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: articulo.metaTitle,
       description: articulo.metaDescription,
-      url: `https://somoslapizarra.cl/blog/${articulo.slug}`,
+      url: `https://www.somoslapizarra.cl/blog/${articulo.slug}`,
       siteName: "LaPizarra",
-      images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
       type: "article",
       publishedTime: articulo.fecha,
     },
@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: articulo.metaTitle,
       description: articulo.metaDescription,
-      images: ["https://somoslapizarra.cl/og-image.jpg"],
+      images: ["https://www.somoslapizarra.cl/og-image.jpg"],
     },
     alternates: {
-      canonical: `https://somoslapizarra.cl/blog/${articulo.slug}`,
+      canonical: `https://www.somoslapizarra.cl/blog/${articulo.slug}`,
     },
   };
 }
@@ -242,20 +242,20 @@ export default async function ArticuloPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "LaPizarra",
-      logo: { "@type": "ImageObject", url: "https://somoslapizarra.cl/logo-blanco.png" },
+      logo: { "@type": "ImageObject", url: "https://www.somoslapizarra.cl/logo-blanco.png" },
     },
     datePublished: articulo.fecha,
-    url: `https://somoslapizarra.cl/blog/${articulo.slug}`,
-    image: "https://somoslapizarra.cl/og-image.jpg",
+    url: `https://www.somoslapizarra.cl/blog/${articulo.slug}`,
+    image: "https://www.somoslapizarra.cl/og-image.jpg",
   };
 
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://somoslapizarra.cl" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://somoslapizarra.cl/blog" },
-      { "@type": "ListItem", position: 3, name: articulo.titulo, item: `https://somoslapizarra.cl/blog/${articulo.slug}` },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.somoslapizarra.cl" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.somoslapizarra.cl/blog" },
+      { "@type": "ListItem", position: 3, name: articulo.titulo, item: `https://www.somoslapizarra.cl/blog/${articulo.slug}` },
     ],
   };
 

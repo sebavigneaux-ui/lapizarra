@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: servicio.metaTitle,
       description: servicio.metaDescription,
-      url: `https://somoslapizarra.cl/servicios/${servicio.slug}`,
+      url: `https://www.somoslapizarra.cl/servicios/${servicio.slug}`,
       siteName: "LaPizarra",
-      images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+      images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
       type: "website",
     },
-    alternates: { canonical: `https://somoslapizarra.cl/servicios/${servicio.slug}` },
+    alternates: { canonical: `https://www.somoslapizarra.cl/servicios/${servicio.slug}` },
   };
 }
 
@@ -51,19 +51,19 @@ export default async function ServicioPage({ params }: Props) {
     provider: {
       "@type": "Organization",
       name: "LaPizarra",
-      url: "https://somoslapizarra.cl",
+      url: "https://www.somoslapizarra.cl",
     },
     areaServed: { "@type": "Country", name: "Chile" },
-    url: `https://somoslapizarra.cl/servicios/${servicio.slug}`,
+    url: `https://www.somoslapizarra.cl/servicios/${servicio.slug}`,
   };
 
   const schemaBreadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://somoslapizarra.cl" },
-      { "@type": "ListItem", position: 2, name: "Servicios", item: "https://somoslapizarra.cl/servicios" },
-      { "@type": "ListItem", position: 3, name: servicio.titulo, item: `https://somoslapizarra.cl/servicios/${servicio.slug}` },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.somoslapizarra.cl" },
+      { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.somoslapizarra.cl/servicios" },
+      { "@type": "ListItem", position: 3, name: servicio.titulo, item: `https://www.somoslapizarra.cl/servicios/${servicio.slug}` },
     ],
   };
 

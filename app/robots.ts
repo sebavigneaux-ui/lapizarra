@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: "https://somoslapizarra.cl/sitemap.xml",
+    sitemap: "https://www.somoslapizarra.cl/sitemap.xml",
   };
 }

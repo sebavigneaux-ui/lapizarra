@@ -3,7 +3,7 @@ import { ARTICULOS } from "./data/articulos";
 import { SERVICIOS } from "./data/servicios";
 import { proyectosPublicados } from "./data/proyectos";
 
-const BASE = "https://somoslapizarra.cl";
+const BASE = "https://www.somoslapizarra.cl";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

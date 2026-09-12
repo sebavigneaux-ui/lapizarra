@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Servicios de Producción de Eventos | LaPizarra",
     description: "Servicios de producción de eventos: corporativos, activaciones BTL, stands para ferias, lanzamientos de producto, eventos internos y producción audiovisual. Atendemos Santiago y 5 regiones de Chile.",
-    url: "https://somoslapizarra.cl/servicios",
+    url: "https://www.somoslapizarra.cl/servicios",
     siteName: "LaPizarra",
-    images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
-  alternates: { canonical: "https://somoslapizarra.cl/servicios" },
+  alternates: { canonical: "https://www.somoslapizarra.cl/servicios" },
 };
 
 export default function ServiciosPage() {

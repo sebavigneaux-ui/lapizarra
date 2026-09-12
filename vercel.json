@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "somoslapizarra.cl" }
+      ],
+      "destination": "https://www.somoslapizarra.cl/:path*",
+      "permanent": true
+    }
+  ]
+}

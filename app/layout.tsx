@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.somoslapizarra.cl"),
   title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
   description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
   viewport: {
@@ -11,14 +12,17 @@ export const metadata: Metadata = {
     maximumScale: 5,
     userScalable: true,
   },
+  alternates: {
+    canonical: "https://www.somoslapizarra.cl",
+  },
   openGraph: {
     title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
     description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
-    url: "https://somoslapizarra.cl",
+    url: "https://www.somoslapizarra.cl",
     siteName: "LaPizarra",
     images: [
       {
-        url: "https://somoslapizarra.cl/og-image.jpg",
+        url: "https://www.somoslapizarra.cl/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "LaPizarra",
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LaPizarra — Productora de eventos corporativos y experiencias de marca",
     description: "Productora de eventos corporativos en Chile. Producción integral de convenciones, lanzamientos, activaciones BTL y stands feriales en Santiago y regiones.",
-    images: ["https://somoslapizarra.cl/og-image.jpg"],
+    images: ["https://www.somoslapizarra.cl/og-image.jpg"],
   },
   verification: {
     google: "BzXBzQBx_ZLjc7-w8dSwjNGeIcnQxrfYOGf2_XdhliM",
@@ -42,12 +46,12 @@ const schemaOrganization = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://somoslapizarra.cl/#organization",
+      "@id": "https://www.somoslapizarra.cl/#organization",
       name: "LaPizarra",
-      url: "https://somoslapizarra.cl",
+      url: "https://www.somoslapizarra.cl",
       logo: {
         "@type": "ImageObject",
-        url: "https://somoslapizarra.cl/logo-blanco.png",
+        url: "https://www.somoslapizarra.cl/logo-blanco.png",
       },
       sameAs: [
         "https://www.instagram.com/somoslapizarra/",
@@ -88,11 +92,11 @@ const schemaOrganization = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://somoslapizarra.cl/#localbusiness",
+      "@id": "https://www.somoslapizarra.cl/#localbusiness",
       name: "LaPizarra",
       description:
         "Productora de eventos corporativos y experiencias de marca. Diseño, producción y ejecución de eventos corporativos, activaciones BTL, ferias y stands en Chile.",
-      url: "https://somoslapizarra.cl",
+      url: "https://www.somoslapizarra.cl",
       telephone: "+56-9-5841-9326",
       email: "sebastian@somoslapizarra.cl",
       address: {

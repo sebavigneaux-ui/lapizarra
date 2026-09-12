@@ -6,6 +6,15 @@ import Header from "../components/Header";
 export const metadata = {
   title: "Proyectos — LaPizarra",
   description: "Muestra de trabajos: eventos corporativos, lanzamientos, activaciones BTL y experiencias de marca producidas por LaPizarra.",
+  openGraph: {
+    title: "Proyectos — LaPizarra",
+    description: "Muestra de trabajos: eventos corporativos, lanzamientos, activaciones BTL y experiencias de marca producidas por LaPizarra.",
+    url: "https://www.somoslapizarra.cl/proyectos",
+    siteName: "LaPizarra",
+    images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+    type: "website",
+  },
+  alternates: { canonical: "https://www.somoslapizarra.cl/proyectos" },
 };
 
 export default function ProyectosPage() {

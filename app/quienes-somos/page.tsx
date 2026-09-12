@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     title: "Quiénes somos | LaPizarra",
     description:
       "Sebastián Vigneaux y Daniel Soto fundaron LaPizarra en 2023 para reunir visión estratégica y excelencia en producción en una sola agencia.",
-    url: "https://somoslapizarra.cl/quienes-somos",
+    url: "https://www.somoslapizarra.cl/quienes-somos",
     siteName: "LaPizarra",
-    images: [{ url: "https://somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://www.somoslapizarra.cl/og-image.jpg", width: 1200, height: 630 }],
     type: "website",
   },
-  alternates: { canonical: "https://somoslapizarra.cl/quienes-somos" },
+  alternates: { canonical: "https://www.somoslapizarra.cl/quienes-somos" },
 };
 
 const schemaPage = {
@@ -26,25 +26,25 @@ const schemaPage = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://somoslapizarra.cl" },
-        { "@type": "ListItem", position: 2, name: "Quiénes somos", item: "https://somoslapizarra.cl/quienes-somos" },
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.somoslapizarra.cl" },
+        { "@type": "ListItem", position: 2, name: "Quiénes somos", item: "https://www.somoslapizarra.cl/quienes-somos" },
       ],
     },
     {
       "@type": "Person",
-      "@id": "https://somoslapizarra.cl/#sebastian-vigneaux",
+      "@id": "https://www.somoslapizarra.cl/#sebastian-vigneaux",
       name: "Sebastián Vigneaux",
       jobTitle: "Co-fundador y Director Comercial",
-      worksFor: { "@id": "https://somoslapizarra.cl/#organization" },
+      worksFor: { "@id": "https://www.somoslapizarra.cl/#organization" },
       description:
         "18 años de experiencia en gestión corporativa y dirección comercial en empresas de primer nivel. Co-fundador de LaPizarra, productora de eventos corporativos en Chile.",
     },
     {
       "@type": "Person",
-      "@id": "https://somoslapizarra.cl/#daniel-soto",
+      "@id": "https://www.somoslapizarra.cl/#daniel-soto",
       name: "Daniel Soto",
       jobTitle: "Co-fundador y Director de Producción",
-      worksFor: { "@id": "https://somoslapizarra.cl/#organization" },
+      worksFor: { "@id": "https://www.somoslapizarra.cl/#organization" },
       description:
         "15 años de experiencia como productor de eventos corporativos y experiencias de marca en Chile. Co-fundador de LaPizarra.",
     },
