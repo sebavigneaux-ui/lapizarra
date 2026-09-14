@@ -245,6 +245,10 @@ export default async function ArticuloPage({ params }: Props) {
       logo: { "@type": "ImageObject", url: "https://www.somoslapizarra.cl/logo-blanco.png" },
     },
     datePublished: articulo.fecha,
+    // No hay tracking de fecha de última edición en el dataset de artículos todavía;
+    // se usa la fecha de publicación como valor conservador hasta que exista un campo
+    // real de "última modificación" en app/data/articulos.ts.
+    dateModified: articulo.fecha,
     url: `https://www.somoslapizarra.cl/blog/${articulo.slug}`,
     image: "https://www.somoslapizarra.cl/og-image.jpg",
   };

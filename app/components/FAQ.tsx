@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import Blobs from "./Blobs";
 
 const preguntas = [
@@ -30,8 +28,6 @@ const preguntas = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
     <section id="faq" className="bg-[#231F20] py-24 px-6 relative overflow-hidden">
       <Blobs />
@@ -42,26 +38,20 @@ export default function FAQ() {
         </h2>
 
         <div className="max-w-3xl">
-            {preguntas.map((item, i) => (
-              <div key={i} className="border-t border-white/10 first:border-t-0">
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full flex items-center justify-between py-6 text-left group"
-                >
-                  <span className="text-white font-bold text-lg pr-8 group-hover:text-[#EC008C] transition-colors">
-                    {item.q}
-                  </span>
-                  <span className="text-[#EC008C] font-black text-xl flex-shrink-0">
-                    {open === i ? "−" : "+"}
-                  </span>
-                </button>
-                {open === i && (
-                  <p className="text-white/50 text-lg leading-relaxed pb-6">
-                    {item.a}
-                  </p>
-                )}
-              </div>
-            ))}
+          {preguntas.map((item, i) => (
+            <details key={i} className="group border-t border-white/10 first:border-t-0">
+              <summary className="w-full flex items-center justify-between py-6 text-left cursor-pointer list-none marker:hidden [&::-webkit-details-marker]:hidden">
+                <span className="text-white font-bold text-lg pr-8 group-hover:text-[#EC008C] transition-colors">
+                  {item.q}
+                </span>
+                <span className="text-[#EC008C] font-black text-xl flex-shrink-0 group-open:hidden">+</span>
+                <span className="text-[#EC008C] font-black text-xl flex-shrink-0 hidden group-open:inline">−</span>
+              </summary>
+              <p className="text-white/50 text-lg leading-relaxed pb-6">
+                {item.a}
+              </p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
