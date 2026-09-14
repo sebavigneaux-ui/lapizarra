@@ -8,6 +8,7 @@ const clientes = [
   "SQM", "Parque Arauco", "Ripley", "Alsea", "Kaufmann",
   "Polpaico", "CChC", "Universidad de los Andes",
   "Orsan Seguros", "Cool Carriers", "Novo Nordisk",
+  "Natura", "Universidad San Sebastián", "Cesce",
 ];
 
 export default function Hero() {

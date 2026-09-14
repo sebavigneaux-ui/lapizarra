@@ -7,10 +7,11 @@ const clientes = [
   "SQM", "Parque Arauco", "Ripley", "Alsea", "Kaufmann",
   "Polpaico", "CChC", "Universidad de los Andes",
   "Orsan Seguros", "Cool Carriers", "Novo Nordisk",
+  "Natura", "Universidad San Sebastián", "Cesce",
 ];
 
 export default function ClientesDestacados() {
-  const { count, ref } = useCountUp(21);
+  const { count, ref } = useCountUp(24);
 
   return (
     <section id="clientes" className="bg-white py-24 px-6">
