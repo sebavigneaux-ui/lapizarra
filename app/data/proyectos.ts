@@ -2,6 +2,8 @@ export type Proyecto = {
   slug: string;
   cliente: string;
   titulo: string;
+  seoTitle?: string; // título completo para <title> (≤60 caracteres)
+  descripcion?: string; // meta description propia (140–160 caracteres)
   fotos: string[];
   heroFoto?: string; // fuerza una foto específica como principal
   heroPosition?: string; // object-position del hero, ej: "center top"
@@ -17,6 +19,7 @@ export const proyectos: Proyecto[] = [
     slug: "polpaico-convencion-clientes",
     cliente: "Polpaico",
     titulo: "Convención de Clientes",
+    descripcion: "Convención de Clientes de Polpaico en Concepción: 200 clientes y distribuidores, puesta en escena tecnológica y networking. Producida por LaPizarra.",
     fotos: [
       "/galeria/1.jpg",
       "/galeria/2.jpg",
@@ -42,6 +45,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-leap-motor",
     cliente: "Stellantis",
     titulo: "Formación Comercial Leap Motor",
+    descripcion: "Formación comercial inmersiva para lanzar Leap Motor en Chile: más de 80 vendedores de Stellantis vivieron la marca antes de venderla. Caso LaPizarra.",
     videos: ["jpXMz12JjXU"],
     fotos: [
       "/galeria2/1.jpg",
@@ -66,6 +70,7 @@ export const proyectos: Proyecto[] = [
     slug: "cool-carriers-convencion",
     cliente: "Cool Carriers",
     titulo: "Convención de Clientes 2025",
+    descripcion: "Convención de Clientes 2025 de Cool Carriers en Santiago: 150 clientes, gastronomía premium y música en vivo para fortalecer vínculos comerciales.",
     videos: ["lNUHjeq-81s"],
     fotos: [
       "/galeria3/1.jpg",
@@ -91,6 +96,7 @@ export const proyectos: Proyecto[] = [
     slug: "orsan-seguros-convencion",
     cliente: "Orsan Seguros",
     titulo: "Convención de Corredores",
+    descripcion: "Convención de Corredores de Orsan Seguros en un rooftop de Providencia: 80 corredores y lanzamiento de una nueva plataforma digital. Caso LaPizarra.",
     fotos: [
       "/galeria4/1.jpg",
       "/galeria4/2.jpg",
@@ -114,6 +120,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-citroen-basalt",
     cliente: "Stellantis",
     titulo: "Formación Comercial Citroën Basalt",
+    descripcion: "Formación comercial Citroën Basalt: reveal en vivo, estaciones de producto y test drive para 60 vendedores, con 95% de evaluación excelente o muy buena.",
     heroFoto: "/galeria5/7.jpg",
     fotos: [
       "/galeria5/0.jpg",
@@ -139,6 +146,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-jeep-commander",
     cliente: "Stellantis",
     titulo: "Formación Comercial Jeep Commander",
+    descripcion: "Formación comercial para el lanzamiento del Jeep Commander: inmersión en el universo Jeep y sesión de manejo para la red comercial de Stellantis Chile.",
     videos: ["503CFR2-nbc"],
     fotos: [
       "/galeria7/1.jpg",
@@ -163,6 +171,7 @@ export const proyectos: Proyecto[] = [
     slug: "parque-arauco-corrida-maipu",
     cliente: "Parque Arauco",
     titulo: "Corrida de Maipú 2024",
+    descripcion: "Corrida de Maipú 2024 para Parque Arauco: más de 5.000 corredores en 5K, 10K e infantil. Producción integral de evento deportivo y activación de marca.",
     videos: ["4uyNXJ2N6ow"],
     fotos: [
       "/galeria6/1.jpg",
@@ -188,6 +197,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-capsulas-formacion",
     cliente: "Stellantis",
     titulo: "Cápsulas de Formación Corporativa",
+    descripcion: "Biblioteca de más de 200 cápsulas audiovisuales de formación para Stellantis, grabadas en INACAP Vitacura con enfoque de microlearning. Caso LaPizarra.",
     fotos: [
       "/galeria8/1.jpg",
       "/galeria8/2.jpg",
@@ -206,6 +216,7 @@ export const proyectos: Proyecto[] = [
     slug: "stellantis-ram-dakota-formacion-comercial",
     cliente: "Stellantis",
     titulo: "Formación Comercial RAM Dakota",
+    descripcion: "Formación comercial RAM Dakota en Santa Martina: test drive on road y offroad para 160 vendedores de Stellantis en dos jornadas. Producida por LaPizarra.",
     heroFoto: "/galeria18/1.jpg",
     videos: ["yGZWBmZTJvA"],
     fotos: [
@@ -228,6 +239,7 @@ export const proyectos: Proyecto[] = [
     slug: "cabify-celebracion-18-septiembre",
     cliente: "Cabify",
     titulo: "Celebración 18 de Septiembre",
+    descripcion: "Celebración de Fiestas Patrias para Cabify en Estero Arrayán: 85 colaboradores, asado, juegos branded e integración entre áreas. Producida por LaPizarra.",
     heroFoto: "/galeria19/4.jpg",
     fotos: [
       "/galeria19/4.jpg",
@@ -249,6 +261,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-celebracion-fiestas-patrias-mandarin-oriental",
     cliente: "Novo Nordisk",
     titulo: "Celebración Fiestas Patrias 2026 — Hotel Mandarin Oriental",
+    seoTitle: "Fiestas Patrias Novo Nordisk, Mandarin Oriental | LaPizarra",
+    descripcion: "Fiestas Patrias corporativas de Novo Nordisk en el Hotel Mandarin Oriental: más de 100 colaboradores, chefs en vivo, cueca y juegos criollos.",
     heroFoto: "/galeria20/4.jpg",
     fotos: [
       "/galeria20/4.jpg",
@@ -270,6 +284,8 @@ export const proyectos: Proyecto[] = [
     slug: "cool-carriers-convencion-clientes-2026-mestizo",
     cliente: "Cool Carriers",
     titulo: "Convención de Clientes 2026 — Restaurant Mestizo",
+    seoTitle: "Convención de Clientes Cool Carriers 2026 | LaPizarra",
+    descripcion: "Segunda Convención de Clientes de Cool Carriers en Restaurant Mestizo, Parque Bicentenario: 50% más asistentes que en 2025. Producida por LaPizarra.",
     heroFoto: "/galeria23/1.jpg",
     videos: ["i2p80seksJ8"],
     fotos: [
@@ -297,6 +313,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-digital-camp-workshop-nutricionistas",
     cliente: "Novo Nordisk",
     titulo: "Digital Camp — Workshop de Formación Digital para Nutricionistas",
+    seoTitle: "Digital Camp Novo Nordisk: Workshop Digital | LaPizarra",
+    descripcion: "Digital Camp de Novo Nordisk: workshop de formación digital para 40 nutricionistas en sus oficinas de Santiago, con branding, estaciones y podcast.",
     heroFoto: "/galeria21/2.jpg",
     videos: ["hvLqWU3YMIQ"],
     fotos: [
@@ -319,6 +337,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-sala-podcast-corporativa",
     cliente: "Novo Nordisk",
     titulo: "Sala de Podcast Corporativa — Diseño y Montaje",
+    seoTitle: "Sala de Podcast Corporativa Novo Nordisk | LaPizarra",
+    descripcion: "Diseño y montaje de una sala de podcast corporativa para Novo Nordisk en Santiago: set de madera, iluminación, neón ON AIR y cableado oculto.",
     heroFoto: "/galeria22/1.jpg",
     fotos: ["/galeria22/1.jpg", "/galeria22/2.jpg", "/galeria22/3.jpg"],
     objetivo:
@@ -332,6 +352,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-vive-ligero-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Vive Ligero — Lanzamiento Interno de Campaña",
+    seoTitle: "Vive Ligero: Lanzamiento Interno Novo Nordisk | LaPizarra",
+    descripcion: "Lanzamiento interno de la campaña Vive Ligero de Novo Nordisk: regalos personalizados y show del mago Jean Paul Olhaberry para el equipo.",
     heroFoto: "/galeria17/3.jpg",
     heroPosition: "center top",
     fotos: [
@@ -350,6 +372,8 @@ export const proyectos: Proyecto[] = [
     slug: "adecco-retrato-ejecutivo-hr-conference",
     cliente: "Adecco",
     titulo: "Retrato Ejecutivo — The Annual HR Conference 2026",
+    seoTitle: "Adecco: Retrato Ejecutivo en HR Conference | LaPizarra",
+    descripcion: "Retrato Ejecutivo de Adecco en The Annual HR Conference 2026: activación de stand que generó 60% más leads de lo esperado. Caso LaPizarra.",
     heroFoto: "/galeria16/1.jpg",
     fotos: [
       "/galeria16/1.jpg",
@@ -365,6 +389,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-unordinary-drives-change",
     cliente: "Novo Nordisk",
     titulo: "Unordinary Drives Change — Branding de Oficinas",
+    seoTitle: "Branding de Oficinas Novo Nordisk: Unordinary | LaPizarra",
+    descripcion: "Branding de oficinas para Novo Nordisk Chile con la campaña Unordinary Drives Change: intervenciones que comunican cultura y employer branding.",
     heroFoto: "/galeria15/2.jpg",
     fotos: [
       "/galeria15/2.jpg",
@@ -381,6 +407,8 @@ export const proyectos: Proyecto[] = [
     slug: "novo-nordisk-wegovy-lanzamiento",
     cliente: "Novo Nordisk",
     titulo: "Lanzamiento Wegovy — Intervención de Oficinas",
+    seoTitle: "Lanzamiento Wegovy: Intervención de Oficinas | LaPizarra",
+    descripcion: "Intervención de oficinas de Novo Nordisk para el lanzamiento interno de Wegovy® en Chile: experiencia de marca para todo el equipo. Caso LaPizarra.",
     heroFoto: "/galeria14/1.jpg",
     fotos: [
       "/galeria14/1.jpg",
@@ -396,6 +424,7 @@ export const proyectos: Proyecto[] = [
     slug: "natura-activacion-dia-del-padre",
     cliente: "Natura",
     titulo: "Activación Día del Padre",
+    descripcion: "Activación interna de Día del Padre para Natura en su edificio logístico de Santiago: experiencia emotiva y mural colectivo para los equipos.",
     heroFoto: "/galeria13/3.jpg",
     fotos: [
       "/galeria13/3.jpg",

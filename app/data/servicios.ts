@@ -45,7 +45,7 @@ export const SERVICIOS: Servicio[] = [
       { numero: "03", titulo: "Producción", descripcion: "Coordinamos todos los proveedores y elementos técnicos bajo un solo equipo responsable." },
       { numero: "04", titulo: "Ejecución y cierre", descripcion: "Dirigimos el evento en terreno y entregamos métricas de resultado." },
     ],
-    proyectosRelacionados: ["polpaico-convencion-clientes", "cool-carriers-convencion", "orsan-seguros-convencion"],
+    proyectosRelacionados: ["cool-carriers-convencion-clientes-2026-mestizo", "novo-nordisk-digital-camp-workshop-nutricionistas", "polpaico-convencion-clientes", "orsan-seguros-convencion", "cool-carriers-convencion"],
   },
   {
     slug: "activaciones-btl",
@@ -79,7 +79,7 @@ export const SERVICIOS: Servicio[] = [
       { numero: "03", titulo: "Activación", descripcion: "Ejecutamos con equipo propio en terreno, con coordinación en tiempo real." },
       { numero: "04", titulo: "Contenido y resultados", descripcion: "Capturamos el contenido generado y medimos el impacto de la activación." },
     ],
-    proyectosRelacionados: ["parque-arauco-corrida-maipu"],
+    proyectosRelacionados: ["parque-arauco-corrida-maipu", "natura-activacion-dia-del-padre"],
   },
   {
     slug: "ferias-stands",
@@ -147,7 +147,7 @@ export const SERVICIOS: Servicio[] = [
       { numero: "03", titulo: "Ejecución", descripcion: "Dirigimos el evento con foco total en el momento del reveal." },
       { numero: "04", titulo: "Contenido", descripcion: "Capturamos y entregamos el material audiovisual del lanzamiento." },
     ],
-    proyectosRelacionados: ["stellantis-leap-motor", "stellantis-citroen-basalt", "stellantis-jeep-commander"],
+    proyectosRelacionados: ["stellantis-ram-dakota-formacion-comercial", "novo-nordisk-vive-ligero-lanzamiento", "novo-nordisk-wegovy-lanzamiento", "stellantis-leap-motor", "stellantis-citroen-basalt", "stellantis-jeep-commander"],
   },
   {
     slug: "eventos-internos-empresas",
@@ -181,7 +181,7 @@ export const SERVICIOS: Servicio[] = [
       { numero: "03", titulo: "Producción", descripcion: "Coordinamos todos los elementos para una ejecución sin fricciones." },
       { numero: "04", titulo: "Cierre y follow-up", descripcion: "Entregamos contenido del evento para comunicación interna post-jornada." },
     ],
-    proyectosRelacionados: ["polpaico-convencion-clientes", "cool-carriers-convencion"],
+    proyectosRelacionados: ["cabify-celebracion-18-septiembre", "novo-nordisk-celebracion-fiestas-patrias-mandarin-oriental", "novo-nordisk-unordinary-drives-change"],
   },
   {
     slug: "produccion-audiovisual-eventos",
@@ -215,6 +215,6 @@ export const SERVICIOS: Servicio[] = [
       { numero: "03", titulo: "Producción en evento", descripcion: "Cubrimos el evento con equipo técnico dedicado e independiente del equipo de producción." },
       { numero: "04", titulo: "Post-producción", descripcion: "Editamos y entregamos el material en los formatos y plazos acordados." },
     ],
-    proyectosRelacionados: ["stellantis-leap-motor", "stellantis-citroen-basalt", "parque-arauco-corrida-maipu"],
+    proyectosRelacionados: ["novo-nordisk-sala-podcast-corporativa", "stellantis-capsulas-formacion", "adecco-retrato-ejecutivo-hr-conference", "parque-arauco-corrida-maipu"],
   },
 ];
