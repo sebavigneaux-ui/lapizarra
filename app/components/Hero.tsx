@@ -35,9 +35,10 @@ export default function Hero() {
         muted
         loop
         playsInline
+        poster="/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover opacity-55"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/hero-2026.mp4" type="video/mp4" />
       </video>
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#231F20]/50" />
