@@ -267,6 +267,33 @@ export const proyectos: Proyecto[] = [
       "La Celebración de Fiestas Patrias de Novo Nordisk en el Hotel Mandarin Oriental reunió a más de 100 colaboradores en una jornada que combinó con precisión sus dos objetivos: integración de equipo y reconocimiento al trabajo detrás de los lanzamientos más importantes del año para la marca. El dúo folclórico, la cueca con las mascotas de producto y los juegos criollos generaron momentos de alta participación espontánea, con colaboradores de distintas áreas compartiendo mesa, baile y juego en un formato que rara vez ocurre en la dinámica habitual de trabajo. La ambientación y la gastronomía, a la altura del estándar del venue, reforzaron el mensaje de que la compañía valora y celebra a su equipo con el mismo nivel de exigencia que aplica a sus lanzamientos de producto. Para Novo Nordisk, la jornada funcionó como el cierre perfecto de un año de hitos relevantes: una instancia donde el reconocimiento no se limitó a las palabras, sino que se tradujo en una experiencia memorable para quienes hicieron posible esos logros. Para LaPizarra, este proyecto confirma que las celebraciones de Fiestas Patrias para empresas, cuando se producen con el mismo estándar que un evento corporativo de primer nivel, son una de las herramientas más efectivas para comunicar reconocimiento genuino a un equipo.",
   },
   {
+    slug: "cool-carriers-convencion-clientes-2026-mestizo",
+    cliente: "Cool Carriers",
+    titulo: "Convención de Clientes 2026 — Restaurant Mestizo",
+    heroFoto: "/galeria23/1.jpg",
+    videos: ["i2p80seksJ8"],
+    fotos: [
+      "/galeria23/1.jpg",
+      "/galeria23/6.jpg",
+      "/galeria23/2.jpg",
+      "/galeria23/3.jpg",
+      "/galeria23/8.jpg",
+      "/galeria23/7.jpg",
+      "/galeria23/9.jpg",
+      "/galeria23/4.jpg",
+      "/galeria23/10.jpg",
+      "/galeria23/5.jpg",
+      "/galeria23/11.jpg",
+      "/galeria23/12.jpg",
+    ],
+    objetivo:
+      "Por segundo año consecutivo, Cool Carriers —una de las empresas líderes en logística de temperatura controlada en Chile— confió en LaPizarra para producir su Convención de Clientes. Que un cliente vuelva a encargar el mismo evento corporativo es, en sí mismo, una forma de medir resultados: la edición 2025 dejó la vara alta y generó conversación entre los clientes de la compañía, y la edición 2026 tenía el desafío de superarla. El encargo se mantuvo fiel a su esencia: reunir a los principales clientes de Cool Carriers en una noche de relacionamiento de alto estándar, fortalecer vínculos comerciales de largo plazo y transmitir el compromiso de la empresa con quienes confían su cadena de frío a su operación. Pero esta vez con una exigencia adicional: recibir una convocatoria significativamente mayor sin perder la cercanía ni el nivel de detalle que hicieron memorable la primera edición. Para lograrlo, volvimos a elegir Restaurant Mestizo, en el Parque Bicentenario de Vitacura, cerrado de forma exclusiva para el evento entre las 18:30 y las 23:00 horas. Repetir el venue fue una decisión estratégica: Mestizo ya había demostrado ser un espacio ideal para una convención de clientes en Santiago, y la segunda edición nos permitió aprovechar todo lo aprendido sobre su arquitectura, sus terrazas y sus flujos para producir una noche todavía mejor.",
+    conceptoCreativo:
+      "El concepto de la Convención de Clientes 2026 fue consolidar a Mestizo como la casa del encuentro anual entre Cool Carriers y sus clientes. La arquitectura del restaurante —hormigón, madera, grandes ventanales, terrazas abiertas al parque y la vista hacia el cerro San Cristóbal— ofrece una escala y una elegancia que pocos venues en Santiago pueden igualar, y diseñamos la producción para potenciar esas cualidades en lugar de ocultarlas. La experiencia comenzaba en la llegada: un tótem LED de bienvenida con la imagen corporativa, un mesón de acreditación con anfitrionas uniformadas con pañuelo en el color de la marca y credenciales personalizadas con el nombre de cada invitado. Un logotipo corpóreo de gran formato de Cool Carriers en la terraza y un backdrop de marca se convirtieron en los puntos fotográficos de la noche. Ambientamos el venue con decoración floral, elementos corporativos en cada mesa e iluminación perimetral en los colores de la compañía, que se encendía a medida que caía la tarde sobre el parque. La gastronomía fue protagonista: un cóctel premium con tablas de aperitivo y bajativos premium, servido en las terrazas y salones de Mestizo. La música estuvo a cargo de un DJ con sistema de audio profesional y música en vivo, acompañada de efectos de iluminación robotizada y un láser que proyectó el logo de Cool Carriers hacia el Parque Metropolitano, un gesto de marca visible a gran escala. El programa incluyó palabras del equipo directivo de Cool Carriers ante todos los asistentes y cerró con un regalo corporativo para cada invitado.",
+    resultado:
+      "La Convención de Clientes 2026 de Cool Carriers logró un quórum un 50% superior al de la edición 2025. Ese crecimiento no fue casual: es el resultado directo del éxito del año anterior, que convirtió la invitación en un evento esperado dentro de la red de clientes de la compañía, y de la consolidación de Restaurant Mestizo como un venue espectacular para una convención de clientes de este estilo. Recibir a un 50% más de invitados sin perder cercanía exigía una producción precisa: flujos de acreditación ágiles, servicio de cóctel dimensionado para la nueva escala y una distribución de los espacios que mantuvo la conversación fluida en terrazas y salones durante toda la noche. Las palabras del equipo directivo reunieron a todos los asistentes en un momento compartido, mientras el resto de la velada se dedicó a lo que mejor hace una convención de clientes: networking genuino, en un entorno que invita a quedarse. De esta segunda edición extraemos un aprendizaje valioso para cualquier empresa que organiza eventos de relacionamiento con clientes: la continuidad construye marca. Repetir un formato exitoso, en un venue que ya funciona y con una productora que conoce el evento, permite invertir la energía en mejorar la experiencia en lugar de reinventarla. Para LaPizarra, que Cool Carriers vuelva a confiarnos su convención de clientes, y que la asistencia crezca un 50%, es la mejor confirmación de que los eventos corporativos bien producidos generan relaciones comerciales que se fortalecen año tras año.",
+  },
+  {
     slug: "novo-nordisk-digital-camp-workshop-nutricionistas",
     cliente: "Novo Nordisk",
     titulo: "Digital Camp — Workshop de Formación Digital para Nutricionistas",
