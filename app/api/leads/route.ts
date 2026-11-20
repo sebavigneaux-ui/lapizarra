@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
+import { notificarLeadPorCorreo } from "../../lib/notificarLead";
 
 const SHEET_ID = "1drFXs9NrLMaW5t1CyuP26oRgr0JOyiBDzqDlzWrqQow";
 
@@ -77,8 +78,30 @@ export async function POST(req: NextRequest) {
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
       range: "A:N",
-      valueInputOption: "USER_ENTERED",
+      valueInputOption: "RAW", // como texto: evita #ERROR! con valores tipo "+5 días"
       requestBody: { values: [row] },
+    });
+
+    // Aviso por correo (no bloquea la respuesta si falla)
+    await notificarLeadPorCorreo({
+      origen: "Calculadora",
+      asunto: `[Nueva simulación] ${body.empresa} · ${body.tipoLabel} · ${fmt(body.totalMin)}–${fmt(body.totalMax)}`,
+      replyTo: body.correo,
+      campos: [
+        ["Fecha", timestamp],
+        ["Nombre", body.nombre],
+        ["Empresa", body.empresa],
+        ["Correo", body.correo],
+        ["Teléfono", body.telefono],
+        ["Tipo de evento", body.tipoLabel],
+        ["Asistentes", body.asistentesLabel],
+        ["Región", body.regionLabel],
+        ["Días", body.diasLabel],
+        ["Fecha evento", body.fechaEvento],
+        ["Servicios", bloquesStr.split(" | ").join("\n")],
+        ["Rango estimado", `${fmt(body.totalMin)} – ${fmt(body.totalMax)}`],
+        ["Mensaje", body.mensaje],
+      ],
     });
 
     // Notificación WhatsApp vía Green API

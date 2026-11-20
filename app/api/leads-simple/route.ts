@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
+import { notificarLeadPorCorreo } from "../../lib/notificarLead";
 
 const SHEET_ID = "1drFXs9NrLMaW5t1CyuP26oRgr0JOyiBDzqDlzWrqQow";
 
@@ -68,8 +69,23 @@ export async function POST(req: NextRequest) {
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
       range: "A:N",
-      valueInputOption: "USER_ENTERED",
+      valueInputOption: "RAW", // como texto: evita #ERROR! con valores tipo "+5 días"
       requestBody: { values: [row] },
+    });
+
+    // Aviso por correo (no bloquea la respuesta si falla)
+    await notificarLeadPorCorreo({
+      origen: "Formulario home",
+      asunto: `[Nuevo contacto] ${empresa} · ${tipoEvento}`,
+      replyTo: correo,
+      campos: [
+        ["Fecha", timestamp],
+        ["Nombre", nombre],
+        ["Empresa", empresa],
+        ["Correo", correo],
+        ["Teléfono", telefono],
+        ["Tipo de evento", tipoEvento],
+      ],
     });
 
     const greenId = process.env.GREENAPI_ID_INSTANCE;
